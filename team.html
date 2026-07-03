@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Goal Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .calculator-container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      margin: 1rem auto;
+      max-width: 1000px;
+    }
+
+    .result-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #4361ee;
+      transition: transform 0.3s ease;
+    }
+
+    .result-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .result-value {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #4361ee;
+      margin: 0.3rem 0;
+    }
+
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .slider-value {
+      display: inline-block;
+      min-width: 50px;
+      text-align: center;
+      font-weight: 600;
+      color: #4361ee;
+      background-color: rgba(67, 97, 238, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+    }
+
+    .chart-container {
+      height: 300px;
+      margin-top: 1.5rem;
+    }
+
+    .loading-spinner {
+      display: none;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .btn-calculate {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .tooltip-icon {
+      color: #4895ef;
+      cursor: help;
+      font-size: 0.85rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #3a0ca3;
+    }
+
+    .tab-content {
+      padding: 1rem 0;
+    }
+
+    .nav-tabs .nav-link.active {
+      font-weight: 600;
+      color: #4361ee;
+      border-bottom: 3px solid #4361ee;
+    }
+
+    .table-responsive {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .progress-bar {
+      background-color: #4361ee;
+    }
+
+    .error-message {
+      color: #e63946;
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-container {
+        padding: 1rem;
+      }
+
+      .result-value {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4">
+    <div class="calculator-container">
+      <h2 class="text-center section-title">Advanced Goal Planner</h2>
+
+
+      <div class="tab-content" id="calculatorTabContent">
+        <div class="tab-pane fade show active" id="inputs" role="tabpanel">
+          <div class="row">
+            <div class="col-md-6">
+              <form id="goalForm">
+                <div class="mb-3">
+                  <label for="dreamAmount" class="form-label">
+                    Goal Amount (₹)
+                    <i class="bi bi-info-circle tooltip-icon" title="Current cost of your goal today"></i>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text">₹</span>
+                    <input type="number" class="form-control" id="dreamAmount" value="1000000" min="1000" step="1000">
+                  </div>
+                  <div id="dreamAmountError" class="error-message"></div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="years" class="form-label">
+                    Timeframe (Years)
+                    <i class="bi bi-info-circle tooltip-icon" title="Number of years to achieve your goal"></i>
+                  </label>
+                  <input type="range" class="form-range" id="years" min="1" max="40" value="10"
+                    oninput="updateSliderValue('yearsValue', this.value)">
+                  <div class="d-flex justify-content-between">
+                    <small>1</small>
+                    <span class="slider-value" id="yearsValue">10</span>
+                    <small>40</small>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="inflationRate" class="form-label">
+                    Inflation Rate (%)
+                    <i class="bi bi-info-circle tooltip-icon" title="Expected annual inflation rate for your goal"></i>
+                  </label>
+                  <input type="range" class="form-range" id="inflationRate" min="1" max="15" value="6" step="0.1"
+                    oninput="updateSliderValue('inflationValue', this.value)">
+                  <div class="d-flex justify-content-between">
+                    <small>1%</small>
+                    <span class="slider-value" id="inflationValue">6%</span>
+                    <small>15%</small>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="expectedReturn" class="form-label">
+                    Expected Return (%)
+                    <i class="bi bi-info-circle tooltip-icon" title="Expected annual return on your investments"></i>
+                  </label>
+                  <input type="range" class="form-range" id="expectedReturn" min="1" max="20" value="12" step="0.1"
+                    oninput="updateSliderValue('returnValue', this.value)">
+                  <div class="d-flex justify-content-between">
+                    <small>1%</small>
+                    <span class="slider-value" id="returnValue">12%</span>
+                    <small>20%</small>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="savingsAmount" class="form-label">
+                    Existing Savings (₹)
+                    <i class="bi bi-info-circle tooltip-icon" title="Amount you've already saved for this goal"></i>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text">₹</span>
+                    <input type="number" class="form-control" id="savingsAmount" value="0" min="0" step="1000">
+                  </div>
+                </div>
+
+                <div class="loading-spinner" id="loadingSpinner">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <p class="mt-2">Calculating your goal plan...</p>
+                </div>
+
+                <button type="button" class="btn btn-primary w-100 btn-calculate mt-3" onclick="calculateGoal()">
+                  <i class="bi bi-calculator"></i> Calculate
+                </button>
+              </form>
+            </div>
+
+            <div class="col-md-6">
+              <div class="chart-container">
+                <canvas id="goalChart"></canvas>
+              </div>
+              <div class="mt-3">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="result-card">
+                      <h6><i class="bi bi-bullseye"></i> Future Value Needed</h6>
+                      <p class="result-value" id="targetDreamAmount">₹0</p>
+                      <small class="text-muted">Amount accounting for inflation</small>
+                    </div>
+
+                    <div class="result-card">
+                      <h6><i class="bi bi-wallet2"></i> Monthly Savings</h6>
+                      <p class="result-value" id="monthlySavings">₹0</p>
+                      <small class="text-muted">Amount to save each month</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="result-card">
+                      <h6><i class="bi bi-cash-stack"></i> Total Investment</h6>
+                      <p class="result-value" id="investedAmount">₹0</p>
+                      <small class="text-muted">Total amount you'll contribute</small>
+                    </div>
+
+                    <div class="result-card">
+                      <h6><i class="bi bi-graph-up-arrow"></i> Estimated Earnings</h6>
+                      <p class="result-value" id="totalEarnings">₹0</p>
+                      <small class="text-muted">Growth from investments</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let goalChart = null;
+    let savingsChart = null;
+    let projectionData = [];
+    const API_KEY = 'bf27810f-27a3-44f3-b28d-c0a863d04ffb'; // AdvisorKhoj API key
+
+    // Format currency for Indian Rupees
+    function formatCurrency(amount) {
+      return '₹' + amount.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+    }
+
+    // Update slider value displays
+    function updateSliderValue(elementId, value) {
+      const element = document.getElementById(elementId);
+      if (elementId.includes('Value')) {
+        element.textContent = value;
+      } else {
+        element.textContent = value + '%';
+      }
+    }
+
+    // Validate inputs
+    function validateInputs() {
+      let isValid = true;
+      const dreamAmount = parseFloat(document.getElementById('dreamAmount').value);
+      const errorElement = document.getElementById('dreamAmountError');
+
+      if (isNaN(dreamAmount)) {
+        errorElement.textContent = "Please enter a valid amount";
+        isValid = false;
+      } else if (dreamAmount < 1000) {
+        errorElement.textContent = "Minimum amount is ₹1000";
+        isValid = false;
+      } else {
+        errorElement.textContent = "";
+      }
+
+      return isValid;
+    }
+
+
+    // Update charts
+    function updateCharts(results, projection) {
+      const ctx = document.getElementById('goalChart').getContext('2d');
+      const savingsCtx = document.getElementById('savingsChart').getContext('2d');
+
+      // Main goal chart
+      const goalData = {
+        labels: ['Your Investments', 'Investment Growth'],
+        datasets: [{
+          data: [results.invested_amount, results.total_earnings],
+          backgroundColor: ['#4361ee', '#4cc9f0'],
+          borderWidth: 0
+        }]
+      };
+
+      // Savings breakdown chart
+      const savingsData = {
+        labels: ['Monthly Savings', 'Existing Savings'],
+        datasets: [{
+          data: [results.monthly_savings * 12 * results.years, results.savings_amount],
+          backgroundColor: ['#3a0ca3', '#7209b7'],
+          borderWidth: 0
+        }]
+      };
+
+      // Update or create charts
+      if (goalChart) {
+        goalChart.data = goalData;
+        goalChart.update();
+      } else {
+        goalChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: goalData,
+          plugins: [ChartDataLabels],
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    return context.label + ': ' + formatCurrency(context.raw);
+                  }
+                }
+              },
+              datalabels: {
+                formatter: (value) => formatCurrency(value),
+                color: '#fff',
+                font: { weight: 'bold' }
+              }
+            }
+          }
+        });
+      }
+
+      if (savingsChart) {
+        savingsChart.data = savingsData;
+        savingsChart.update();
+      } else {
+        savingsChart = new Chart(savingsCtx, {
+          type: 'pie',
+          data: savingsData,
+          plugins: [ChartDataLabels],
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const percentage = Math.round((context.raw / results.target_amount) * 100);
+                    return `${context.label}: ${formatCurrency(context.raw)} (${percentage}%)`;
+                  }
+                }
+              },
+              datalabels: {
+                formatter: (value) => {
+                  const percentage = Math.round((value / results.target_amount) * 100);
+                  return `${percentage}%`;
+                },
+                color: '#fff',
+                font: { weight: 'bold' }
+              }
+            }
+          }
+        });
+      }
+
+      // Update progress bar
+      const progressPercentage = Math.min(Math.round((results.savings_amount / results.target_amount) * 100), 100);
+      document.getElementById('goalProgress').style.width = `${progressPercentage}%`;
+      document.getElementById('progressText').textContent =
+        `You're ${progressPercentage}% toward your goal (${formatCurrency(results.savings_amount)} saved)`;
+    }
+
+    // Update projection table
+    function updateProjectionTable(projection) {
+      const tableBody = document.getElementById('projectionTable');
+      tableBody.innerHTML = '';
+
+      projection.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.year}</td>
+          <td>${formatCurrency(item.annualSavings)}</td>
+          <td>${formatCurrency(item.investedAmount)}</td>
+          <td>${formatCurrency(item.interestEarned)}</td>
+          <td>${formatCurrency(item.totalValue)}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Call AdvisorKhoj API for calculations
+   async function fetchGoalCalculation() {
+  const years = parseFloat(document.getElementById('years').value);
+  const dreamAmount = parseFloat(document.getElementById('dreamAmount').value);
+  const inflationRate = parseFloat(document.getElementById('inflationRate').value);
+  const expectedReturn = parseFloat(document.getElementById('expectedReturn').value);
+  const savingsAmount = parseFloat(document.getElementById('savingsAmount').value);
+
+  // Show loading spinner
+  document.getElementById('loadingSpinner').style.display = 'block';
+
+  try {
+    const apiUrl = `https://mfapi.advisorkhoj.com/calc/getGoalSettingCalcResult?key=${API_KEY}&years=${years}&dream_amount=${dreamAmount}&inflation_rate=${inflationRate}&expected_return=${expectedReturn}&savings_amount=${savingsAmount}`;
+    
+    // Changed to POST request with headers
+    const response = await fetch(apiUrl, {
+      method: 'POST', // Use POST instead of GET
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      // Some APIs require empty body for POST with query params
+      body: null 
+    });
+
+    const data = await response.json();
+
+    if (data.status === 200) {
+      return data;
+    } else {
+      throw new Error(data.status_msg || 'Failed to calculate goal');
+    }
+  } catch (error) {
+    console.error('API Error:', error);
+    alert('Error calculating goal: ' + error.message);
+    return null;
+  } finally {
+    // Hide loading spinner
+    document.getElementById('loadingSpinner').style.display = 'none';
+  }
+}
+
+    // Main calculation function
+    async function calculateGoal() {
+      if (!validateInputs()) return;
+
+      // Call API for calculations
+      const apiResult = await fetchGoalCalculation();
+      if (!apiResult) return;
+
+      // Generate projection data based on API results
+      projectionData = generateProjectionData(
+        apiResult.monthly_savings,
+        apiResult.savings_amount,
+        apiResult.expected_return,
+        apiResult.years,
+        apiResult.target_amount
+      );
+
+      // Update UI with API results
+      document.getElementById('targetDreamAmount').textContent = formatCurrency(apiResult.target_dream_amount);
+      document.getElementById('monthlySavings').textContent = formatCurrency(apiResult.monthly_savings);
+      document.getElementById('investedAmount').textContent = formatCurrency(apiResult.invested_amount);
+      document.getElementById('totalEarnings').textContent = formatCurrency(apiResult.total_earnings);
+
+      // Update charts and table
+      updateCharts(apiResult, projectionData);
+      updateProjectionTable(projectionData);
+
+      // Show results tab if not already shown
+      const resultsTab = new bootstrap.Tab(document.getElementById('results-tab'));
+      resultsTab.show();
+    }
+
+    // Initialize on page load
+    window.onload = function () {
+      updateSliderValue('yearsValue', document.getElementById('years').value);
+      updateSliderValue('inflationValue', document.getElementById('inflationRate').value);
+      updateSliderValue('returnValue', document.getElementById('expectedReturn').value);
+
+      // Initialize tooltips
+      const tooltips = [].slice.call(document.querySelectorAll('[title]'));
+      tooltips.map(t => new bootstrap.Tooltip(t));
+
+      // Calculate initial results
+      calculateGoal();
+    };
+  </script>
+</body>
+
+</html>

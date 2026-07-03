@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Group Companies | Your Brand Name</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+    <style>
+        /* Additional styles to enhance the design */
+        .company-card {
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+        
+        .company-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .company-logo-container {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+        }
+        
+        .company-logo {
+            max-height: 80px;
+            max-width: 180px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .company-card:hover .company-logo {
+            transform: scale(1.05);
+        }
+        
+        .company-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .company-name {
+            color: var(--tg-theme-secondary);
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .company-card:hover .company-name {
+            color: var(--tg-theme-primary);
+        }
+        
+        .company-description {
+            color: var(--tg-body-color);
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .company-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--tg-theme-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .company-link:hover {
+            color: var(--tg-theme-secondary);
+        }
+        
+        .company-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .company-link:hover i {
+            transform: translateX(4px);
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--tg-theme-primary) 0%, var(--tg-theme-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stats-label {
+            color: var(--tg-body-color);
+            font-size: 16px;
+        }
+        
+        .section-heading {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .section-heading .sub-title {
+            display: inline-block;
+            background: rgba(0, 174, 66, 0.1);
+            color: var(--tg-theme-primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .section-heading h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .section-heading h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 3px;
+            background: var(--tg-theme-primary);
+        }
+        
+        .section-heading p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <script src="./assets/js/header.js" defer ></script>
+    <script src="./assets/js/footer.js" defer ></script>
+     <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/calculator.jpg">
+            <script src="./assets/js/header.js" defer ></script>
+            <script src="./assets/js/footer.js" defer ></script>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content">
+                            <h2 class="title">Our Group Companies</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item" aria-current="page">Our Group Companies</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape">
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated" class="rightToLeft" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+            </div>
+        </section>
+
+    <!-- Main Content Section -->
+    <section class="about-area" style="padding: 100px 0;">
+        <div class="container">
+            <div class="section-heading text-center">
+                <h2 class="title">Global Presence Through Specialized Companies</h2>
+                <p class="text-muted">Each company in our group brings unique expertise while sharing our core values of innovation, quality, and customer focus.</p>
+            </div>
+
+            <!-- Companies Grid -->
+            <div class="row g-4">
+                <!-- Company 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="company-card">
+                        <div class="company-logo-container">
+                            <img loading="lazy" src="img/company1-logo.png" alt="Company 1 Logo" class="company-logo">
+                        </div>
+                        <div class="company-content">
+                            <h3 class="company-name">Industrial Solutions Inc.</h3>
+                            <p class="company-description">Leading provider of industrial manufacturing equipment and supply chain solutions with operations in 12 countries.</p>
+                            <a href="#" class="company-link">
+                                Explore company
+                                <i class="fi fi-rr-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="company-card">
+                        <div class="company-logo-container">
+                            <img loading="lazy" src="img/company2-logo.png" alt="Company 2 Logo" class="company-logo">
+                        </div>
+                        <div class="company-content">
+                            <h3 class="company-name">Tech Innovations Ltd</h3>
+                            <p class="company-description">Cutting-edge technology solutions provider specializing in AI, IoT, and digital transformation services.</p>
+                            <a href="#" class="company-link">
+                                Explore company
+                                <i class="fi fi-rr-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="company-card">
+                        <div class="company-logo-container">
+                            <img loading="lazy" src="img/company3-logo.png" alt="Company 3 Logo" class="company-logo">
+                        </div>
+                        <div class="company-content">
+                            <h3 class="company-name">Global Logistics Partners</h3>
+                            <p class="company-description">End-to-end logistics and supply chain management with coverage across 60+ countries worldwide.</p>
+                            <a href="#" class="company-link">
+                                Explore company
+                                <i class="fi fi-rr-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="company-card">
+                        <div class="company-logo-container">
+                            <img loading="lazy" src="img/company4-logo.png" alt="Company 4 Logo" class="company-logo">
+                        </div>
+                        <div class="company-content">
+                            <h3 class="company-name">Sustainable Energy Solutions</h3>
+                            <p class="company-description">Pioneers in renewable energy projects with over 2GW of installed capacity across three continents.</p>
+                            <a href="#" class="company-link">
+                                Explore company
+                                <i class="fi fi-rr-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="company-card">
+                        <div class="company-logo-container">
+                            <img loading="lazy" src="img/company5-logo.png" alt="Company 5 Logo" class="company-logo">
+                        </div>
+                        <div class="company-content">
+                            <h3 class="company-name">Financial Services Group</h3>
+                            <p class="company-description">Comprehensive financial services including investment banking, asset management, and corporate finance.</p>
+                            <a href="#" class="company-link">
+                                Explore company
+                                <i class="fi fi-rr-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="company-card">
+                        <div class="company-logo-container">
+                            <img loading="lazy" src="img/company6-logo.png" alt="Company 6 Logo" class="company-logo">
+                        </div>
+                        <div class="company-content">
+                            <h3 class="company-name">Healthcare Innovations</h3>
+                            <p class="company-description">Advanced medical technologies and healthcare services improving lives in over 40 countries worldwide.</p>
+                            <a href="#" class="company-link">
+                                Explore company
+                                <i class="fi fi-rr-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="services-bg grey-bg" style="padding: 90px 0;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-number">15+</div>
+                        <div class="stats-label">Group Companies</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-number">40+</div>
+                        <div class="stats-label">Countries</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-number">5K+</div>
+                        <div class="stats-label">Employees</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card">
+                        <div class="stats-number">$3.2B</div>
+                        <div class="stats-label">Combined Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 100px 0; background: linear-gradient(135deg, var(--tg-theme-primary) 0%, var(--tg-theme-secondary) 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 style="color: white; margin-bottom: 20px;">Discover how our group companies can work for you</h2>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px; font-size: 18px;">Our network of specialized businesses offers comprehensive solutions tailored to your needs.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn" style="background: white; color: var(--tg-theme-secondary); padding: 15px 30px; font-size: 16px; font-weight: 600;">
+                        Contact Our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <!-- Scripts -->
+ <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer ></script>
+    
+    <script src="./assets/js/jquery.odometer.min.js" defer ></script>
+    
+    
+    <script src="./assets/js/ScrollTrigger.js" defer ></script>
+    <script src="./assets/js/SplitText.js" defer ></script>
+
+    <script src="./assets/js/jquery.parallaxScroll.min.js" defer ></script>
+    <script src="./assets/js/swiper-bundle.js" defer ></script>
+    <script src="./assets/js/ajax-form.js" defer ></script>
+    <script src="./assets/js/wow.min.js" defer ></script>
+    <script src="./assets/js/aos.js" defer ></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+</body>
+</html>

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- Meta Title -->
+    <title>Integrated India Savings Calculator – Grow Your Wealth</title>
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Use our quick Savings Calculator to estimate returns on your savings. Start your journey towards financial growth and stability now!">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.integratedindia.in/savings-calculator.html">
+    <meta property="og:title" content="Integrated India Savings Calculator – Grow Your Wealth">
+    <meta property="og:site_name" content="Integrated India">
+    <meta property="og:url" content="https://www.integratedindia.in/savings-calculator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Use our quick Savings Calculator to estimate returns on your savings. Start your journey towards financial growth and stability now!">
+    <meta property="og:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png">
+    <meta property="og:image" content="https://www.instagram.com/integratedenterprises/">
+    <meta property="og:image" content="https://www.facebook.com/IntegratedEnterprises">
+    <meta property="og:image" content="https://x.com/IntegratedTweet">
+    <meta property="og:image" content="https://www.youtube.com/@integratedenterprises2653">
+    <meta property="og:image" content="https://www.linkedin.com/company/integratedenterprises/?viewAsMember=true">
+    <meta property="og:image"
+        content="https://www.threads.com/@integratedenterprises?xmt=AQGzhhZ0dev7wSSHxV2Jfk3U4gY7SWUp9Qe8sKPGmC-XfdQ">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Integrated India Savings Calculator – Grow Your Wealth">
+    <meta name="twitter:site" content="@IntegratedTweet">
+    <meta name="twitter:description"
+        content="Use our quick Savings Calculator to estimate returns on your savings. Start your journey towards financial growth and stability now!">
+    <meta name="twitter:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png">
+    <meta name="twitter:image:alt" content="Integrated India">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+        <link rel="preload" as="image" href="./assets/img/bg/calculator.jpg" fetchpriority="high">
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer ></script>
+
+    <style type="text/css">
+        .calculator-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .calculator-header h2 {
+            color: #2a466a;
+            font-weight: 700;
+        }
+
+        .calculator-header p {
+            color: #666;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #2a466a;
+            box-shadow: 0 0 0 3px rgba(42, 70, 106, 0.1);
+            outline: none;
+        }
+
+        .btn-calculate {
+            background-color: #2a466a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .btn-calculate:hover {
+            background-color: #1b3098;
+        }
+
+        .result-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .tabs {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tabs li {
+            padding: 12px 20px;
+            cursor: pointer;
+            background: #f5f5f5;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .tabs li.active {
+            background: #2a466a;
+            color: white;
+        }
+
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .result-table th {
+            background: #2a466a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .result-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: #2a466a;
+        }
+
+        .mode-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .mode-btn {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .mode-btn:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .mode-btn:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        .mode-btn.active {
+            background: #2a466a;
+            color: white;
+        }
+
+        .form-column {
+            padding: 15px;
+        }
+
+        /* Range slider styles */
+        .range-slider {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .range-slider input[type="range"] {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            padding: 0 !important;
+        }
+
+        .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #2a466a;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .range-value {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Chart container */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 20px;
+            }
+
+            .tabs li {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .form-column {
+                padding: 10px;
+            }
+        }
+    </style>
+
+    <!-- BreadcrumbList Schema markup -->
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Thing",
+        "@id": "https://www.integratedindia.in/",
+        "name": "Home"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://www.integratedindia.in/financial-calculators.html",
+        "name": "Financial Calculators"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://www.integratedindia.in/savings-calculator.html",
+        "name": "Savings Calculator – Watch Your Money Grow"
+      }
+    }
+  ]
+}
+</script>
+
+    <!-- WebPage Schema markup -->
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Savings Calculator – Watch Your Money Grow",
+  "url": "https://www.integratedindia.in/savings-calculator.html",
+  "description": "Use our quick Savings Calculator to estimate returns on your savings. Start your journey towards financial growth and stability now!",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Integrated India",
+    "url": "https://www.integratedindia.in/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png"
+    }
+  }
+}
+  
+</script>
+
+<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+	<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+
+
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+    <main class="fix">
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/calculator.jpg">
+            <script src="./assets/js/header.js" defer ></script>
+            <script src="./assets/js/footer.js" defer ></script>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content">
+                            <h2 class="title"> Savings Calculator</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="financial-calculators.html">Calculator</a></li>
+                                    <li class="breadcrumb-item" aria-current="page"> Savings Calculator</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape">
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated" class="rightToLeft" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+                
+            </div>
+        </section>
+        <section class="pt-120 pb-120">
+            <div class="container">
+                <div class="calculator-container">
+                    <div class="calculator-header">
+                        <h1>Savings Calculator – Watch Your Money Grow</h1>
+                        <p>Plan your savings journey and see how your money can grow over time</p>
+                    </div>
+
+                    <div class="mode-toggle d-none">
+                        <button id="accumulation-btn" class="mode-btn active">Accumulation</button>
+                        <button id="withdrawal-btn" class="mode-btn">Withdrawal</button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 form-column">
+                            <div id="accumulation-form">
+                                <div class="input-group">
+                                    <label for="Init_Inv_txt">Initial Investment (₹)</label>
+                                    <input id="Init_Inv_txt" type="text" placeholder="e.g. 1,00,000">
+                                    <div class="range-slider">
+                                        <input type="range" id="Init_Inv_range" min="0" max="10000000" step="1000"
+                                            value="100000">
+                                        <span class="range-value" id="Init_Inv_value">₹1,00,000</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="Reg_Amt_txt">Regular Addition Amount (₹)</label>
+                                    <input id="Reg_Amt_txt" type="text" placeholder="e.g. 5,000">
+                                    <div class="range-slider">
+                                        <input type="range" id="Reg_Amt_range" min="0" max="100000" step="100"
+                                            value="5000">
+                                        <span class="range-value" id="Reg_Amt_value">₹5,000</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="Reg_Int_Dlist">Regular Addition Period</label>
+                                    <select id="Reg_Int_Dlist">
+                                        <option selected="selected" value="Monthly">Monthly</option>
+                                        <option value="Quarterly">Quarterly</option>
+                                        <option value="Half-Yearly">Half-Yearly</option>
+                                        <option value="Yearly">Yearly</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div id="withdrawal-form" style="display: none;">
+                                <div class="input-group">
+                                    <label for="Corpus_Amount">Corpus Amount (₹)</label>
+                                    <input id="Corpus_Amount" type="text" placeholder="e.g. 50,00,000">
+                                    <div class="range-slider">
+                                        <input type="range" id="Corpus_Amount_range" min="0" max="10000000" step="10000"
+                                            value="5000000">
+                                        <span class="range-value" id="Corpus_Amount_value">₹50,00,000</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="Withdrawal_Amount">Monthly Withdrawal Amount (₹)</label>
+                                    <input id="Withdrawal_Amount" type="text" placeholder="e.g. 50,000">
+                                    <div class="range-slider">
+                                        <input type="range" id="Withdrawal_Amount_range" min="0" max="100000"
+                                            step="1000" value="50000">
+                                        <span class="range-value" id="Withdrawal_Amount_value">₹50,000</span>
+                                    </div>
+                                </div>
+
+                                <button id="withdrawal_calc" class="btn-calculate">Calculate</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-column">
+                            <div id="accumulation-form-right">
+                                <div class="input-group">
+                                    <label for="Int_Rat_txt">Expected Annual Return (%)</label>
+                                    <input id="Int_Rat_txt" type="number" step="0.01" placeholder="e.g. 8.5" min="0"
+                                        max="30" step="0.1">
+                                    <div class="range-slider">
+                                        <input type="range" id="Int_Rat_range" min="0" max="30" step="0.1" value="8.5">
+                                        <span class="range-value" id="Int_Rat_value">8.5%</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="Int_CI_Int_Dlist">Compounding Frequency</label>
+                                    <select id="Int_CI_Int_Dlist">
+                                        <option value="Monthly">Monthly</option>
+                                        <option value="Quarterly">Quarterly</option>
+                                        <option value="Half-Yearly">Half-Yearly</option>
+                                        <option selected="selected" value="Yearly">Yearly</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="No_Yrs_txt">Investment Period (Years)</label>
+                                    <input id="No_Yrs_txt" type="number" placeholder="e.g. 10" min="1" max="50"
+                                        step="1">
+                                    <div class="range-slider">
+                                        <input type="range" id="No_Yrs_range" min="1" max="50" step="1" value="10">
+                                        <span class="range-value" id="No_Yrs_value">10 years</span>
+                                    </div>
+                                </div>
+                                <button id="sci_calc" class="btn-calculate">Calculate</button>
+
+                            </div>
+
+                            <div id="withdrawal-form-right" style="display: none;">
+                                <div class="input-group">
+                                    <label for="Withdrawal_Return">Expected Annual Return (%)</label>
+                                    <input id="Withdrawal_Return" type="number" step="0.01" placeholder="e.g. 7.5"
+                                        min="0" max="30" step="0.1">
+                                    <div class="range-slider">
+                                        <input type="range" id="Withdrawal_Return_range" min="0" max="30" step="0.1"
+                                            value="7.5">
+                                        <span class="range-value" id="Withdrawal_Return_value">7.5%</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="Inflation_Rate">Expected Inflation Rate (%)</label>
+                                    <input id="Inflation_Rate" type="number" step="0.01" placeholder="e.g. 6" min="0"
+                                        max="20" step="0.1">
+                                    <div class="range-slider">
+                                        <input type="range" id="Inflation_Rate_range" min="0" max="20" step="0.1"
+                                            value="6">
+                                        <span class="range-value" id="Inflation_Rate_value">6%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="result-container" id="Result_Container">
+                                <ul class="tabs">
+                                    <li class="active" id="STab_1" onclick="OpenTab('1','ResultTab')">Summary</li>
+                                    <li id="STab_2" onclick="OpenTab('2','CalculationTab')">Yearly Projection</li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="ResultTab" style="display: block;">
+                                        <div class="chart-container">
+                                            <canvas id="resultsChart"></canvas>
+                                        </div>
+                                        <div id="OutResult">
+                                            <table class="result-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Initial Investment</td>
+                                                        <td id="TD_II" class="highlight"></td>
+                                                    </tr>
+                                                    <tr id="accumulation-result-row">
+                                                        <td id="RegAddiPeriodTd">Regular Investment</td>
+                                                        <td id="TD_YI" class="highlight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Annual Return Rate</td>
+                                                        <td id="TD_IA" class="highlight"></td>
+                                                    </tr>
+                                                    <tr id="compounding-row">
+                                                        <td>Compounding Frequency</td>
+                                                        <td id="TD_IC" class="highlight"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Future Value</td>
+                                                        <td id="TD_FV" class="highlight"></td>
+                                                    </tr>
+                                                    <tr id="withdrawal-result-row" style="display: none;">
+                                                        <td>Withdrawal Duration</td>
+                                                        <td id="TD_WD" class="highlight"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div id="CalculationTab" style="display: none;">
+                                        <div id="ddResult" class="overflow-auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="disclaimer" style="margin-top: 30px; color: #666; font-size: 14px;">
+                        <p><strong>Disclaimer:</strong> The results from this calculator are for illustrative purposes
+                            only and should not be considered as financial advice. Past performance is not indicative of
+                            future returns. Please consult with a financial advisor before making any investment
+                            decisions.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="financial-calculators.html" class="btn-calculate"
+                        style="display: inline-block; width: auto; padding: 10px 20px;">
+                        Back to Calculators
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+    <script src="./assets/js/faqs.js" defer ></script>
+    <script>
+        // Use a single, global chart instance
+        let myChart = null;
+
+        // Function to open a specific result tab
+        function OpenTab(tabSource, containerId) {
+            $(".tab-content>div").css("display", "none");
+            $(".tabs li").removeClass("active");
+            $("#STab_" + tabSource).addClass("active");
+            $("#" + containerId).css("display", "block");
+        }
+
+        $(document).ready(function () {
+            // --- CONFIGURATION ---
+            const inputIdMap = {
+                "Corpus_Amount": "Corpus_Amount",
+                "Withdrawal_Amount": "Withdrawal_Amount",
+                "Withdrawal_Return": "Withdrawal_Return",
+                "Inflation_Rate": "Inflation_Rate"
+            };
+
+            // --- INITIALIZATION ---
+            function initializePage() {
+                const sliderIds = [
+                    "Init_Inv", "Reg_Amt", "Int_Rat", "No_Yrs",
+                    "Corpus_Amount", "Withdrawal_Amount", "Withdrawal_Return", "Inflation_Rate"
+                ];
+                sliderIds.forEach(baseId => linkSliderAndText(baseId, inputIdMap[baseId]));
+
+                $("#accumulation-btn").on('click', () => switchMode(true));
+                $("#withdrawal-btn").on('click', () => switchMode(false));
+                
+                $("#Reg_Int_Dlist, #Int_CI_Int_Dlist").on('change', calculateAccumulation);
+
+                switchMode(true);
+            }
+
+            // --- UI & EVENT HANDLING ---
+            function linkSliderAndText(baseId, customTextId) {
+                const textInputId = customTextId || `${baseId}_txt`;
+                const textInput = $(`#${textInputId}`);
+                const rangeInput = $(`#${baseId}_range`);
+
+                if (!textInput.length || !rangeInput.length) return;
+                
+                const isCurrency = ['Init_Inv', 'Reg_Amt', 'Corpus_Amount', 'Withdrawal_Amount'].includes(baseId);
+                const max = parseFloat(rangeInput.attr('max')); // Get max from range slider
+
+                const updateGroup = (source) => {
+                    let value = source.val();
+                    let numericValue = parseFloat(String(value).replace(/,/g, '')) || 0;
+
+                    // Enforce the max limit from the slider
+                    if (numericValue > max) {
+                        numericValue = max;
+                        // Update the input that triggered the change to show the capped value
+                        source.val(isCurrency ? numericValue.toLocaleString('en-IN') : numericValue);
+                    }
+
+                    // Sync the other input element
+                    if (source.is(textInput)) {
+                        rangeInput.val(numericValue);
+                    } else { // Source is range slider
+                        textInput.val(isCurrency ? numericValue.toLocaleString('en-IN') : numericValue);
+                    }
+                    
+                    updateValueDisplay(baseId, numericValue);
+
+                    // Defer calculation to prevent UI lag while typing
+                    setTimeout(() => {
+                        if ($("#accumulation-btn").hasClass("active")) {
+                            calculateAccumulation();
+                        } else {
+                            calculateWithdrawal();
+                        }
+                    }, 10);
+                };
+                
+                // Set initial state on page load
+                const initialNumericValue = parseFloat(rangeInput.val());
+                textInput.val(isCurrency ? initialNumericValue.toLocaleString('en-IN') : initialNumericValue);
+                updateValueDisplay(baseId, initialNumericValue);
+
+                // Add event listeners
+                textInput.on("input", () => updateGroup(textInput));
+                rangeInput.on("input", () => updateGroup(rangeInput));
+
+                // For currency fields, format the number with commas when the user clicks away.
+                // This prevents the cursor from jumping around during typing.
+                if (isCurrency) {
+                    textInput.on('blur', function() {
+                        const numericValue = parseFloat(String($(this).val()).replace(/,/g, '')) || 0;
+                        $(this).val(numericValue.toLocaleString('en-IN'));
+                    });
+                }
+            }
+
+
+            function switchMode(isAccumulation) {
+                $("#accumulation-btn").toggleClass("active", isAccumulation);
+                $("#withdrawal-btn").toggleClass("active", !isAccumulation);
+
+                $("#accumulation-form, #accumulation-form-right").toggle(isAccumulation);
+                $("#withdrawal-form, #withdrawal-form-right").toggle(!isAccumulation);
+                
+                $("#accumulation-result-row, #compounding-row").toggle(isAccumulation);
+                $("#withdrawal-result-row").toggle(!isAccumulation);
+
+                $("#Result_Container").hide();
+
+                if (isAccumulation) {
+                    calculateAccumulation();
+                } else {
+                    calculateWithdrawal();
+                }
+            }
+
+            function updateValueDisplay(baseId, value) {
+                const valueDisplay = $(`#${baseId}_value`);
+                if (!valueDisplay.length) return;
+
+                const numValue = parseFloat(value) || 0;
+                let displayText = value;
+
+                switch (baseId) {
+                    case "Init_Inv":
+                    case "Reg_Amt":
+                    case "Corpus_Amount":
+                    case "Withdrawal_Amount":
+                        displayText = "₹" + numValue.toLocaleString('en-IN');
+                        break;
+                    case "Int_Rat":
+                    case "Withdrawal_Return":
+                    case "Inflation_Rate":
+                        displayText = numValue.toFixed(1) + "%";
+                        break;
+                    case "No_Yrs":
+                        displayText = numValue + (numValue > 1 ? " years" : " year");
+                        break;
+                }
+                valueDisplay.text(displayText);
+            }
+
+            // --- CALCULATION LOGIC ---
+            function calculateAccumulation() {
+                const initial = parseFloat(String($("#Init_Inv_txt").val()).replace(/,/g, '')) || 0;
+                const addition = parseFloat(String($("#Reg_Amt_txt").val()).replace(/,/g, '')) || 0;
+                const addPeriod = $("#Reg_Int_Dlist").val();
+                const annualRate = (parseFloat($("#Int_Rat_txt").val()) || 0) / 100;
+                const compoundPeriod = $("#Int_CI_Int_Dlist").val();
+                const years = parseInt($("#No_Yrs_txt").val()) || 0;
+
+                if (years === 0) return;
+                $("#Result_Container").show();
+
+                const n = { "Monthly": 12, "Quarterly": 4, "Half-Yearly": 2, "Yearly": 1 }[compoundPeriod];
+                const pmt = addition * ({ "Monthly": 12, "Quarterly": 4, "Half-Yearly": 2, "Yearly": 1 }[addPeriod]);
+
+                let totalPrincipal = initial;
+                let totalInterest = 0;
+                let futureValue = initial;
+                const yearlyData = [];
+                const chartLabels = ['Start', ...Array.from({ length: years }, (_, i) => `Year ${i + 1}`)];
+                const chartPrincipalData = [initial];
+                const chartInterestData = [0];
+
+                for (let i = 1; i <= years; i++) {
+                    const interestThisYear = (futureValue + pmt) * (Math.pow(1 + annualRate / n, n)) - (futureValue + pmt);
+                    futureValue += pmt + interestThisYear;
+                    totalPrincipal += pmt;
+                    totalInterest += interestThisYear;
+                    
+                    yearlyData.push({
+                        year: i,
+                        principal: totalPrincipal,
+                        interest: interestThisYear,
+                        totalInterest: totalInterest,
+                        finalValue: futureValue
+                    });
+                    chartPrincipalData.push(totalPrincipal);
+                    chartInterestData.push(totalInterest);
+                }
+                
+                displayAccumulationResults(yearlyData, { initial, addition, addPeriod, annualRate, compoundPeriod, futureValue });
+                updateAccumulationChart(chartLabels, chartPrincipalData, chartInterestData);
+                OpenTab('1', 'ResultTab');
+            }
+
+            function calculateWithdrawal() {
+                const corpus = parseFloat(String($("#Corpus_Amount").val()).replace(/,/g, '')) || 0;
+                const monthlyWithdrawal = parseFloat(String($("#Withdrawal_Amount").val()).replace(/,/g, '')) || 0;
+                const annualReturn = (parseFloat($("#Withdrawal_Return").val()) || 0) / 100;
+                const inflation = (parseFloat($("#Inflation_Rate").val()) || 0) / 100;
+
+                if (corpus === 0 || monthlyWithdrawal === 0) return;
+                $("#Result_Container").show();
+
+                let currentCorpus = corpus;
+                let year = 0;
+                let totalWithdrawn = 0;
+                const yearlyData = [];
+                const chartLabels = ['Start'];
+                const chartCorpusData = [corpus];
+
+                while (currentCorpus > 0 && year < 100) {
+                    year++;
+                    const growth = currentCorpus * annualReturn;
+                    const withdrawal = (monthlyWithdrawal * 12) * Math.pow(1 + inflation, year - 1);
+                    
+                    if (currentCorpus + growth < withdrawal) {
+                        totalWithdrawn += currentCorpus + growth;
+                        currentCorpus = 0;
+                    } else {
+                        currentCorpus += growth - withdrawal;
+                        totalWithdrawn += withdrawal;
+                    }
+                    
+                    yearlyData.push({ year, withdrawal, growth, endingCorpus: currentCorpus });
+                    chartLabels.push(`Year ${year}`);
+                    chartCorpusData.push(currentCorpus);
+                }
+
+                displayWithdrawalResults(yearlyData, { corpus, annualReturn, totalWithdrawn, duration: year });
+                updateWithdrawalChart(chartLabels, chartCorpusData);
+                OpenTab('1', 'ResultTab');
+            }
+
+            // --- DISPLAY & CHARTING ---
+            function displayAccumulationResults(yearlyData, summary) {
+                const format = (val) => val.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                $("#TD_II").html("₹" + format(summary.initial));
+                $("#RegAddiPeriodTd").html(`${summary.addPeriod} Investment`);
+                $("#TD_YI").html("₹" + format(summary.addition));
+                $("#TD_IA").html((summary.annualRate * 100).toFixed(2) + "%");
+                $("#TD_IC").html(summary.compoundPeriod);
+                $("#TD_FV").html("₹" + format(summary.futureValue));
+
+                let table = '<table class="result-table"><thead><tr><th>Year</th><th>Total Principal</th><th>Total Interest</th><th>End Value</th></tr></thead><tbody>';
+                yearlyData.forEach(d => {
+                    table += `<tr><td>${d.year}</td><td>₹${format(d.principal)}</td><td>₹${format(d.totalInterest)}</td><td>₹${format(d.finalValue)}</td></tr>`;
+                });
+                $("#ddResult").html(table + '</tbody></table>');
+            }
+
+            function displayWithdrawalResults(yearlyData, summary) {
+                const format = (val) => val.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                $("#TD_II").html("₹" + format(summary.corpus));
+                $("#TD_IA").html((summary.annualReturn * 100).toFixed(2) + "%");
+                $("#TD_FV").html("₹" + format(summary.totalWithdrawn));
+                $("#TD_WD").html(summary.duration >= 100 ? '100+ years' : `${summary.duration} years`);
+
+                let table = '<table class="result-table"><thead><tr><th>Year</th><th>Withdrawal</th><th>Growth</th><th>Ending Corpus</th></tr></thead><tbody>';
+                yearlyData.forEach(d => {
+                    table += `<tr><td>${d.year}</td><td>₹${format(d.withdrawal)}</td><td>₹${format(d.growth)}</td><td>₹${format(d.endingCorpus)}</td></tr>`;
+                });
+                $("#ddResult").html(table + '</tbody></table>');
+            }
+
+            function updateAccumulationChart(labels, principalData, interestData) {
+                if (myChart) myChart.destroy();
+                myChart = new Chart(document.getElementById('resultsChart').getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{ label: 'Total Principal', data: principalData, backgroundColor: '#2a466a' }, { label: 'Total Interest', data: interestData, backgroundColor: '#4CAF50' }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'Investment Growth: Principal vs. Interest', font: { size: 16 } }, tooltip: { mode: 'index', intersect: false } },
+                        scales: { x: { stacked: true }, y: { stacked: true, ticks: { callback: v => '₹' + v.toLocaleString('en-IN') } } }
+                    }
+                });
+            }
+
+            function updateWithdrawalChart(labels, corpusData) {
+                if (myChart) myChart.destroy();
+                myChart = new Chart(document.getElementById('resultsChart').getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{ label: 'Corpus Balance', data: corpusData, borderColor: '#c45850', backgroundColor: 'rgba(196, 88, 80, 0.2)', fill: true, tension: 0.1 }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'Corpus Depletion Over Time', font: { size: 16 } } },
+                        scales: { y: { ticks: { callback: v => '₹' + v.toLocaleString('en-IN') } } }
+                    }
+                });
+            }
+
+            // --- START THE APP ---
+            initializePage();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+<%@ Page Language="C#" CodeFile=Businesslogic/SendMail.aspx.cs Inherits="IEILShell.SendMail" ContentType="text/html" ResponseEncoding="utf-8" %>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Sriram Vaidyanathan",
+    "position": "Managing Director & CEO",
+    "image": "assets/img/team/sriram_vaidyanathan.png",
+    "description": ["He is an Engineer and a Masters graduate from Leeds University Business School. He has been a Board Member since 2009. As a second generation entrepreneur, he was instrumental in starting the capital market and commodity verticals for Integrated. He has gained consummate and fruitful experience in Financial Services and BPO industry across all areas like Marketing, Equity Research and Risk Management. He is very passionate about investing in public equities across all sectors. He is very active in Capital Market forums and is passionate about promoting equity investment cult for retail investors. As the MD & CEO he holds responsibility for all business verticals by driving growth through technology and digital transformation."]
+  },
+  {
+    "id": 2,
+    "name": "Natarajan S.",
+    "position": "Director",
+    "image": "assets/img/team/s_natarajan.png",
+    "description": ["He is a member of the Institute of Chartered Accountants of India, New Delhi since 1975. During the period of his active practice years, he has represented many Industrial houses like SPIC, Binny, Sterling, Modi and Shriram Group. He has played a key role in restructuring the various businesses of Shriram Group, which resulted in the group focusing in financial services, engineering and real estate. He has also been instrumental in the growth of various business units of Shriram group."]
+  },
+  {
+    "id": 3,
+    "name": "Sridharan S.",
+    "position": "Director",
+    "image": "assets/img/team/seetharaman-sridharan.png",
+    "description": [
+      "Retired as the Managing Partner of Ernst & Young, Muscat, Oman after spending 30 years at EY. Lived in Muscat for over 30 years and travelled extensively all over the region and the world. Sridharan was involved in providing entire range of professional services in his 30+ years with Ernst & Young, Middle East. Mainly advised several Global top 100 corporations in Technology, Oilfield Services, Financial services, diversified conglomerates, EPC Construction and Petroleum.",
+      "Founder member and later became President of Muscat Tamil Association, President of the Indian School, Founder Secretary of NRI Economic Forum and Founder member of the Muscat Chapter of the Institute of Chartered Accountants of India. After retirement was nominated to be an Independent Board Member and the Chairman of the Audit Committee of a wholly owned subsidiary of Government of Oman’s investment holding company for energy related investments. Served as an Independent Director of L & T Ship Building Limited until its merger with the parent."
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Arun K Iyengar",
+    "position": "Whole Time Director",
+    "image": "assets/img/team/arun-k-Iyengar.png",
+    "description": [
+      "Arun K Iyengar holds a Bachelor's degree in Commerce and has been with the company since 1989. He currently spearheads the company's digital initiatives, driving both digital marketing and business strategies forward. In his role as Head of Digital, he is instrumental in identifying the right partners to support the company’s digital transformation. He collaborates closely with the IT team to ensure the seamless execution of digital initiatives including Mobile apps.",
+      "In addition to his digital responsibilities, he is the Product Head of Mutual Funds. With over 30 years of industry experience, He collaborates closely with the branch team to identify the right products for customers, tailored to their risk profiles and investment horizons."
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Selvakumar S.",
+    "position": "Director",
+    "image": "assets/img/team/s-selvakumar.png",
+    "description": [
+      "S. Selvakumar is a dynamic and passionate leader in marketing, with a career that began in 1999 in the Pharma industry, following his MBA from The American College. He joined the company in 2004 and has since played a pivotal role in shaping its growth.",
+      "He successfully leads the company's marketing and sales strategies for all the products. His focus has been on expanding the company’s presence nationwide, ensuring a strong market footprint. In addition to his marketing expertise, he is deeply involved in talent management, fostering a culture of excellence and innovation within the organization.",
+      "His commitment to the company’s success is evident in his ability to inspire and lead his team, driving the company forward in an increasingly competitive landscape."
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Prabha V.",
+    "position": "Director",
+    "image": "assets/img/team/v-prabha.png",
+    "description": [
+      "V. Prabha holds a Bachelor’s degree in Bio-Chemistry and joined the company in 1998. With over 15 years in Marketing & Sales, she initially led the compliance team in the Insurance Broking Division and is currently spearheading the Capital Market Division.",
+      "Her extensive knowledge on products, compliance and business approach has been instrumental in scaling up the insurance business. She is known for her consensus decision making with a collaborative approach. As a supportive leader, she fosters trust within her team and is committed to driving success.",
+      "Her deep understanding of Insurance Rules and Regulations has helped the organization reach various frontiers. She is straight forward and handles every issue with a fair attitude. She is a solution provider and anticipates the hurdles & opportunities for the team and the organisation. She is a supportive leader and builds trust within the team. She is interested in exploring Religious places."
+    ]
+  }
+]

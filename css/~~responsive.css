@@ -1,0 +1,386 @@
+#MobileLogo
+{
+display: none;
+}
+/*Laptops*/  
+@media (min-width:1024px) and (max-width: 1366px)   
+{
+  #IntegChoose { width: 100%; }
+  /*#OurParnerSlide { margin-left: 20%; }*/
+}
+/*Large Screem*/
+@media (min-width: 1080px) and (max-width:1920px) and (orientation : landscape)
+{
+  #header-wrap { width: 100%; } 
+  #HeaderNavBar { width: 100%; }
+  #sliders { width: 100%; }
+  #FooterReal { width: 100%; }
+  #IntegChoose { width: 100%; }
+  /*#OurParnerSlide { margin-left: 30%; }*/
+}
+@media (min-width: 1441px) and (max-width:1920px) and (orientation : landscape)
+{
+  #AboutIntegImg
+  {
+    height: 370px;
+  }
+  .text_Class_2
+  {
+    margin-top:0%;
+  }
+  .MaskContainer > div 
+  {
+    width: 39%;
+  }
+  #CNBCAwardImg
+  {
+    height: 470px;width:360px;margin-left: 0%;margin-top: 3%;
+  }
+}
+
+/* only small desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .top-nav-collapse .navbar-brand img {
+    width: 48%;
+  }
+  #StartInvestDiv
+  {
+    width: 25%;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:18%;
+    left: 70%;
+    height: 30%;
+    opacity: 0.8;
+    padding: 0px;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+
+/* tablets */
+@media (max-width: 991px) {
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .pricing-table-item {
+    margin-bottom: 30px;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+  
+}
+
+/* only small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  .top-nav-collapse .navbar-brand img {
+    width: 48%;
+  }
+  .pricing-table-item {
+    margin-bottom: 30px;
+  }
+  .testimonial-item {
+    padding: 10px;
+  }
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  #copyright .nav-inline {
+    line-height: 28px;
+    text-align: left !important;
+  }
+  #copyright .nav-inline li a {
+    padding: 0px 0px 0px 4px;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }
+  #StartInvestDiv
+  {
+    width: 25%;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:18%;
+    left: 70%;
+    height: 30%;
+    opacity: 0.8;
+    padding: 0px;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+
+/* mobile or only mobile */
+@media (max-width: 767px) 
+{
+  /*.section-padding {
+    padding: 50px 0;
+  }*/
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .top-nav-collapse .navbar-brand img {
+    width: 48%;
+  }
+  .btn-lg {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+  .btn-border {
+    font-size: 9px;
+    padding: 5px 9px;
+  }
+  .navbar-brand img {
+    margin: 5px 0;
+    width: 48%;
+  }
+  #carousel-area .carousel-item .carousel-caption h3 {
+    font-size: 12px;
+  }
+  #carousel-area .carousel-item .carousel-caption h5 {
+    font-size: 10px;
+  }
+  #carousel-area .btn-lg{
+    margin: 3px;
+  }
+  #carousel-area .carousel-control-next i, #carousel-area .carousel-control-prev i {
+    border: none;
+  }
+  #carousel-area .carousel-control-next i:hover, #carousel-area .carousel-control-prev i:hover {
+    background: transparent;
+    border: none;
+  }
+  .portfoli-content::before {
+    left: 30px;
+  }
+  .testimonial-item {
+    padding: 0;
+  }
+  .client-item-wrapper img {
+    width: 70%;
+  }
+  .pricing-table-item {
+    margin-bottom: 30px;
+  }
+  .title-head, .contact-info-title {
+    font-size: 22px;
+  }
+  .contact-form {
+    margin-bottom: 30px;
+  }
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  #copyright .nav-inline {
+    line-height: 20px;
+    text-align: left !important;
+  }
+  #copyright .nav-inline li a {
+    padding: 0px 0px 0px 4px;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }  
+  
+  #StartInvestDiv
+  {
+    width: 150px;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:15%;
+    left: 70%;
+    height: 150px;
+    opacity: 0.8;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+
+
+@media only screen and (max-width: 600px) 
+{
+  body 
+  {
+    /*background-color: lightblue;*/
+  }
+  #MobileLogo
+  {
+	display: block;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }
+
+  /*#StartInvestDiv
+  {
+    width: 250px;
+    background-color: #474242;
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:250px;
+    left:20%;
+    height: 100px;
+    opacity: 0.8;
+  }
+
+  #StartInvestDiv h3 {
+    font-size: 12px;
+  }
+  #StartInvestDiv h5 {
+    font-size: 10px;
+  }*/
+  /**/
+  #StartInvestDiv
+  {
+    width: 30%;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:15%;
+    left: 60%;
+    height: 80%;
+    opacity: 0.8;
+    padding: 0px;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  } 
+	.FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+  }
+
+  .FooterText
+  {
+    float: left;
+    /*width: 25%;*/
+    background-color: #F3DAC4;
+    color: #E79335;
+    font-size: 0.5em;
+    vertical-align: middle;
+    height: 7.1em;
+    padding: 1.5em;
+    border: 0px solid #000000;
+    line-height: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+  }
+}

@@ -1,0 +1,114 @@
+.text_Class_1 
+{
+    font-size: 25px;
+    color:#FFFFFF;
+    font-weight: bold;
+    font-family:"Rubik", sans-serif;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.text_Class_2
+{
+    font-size: 20px;
+    color:#FFFFFF;
+    font-weight: normal;
+    font-family:"Rubik", sans-serif;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    line-height: 2rem;
+    padding: 10px;
+}
+
+.BluePanel
+{
+    background-color: #093151;
+    height: 645px;
+    width: 100%;
+}
+
+.text_Class_3
+{
+    font-size: 18px;
+    color:#536478;
+    font-weight: normal;
+    font-family:"Rubik", sans-serif;
+}
+
+.text_Class_4
+{
+    font-size: 20px;
+    color:#FF7F27;
+    font-weight: normal;
+    font-family:"Rubik", sans-serif;
+}
+
+.VisionText
+{
+    font-size: 30px;
+    color:#69AB3D;
+    font-weight: bolder;
+    font-family:"Rubik", sans-serif;
+}
+
+.MissionText
+{
+    font-size: 30px;
+    color:#F59E03;
+    font-weight: bolder;
+    font-family:"Rubik", sans-serif;
+}
+
+.text_Yellow
+{
+    font-size: 25px;
+    color:#FF7F27;
+    font-weight: bolder;
+    font-family:"Rubik", sans-serif;
+}
+
+.text_black
+{
+    font-size: 17px;
+    columns: #000000;;
+    font-weight: bolder;
+    font-family:"Rubik", sans-serif;
+}
+
+.Timeline
+{
+    background-color: #EFEFEF; 
+} 
+
+.TimeLineH1
+{
+    font-family: Abel;
+    font-size: 32px;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.TimeLineH3
+{
+    font-family: Abel;
+    font-size: 23px;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.TimeLineP
+{
+    font-family: Abel;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 5px;
+}
+
+.TimeLineContent
+{
+    font-family: Abel;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 3%;
+}

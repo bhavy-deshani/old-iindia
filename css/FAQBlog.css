@@ -1,0 +1,202 @@
+.FAQMenuDiv,.FAQSumbMenudiv
+{
+    /* border: 1px solid #999999; */
+    border-radius: 10px;
+    width: 78%;
+    margin: 1% 10%;
+    display: flex;
+    flex-direction: row;
+}
+.FAQMenuDiv div
+{
+    padding: 10px;
+    flex: 1;
+    font-weight: bold;
+    text-align: center;
+}
+/* .FAQMenuDiv div:hover,.FAQMenuDiv div:active,.Active
+{
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: tomato;
+    color: #ffffff;
+} */
+.Inv_Container_Sub_Menu_active:after
+{
+  margin-left: 16.9% !important;
+}
+.ListHeader
+{
+    font-weight: 600;
+    
+}
+#BlogContainer,.FaqDataDiv
+{ 
+  height:auto;clear:both; margin-bottom:5%;
+}
+#FAQMenusClickDiv
+{
+  clear: both;
+  float: none;
+  margin: 0 !important;
+  width: 90% !important;
+}
+
+.FAQSumbMenudiv > .FAQSubSubMenu:nth-child(1)
+{
+  width: 30%;
+}
+.FAQSumbMenudiv > .FAQSubSubMenu:nth-child(2)
+{
+  width: 65%;
+}
+.Bcarosuel{ width:100%; height:180px; border-bottom:3px solid #EEEEEE; overflow:hidden}
+.Bcarosuel_1{ margin:5px; border:5px solid #EEEEEE; width:225px; height:150px;cursor:pointer}
+.Bcarosuel_ins_img{float:left; width:225px; height:230px; border:1px solid #999999; margin:5px;}
+.Bcarosuel_ins_txt{float:left; width:90%; height:230px; border:1px solid #999999; margin:5px; font-family:Arial; font-size:15px; line-height:30px; padding:4px; text-align:justify; color:#666666}
+.Binshead{font-weight:normal; color:#666666; font-size:24px; line-height:40px;font-family:open_sans_condensedbold,Arial, Helvetica, sans-serif;}
+.MenuDiv
+{
+  display: flex;width:100%;margin-top:10%;flex-wrap:nowrap;
+
+}
+.MenuDiv div
+{
+  margin-left:10%;
+}
+.MenuDiv div:nth-child(2)
+{
+  margin-left:5%;
+}
+a.Active h1
+{
+  color:tomato;
+}
+  @media only screen and (min-width:960px)
+  {
+   
+      .Bcarosuel_1{ margin:5px; border:5px solid #EEEEEE; width:225px; height:150px;cursor:pointer}
+      .Bcarosuel_ins_img{float:left; width:225px;  border:1px solid #999999; margin:5px;}
+      .Bcarosuel_ins_txt{float:left; width:90%; height:230px; border:1px solid #999999; margin:5px; font-family:Arial; font-size:15px; line-height:30px; padding:4px; text-align:justify; color:#666666}
+      .Binshead{font-weight:normal; color:#666666; font-size:24px; line-height:40px;font-family:open_sans_condensedbold,Arial, Helvetica, sans-serif;}
+  }
+  @media only screen and (min-width:770px) and (max-width:1234px)
+  { 
+    .DematFAQimg,.Collapseimg
+    {
+      width: 5% !important;
+    }
+    .FAQSumbMenudiv {
+      width: 100%;
+      margin: 1%;
+    }
+  .MenuDiv {
+      margin-top: 13%;
+  }
+    .FAQMenuDiv {
+      width: 98%;
+      margin: 1% 1%;
+    }
+    .Bcarosuel_ins_txt
+    {
+      flex-direction: column !important;
+      line-height: 18px;
+    }
+    #BlogContainer div
+    {
+      display: flex;
+      flex-direction: row;
+    } 
+    .Binshead
+    {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      text-align: left;
+    }
+    .Bcarosuel_1 img
+    {
+      height: 100%;
+    }
+  }
+
+  @media only screen and (max-width:760px)
+  {
+    .DmatFaq_S1 {
+      text-align: left;
+      /* margin: 20px 0 !important;
+      padding: 20px 0 !important; */
+      height: 40px;
+    }
+    #BlogContainer > div
+    {
+      flex-direction: column;
+    }
+    #FAQMenusClickDiv {
+      width: 100% !important;
+    }
+    .FAQSumbMenudiv {
+      width: 100%;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+    }
+    .FAQSumbMenudiv > .FAQSubSubMenu:nth-child(1)
+    ,.FAQSumbMenudiv > .FAQSubSubMenu:nth-child(2){
+      width: 100% !important;
+    }
+    .FAQMenuDiv{
+      width: 98%;
+      margin: 1% 1%;
+    }
+    .FAQMenuDiv
+    {
+      flex-direction: column;
+    }
+    .MenuDiv h1
+    {
+      font-size:26px !important;
+    }
+    .MenuDiv
+  {
+    flex-direction: row;
+    white-space: nowrap;
+    margin-top:18% !important;
+  }
+  .MenuDiv div
+  {
+    margin-left: 5%;
+  }
+    .Bcarosuel_1,.Bcarosuel
+    {
+      display: flex;
+      flex-direction: row;
+    }
+    .Bcarosuel
+    {
+      height: 110px;
+    }
+    .Bcarosuel_1
+    {
+      width: 100px !important;
+      height: 100px !important;
+    }
+    #BlogContainer
+    {
+      margin: 0;
+      width: 99%;
+      margin-bottom:20%;
+    }
+    #BlogContainer *
+    {
+      width: 99%;
+      height: auto;
+    }
+    .Binshead
+    {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 5px;
+      text-align: left;
+    }
+  }

@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "name": "Balamurugan",
+        "position": "North Regional Head",
+        "image": "assets/img/team/balamurugan.png"
+
+    },
+    {
+        "id": 2,
+        "name": "Chetan Anand",
+        "position": "Karnataka Regional Head",
+        "image": "assets/img/team/chetan_anand.png"
+
+    },
+    
+    {
+        "id": 5,
+        "name": "Marimuthu",
+        "position": "TAP Regional Head",
+        "image": "assets/img/team/marimuthu.png"
+    },
+   
+    {
+        "id": 6,
+        "name": "Palani",
+        "position": "East Regional Head",
+        "image": "assets/img/team/palani.png"
+    },
+   
+    {
+        "id": 9,
+        "name": "Pramod Moily",
+        "position": "Maharashtra Regional Head",
+        "image": "assets/img/team/pramod_moily.png"
+    },
+   
+    {
+        "id": 10,
+        "name": "Vivek Kumar V B ",
+        "position": "Incharge Kerala",
+        "image": "assets/img/team/vivek_kumar.jpg"
+    },
+     {
+        "id": 11,
+        "name": "A. Poopandi Kannan",
+        "position": "Incharge Chennai",
+        "image": "assets/img/team/poopadi.jpg"
+    },
+    {
+        "id": 12,
+        "name": "P. Sharmila",
+        "position": "Incharge Chennai",
+        "image": "assets/img/team/p_sharmila.jpg"
+    },
+    {
+        "id": 13,
+        "name": "S. P. Shanthi",
+        "position": "Incharge Chennai",
+        "image": "assets/img/team/s_p_shanthi.jpg"
+    },
+    {
+        "id": 14,
+        "name": "V. Christinal Rita",
+        "position": "Incharge Chennai",
+        "image": "assets/img/team/v_christinal_rita.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Jackulin G",
+        "position": "Incharge Tamil Nadu",
+        "image": "assets/img/team/jackulin_g.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Prashant Bachhav",
+        "position": "Incharge Gujarat",
+        "image": "assets/img/team/prashant.jpeg"
+    },
+    {
+        "id": 17,
+        "name": "Anbu S",
+        "position": "Incharge Tamil Nadu",
+        "image": "assets/img/team/anbu_s.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Manivelan A",
+        "position": "Incharge Tamil Nadu",
+        "image": "assets/img/team/manivelan.jpeg"
+    }
+    
+]

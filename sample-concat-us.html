@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>State City Branch Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label, select {
+      display: block;
+      margin-bottom: 15px;
+    }
+    select {
+      padding: 5px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select State, City, and Branch</h2>
+
+  <label for="state-select">State:</label>
+  <select id="state-select">
+    <option>Select State</option>
+    <option>Andhra Pradesh</option>
+    <option>Gujarat</option>
+    <option>Tamil Nadu</option>
+  </select>
+
+  <label for="city-select">City:</label>
+  <select id="city-select">
+    <option>Select City</option>
+    <option>Chittoor</option>
+    <option>Hyderabad</option>
+    <option>Chennai</option>
+  </select>
+
+  <label for="branch-select">Branch:</label>
+  <select id="branch-select">
+    <option>Select Branch</option>
+    <option>Kaliambakam</option>
+    <option>Main Office</option>
+    <option>Branch 1</option>
+  </select>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const stateSelect = document.getElementById("state-select");
+      const citySelect = document.getElementById("city-select");
+      const branchSelect = document.getElementById("branch-select");
+
+      function slugify(text) {
+        return text.toLowerCase().trim().replace(/\s+/g, '-');
+      }
+
+      function updateHashURL() {
+        const state = stateSelect.value;
+        const city = citySelect.value;
+        const branch = branchSelect.value;
+
+        if (
+          state !== "Select State" &&
+          city !== "Select City" &&
+          branch !== "Select Branch"
+        ) {
+          const hash = `/location/${slugify(state)}/${slugify(city)}/${slugify(branch)}`;
+          window.location.hash = hash;
+        }
+      }
+
+      function setSelectionFromHash() {
+        const hash = window.location.hash;
+        const match = hash.match(/\/location\/([^/]+)\/([^/]+)\/([^/]+)/);
+        if (match) {
+          const [_, state, city, branch] = match;
+          selectByText(stateSelect, state.replace(/-/g, ' '));
+          selectByText(citySelect, city.replace(/-/g, ' '));
+          selectByText(branchSelect, branch.replace(/-/g, ' '));
+        }
+      }
+
+      function selectByText(select, text) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.toLowerCase() === text.toLowerCase()) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Set initial values from URL hash
+      setSelectionFromHash();
+
+      // Update hash on change
+      stateSelect.addEventListener("change", updateHashURL);
+      citySelect.addEventListener("change", updateHashURL);
+      branchSelect.addEventListener("change", updateHashURL);
+    });
+  </script>
+</body>
+</html>

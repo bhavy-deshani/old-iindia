@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+
+    <style>
+        :root {
+            --primary-color: #1c355e;
+            --secondary-color: #00ae42;
+            --accent-color: #00ae42;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #00ae42;
+            --warning-color: #f72585;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+
+
+        /* Card Styling */
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            padding: 15px 20px;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        /* Form Styling */
+        .form-control,
+        .form-select {
+            border-radius: var(--border-radius);
+            padding: 12px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        /* Button Styling */
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+
+            i {
+                color: #fff !important;
+            }
+        }
+
+        .btn-primary i {
+            color: #fff !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+        }
+
+        .btn-success:hover {
+            background-color: #3aa8d8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-secondary {
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Tab Styling */
+        .nav-tabs {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            padding: 12px 25px;
+            font-weight: 500;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            transition: var(--transition);
+            margin-right: 5px;
+        }
+
+        .nav-tabs .nav-link:hover {
+            color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background-color: transparent;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .tab-content {
+            padding: 25px 0;
+        }
+
+        /* Feedback Textarea */
+        .feedback-textarea {
+            min-height: 150px;
+            resize: none;
+        }
+
+        /* Rating Stars */
+        .rating-stars {
+            display: flex;
+            gap: 10px;
+        }
+
+        .rating-stars i {
+            font-size: 28px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: #ddd;
+        }
+
+        .rating-stars i:hover {
+            transform: scale(1.2);
+        }
+
+        .rating-stars .fas {
+            color: #ffc107;
+        }
+
+        .rating-label {
+            font-weight: 500;
+            margin-top: 5px;
+            color: var(--dark-color);
+        }
+
+        /* CAPTCHA Styling */
+        .captcha-box {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            user-select: none;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 10px;
+            display: inline-block;
+            border: 1px solid #dee2e6;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .captcha-container canvas {
+            border-radius: var(--border-radius);
+            border: 1px solid #dee2e6;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide-up {
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Image */
+        .comp-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .comp-img img:hover {
+            transform: scale(1.02);
+        }
+
+
+        /* Token Display */
+        .token-display {
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+
+        .token-display strong {
+            font-size: 1.5rem;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e9ecef;
+            z-index: 1;
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            z-index: 2;
+            transition: width 0.5s ease;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #6c757d;
+            transition: var(--transition);
+        }
+
+        .step.active .step-number {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .step.completed .step-label {
+            color: var(--success-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                min-width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+
+            #sidebar .logo-small {
+                display: none;
+            }
+
+            #sidebar .logo-full {
+                display: inline-block;
+                height: 30px;
+            }
+
+            .progress-steps {
+                flex-wrap: wrap;
+            }
+
+            .step {
+                width: 50%;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Custom Checkbox */
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Floating Labels */
+        .form-floating label {
+            color: #6c757d;
+        }
+
+        /* Input Group */
+        .input-group-text {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        /* Alert Styling */
+        .alert {
+            border-radius: var(--border-radius);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 10px;
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #ddd;
+            /* empty star color */
+            transition: all 0.2s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+            /* yellow color for selected stars */
+            transform: scale(1.1);
+        }
+
+        .rating-label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .btn::after {
+            content: "";
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <script src="./assets/js/header.js" defer ></script>
+        <script src="./assets/js/footer.js" defer ></script>
+        <div class="animate__animated animate__fadeIn">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-header bg-white d-flex justify-content-between">
+                                <h4 class="mb-0"><i class="fas fa-headset me-2"></i> Customer Support Portal</h4>
+                                <a class="nav-link" href="customer-track.html">
+                                    <i class=" fa fa-search"></i> Track Query
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <!-- Progress Steps -->
+
+                                <!-- Query Tab -->
+                                <div class="progress-steps my-5" id="progressSteps">
+                                    <div class="progress-bar" style="width: 0%;"></div>
+                                    <div class="step active" data-step="1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-label">Select Service</div>
+                                    </div>
+                                    <div class="step" data-step="2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-label">Verify Details</div>
+                                    </div>
+                                    <div class="step" data-step="3">
+                                        <div class="step-number">3</div>
+                                        <div class="step-label">Describe Issue</div>
+                                    </div>
+                                    <div class="step" data-step="4">
+                                        <div class="step-number">4</div>
+                                        <div class="step-label">Submit</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Department Selection -->
+                                    <div class="mb-4" id="dpt">
+                                        <label class="form-label">Query related to?</label>
+                                        <select class="form-select" id="department" required>
+                                            <option value="">Select Product/Service</option>
+                                            <option value="demat account">Demat Account</option>
+                                            <option value="mutual fund">Mutual Fund</option>
+                                            <option value="equity trading">Equity Trading</option>
+                                            <option value="national pension system">National Pension System</option>
+                                            <option value="insurance">Insurance</option>
+                                            <option value="pan / tan department">PAN / TAN Services</option>
+                                            <option value="registry service department">Registry Service</option>
+                                            <option value="secretarial service">Secretarial Service</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Mobile Number Section (for Demat, Equity, MF, NPS, Insurance) -->
+                                    <div id="mobileSection" class="slide-up w-50" style="display: none;">
+                                        <div class="mb-3">
+                                            <label class="form-label">Registered Mobile Number</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                                                <input type="tel" class="form-control" id="complainantMobile"
+                                                    placeholder="Enter registered mobile number" value="9876543210">
+                                                <button class="btn btn-primary" onclick="sendOTP()">
+                                                    <i class="fas fa-paper-plane me-2"></i>Send OTP
+                                                </button>
+                                            </div>
+                                            <small class="text-muted">We'll send a verification code to this
+                                                number</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- OTP Verification -->
+                                    <div id="otpForm" class="slide-up w-50" style="display: none;">
+                                        <div class="mb-3">
+                                            <label class="form-label">Enter OTP</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                <input value="1234" type="number" class="form-control" id="otpInput"
+                                                    placeholder="Enter 4-digit OTP">
+                                                <button class="btn btn-success" onclick="verifyOTP()">
+                                                    <i class="fas fa-check me-2"></i>Verify OTP
+                                                </button>
+                                            </div>
+                                            <small class="text-muted">Check your SMS for the OTP (use 1234 for
+                                                demo)</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Customer ID Selection (for Demat and Equity) -->
+                                    <div id="customerIdSection" class="slide-up" style="display: none;">
+                                        <div class="mb-3">
+                                            <label class="form-label">Select Your Account</label>
+                                            <select class="form-select" id="customerIdSelect">
+                                                <option value="">Select Customer ID</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- DP ID and Client ID for Demat Account -->
+                                    <div class="row slide-up" id="dpIdSection" style="display: none;">
+                                        <div class="mb-3 col-md-4">
+                                            <label class="form-label">DP ID</label>
+                                            <input type="text" class="form-control" id="dpIdInput" disabled>
+                                        </div>
+                                        <div class="mb-3 col-md-8">
+                                            <label class="form-label">Client ID</label>
+                                            <input type="text" class="form-control" id="clientIdInput" disabled>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trading Code for Equity Trading -->
+                                    <div id="tradingCodeSection" class="slide-up" style="display: none;">
+                                        <div class="mb-3">
+                                            <label class="form-label">Trading Code</label>
+                                            <input type="text" class="form-control" id="tradingCodeInput" disabled>
+                                        </div>
+                                    </div>
+
+                                    <!-- Manual Input for PAN / TAN, Registry Service, Secretarial Service, and Other -->
+                                    <div class="row slide-up" id="manualInputSection" style="display: none;">
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" id="manualName"
+                                                placeholder="Your full name">
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Mobile Number</label>
+                                            <input type="tel" class="form-control" id="manualMobile"
+                                                placeholder="10-digit mobile number">
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Email Address</label>
+                                            <input type="email" class="form-control" id="manualEmail"
+                                                placeholder="Your email address">
+                                        </div>
+                                    </div>
+
+                                    <!-- Customer Details -->
+                                    <div class="row slide-up" id="customerDetailsSection" style="display: none;">
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="complainantName" disabled>
+                                        </div>
+                                        <div class="mb-3 col-md-6" style="display: none;">
+                                            <label class="form-label">Mobile</label>
+                                            <input type="tel" class="form-control" id="displayMobile" disabled>
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="complainantEmail" disabled>
+                                        </div>
+
+                                        <!-- Demat Query Options -->
+                                        <div class="col-md-6 slide-up" id="dematQueryOptions" style="display: none;">
+                                            <div class="mb-3">
+                                                <label class="form-label">Select Service Type</label>
+                                                <select class="form-select" id="dematQuerySelect">
+                                                    <option value="">Select Service</option>
+                                                    <option value="Billing">Billing</option>
+                                                    <option value="Equity Demat">Equity Demat</option>
+                                                    <option value="MF Demat">MF Demat</option>
+                                                    <option value="Remat">Remat</option>
+                                                    <option value="Repurchase">Repurchase</option>
+                                                    <option value="Redemption">Redemption</option>
+                                                    <option value="Reconversion">Reconversion</option>
+                                                    <option value="Statement Request">Statement Request</option>
+                                                    <option value="A/C Opening">A/C Opening</option>
+                                                    <option value="UPI Payment Request">UPI Payment Request</option>
+                                                    <option value="Margin UnPledge Creation">Margin UnPledge
+                                                        Creation</option>
+                                                    <option value="AUTO-DEBIT(eDDPI)">AUTO-DEBIT(eDDPI)</option>
+                                                    <option value="A/C Closing">A/C Closing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mutual Fund Query Options -->
+                                        <div class="col-md-6 slide-up" id="mutualFundQueryOptions"
+                                            style="display: none;">
+                                            <div class="mb-3">
+                                                <label class="form-label">Select Service Type</label>
+                                                <select class="form-select" id="mutualFundQuerySelect">
+                                                    <option value="">Select Query</option>
+                                                    <option value="Purchase">Purchase</option>
+                                                    <option value="Additional Purchase">Additional Purchase</option>
+                                                    <option value="Switchover">Switchover</option>
+                                                    <option value="SIP">SIP</option>
+                                                    <option value="SWP">SWP</option>
+                                                    <option value="Redemption">Redemption</option>
+                                                    <option value="STP">STP</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Query Input Section -->
+                                    <div id="querySection" class="slide-up" style="display: none;">
+                                        <div class="mb-3">
+                                            <label class="form-label">Describe Your Query</label>
+                                            <textarea class="form-control" id="complaintQuery" rows="5" maxlength="2000"
+                                                placeholder="Please provide details about your issue..."></textarea>
+                                            <small class="text-muted" id="charCount">2000 characters
+                                                remaining</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Attachment Input Section -->
+                                    <div id="attachmentSection" class="slide-up" style="display: none;">
+                                        <div class="mb-3">
+                                            <label class="form-label">Attach Supporting Documents (Optional)</label>
+                                            <div class="input-group">
+                                                <input type="file" class="form-control" id="attachmentInput"
+                                                    accept=".pdf,.jpg,.png,.doc,.docx">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    onclick="clearAttachment()" title="Clear attachment">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <small class="text-muted">Allowed formats: PDF, JPG, PNG, DOC, DOCX (Max
+                                                5MB)</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- CAPTCHA Section -->
+                                    <div id="captchaSection" class="slide-up" style="display: none;">
+                                        <div class="mb-4">
+                                            <label class="form-label">Enter CAPTCHA</label>
+                                            <div class="captcha-container">
+                                                <canvas id="captchaCanvas" width="120" height="40" role="img" aria-label="Complaint CAPTCHA verification code. Use the audio button to hear the code." tabindex="0"
+                                                    class="border rounded"></canvas>
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    onclick="generateCaptcha()" title="Refresh CAPTCHA">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary" type="button" id="audioComplaintCaptcha" title="Play audio CAPTCHA" aria-label="Play audio CAPTCHA">
+                                                    <i class="fas fa-volume-up"></i>
+                                                </button>
+                                                <input type="text" class="form-control" id="captchaInput"
+                                                    placeholder="Enter CAPTCHA" aria-describedby="complaintCaptchaHint">
+                                                <div id="complaintCaptchaHint" class="visually-hidden">This CAPTCHA is case-sensitive. Press the audio CAPTCHA button to hear the code.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Token Display Section -->
+                                    <div id="tokenDisplay" class="token-display animate__animated animate__fadeIn mt-4"
+                                        style="display: none;">
+                                        <h5><i class="fas fa-check-circle me-2"></i> Query Submitted Successfully!
+                                        </h5>
+                                        <p id="tokenMessage"></p>
+                                        <p class="mb-0">We'll contact you shortly regarding your query.</p>
+                                    </div>
+                                    <div class="row justify-content-between pt-2">
+                                        <div class="col-md-6">
+
+                                            <div id="submitSection" class="slide-up " style="display: none;">
+                                                <button class="btn btn-primary  py-2" onclick="submitComplaint()">
+                                                    <i style="color: #fff;" class="fas fa-paper-plane me-2"></i>Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class=" col-md-6 text-end">
+                                            <a href="contact-us.html" class="btn btn-primary "> Back</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </main>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer ></script>
+    
+    <script src="./assets/js/jquery.odometer.min.js" defer ></script>
+    
+    
+    <script src="./assets/js/ScrollTrigger.js" defer ></script>
+    <script src="./assets/js/SplitText.js" defer ></script>
+
+    <script src="./assets/js/jquery.parallaxScroll.min.js" defer ></script>
+    <script src="./assets/js/swiper-bundle.js" defer ></script>
+    <script src="./assets/js/ajax-form.js" defer ></script>
+    <script src="./assets/js/wow.min.js" defer ></script>
+    <script src="./assets/js/aos.js" defer ></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+    <script src="Scripts/contact.js" defer ></script>
+    <script src="Scripts/GlobalApi.js" defer ></script>
+    <script>
+        // Fixed demo data with unique names
+        const complaints = [
+            // Demat Account
+            {
+                dpId: 'IN300757',
+                clientId: '11223344',
+                mobile: '9876543210',
+                name: 'Rajesh Kumar',
+                email: 'rajesh.kumar@example.com',
+                customerId: '123456'
+            },
+            {
+                dpId: 'IN300757',
+                clientId: '11223344',
+                mobile: '9876543210',
+                name: 'Sunil Kumar',
+                email: 'sunil.kumar@example.com',
+                customerId: '225588'
+            },
+            {
+                dpId: 'IN300757',
+                clientId: '11223344',
+                mobile: '9876543210',
+                name: 'Dinesh Kumar',
+                email: 'dinesh.kumar@example.com',
+                customerId: '226888'
+            },
+            {
+                dpId: 'IN300441',
+                clientId: '55667788',
+                mobile: '9876543211',
+                name: 'Priya Sharma',
+                email: 'priya.sharma@example.com',
+                customerId: '234567'
+            },
+            {
+                tradingCode: 'C0107A008',
+                mobile: '9876543210',
+                name: 'Rajesh Kumar',
+                email: 'rajesh.kumar@example.com',
+                customerId: '345678'
+            },
+            {
+                tradingCode: 'C0107A009',
+                mobile: '9876543211',
+                name: 'Priya Sharma',
+                email: 'priya.sharma@example.com',
+                customerId: '456789'
+            },
+            // Mutual Fund, NPS, Insurance
+            {
+                mobile: '9876543210',
+                name: 'Rajesh Kumar',
+                email: 'rajesh.kumar@example.com',
+                customerId: '567890'
+            },
+            {
+                mobile: '9876543211',
+                name: 'Priya Sharma',
+                email: 'priya.sharma@example.com',
+                customerId: '123457'
+            },
+            {
+                mobile: '9876543212',
+                name: 'Amit Patel',
+                email: 'amit.patel@example.com',
+                customerId: '123458'
+            },
+            {
+                mobile: '9876543213',
+                name: 'Neha Gupta',
+                email: 'neha.gupta@example.com',
+                customerId: '123459'
+            },
+            {
+                mobile: '9876543214',
+                name: 'Sanjay Verma',
+                email: 'sanjay.verma@example.com',
+                customerId: '123450'
+            }
+        ];
+
+        // Update progress steps
+        function updateProgress(currentStep) {
+            const steps = document.querySelectorAll('.step');
+            const progressBar = document.querySelector('.progress-bar');
+
+            steps.forEach(step => {
+                const stepNumber = parseInt(step.getAttribute('data-step'));
+                if (stepNumber < currentStep) {
+                    step.classList.remove('active');
+                    step.classList.add('completed');
+                } else if (stepNumber === currentStep) {
+                    step.classList.add('active');
+                    step.classList.remove('completed');
+                } else {
+                    step.classList.remove('active', 'completed');
+                }
+            });
+
+            // Update progress bar width
+            const progressPercentage = ((currentStep - 1) / (steps.length - 1)) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+        }
+
+        function sendOTP() {
+            const selectedDept = $('#department').val().toLowerCase();
+            const mobile = $('#complainantMobile').val().trim();
+
+            if (!/^\d{10}$/.test(mobile)) {
+                showAlert('Please enter a valid 10-digit mobile number.', 'warning');
+                return;
+            }
+
+            // Send OTP with updated message
+            showAlert(`OTP sent to registered mobile number: ${mobile} (Use 1234 for demo)`, 'success');
+            $('#otpForm').fadeIn();
+            $('#customerIdSection').hide();
+            $('#dpIdSection').hide();
+            $('#tradingCodeSection').hide();
+
+            updateProgress(2);
+        }
+
+        // Show alert message
+        function showAlert(message, type = 'success') {
+            const alertBox = $(`
+                <div class="alert alert-${type} alert-dismissible fade show animate__animated animate__fadeIn" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `);
+
+            $('#content').prepend(alertBox);
+
+
+        }
+
+        // OTP Verification
+        function verifyOTP() {
+            const otp = $('#otpInput').val().trim();
+            if (otp !== "1234") {
+                showAlert("Invalid OTP. Please enter 1234 for demo.", 'danger');
+                return;
+            }
+
+            showAlert("OTP verified successfully!", 'success');
+            $('#otpForm').fadeOut();
+            $('#mobileSection').fadeOut();
+
+            const selectedDept = $('#department').val().toLowerCase();
+            const mobile = $('#complainantMobile').val().trim();
+
+            if (selectedDept === "demat account" || selectedDept === "equity trading") {
+                const customers = complaints.filter(c => c.mobile === mobile &&
+                    (selectedDept === "demat account" ? c.dpId : c.tradingCode));
+
+                if (customers.length === 0) {
+                    showAlert("No accounts found with this mobile number.", 'warning');
+                    return;
+                }
+
+                $('#customerIdSelect').empty().append('<option value="">Select Customer</option>');
+                customers.forEach(customer => {
+                    $('#customerIdSelect').append(`<option value="${customer.customerId}">${customer.customerId} - ${customer.name}</option>`);
+                });
+                $('#customerIdSection').fadeIn();
+            }
+            else if (["mutual fund", "national pension system", "insurance"].includes(selectedDept)) {
+                const customer = complaints.find(c => c.mobile === mobile);
+                if (customer) {
+                    fillCustomerDetails(customer);
+                    // Show specific query options based on department
+                    if (selectedDept === "demat account") {
+                        $('#dematQueryOptions').fadeIn();
+                    } else if (selectedDept === "mutual fund") {
+                        $('#mutualFundQueryOptions').fadeIn();
+                    }
+                    $('#querySection').fadeIn();
+                    $('#submitSection').fadeIn();
+                    $('#attachmentSection').fadeIn();
+                    $('#captchaSection').fadeIn();
+
+                    updateProgress(3);
+                } else {
+                    showAlert("No customer found with this mobile number.", 'warning');
+                }
+            }
+        }
+
+        // Handle customer selection for Demat and Equity
+        $('#customerIdSelect').change(function () {
+            const selectedDept = $('#department').val().toLowerCase();
+            const customerId = $(this).val();
+            const mobile = $('#complainantMobile').val().trim();
+
+            if (!customerId) return;
+
+            const customer = complaints.find(c => c.mobile === mobile && c.customerId === customerId);
+            if (customer) {
+                fillCustomerDetails(customer);
+
+                if (selectedDept === "demat account") {
+                    $('#dpIdInput').val(customer.dpId);
+                    $('#clientIdInput').val(customer.clientId);
+                    $('#dpIdSection').fadeIn();
+                    $('#dematQueryOptions').fadeIn();
+                } else if (selectedDept === "equity trading") {
+                    $('#tradingCodeInput').val(customer.tradingCode);
+                    $('#tradingCodeSection').fadeIn();
+                }
+
+                $('#querySection').fadeIn();
+                $('#submitSection').fadeIn();
+                $('#attachmentSection').fadeIn();
+                $('#captchaSection').fadeIn();
+
+                updateProgress(3);
+            }
+        });
+
+        function fillCustomerDetails(complaint) {
+            $('#complainantName').val(complaint.name).prop('disabled', true);
+            $('#complainantEmail').val(complaint.email).prop('disabled', true);
+            $('#customerDetailsSection').fadeIn();
+            // Remove the displayMobile field since we won't show it anymore
+            $('#displayMobile').closest('.mb-3').hide();
+        }
+
+        function generateCaptcha() {
+            const canvas = document.getElementById("captchaCanvas");
+            const ctx = canvas.getContext("2d");
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let captchaText = "";
+
+            // Generate a random 6-character CAPTCHA
+            for (let i = 0; i < 5; i++) {
+                captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+
+            // Store CAPTCHA text for validation
+            canvas.setAttribute("data-captcha", captchaText);
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw background
+            ctx.fillStyle = "#f8f9fa";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw slight distortion with lines and dots
+            for (let i = 0; i < 5; i++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.strokeStyle = "#ddd";
+                ctx.lineWidth = Math.random() * 1;
+                ctx.stroke();
+            }
+
+            for (let i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, 1.5, 0, 2 * Math.PI);
+                ctx.fillStyle = "#ddd";
+                ctx.fill();
+            }
+
+            // Draw CAPTCHA text with different styles
+            for (let i = 0; i < captchaText.length; i++) {
+                let fontSize = 24 + Math.floor(Math.random() * 6);
+                let rotation = (Math.random() - 0.5) * 0.3;
+                let x = 20 + i * 20;
+                let y = 30 + Math.random() * 10 - 5;
+
+                ctx.font = `${fontSize}px Arial`;
+                ctx.fillStyle = "#4361ee";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate(rotation);
+                ctx.fillText(captchaText[i], 0, 0);
+                ctx.restore();
+            }
+        }
+
+        function clearAttachment() {
+            $('#attachmentInput').val('');
+            showAlert('Attachment cleared!', 'info');
+        }
+
+        function validateCaptcha() {
+            const userInput = document.getElementById("captchaInput").value.trim().toUpperCase();
+            const captchaText = document.getElementById("captchaCanvas").getAttribute("data-captcha");
+
+            if (userInput === captchaText) {
+                return true;
+            } else {
+                showAlert("Invalid CAPTCHA. Please try again.", 'warning');
+                generateCaptcha();
+                return false;
+            }
+        }
+
+        function getSpokenComplaintCaptchaText(code) {
+            return 'Audio CAPTCHA: ' + code.split('').map(ch => {
+                return /[0-9]/.test(ch) ? 'digit ' + ch : 'letter ' + ch;
+            }).join(', ') + '.';
+        }
+
+        function speakComplaintCaptcha() {
+            const code = document.getElementById('captchaCanvas').getAttribute('data-captcha') || '';
+            if (!code) {
+                return;
+            }
+            if (!('speechSynthesis' in window)) {
+                alert('Audio CAPTCHA is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(getSpokenComplaintCaptchaText(code));
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function submitComplaint() {
+            const selectedDept = $('#department').val().toLowerCase();
+            const query = $('#complaintQuery').val().trim();
+            const attachment = $('#attachmentInput').prop('files')[0];
+
+            if (!query) {
+                showAlert("Please enter your query.", 'warning');
+                return;
+            }
+
+            if (!validateCaptcha()) {
+                return;
+            }
+
+            let name, mobile, email, customerId, serviceType = null;
+
+            if (["demat account", "mutual fund", "equity trading", "national pension system", "insurance"].includes(selectedDept)) {
+                name = $('#complainantName').val();
+                mobile = $('#complainantMobile').val().trim(); // Get mobile from input field
+                email = $('#complainantEmail').val();
+                customerId = $('#customerIdSelect').val() || generateCustomerId();
+
+                // Get service type if applicable
+                if (selectedDept === "demat account") {
+                    serviceType = $('#dematQuerySelect').val();
+                } else if (selectedDept === "mutual fund") {
+                    serviceType = $('#mutualFundQuerySelect').val();
+                }
+            } else {
+                name = $('#manualName').val();
+                mobile = $('#manualMobile').val().trim(); // Get mobile from manual input
+                email = $('#manualEmail').val();
+                customerId = generateCustomerId();
+            }
+
+            const dpId = selectedDept === "demat account" ? $('#dpIdInput').val() : null;
+            const clientId = selectedDept === "demat account" ? $('#clientIdInput').val() : null;
+            const tradingCode = selectedDept === "equity trading" ? $('#tradingCodeInput').val() : null;
+
+            const complaint = {
+                token: generateToken(),
+                customerId: customerId,
+                name: name,
+                mobile: mobile, // Ensure mobile is stored
+                email: email,
+                department: selectedDept,
+                dpId: dpId,
+                clientId: clientId,
+                tradingCode: tradingCode,
+                serviceType: serviceType,
+                query: query,
+                attachment: attachment ? attachment.name : null,
+                medium: "Website Form",
+                date: new Date().toLocaleDateString('en-GB'),
+                status: "Pending"
+            };
+
+            let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+            complaints.push(complaint);
+            localStorage.setItem("complaints", JSON.stringify(complaints));
+
+            $('#tokenMessage').html(`Your Query has been submitted successfully.<br>Token Number: <strong class="fw-bolder">${complaint.token}</strong>`);
+            $('#tokenDisplay').fadeIn();
+
+            // Hide all form sections
+            $('#dpt, #mobileSection, #customerIdSection, #dpIdSection, #tradingCodeSection, #manualInputSection, #otpForm, #customerDetailsSection, #querySection, #submitSection, #captchaSection, #attachmentSection, #dematQueryOptions, #mutualFundQueryOptions').hide();
+
+            updateProgress(4);
+
+
+        }
+
+        function generateToken() {
+            const now = new Date();
+            const year = String(now.getFullYear()).slice(-2);
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const date = String(now.getDate()).padStart(2, '0');
+            const currentDate = `${year}${month}${date}`;
+
+            // Department prefixes
+            const departmentPrefixes = {
+                "insurance": "INS",
+                "mutual fund": "MF",
+                "demat account": "DP",
+                "equity trading": "EQTRD",
+                "national pension system": "NPS",
+                "pan / tan department": "PAN",
+                "registry service department": "REG",
+                "secretarial service": "SEC",
+                "other": "GEN"
+            };
+
+            // Get the selected department
+            const department = $('#department').val();
+
+            // Get the prefix for the department or default to "INTG"
+            let prefix = departmentPrefixes[department] || "INTG";
+
+            // Retrieve the last counter and date from localStorage
+            let lastCounter = localStorage.getItem('lastCounter');
+            let lastDate = localStorage.getItem('lastDate');
+
+            // Initialize the counter
+            let counter;
+
+            if (lastDate === currentDate) {
+                // If the date is the same, increment the counter
+                counter = parseInt(lastCounter, 10) + 1;
+            } else {
+                // If the date is different, continue from the last counter (do not reset)
+                counter = parseInt(lastCounter, 10) || 1; // Fallback to 1 if no counter exists
+            }
+
+            // Update localStorage with the new counter and date
+            localStorage.setItem('lastCounter', counter);
+            localStorage.setItem('lastDate', currentDate);
+
+            // Format the counter as a 4-digit string
+            let counterPart = String(counter).padStart(4, '0');
+
+            // Generate the token with department prefix
+            return `${prefix}-${year}${month}${date}${counterPart}`;
+        }
+
+        function generateCustomerId() {
+            return 'CUST' + Math.floor(1000 + Math.random() * 9000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const stars = document.querySelectorAll('.star');
+            const ratingLabel = document.getElementById('ratingLabel');
+            let currentRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    currentRating = parseInt(this.getAttribute('data-value'));
+
+                    // Update stars
+                    stars.forEach(s => {
+                        const value = parseInt(s.getAttribute('data-value'));
+                        if (value <= currentRating) {
+                            s.classList.add('active');
+                            s.textContent = '★'; // filled star
+                        } else {
+                            s.classList.remove('active');
+                            s.textContent = '☆'; // empty star
+                        }
+                    });
+
+                    // Update label
+                    const labels = ["Poor", "Fair", "Average", "Good", "Excellent"];
+                    ratingLabel.textContent = labels[currentRating - 1];
+                });
+
+                // Optional hover effect
+                star.addEventListener('mouseover', function () {
+                    const hoverRating = parseInt(this.getAttribute('data-value'));
+                    stars.forEach(s => {
+                        const value = parseInt(s.getAttribute('data-value'));
+                        s.textContent = value <= hoverRating ? '★' : '☆';
+                    });
+                });
+
+                star.addEventListener('mouseout', function () {
+                    stars.forEach(s => {
+                        const value = parseInt(s.getAttribute('data-value'));
+                        s.textContent = value <= currentRating ? '★' : '☆';
+                    });
+                });
+            });
+        });
+        $(document).ready(function () {
+            generateCaptcha();
+            document.getElementById('audioComplaintCaptcha').addEventListener('click', speakComplaintCaptcha);
+
+
+
+            // Handle Character Count for Query Input
+            $('#complaintQuery').on('input', function () {
+                const maxLength = 2000;
+                const remaining = maxLength - $(this).val().length;
+                $('#charCount').text(`${remaining} characters remaining`);
+            });
+
+            // Hide all sections initially
+            $('#mobileSection, #customerIdSection, #dpIdSection, #tradingCodeSection, #manualInputSection, #otpForm, #customerDetailsSection, #querySection, #submitSection, #captchaSection, #attachmentSection, #dematQueryOptions, #mutualFundQueryOptions').hide();
+
+            // Initialize progress steps
+            updateProgress(1);
+
+            // Handle Department Change
+            $('#department').change(function () {
+                const selectedDept = $(this).val().toLowerCase();
+
+                // Hide all sections initially
+                $('#mobileSection, #customerIdSection, #dpIdSection, #tradingCodeSection, #manualInputSection, #otpForm, #customerDetailsSection, #querySection, #submitSection, #captchaSection, #attachmentSection, #dematQueryOptions, #mutualFundQueryOptions').hide();
+
+                if (["demat account", "mutual fund", "equity trading", "national pension system", "insurance"].includes(selectedDept)) {
+                    $('#mobileSection').fadeIn();
+                } else if (["pan / tan department", "registry service department", "secretarial service", "other"].includes(selectedDept)) {
+                    $('#manualInputSection').fadeIn();
+                    $('#querySection').fadeIn();
+                    $('#submitSection').fadeIn();
+                    $('#attachmentSection').fadeIn();
+                    $('#captchaSection').fadeIn();
+
+                    updateProgress(3);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

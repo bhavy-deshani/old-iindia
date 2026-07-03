@@ -1,0 +1,276 @@
+﻿.EMTable.EMTable
+{
+    margin: 2% 10%;
+    width: 80%;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    text-align: left;
+    border-collapse: collapse;
+}
+.EMTable tr:nth-child(2) th
+{
+    color:#2DA6D9;
+}
+.EMTable tr th,.EMTable tr td
+{
+    padding: 10px 5px;
+}
+.EMTable tr th
+{
+    text-align: center;
+}
+.EMTable tr td >a
+{
+    color: #333333;
+}
+.EMTable tr:nth-child(odd)
+{
+    border-right: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+}
+.EMTable tr:nth-child(even)
+{
+    background: #F6F6F6;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+.GMapDiv
+{
+    width: 45%;
+}
+/* #gmap_ro
+,#gmap_ao
+{
+    border: 1px solid red;
+} */
+
+#AddressDetailsDiv > div:nth-child(1)
+{
+    width: 450px;
+}
+.project-tab {
+    padding-top: 10%;
+    margin-top: -8%;
+}
+.project-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.project-tab #tabs h6.section-title{
+    color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #0062cc;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #0062cc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.project-tab .nav-link:hover {
+    border: none;
+}
+.project-tab thead
+{
+    background: #f3f3f3;
+    color: #333;
+}
+.project-tab a{
+    text-decoration: none;
+    color: #333;
+    /*font-weight: 600;*/
+}
+
+/*Drop Downlist Design*/
+.select
+{
+    position:relative;
+    display:inline-block;
+    margin-bottom:15px;
+    width:100%;
+}
+select
+{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 8px 8px;
+    outline: 0;
+    border: 2px solid #C9C9C9 ;
+    border-radius: 0;
+    background: #FFFFFF(243, 241, 241);
+    color: grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.select__arrow
+{
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: grey transparent transparent transparent;
+}
+.input-container
+{
+  position:relative;
+  margin-bottom:25px;
+}
+.input-container label
+{
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-size:16px;
+  color:#fff;	
+  transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+border:none;	
+outline:none;
+border-bottom:1px solid #e74c3c;	
+}
+.ContactusBtn
+{
+    background-color: #EAEAEA;
+    font-size: 18px;
+    padding:10px;
+    border: 1px solid #858181;
+    cursor: pointer;
+}
+.EMDiv
+{
+    padding: 0 16px;
+}
+.HN
+{
+    display: block;
+}
+.EMTable tr:nth-child(1)
+{
+    border-right: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+}
+@media only screen and (max-width:760px)
+{
+    .GMapDiv
+    {
+        width: 85%;
+    }
+    .MapDivSty {
+        float: left; 
+    }
+    #AddressDetailsDiv > div:nth-child(1) {
+        width: 285px;
+    }
+    .IframeStyle {
+        width: 285px !important;
+    }
+    .col-100 {
+        display: flex;
+        flex-direction: row;
+      }
+      
+      .col-101 {
+        order: -1;
+      }
+    .col-102
+    {
+        order: -1;
+    }
+    .EMTable tr:nth-child(1)
+    {
+        border-right: 1px solid #FFFFFF;
+        border-left: 1px solid #FFFFFF;
+    }
+    .SButnDiv
+    {
+        text-align: center;
+    }
+    .HN
+    {
+        display: none;
+    }
+    .EMDiv
+    {
+        padding: 0;
+    }
+    .EMTable tr,.EMTable tr td,.EMTable tr th,.EMTable tbody
+    {
+        display: block;
+        width: 100%;
+        text-align: left !important;
+    }
+    .EMTable,.EMDiv
+    {
+        width: 100%;
+        margin: 0;
+    }
+    #nav-tab,#nav-tab a
+    {
+        text-align: center;
+        white-space: nowrap;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    #nav-tab a
+    {
+        width: 60%;
+        align-self: center;
+    }
+    .nav-link.active
+    {
+        font-size: 14px !important;
+    }
+    .ProductOutline
+    {
+        height: auto !important;
+        margin-bottom:5%;
+    }
+    .container
+    {
+        overflow-wrap: anywhere;
+        padding: 0;
+        width: 100% !important;
+    }
+    .tab-content,#nav-tabContent {
+        padding: 0px !important;
+        border: 0px;
+    }
+    .project-tab {
+        padding: 0%;
+        margin-top: 0%;
+    }   
+}
+@media only screen and (min-width:800px) and (max-width:1234px)
+{
+    .GMapDiv
+    {
+        width: 85%;
+    }
+    #AddressDetailsDiv > div:nth-child(1) {
+    width: 490px;
+}
+}

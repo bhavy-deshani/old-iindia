@@ -1,0 +1,189 @@
+[
+  {
+    "id": 1,
+    "name": "Sriram Vaidyanathan",
+    "position": "Managing Director & CEO",
+    "image": "assets/img/team/sriram_vaidyanathan.png",
+    "description": [
+      "He is an Engineer and a Masters graduate from Leeds University Business School. He has been a Board Member since 2009. As a second generation entrepreneur, he was instrumental in starting the capital market and commodity verticals for Integrated. He has gained consummate and fruitful experience in Financial Services and BPO industry across all areas like Marketing, Equity Research and Risk Management. He is very passionate about investing in public equities across all sectors. He is very active in Capital Market forums and is passionate about promoting equity investment cult for retail investors. As the MD & CEO he holds responsibility for all business verticals by driving growth through technology and digital transformation."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Anand G.",
+    "position": "CISO (Chief Information Security Officer)",
+    "image": "assets/img/team/g_anand.png",
+    "description": [
+      "G. Anand holds a Master’s degree in Commerce and has been with the company since 1992. Throughout his tenure, he has held various positions and worked extensively across the country, gaining a wealth of experience in different facets of the business.",
+      "In his previous role, he led the Processing Services Division, overseeing key areas including PAN, TAN, ETDS, GST, NPS and IT Returns. His leadership in these areas involved managing processes and ensuring compliance with regulatory requirements.",
+      "Currently, he is responsible for handling compliances related to capital market operations. This role includes ensuring adherence to regulatory standards, managing risk, and implementing best practices to maintain the integrity and efficiency of capital market operations."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Arun K Iyengar",
+    "position": "IT & Digital Initiatives",
+    "image": "assets/img/team/arun-k-Iyengar.png",
+    "description": [
+      "Arun K Iyengar holds a Bachelor's degree in Commerce and has been with the company since 1989. He currently spearheads the company's digital initiatives, driving both digital marketing and business strategies forward. In his role as Head of Digital, he is instrumental in identifying the right partners to support the company’s digital transformation. He collaborates closely with the IT team to ensure the seamless execution of digital initiatives including Mobile apps."
+    ]
+  },
+  {
+    "id": 4,
+    "name": " Balaji G",
+    "position": "HR Head",
+    "image": "assets/img/team/balaji.jpeg"
+  },
+   {
+    "id": 5,
+    "name": " Bharti Bhaskar",
+    "position": "Program Director STRI & NRI",
+    "image": "assets/img/team/bharti-bhaskar.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Devika Gopalan",
+    "position": "Customer Experience and Employee Engagement Initiatives",
+    "image": "assets/img/team/devika.png",
+    "description": [
+      "She heads the Customer Experience (CX) initiative and STRI, the women empowerment program.",
+      "In her Customer Experience role, she focuses on enhancing every interaction a customer has with the organization—across branches, the mobile app, and the website. Her approach centers on making customer journeys simpler, more transparent, and consistently engaging at every touchpoint.",
+      "She also leads STRI, an all-women empowerment initiative driven by the women employees. STRI goes beyond financial awareness to promote overall wellness, encompassing physical, emotional, and personal well-being, along with confidence building and community support. The program reflects a strong belief that empowered women create stronger families, workplaces, and communities."
+    ]
+  },
+    
+  {
+    "id": 7,
+    "name": " Dhanraj",
+    "position": "Business Transformation Coach",
+    "image": "assets/img/team/dhanraj.png"
+  },
+   {
+    "id": 8,
+    "name": "Ganesan S",
+    "position": "Capital Market Head",
+    "image": "assets/img/team/ganeshan.png"
+  },
+  {
+    "id": 9,
+    "name": "Murali R.",
+    "position": "Chief of Planning Strategy & Talent Management Committee",
+    "image": "assets/img/team/r_murali.png",
+    "description": [
+      "R Murali has done his Masters in Finance and bachelors in IT. He leads the Information Technology and hardware planning at Integrated. He oversees everything related to infrastructure, strategy, procurement and IT security. He has been instrumental in ensuring a robust and secure IT infrastructure.",
+      "Passionate about reading, he stays abreast of the latest market trends, enabling him to keep the company’s technology strategies relevant in a rapidly changing environment.",
+      "He also interacts with the business leaders to give his inputs on business strategy and analytics."
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Prabha V.",
+    "position": "Compliance & Operation Capital Market",
+    "image": "assets/img/team/v-prabha.png",
+    "description": [
+      "V. Prabha holds a Bachelor’s degree in Bio-Chemistry and joined the company in 1998. With over 15 years in Marketing & Sales, she initially led the compliance team in the Insurance Broking Division and is currently spearheading the Capital Market Division.",
+      "Her extensive knowledge on products, compliance and business approach has been instrumental in scaling up the insurance business. She is known for her consensus decision making with a collaborative approach. As a supportive leader, she fosters trust within her team and is committed to driving success.",
+      "Her deep understanding of Insurance Rules and Regulations has helped the organization reach various frontiers. She is straight forward and handles every issue with a fair attitude. She is a solution provider and anticipates the hurdles & opportunities for the team and the organisation. She is a supportive leader and builds trust within the team. She is interested in exploring Religious places."
+    ]
+  },
+   {
+    "id": 11,
+    "name": " Payal Shah",
+    "position": "STRI Head",
+    "image": "assets/img/team/payal_shah.png"
+  },
+  {
+    "id": 12,
+    "name": "Parthsarthy",
+    "position": "Mutual Funds Head",
+    "image": "assets/img/team/parthsarthy.png"
+  },
+  {
+    "id": 13,
+    "name": " Prabu S",
+    "position": "Capital Market CTD",
+    "image": "assets/img/team/Prabhu.jpeg"
+  },
+  {
+    "id": 14,
+    "name": "Sathyanarayanan N. ",
+    "position": "Head Finance & Accounts",
+    "image": "assets/img/team/n_sathyanarayanan.png",
+    "description": [
+      "N. Sathyanarayanan holds a Bachelor’s degree in Commerce and is both a Chartered Accountant and a Cost Accountant. Since joining the company in 2018, he has led the Finance and Accounts division for the entire group.",
+      "With 20 years of experience in MNCs and other corporates before joining Integrated, he brings a wealth of fresh ideas and practical experience to the financial domain. His data-driven approach and expertise in statutory compliance have been instrumental in the company’s growth.",
+      "He plays a key role in managing treasury operations and maintaining banking relationships. He is an expert at identifying opportunities to improve margins and explore investment possibilities, ensuring optimal utilization of resources."
+    ]
+  },
+  {
+    "id": 15,
+    "name": " Selvakumar S.",
+    "position": "Chief Marketing Officer & Talent Management Committee",
+    "image": "assets/img/team/s-selvakumar.png",
+    "description": [
+      "S. Selvakumar is a dynamic and passionate leader in marketing, with a career that began in 1999 in the Pharma industry, following his MBA from The American College. He joined the company in 2004 and has since played a pivotal role in shaping its growth.",
+      "He successfully leads the company's marketing and sales strategies for all the products. His focus has been on expanding the company’s presence nationwide, ensuring a strong market footprint. In addition to his marketing expertise, he is deeply involved in talent management, fostering a culture of excellence and innovation within the organization.",
+      "His commitment to the company’s success is evident in his ability to inspire and lead his team, driving the company forward in an increasingly competitive landscape."
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Sivakumar R. ",
+    "position": "Software Architecture",
+    "image": "assets/img/team/r_sivakumar.png",
+    "description": [
+      "R Sivakumar has done his master’s in Computer Science. He has been instrumental in developing the Back Office system for DP operations and all the software development initiatives in Integrated. His domain knowledge extends across all divisions and processes, including SMD, Life Insurance, Fixed Income, and Registry. He has been instrumental in building a committed team of developers.",
+      "He plays a pivotal role in planning the transition to new technologies and identifying the right technology platforms based on the latest trends and market demands. He oversees the auditing of all developed software to ensure quality and compliance.",
+      "His style is marked by his focus on excellence and achieving outstanding results."
+    ]
+  },
+  {
+    "id": 17,
+    "name": " Subha K.N.",
+    "position": "Head Data Analytics, Secretarial & Talent Management Committee",
+    "image": "assets/img/team/k_n_subha.png",
+    "description": [
+      "K.N. Subha holds a Bachelor’s degree in Commerce and is a member of the Institute of Company Secretaries of India. She joined the company in 1999 and has experience working across various divisions.",
+      "Her current portfolio includes overseeing secretarial activities, MIS, data analytics, administrative and branding strategy to new branches. She also oversees the statutory compliance for Integrated.",
+      "Known for her active listening and eagerness to learn, she approaches problems with a rational and positive attitude. She is also part of the talent management committee actively involved in surveys and town hall meetings with all the employees."
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Sudhakar L.",
+    "position": "Alternate Channel & TIN FC",
+    "image": "assets/img/team/l_sudhakar.png",
+    "description": [
+      "L. Sudhakar holds a Bachelor’s degree in Commerce. He joined the company in 1989 and currently heads the Alternate Channel. He is also at the forefront of the company's NPS activities and leads the TIN FC division. He manages a network of over 17,000 franchisees spread across the country and strives to bring transformational change to the lives of partners by advancing their professional careers, with a focus on promoting savings among the common man, especially in rural areas.",
+      "He consistently explores innovative ideas, guided by his philosophy that the world is full of opportunities. A multilingual professional with extensive experience across India, he is known for identifying unexplored areas for business development and setting new trends."
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Suresh Babu K",
+    "position": "Registry Operations",
+    "image": "assets/img/team/suresh_babu_k.png",
+    "description": [
+      "Suresh Babu K is a qualified Cost and Management Accountant with nearly three decades of experience in various domains, including Finance & Accounts, Registrar & Transfer Agent services, HR Functions, Regulatory Compliance, Secretarial Services, and Tax-related services.",
+      "Currently, he heads the Corporate Services Division, overseeing Registry Services and Secretarial Services. His systematic approach has been instrumental in successfully managing numerous regulatory inspections by SEBI, NSDL, CDSL, IRDAI and related third-party professional audits. He is committed to setting efficient processes and continually seeks opportunities for margin improvement. He has also successfully streamlined HR processes during his tenure."
+    ]
+  },
+  {
+    "id": 20,
+    "name": " Vinod Kumar K.T.",
+    "position": "Principal Officer Insurance",
+    "image": "assets/img/team/k_t_vinod_kumar.png",
+    "description": [
+      "K.T. Vinod Kumar holds a Master’s degree in Business Administration with a specialization in Finance from Newport University and a Master’s in Commerce from the University of Madras and a recipient of the gold medal in Commerce, among other accolades.",
+      "Currently, he serves as the Principal Officer responsible for Life Insurance and Health Insurance compliance. Since joining Integrated in 1994, he has overseen capital market operations, including depository and trading activities, and has played a crucial role in formulating policies for capital market-related compliance and operations."
+    ]
+  },
+ 
+  {
+    "id": 21,
+    "name": " Vasumathi Balaji",
+    "position": "Head NRI Wealth",
+    "image": "assets/img/team/vasumathi.png"
+  }
+ 
+]

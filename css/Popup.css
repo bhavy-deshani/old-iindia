@@ -1,0 +1,147 @@
+﻿/*Masking*/
+/*Model Css*/
+#PopupImg1 
+{
+	width: 100%;		
+}
+#PopupImg2
+{
+	width: 100%;		
+}
+.ModalDialog 
+{
+    position: fixed;
+    font-family: glametrix, Tahoma, Geneva, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    font-size:23px;
+    color:blue;
+}
+.ModalDialog:target 
+{
+    opacity:1;
+    pointer-events: auto;
+}
+.ModalDialog > div 
+{
+    position: relative;
+    margin: 60px auto;
+    padding: 15px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+.Modelclose
+{
+    background: #EFEFEF;
+    color: #000;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.Modelclose:hover
+{
+    background: #00d9ff;
+}
+.TModalDialog
+{
+    position: fixed;
+    font-family: glametrix, Tahoma, Geneva, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+            
+    font-size:23px;
+    color:blue;
+}
+.TModalDialog:target 
+{
+    opacity:1;
+    pointer-events: auto;
+}
+.TModalDialog > div 
+{
+    position: relative;
+    margin: 60px auto;
+    padding: 15px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+@media screen and (max-width: 1460px)
+{
+	.ModalDialog > div
+	{
+	    width: 53%;
+	}
+	.TModalDialog > div
+	{
+	    width: 53%;
+	}
+}
+@media screen and (max-width: 1370px)
+{
+	.ModalDialog > div
+	{
+	    width: 56%;
+	}
+	.TModalDialog > div
+	{
+	    width: 56%;
+	}
+}
+@media screen and (max-width: 1360px)
+{
+	.ModalDialog > div
+	{
+	    width: 56%;
+	}
+	.TModalDialog > div
+	{
+	    width: 56%;
+	}
+}
+@media screen and (max-width: 1260px)
+{
+	.ModalDialog > div
+	{
+	    width: 75%;
+	}
+	.TModalDialog > div
+	{
+	    width: 75%;
+	}
+}
+.ModalDialog > div{width:50%;}

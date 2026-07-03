@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>POLICY ON HANDLING OF COMPLAINTS AND GRIEVANCE REDRESSAL</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./assets/css/animate.min.css" />
+	<link rel="stylesheet" href="./assets/css/default.css" />
+	<link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+	<script src="./assets/js/app-link.js" defer></script>
+	<link rel="preload" as="image" href="./assets/img/bg/kyc.jpg" fetchpriority="high">
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+
+	<style>
+		/* --- Styles Preserved --- */
+		.step-one-wrapper {
+			position: relative;
+			z-index: 20;
+			padding-bottom: 80px;
+		}
+
+		.lodging-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 0.8fr;
+			gap: 40px;
+			align-items: start;
+		}
+
+		.steps-container .section-label {
+			background: rgba(0, 174, 66, 0.1);
+			color: var(--tg-theme-primary);
+			padding: 6px 16px;
+			border-radius: 30px;
+			font-size: 0.85rem;
+			font-weight: var(--tg-fw-bold);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			display: inline-block;
+			margin-bottom: 15px;
+		}
+
+		.steps-container h2 {
+			color: var(--tg-color-white-default) !important;
+			font-size: 2.5rem;
+			font-weight: var(--tg-fw-bold);
+			margin-bottom: 30px;
+			text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.step-card {
+			background: var(--tg-color-white-default);
+			border-radius: 20px;
+			padding: 25px;
+			margin-bottom: 20px;
+			display: flex;
+			align-items: flex-start;
+			gap: 20px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+			transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			border: 1px solid var(--tg-border-2);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.step-card:hover {
+			transform: translateY(-5px) scale(1.02);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			border-color: var(--tg-theme-primary);
+		}
+
+		.step-card::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 4px;
+			height: 100%;
+			background: var(--tg-theme-primary);
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		.step-card:hover::before {
+			opacity: 1;
+		}
+
+		.step-number {
+			background: var(--tg-color-gray-6);
+			color: var(--tg-theme-secondary);
+			min-width: 50px;
+			height: 50px;
+			border-radius: 14px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: var(--tg-fw-extra-bold);
+			font-size: 1.2rem;
+			flex-shrink: 0;
+			transition: all 0.3s;
+		}
+
+		.step-card:hover .step-number {
+			background: var(--tg-theme-primary);
+			color: var(--tg-color-white-default);
+		}
+
+		.step-content h5 {
+			font-size: 1.1rem;
+			font-weight: var(--tg-fw-bold);
+			color: var(--tg-theme-secondary) !important;
+			margin-bottom: 8px;
+		}
+
+		.step-content p {
+			font-size: 0.95rem;
+			color: var(--tg-color-gray-4);
+			margin: 0;
+			line-height: 1.5;
+		}
+
+		/* Resolution Policy */
+		.resolution-cinematic-area {
+			padding: 120px 0;
+			position: relative;
+			z-index: 1;
+		}
+
+		.resolution-card-wrapper {
+			background: var(--tg-color-white-default);
+			border-radius: 24px;
+			overflow: hidden;
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+			margin: 0 auto;
+		}
+
+		.res-content-box {
+			padding: 60px 50px;
+		}
+
+		.res-content-box .section-title .title {
+			color: var(--tg-theme-secondary) !important;
+			font-size: 32px;
+			font-weight: var(--tg-fw-bold);
+		}
+
+		/* Appeal Section */
+		.appeal-section {
+			padding: 100px 0;
+		}
+
+		.appeal-card {
+			background: linear-gradient(120deg, var(--tg-theme-secondary) 0%, #2a4b82 100%);
+			border-radius: var(--radius-lg);
+			padding: 60px;
+			color: var(--tg-color-white-default);
+			position: relative;
+			overflow: hidden;
+			box-shadow: 0 20px 50px rgba(28, 53, 94, 0.2);
+		}
+
+		.appeal-card::after {
+			content: '';
+			position: absolute;
+			top: -50px;
+			right: -50px;
+			width: 300px;
+			height: 300px;
+			background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+			border-radius: 50%;
+		}
+
+		.btn-outline-custom {
+			border: 2px solid rgba(255, 255, 255, 0.3);
+			color: var(--tg-color-white-default);
+			padding: 12px 30px;
+			border-radius: 50px;
+			font-weight: 500;
+			margin-top: 20px;
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			transition: all 0.3s;
+			text-decoration: none;
+		}
+
+		.btn-outline-custom:hover {
+			background: var(--tg-color-white-default);
+			color: var(--tg-theme-secondary);
+			border-color: var(--tg-color-white-default);
+		}
+
+		.resolution-time-box {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			padding: 30px;
+			border-radius: var(--radius-md);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			text-align: center;
+		}
+
+		/* Note Wrapper */
+		.note-wrapper {
+			padding-bottom: 100px;
+		}
+
+		.note-card {
+			background: var(--tg-color-yellow-light);
+			border: 1px dashed #ffc107;
+			border-radius: var(--radius-md);
+			padding: 30px;
+		}
+
+		.note-card .icon {
+			font-size: 2rem;
+			color: #ffb300;
+			margin-right: 20px;
+		}
+
+		.list-check li {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-bottom: 8px;
+			font-weight: 500;
+			color: var(--tg-body-color);
+		}
+
+		.list-check li i {
+			color: #ffb300;
+		}
+
+		/* Officer Box Styles */
+		/* --- Modern Profile Card Layout --- */
+.officer-profile-section {
+    padding: 80px 0 60px;
+    background-color: #fcfcfc;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: visible; /* Allow icon to float */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px; /* Space for the floating icon if needed, or adjust internal padding */
+    position: relative;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.pc-banner {
+    height: 100px;
+    background: linear-gradient(135deg, var(--tg-theme-secondary) 0%, #162a47 100%);
+    border-radius: 20px 20px 0 0;
+    position: relative;
+}
+
+.pc-banner.green-variant {
+    background: linear-gradient(135deg, var(--tg-theme-primary) 0%, #008a33 100%);
+}
+
+.pc-avatar {
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 4px solid #fff;
+    font-size: 2.5rem;
+}
+
+.pc-content {
+    padding: 60px 30px 40px; /* Top padding clears the avatar */
+    text-align: center;
+}
+
+.pc-role {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--tg-color-gray-4);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.pc-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--tg-theme-secondary);
+    margin-bottom: 25px;
+}
+
+.pc-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: #f4f7fa;
+    color: var(--tg-theme-secondary);
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.pc-contact-btn:hover {
+    background: var(--tg-theme-secondary);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(28, 53, 94, 0.2);
+}
+
+.pc-contact-btn.green-btn:hover {
+    background: var(--tg-theme-primary);
+    box-shadow: 0 5px 15px rgba(0, 174, 66, 0.2);
+}
+		/* Definition Card Styles */
+		.def-card {
+			background: #fff;
+			border-radius: 15px;
+			padding: 30px;
+			height: 100%;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+			border: 1px solid #eee;
+		}
+
+		.def-card h4 {
+			color: var(--tg-theme-secondary);
+			margin-bottom: 20px;
+			font-weight: 700;
+			border-bottom: 2px solid #eee;
+			padding-bottom: 10px;
+		}
+
+		.custom-list {
+			list-style: none;
+			padding: 0;
+		}
+
+		.custom-list li {
+			position: relative;
+			padding-left: 25px;
+			margin-bottom: 12px;
+			color: var(--tg-body-color);
+		}
+
+		.custom-list li::before {
+			content: '\f00c';
+			font-family: "Font Awesome 6 Free";
+			font-weight: 900;
+			position: absolute;
+			left: 0;
+			top: 3px;
+			color: var(--tg-theme-primary);
+			font-size: 14px;
+		}
+
+		.custom-list.cross-list li::before {
+			content: '\f00d';
+			color: #dc3545;
+		}
+
+		/* Process Section Title */
+		.section-header {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		.section-header .title {
+			font-size: 2.2rem;
+			color: var(--tg-theme-secondary);
+			font-weight: 700;
+		}
+
+		/* --- NEW Glassmorphism Horizontal Timeline Styles --- */
+		.glass-timeline-section {
+			padding: 100px 0;
+			background: linear-gradient(135deg, #f6f9fc 0%, #eef2f5 100%);
+			position: relative;
+			overflow: hidden;
+		}
+
+		/* Abstract Blobs for Background */
+		.blob {
+			position: absolute;
+			filter: blur(80px);
+			opacity: 0.6;
+			z-index: 0;
+		}
+
+		.blob-1 {
+			top: 10%;
+			left: -5%;
+			width: 400px;
+			height: 400px;
+			background: rgba(0, 174, 66, 0.15);
+			border-radius: 50%;
+		}
+
+		.blob-2 {
+			bottom: 10%;
+			right: -5%;
+			width: 500px;
+			height: 500px;
+			background: rgba(28, 53, 94, 0.1);
+			border-radius: 50%;
+		}
+
+		.glass-timeline-row {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 30px;
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Connector Line (Desktop) */
+		.glass-timeline-row::before {
+			content: '';
+			position: absolute;
+			top: 40px;
+			left: 10%;
+			right: 10%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent 0%, rgba(28, 53, 94, 0.1) 50%, transparent 100%);
+			z-index: -1;
+		}
+
+		.glass-card {
+			background: rgba(255, 255, 255, 0.7);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 24px;
+			padding: 40px 30px;
+			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+			transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.glass-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.1);
+			border-color: rgba(255, 255, 255, 0.9);
+			background: rgba(255, 255, 255, 0.85);
+		}
+
+		.step-badge {
+			width: 60px;
+			height: 60px;
+			border-radius: 18px;
+			background: var(--tg-color-white-default);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5rem;
+			font-weight: 800;
+			color: var(--tg-theme-primary);
+			margin-bottom: 25px;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+			position: relative;
+		}
+
+		/* Pastel Colors for badges/icons */
+		.glass-card:nth-child(1) .step-badge {
+			background: #e0f7fa;
+			color: #00acc1;
+		}
+
+		.glass-card:nth-child(2) .step-badge {
+			background: #e8f5e9;
+			color: #43a047;
+		}
+
+		.glass-card:nth-child(3) .step-badge {
+			background: #fff3e0;
+			color: #fb8c00;
+		}
+
+		.gc-title {
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: var(--tg-theme-secondary);
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.gc-content {
+			color: var(--tg-color-gray-4);
+			font-size: 0.95rem;
+			line-height: 1.7;
+		}
+
+		.gc-content p {
+			margin-bottom: 15px;
+		}
+
+		.gc-content p:last-child {
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 991px) {
+			.glass-timeline-row {
+				grid-template-columns: 1fr;
+			}
+
+			.glass-timeline-row::before {
+				display: none;
+			}
+		}
+
+		.fade-up {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: opacity 0.8s ease, transform 0.8s ease;
+		}
+
+		.fade-up.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+</head>
+
+<body>
+	<header class="">
+		<div id="sticky-header" class="tg-header__area">
+			<div class="container custom-container">
+				<div class="row">
+					<div class="col-12">
+						<div class="tgmenu__wrap">
+							<nav class="tgmenu__nav">
+								<div class="logo">
+									<a href="/"><img loading="lazy" src="assets/img/Integrated_logo_new.png"
+											alt="Integrated Global Investments (IFSC) Private Limited"
+											title="Integrated Global Investments (IFSC) Private Limited" /></a>
+								</div>
+								<div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex pe-xl-4">
+									<ul class="navigation">
+										<li class="">
+											<a href="about-us.html">About Us</a>
+										</li>
+										<li class="menu-item-has-children">
+											<a href="#">Products</a>
+											<ul class="sub-menu sub-menu-w1">
+												<div class="row row-cols-1 row-cols-lg-4 ">
+													<div class="col py-1">
+														<a href="equity-stock-trading.html" class="m-0 p-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 ">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/equity-icon.png"
+																		alt="Equities" title="Equities">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 p-0 fw-bold">Equities</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="online-commodity-trading.html" class="m-0 p-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 ">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/Commodity-icon.png"
+																		alt="Commodity" title="Commodity">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Commodity</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+													<div class="col py-1">
+														<a href="mutual-funds.html" class="m-0 p-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/mutu-icon.png"
+																		alt="Mutual Fund" title="Mutual Fund">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Mutual Fund
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+													<div class="col py-1">
+														<a href="fixed-deposit-income-option.html"
+															class="m-0 p-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/fixed-icon.png"
+																		alt="Fixed Income" title="Fixed Income">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Fixed Income
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="open-demat-trading-account.html"
+															class="m-0 p-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/demao-icon.png"
+																		alt="Demat Account" title="Demat Account">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Demat Account
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="health-life-insurance-providers.html"
+															class="m-0 p-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/insurance-icon.png"
+																		alt="Life & Health Insurance"
+																		title="Life & Health Insurance">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Life & Health
+																		Insurance</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="nps-national-pension-system.html"
+															class="m-0 p-0 text-b">
+
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/nps-icon.png"
+																		alt="NPS" title="NPS">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">NPS</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="pan-card-tan-tds-services.html" class="m-0 p-0 text-b">
+
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/pan-tan-icon.png"
+																		alt="PAN/TAX Services" title="PAN/TAX Services">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">PAN/TAX
+																		Services</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="secretarial-services.html" class="m-0 p-0 text-b">
+
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/secretarial-icon.png"
+																		alt="Secretarial Services"
+																		title="Secretarial Services">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Secretarial
+																		Services</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="registry-services.html" class="m-0 p-0 text-b">
+
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/Registry-icon.png"
+																		alt="Registry Services"
+																		title="Registry Services">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Registry
+																		Services</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="invest-in-gold-etf.html" class="m-0 p-0 text-b">
+
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/gold-icon.png"
+																		alt="Gold" title="Gold">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">Gold</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+												</div>
+											</ul>
+										</li>
+										<li class="menu-item-has-children">
+											<a href="#">Knowledge Center </a>
+											<ul class="sub-menu sub-menu-w2">
+												<div class="row row-cols-1 ">
+													<div class="col py-1">
+														<a href="financial-calculators.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/Calculators-con.png"
+																		alt="Calculators" title="Calculators">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Calculators</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="blogs.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/blogs-icon.png"
+																		alt="Blogs" title="Blogs">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Blogs</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="faqs-frequently-asked-questions.html"
+															class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/faqs-icon.png"
+																		alt="FAQs" title="FAQs">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">FAQs</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+												</div>
+											</ul>
+										</li>
+										<li class="menu-item-has-children">
+											<a href="#">Event </a>
+											<ul class="sub-menu sub-menu-w2">
+												<div class="row row-cols-1 ">
+													<div class="col py-1">
+														<a href="gallery_7.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/san-antonio.svg"
+																		alt="San Antonio" title="San Antonio">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">San Antonio</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="gallery_6.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/dubai.svg"
+																		alt="Dubai" title="Dubai">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Dubai</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="gallery.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/texas.svg"
+																		alt="Austin, texas" title="Austin, texas">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Austin, texas</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+													<div class="col py-1">
+														<a href="gallery_1.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/san-fransisco.svg"
+																		alt="San Francisco" title="San Francisco">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">San Francisco</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="gallery_2.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/cleveland.svg"
+																		alt="Cleveland" title="Cleveland">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Cleveland</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="gallery_3.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/dallas.svg"
+																		alt="Dallas" title="Dallas">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Dallas</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="gallery_4.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/raleigh.svg"
+																		alt="Raleigh" title="Raleigh">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Raleigh</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="gallery_5.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/new-jersey.svg"
+																		alt="New Jersey" title="New Jersey">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">New Jersey</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+												</div>
+											</ul>
+										</li>
+										<li><a href="contact-us.html">contact</a></li>
+										<li class="menu-item-has-children">
+											<a href="#">Research</a>
+											<ul class="sub-menu sub-menu-w2">
+												<div class="row row-cols-1 ">
+													<div class="col py-1">
+														<a href="research-daily-market-insights.html"
+															class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/daily-market.jpg"
+																		alt="Austin, texas" title="Austin, texas">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Daily Market
+																		Insights</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+
+													<div class="col py-1">
+														<a href="market-insights-equity-futures-options.html"
+															class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/equity-f-o.jpg"
+																		alt="San Francisco" title="San Francisco">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Equity/F&O</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="trading-strategy.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/trading_strategy.jpg"
+																		alt="San Francisco" title="San Francisco">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Trading Strategy
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="stellar-picks.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/stellar_picks.jpg"
+																		alt="San Francisco" title="San Francisco">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Stellar Picks</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="research-technical-reports.html"
+															class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/technical_reports.jpg"
+																		alt="San Francisco" title="San Francisco">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Technical Reports
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="special-reports.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/special_reports.jpg"
+																		alt="San Francisco" title="San Francisco">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Special Reports
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="research-basket.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/basket.jpg"
+																		alt="" title="">
+																</div>
+																<div class="my-auto">
+																	<p class=" m-0 fs--14 p-0 fw-bold">Basket</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col py-1">
+														<a href="initial-public-offering.html" class="m-0 p-0 text-b">
+
+															<li class="d-flex gap-2 hover-effect mb-3">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/ipo-icon.png"
+																		alt="IPO" title="IPO">
+																</div>
+																<div class="my-auto">
+																	<p class="m-0 fs--14 fw-bold p-0">IPO</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+												</div>
+											</ul>
+										</li>
+										<li><a href="nri-investments.html">NRI</a></li>
+										<li class="menu-item-has-children">
+											<a href="#">STRI</a>
+											<ul class="sub-menu sub-menu-w2">
+												<div class="row row-cols-1 ">
+													<div class="col">
+														<a href="investment-options-for-women.html"
+															class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/stri.png"
+																		alt="STRI" title="STRI">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">STRI</p>
+
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="event.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/stri_event.png"
+																		alt="STRI Event" title="STRI Event">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">STRI Event
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+												</div>
+											</ul>
+										</li>
+										<li><a href="gift-city.html">Gift city</a></li>
+
+										<li class="menu-item-has-children">
+											<a href="#">Login/Register</a>
+											<ul class="sub-menu sub-menu-w2">
+												<div class="row row-cols-1 ">
+													<div class="col">
+														<a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+															id="app-link2" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/Equity.png"
+																		alt="Equity" title="Equity">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">Equity</p>
+
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="mf-dp.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/mf-dp.png"
+																		alt="MF & DP" title="MF & DP">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">MF & DP</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="nps-login.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/nps-login.png"
+																		alt="NPS" title="NPS">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">NPS</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="https://www.integratedindia.in/sp/businesspartner/FRLogin/login.aspx"
+															target="_blank" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/franchisee.png"
+																		alt="Franchisee" title="Franchisee">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">Franchisee
+																	</p>
+
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="https://bo.integrated.investments:9443/ldclientlevelH/#Login"
+															target="_blank" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/ld-back-office.png"
+																		alt="LD Back Office" title="LD Back Office">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">LD Back
+																		Office</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+												</div>
+											</ul>
+										</li>
+										<li class="menu-item-has-children">
+											<a href="#">Open Demat A/c</a>
+											<ul class="sub-menu sub-menu-w2">
+												<div class="row row-cols-1 ">
+													<div class="col">
+														<a href="instant-free-trading-demat-account.html"
+															class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/residential_individual.png"
+																		alt="Equity" title="Equity">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">Resident
+																		Individual</p>
+
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="open-minor-demat-account.html" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy"
+																		src="assets/img/minor_account.png"
+																		alt="Minor Account" title="Minor Account">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">Minor Account
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+													<div class="col">
+														<a href="https://www.integratedindia.in/sp/NRIOnboarding_V2/NRIAccountOpenHome.aspx"
+															target="_blank" class="p-0 m-0 text-b">
+															<li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+																<div class="m-y">
+																	<img loading="lazy" src="assets/img/nri-ac.png"
+																		alt="NRI" title="NRI">
+																</div>
+																<div class="lh-1 my-auto">
+																	<p class="lh-1 m-0 fs--14 p-0 fw-bold">NRI
+																	</p>
+																</div>
+																<div class="ani"></div>
+															</li>
+														</a>
+													</div>
+												</div>
+											</ul>
+										</li>
+
+									</ul>
+								</div>
+								<div class="tgmenu__action d-none d-md-block">
+									<ul class="list-wrap">
+										<li class="offCanvas-menu">
+											<a href="javascript:void(0)" class="menu-tigger">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+													<path
+														d="M0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2Z"
+														fill="currentcolor" />
+													<path
+														d="M0 9C0 7.89543 0.895431 7 2 7C3.10457 7 4 7.89543 4 9C4 10.1046 3.10457 11 2 11C0.895431 11 0 10.1046 0 9Z"
+														fill="currentcolor" />
+													<path
+														d="M0 16C0 14.8954 0.895431 14 2 14C3.10457 14 4 14.8954 4 16C4 17.1046 3.10457 18 2 18C0.895431 18 0 17.1046 0 16Z"
+														fill="currentcolor" />
+													<path
+														d="M7 2C7 0.895431 7.89543 0 9 0C10.1046 0 11 0.895431 11 2C11 3.10457 10.1046 4 9 4C7.89543 4 7 3.10457 7 2Z"
+														fill="currentcolor" />
+													<path
+														d="M7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9Z"
+														fill="currentcolor" />
+													<path
+														d="M7 16C7 14.8954 7.89543 14 9 14C10.1046 14 11 14.8954 11 16C11 17.1046 10.1046 18 9 18C7.89543 18 7 17.1046 7 16Z"
+														fill="currentcolor" />
+													<path
+														d="M14 2C14 0.895431 14.8954 0 16 0C17.1046 0 18 0.895431 18 2C18 3.10457 17.1046 4 16 4C14.8954 4 14 3.10457 14 2Z"
+														fill="currentcolor" />
+													<path
+														d="M14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9Z"
+														fill="currentcolor" />
+													<path
+														d="M14 16C14 14.8954 14.8954 14 16 14C17.1046 14 18 14.8954 18 16C18 17.1046 17.1046 18 16 18C14.8954 18 14 17.1046 14 16Z"
+														fill="currentcolor" />
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="mobile-nav-toggler">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+										<path
+											d="M0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2Z"
+											fill="currentcolor" />
+										<path
+											d="M0 9C0 7.89543 0.895431 7 2 7C3.10457 7 4 7.89543 4 9C4 10.1046 3.10457 11 2 11C0.895431 11 0 10.1046 0 9Z"
+											fill="currentcolor" />
+										<path
+											d="M0 16C0 14.8954 0.895431 14 2 14C3.10457 14 4 14.8954 4 16C4 17.1046 3.10457 18 2 18C0.895431 18 0 17.1046 0 16Z"
+											fill="currentcolor" />
+										<path
+											d="M7 2C7 0.895431 7.89543 0 9 0C10.1046 0 11 0.895431 11 2C11 3.10457 10.1046 4 9 4C7.89543 4 7 3.10457 7 2Z"
+											fill="currentcolor" />
+										<path
+											d="M7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9Z"
+											fill="currentcolor" />
+										<path
+											d="M7 16C7 14.8954 7.89543 14 9 14C10.1046 14 11 14.8954 11 16C11 17.1046 10.1046 18 9 18C7.89543 18 7 17.1046 7 16Z"
+											fill="currentcolor" />
+										<path
+											d="M14 2C14 0.895431 14.8954 0 16 0C17.1046 0 18 0.895431 18 2C18 3.10457 17.1046 4 16 4C14.8954 4 14 3.10457 14 2Z"
+											fill="currentcolor" />
+										<path
+											d="M14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9Z"
+											fill="currentcolor" />
+										<path
+											d="M14 16C14 14.8954 14.8954 14 16 14C17.1046 14 18 14.8954 18 16C18 17.1046 17.1046 18 16 18C14.8954 18 14 17.1046 14 16Z"
+											fill="currentcolor" />
+									</svg>
+								</div>
+							</nav>
+						</div>
+						<div class="tgmobile__menu">
+							<nav class="tgmobile__menu-box">
+								<div class="close-btn"><i class="fi fi-br-cross-small"></i></div>
+								<div class="nav-logo">
+									<a href="/"><img loading="lazy"
+											src="assets/img/integrated_enterprises_india_pvt_ltd.png"
+											alt="Integrated Enterprises (India) Pvt. Ltd"
+											title="Integrated Enterprises (India) Pvt. Ltd" /></a>
+								</div>
+
+								<div class="tgmobile__menu-outer">
+								</div>
+								<div class="tgmobile__menu-bottom">
+									<div class="contact-info">
+										<ul class="list-wrap">
+											<li><a
+													href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
+												</p>
+											</li>
+										</ul>
+									</div>
+
+								</div>
+							</nav>
+						</div>
+						<div class="tgmobile__menu-backdrop"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="search-popup-overlay"></div>
+		<div class="offCanvas__info">
+			<div class="offCanvas__close-icon menu-close">
+				<button><i class="fi fi-br-cross-small"></i></button>
+			</div>
+			<div class="offCanvas__logo mb-30">
+				<a href="/"><img loading="lazy" src="assets/img/integrated_enterprises_india_pvt_ltd.png"
+						alt="Integrated Enterprises (India) Pvt. Ltd"
+						title="Integrated Enterprises (India) Pvt. Ltd" /></a>
+			</div>
+			<div class="offCanvas__side-info mb-30">
+				<div class="contact-list mb-30">
+					<h4>Registered Office</h4>
+					<p>5A, 5th Floor, Kences Towers, 1, Ramakrishna Street, <br>
+						T. Nagar, Chennai - 600 017.</p>
+				</div>
+				<div class="contact-list mb-30">
+					<h4>Phone Number</h4>
+					<p><a class="text-b" href="tel:04428143045">044 - 28143045/</a><a class="text-b"
+							href="tel:04428143046">46</a></p>
+					<p> <a class="text-b" href="tel:180042523456"> 1800 425 23456</a></p>
+					<p><a class="text-b" href="tel:02240661800"> 022 - 4066 1800</a></p>
+				</div>
+				<div class="contact-list mb-30">
+					<h4>Email Address</h4>
+					<a class="text-b" href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
+				</div>
+			</div>
+		</div>
+		<div class="offCanvas__overly"></div>
+	</header>
+	<div class="z-99">
+		<div class="chatbot-icon">
+			<img loading="lazy" src="assets/img/chanakya-removebg-preview.png" alt="Chatbot Icon" />
+			<h5 class="fw-bold text-white">Hi, I am Chanakya</h5>
+		</div>
+		<div class="chatbot hidden">
+			<header class="chatbot-header">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-3 chatbot-image">
+						<img loading="lazy" src="assets/img/chatbot-icon.svg" class="img-fluid" alt="Chanakya Logo" />
+					</div>
+					<div class="col-4">
+						<h5 class="text-b m-0 fw-bold">Chanakya</h5>
+					</div>
+					<div class="col-5">
+						<div class="d-flex align-items-center button-group justify-content-end">
+							<button class="btn-maximize hidden text-white border-0 action-button">︽</button>
+							<button class="btn-minimize text-white border-0 action-button">︾</button>
+							<button class="chat-close text-white border-0 action-button">㤤</button>
+						</div>
+
+					</div>
+				</div>
+			</header>
+			<ul class="chatbox">
+				<li class="chat incoming">
+					<p>Myself Chanakya, I am here to assist you today 🌟🚀 I can help you with the queries relating to
+						the products dealt by Integrated.</p>
+				</li>
+				<li class="chat incoming">
+					<p>Choose the product for which you are seeking information from me.</p>
+				</li>
+			</ul>
+			<div class="button-options"></div>
+		</div>
+	</div>
+	<main>
+		<!-- <script src="assets/js/footer.js"></script> -->
+
+		<section class="breadcrumb__area breadcrumb__bg " data-background="./assets/img/bg/gift-city.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="breadcrumb__content">
+							<h1 class="title">Policy on Handling of Complaints and Grievance Redressal</h1>
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Grievance Redressal Policy
+									</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="breadcrumb__shape">
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated"
+					class="rightToLeft" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+
+			</div>
+		</section>
+
+		<section class="process-section" style="padding: 50px 0;">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-10 text-center">
+						<h2 class="title" style="color: var(--tg-theme-secondary); font-weight: 700;">Grievance Redressal Policy</h2>
+						<p class="lead" style="color: var(--tg-body-color); line-height: 1.8;">
+							This policy aims to establish a robust, transparent and efficient mechanism for receiving,
+							handling and redressing complaints and grievances of Customers.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="officer-profile-section">
+    <div class="container">
+        <div class="section-header fade-up">
+            <h2 class="title">Name & Contact Detail</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-6 col-lg-5">
+                <div class="profile-card fade-up">
+                    <div class="pc-banner">
+                        <div class="pc-avatar" style="color: var(--tg-theme-secondary);">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                    </div>
+                    <div class="pc-content">
+                        <span class="pc-role">Complaint Redressal Officer</span>
+                        <h3 class="pc-name">Mr. Jebaruban Selvin</h3>
+                        <a href="mailto:giftycityco@integratedindia.in" class="pc-contact-btn">
+                            <i class="fas fa-envelope"></i> giftycityco@integratedindia.in
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-5">
+                <div class="profile-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="pc-banner green-variant">
+                        <div class="pc-avatar" style="color: var(--tg-theme-primary);">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                    </div>
+                    <div class="pc-content">
+                        <span class="pc-role">Complaint Redressal Appellate Officer</span>
+                        <h3 class="pc-name">Mr. Ganesh Natarajan</h3>
+                        <a href="mailto:giftcitypo@integratedindia.in" class="pc-contact-btn green-btn">
+                            <i class="fas fa-envelope"></i> giftcitypo@integratedindia.in
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+		<section class="resolution-cinematic-area" style="background-color: #fcfcfc; padding: 80px 0;">
+			<div class="container">
+				<div class="section-header mb-5">
+					<h2 class="title">For the purposes of this policy</h2>
+				</div>
+				<div class="row g-4">
+					<div class="col-lg-6">
+						<div class="def-card fade-up">
+							<h4><i class="fas fa-info-circle me-2"></i> Complaint / Grievance shall mean and include:
+							</h4>
+							<p class="mb-3">a written or verbal expression of dissatisfaction against the operation of
+								the Scheme or its employees resulting from a potential damage or wrongdoing to a
+								Customer or from a violation of IFSCA guidelines or related laws/regulations which may
+								or may not request for a claim for compensation.</p>
+							<p>Allegations such as failure to disclose conflicts of interest, misrepresentations, etc.
+								Such grievances may be regarding processing of drawdown transactions, distribution of
+								units etc.</p>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="def-card fade-up" style="transition-delay: 0.1s;">
+							<h4><i class="fas fa-ban me-2" style="color: #dc3545;"></i> It does not include: -</h4>
+							<ul class="custom-list cross-list">
+								<li>Anonymous complaints (except whistleblower complaints)</li>
+								<li>Incomplete or un-specific complaints</li>
+								<li>Allegations without supporting documents</li>
+								<li>Suggestions or seeking guidance/explanation</li>
+								<li>Complaints on matters not relating to the financial products or services provided by
+									the Entity</li>
+								<li>Complaints about any unregistered/ un-regulated activity</li>
+								<li>References in the nature of seeking information or clarifications about financial
+									products or service.</li>
+								<li>Customer feedbacks, queries/clarifications;</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="row justify-content-center mt-4">
+					<div class="col-lg-12">
+						<div class="note-card fade-up" style="background: #fff; border: 1px solid #eee;">
+							<div class="row">
+								<div class="col-md-6 mb-3 mb-md-0">
+									<strong style="color: var(--tg-theme-secondary);">Governing Body</strong> <span
+										class="text-muted">shall mean the Board of Directors of the Company</span>
+								</div>
+								<div class="col-md-6">
+									<strong style="color: var(--tg-theme-secondary);">Costomer</strong> <span
+										class="text-muted">shall mean a person who engaged in a financial transaction or
+										activity with the Entity and includes a person on whose behalf the person
+										engaged in the transaction or activity, is acting;</span>
+								</div>
+							</div>
+							<div class="mt-3 pt-3 border-top">
+								<p class="mb-0 text-center fw-bold" style="color: var(--tg-theme-primary);">Customers
+									can lodge complaints or grievances to the designated email address <a
+										href="mailto:giftcityco@integratedindia.in">giftcityco@integratedindia.in</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="glass-timeline-section">
+			<div class="blob blob-1"></div>
+			<div class="blob blob-2"></div>
+
+			<div class="container">
+				<div class="section-header fade-up">
+					<h2 class="title" style="position: relative; z-index: 1;">Handling complaints and grievance
+						redressal</h2>
+				</div>
+
+				<div class="glass-timeline-row">
+					<div class="glass-card fade-up">
+						<div class="step-badge">01</div>
+						<div class="gc-title"><i class="fas fa-clipboard-check"></i> Assessment</div>
+						<div class="gc-content">
+							<p>On receipt of a complaint, Complaint Redressal Officer (“CRO”) of the Company shall make
+								an assessment on the merits of the complaint.</p>
+							<p>Pursuant to assessment,</p>
+							<p>In case of acceptance, the Company shall acknowledge acceptance of complaints, in
+								writing, within 3 working days of receipt of the complaint.</p>
+							<p>In case of non-acceptance, the Company shall inform the complainant within 5 working days
+								along with reasons.</p>
+						</div>
+					</div>
+
+					<div class="glass-card fade-up" style="transition-delay: 0.1s;">
+						<div class="step-badge">02</div>
+						<div class="gc-title"><i class="fas fa-search"></i> Examination</div>
+						<div class="gc-content">
+							<p>The Company shall examine and process the complaint in a fair, transparent and
+								independent manner.</p>
+							<p>The Company shall ensure that the CRO has sufficient authority to resolve the complaint
+								or has access to individuals with the necessary authority to be able to handle the
+								complaint in a fair and impartial manner. In case the CRO is or was involved in the
+								conduct of the financial service about which the complaint has been made, the complaint
+								will be handled by another officer designated by the Company in a fair and impartial
+								manner.</p>
+							<p>The Company may ask for additional information from the complainant during processing of
+								the complaint.</p>
+						</div>
+					</div>
+
+					<div class="glass-card fade-up" style="transition-delay: 0.2s;">
+						<div class="step-badge">03</div>
+						<div class="gc-title"><i class="fas fa-check-circle"></i> Disposal</div>
+						<div class="gc-content">
+							<p>The Company shall dispose of complaints preferably within 15 days but ordinarily not more
+								than 30 days of acceptance of complaint.</p>
+							<p>The Company may either resolve the complaint or reject the complaint.</p>
+							<p>In case of rejection of a complaint, the Company shall give reasons for rejection of the
+								complaint, in writing.</p>
+							<p>Upon closure of the complaint, the Company will share the root cause analysis of the
+								issue along with the closure details.</p>
+							<p>If the customer does not come back within 7 working days for reopening of the case, the
+								complaint will be considered as closed.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="appeal-section">
+			<div class="container">
+				<div class="appeal-card fade-up rounded-2">
+					<div class="row align-items-center">
+						<div class="col-lg-7 mb-4 mb-lg-0">
+							<h2 class="title text-white">Appeal mechanism</h2>
+							<p class="mb-3 opacity-75 text-white">In case a complainant is not satisfied with the
+								resolution provided by the Company or in case of rejection of complaint, the complainant
+								may file an appeal within 21 days from the receipt of the decision from the CRO, before
+								a Complaint Redressal Appellate Officer (“CRAO”) by sending an e-mail to</p>
+
+							<a href="mailto:giftcitypo@integratedindia.in" class="btn-outline-custom mb-4">
+								giftcitypo@integratedindia.in <i class="fas fa-paper-plane"></i>
+							</a>
+
+							<div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+								<p class="text-white-50 small mb-2">Where a complainant is not satisfied with the
+									decision of the Company and has exhausted the appellate mechanism of the Company, he
+									may file a complaint before the Authority through email to <a
+										href="mailto:grievance-redressal@ifsca.gov.in"
+										style="color: #fff; text-decoration: underline;">grievance-redressal@ifsca.gov.in</a>
+									preferably within 21 days from the receipt of the decision from the Company.</p>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<div class="resolution-time-box">
+								<i class="fas fa-hourglass-half text-white mb-3" style="font-size: 40px;"></i>
+								<h4 class="text-white">Appeal Resolution Time</h4>
+								<p class="text-white-50 mb-0">The CRAO shall dispose of the appeal within a period of 30
+									days.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="note-wrapper">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+						<div class="note-card fade-up mb-4">
+							<div class="d-flex flex-column flex-md-row align-items-start gap-3">
+								<div class="icon">
+									<i class="fas fa-folder-open"></i>
+								</div>
+								<div>
+									<h4 class="title" style="color: var(--tg-heading-color); font-size: 1.3rem;">
+										Maintenance of Records</h4>
+									<p class="mb-3">The entity shall maintain all records relating to handling of
+										complaints, including the following</p>
+									<ul class="list-check ps-0 mb-0">
+										<li><i class="fas fa-check-circle"></i> Complaints received and processed;</li>
+										<li><i class="fas fa-check-circle"></i> All correspondence exchanged between the
+											Entity and the complainants;</li>
+										<li><i class="fas fa-check-circle"></i> all information and documents examined
+											and relied upon by the Entity while processing of the complaints;</li>
+										<li><i class="fas fa-check-circle"></i> Outcome of the complaints;</li>
+										<li><i class="fas fa-check-circle"></i> Reasons for rejection of complaints, if
+											any</li>
+										<li><i class="fas fa-check-circle"></i> Timelines for processing of complaints;
+											and</li>
+										<li><i class="fas fa-check-circle"></i> Data of all complaints handled by it
+										</li>
+									</ul>
+									<p class="mt-3">Record shall be maintained for at least six years from the date of
+										disposal of complaint. In case of any pending litigation or legal proceeding
+										relating to the complaint, the records shall be maintained for the applicable
+										period, after final disposal of the proceeding</p>
+									<p>Records of complaints, including correspondence, evidence, resolutions, and
+										timelines, shall be maintained for at least six years or longer in case of
+										ongoing litigation.</p>
+									<p>Records shall be maintained in an electronic retrieval system.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6 mb-3 mb-md-0">
+								<div class="note-card fade-up h-100"
+									style="background: #f8f9fa; border: 1px solid #eee;">
+									<h5 class="mb-3"><i class="fas fa-file-alt text-primary me-2"></i> Reporting</h5>
+									<ul class="list-check ps-0">
+										<li><i class="fas fa-check-circle" style="color: var(--tg-theme-primary);"></i>
+											The Entity shall submit reports on complaints and resolutions to IFSCA as
+											required.</li>
+										<li><i class="fas fa-check-circle" style="color: var(--tg-theme-primary);"></i>
+											The Annual Report, if any, to be submitted to IFSCA shall include a section
+											titled “Complaint Handling and Grievance Redressal”, presenting data on
+											complaints received, resolved, rejected, and pending.</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="note-card fade-up h-100"
+									style="background: #fff3cd; border: 1px dashed #ffc107;">
+									<h5 class="mb-3" style="color: #856404;"><i
+											class="fas fa-exclamation-triangle me-2"></i> Note:</h5>
+									<p class="mb-2 small">In case of global access, following resources of the Exchange
+										shall not be available to the customers:</p>
+									<ul class="list-check ps-0 small mb-2">
+										<li style="color: #856404;"><i class="fas fa-times-circle text-warning"></i>
+											Rights of investors or investors protection</li>
+										<li style="color: #856404;"><i class="fas fa-times-circle text-warning"></i>
+											Dispute resolution mechanism</li>
+										<li style="color: #856404;"><i class="fas fa-times-circle text-warning"></i>
+											Investor grievance redressal mechanism</li>
+									</ul>
+									<p class="mb-0 small fst-italic">However, the complaints resolution mechanism as
+										mentioned above, will be available with all clients.</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="footer-area footer__area-two">
+			<div class="footer-top" style="padding: 80px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 mb-5 mb-lg-0">
+							<div class="footer-widget">
+								<h4 class="fw-title text-white mb-4" style="font-size: 1.25rem;">Registered Office</h4>
+
+								<div class="d-flex gap-3 text-white-50 mb-3">
+									<div class="icon-box" style="width: 24px; min-width: 24px;">
+										<i class="fas fa-map-marker-alt" style="color: var(--primary);"></i>
+									</div>
+									<p class="mb-0 text-white" style="line-height: 1.6;">
+										Unit No. 75, The Platform – Ground Floor,<br>
+										11 T2, Block 11, GIFT SEZ, GIFT City,<br>
+										Gandhinagar, Gujarat – 382 355
+									</p>
+								</div>
+
+								<div class="d-flex gap-3 text-white-50">
+									<div class="icon-box" style="width: 24px; min-width: 24px;">
+										<i class="fas fa-phone-alt" style="color: var(--primary);"></i>
+									</div>
+									<p class="mb-0 text-white" style="line-height: 1.6;">
+										<a href="tel:+918925801947" class="text-white text-decoration-none">+91
+											8925801947</a>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-7">
+							<div class="footer-widget">
+								<h4 class="fw-title text-white mb-4" style="font-size: 1.25rem;">Registration
+									Information</h4>
+								<div class="row g-3">
+									<div class="col-md-6">
+										<div class="text-white"
+											style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+											<small
+												style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">CIN</small>
+											<div class="text-white mt-1 fw-bold">U66190GJ2024PTC155317</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="text-white"
+											style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+											<small
+												style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">IFSCA
+												Registration No.</small>
+											<div class="text-white mt-1 fw-bold">CMI2025BDK0871</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="text-white"
+											style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+											<small
+												style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">NSE
+												IX Registration ID</small>
+											<div class="text-white mt-1 fw-bold">10092</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="text-white"
+											style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+											<small
+												style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">India
+												INX GA Registration ID</small>
+											<div class="text-white mt-1 fw-bold">100189</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
+	<script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+	<script src="./assets/js/p9_language.js" defer></script>
+	<script src="./assets/js/main.js" fetchpriority="high" defer></script>
+	<script src="./assets/js/chatbot.js" defer></script>
+	<script>
+		$(document).ready(function () {
+			// Intersection Observer for Fade Up Animations
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						$(entry.target).addClass('visible');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, observerOptions);
+
+			$('.fade-up').each(function () {
+				observer.observe(this);
+			});
+		});
+	</script>
+</body>
+
+</html>

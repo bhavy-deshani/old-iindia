@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Inquiry Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md border border-gray-100">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center">Get Expert Advice</h2>
+        <p class="text-gray-500 text-center mb-8 text-sm">Submit your details for a free consultation.</p>
+
+        <form id="leadForm" class="space-y-5">
+            <div>
+                <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Full Name</label>
+                <input type="text" id="name" required placeholder="John Doe"
+                    class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Email Address</label>
+                <input type="email" id="email" required placeholder="john@example.com"
+                    class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Mobile Number</label>
+                <input type="tel" id="mobile" required pattern="[0-9]{10}" placeholder="9876543210"
+                    class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Pincode</label>
+                <input type="number" id="pincode" required placeholder="380001"
+                    class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none transition">
+            </div>
+
+            <button type="submit" id="submitBtn"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-indigo-500/30 transition duration-300 transform active:scale-95">
+                Submit Now
+            </button>
+        </form>
+
+        <p id="responseMsg" class="mt-6 text-center text-sm font-medium hidden"></p>
+    </div>
+
+    <script>
+        const leadForm = document.getElementById('leadForm');
+        const responseMsg = document.getElementById('responseMsg');
+        const submitBtn = document.getElementById('submitBtn');
+
+        leadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                mobile: document.getElementById('mobile').value,
+                pincode: parseInt(document.getElementById('pincode').value),
+                investmentMode: "MF",
+                whichDrive: "Landing Page"
+            };
+
+            // IIS path aur API Key setup
+            // Ensure this matches your app.js route prefix
+            // Is URL ko use karein
+            const API_URL = "https://dmark.iepindia.net/data/api/leads/submit"; 
+            const API_KEY = "WowcTmzEJR3bXiUK7kTtqIQ7jNPdGO+v";
+
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-api-key': API_KEY
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    responseMsg.innerText = "✅ Details sent successfully!";
+                    responseMsg.className = "mt-6 text-center text-sm font-medium text-green-600 bg-green-50 p-3 rounded-lg";
+                    leadForm.reset();
+                } else {
+                    responseMsg.innerText = "❌ Error: " + data.message;
+                    responseMsg.className = "mt-6 text-center text-sm font-medium text-red-600 bg-red-50 p-3 rounded-lg";
+                }
+            } catch (error) {
+                responseMsg.innerText = "❌ Connection failed. Check if Backend is running.";
+                responseMsg.className = "mt-6 text-center text-sm font-medium text-red-600 bg-red-50 p-3 rounded-lg";
+            } finally {
+                responseMsg.classList.remove('hidden');
+                submitBtn.innerText = "Submit Now";
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+</body>
+
+</html>

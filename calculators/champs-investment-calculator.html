@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="robots" content="index, follow, ai-allow">
+    <meta name="googlebot" content="index, follow">
+    <title>Champs Investment Calculator for Minor Investments</title>
+    <meta name="description"
+        content="Plan your child’s future with Integrated’s online Champs investment calculator designed for disciplined minor investments.">
+    <meta name="keywords"
+        content="champs investment calculator, child investment calculator, children education investment calculator, minor investment calculator, child future planning calculator, kids investment planner, education corpus calculator, invest for child future calculator, minor demat investment calculator, long term child savings calculator, child wealth planning tool, child sip calculator, future value child investment calculator, children financial planning calculator, child goal investment calculator, minor account investment planner, champs mutual fund calculator">
+    <link rel="canonical" href="https://www.integratedindia.in/calculators/champs-investment-calculator.html">
+    <meta property="og:title" content="Champs Investment Calculator for Minor Investments" />
+    <meta property="og:description"
+        content="Plan your child’s future with Integrated’s online Champs investment calculator designed for disciplined minor investments." />
+    <meta property="og:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png" />
+    <meta property="og:url" content="https://www.integratedindia.in/calculators/champs-investment-calculator.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Integrated" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Champs Investment Calculator for Minor Investments" />
+    <meta name="twitter:description"
+        content="Plan your child’s future with Integrated’s online Champs investment calculator designed for disciplined minor investments." />
+    <meta name="twitter:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png" />
+    <meta name="twitter:site" content="_@Integrated" />
+    <meta name="twitter:creator" content="_@Integrated" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <link rel="stylesheet" href="../assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="../assets/css/main.css" />
+    <script src="../assets/js/app-link.js" defer></script>
+    <link rel="preload" as="image" href="../assets/img/bg/calculator.jpg" fetchpriority="high">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* ===== SIMPLE CONTENT SECTIONS ===== */
+        .simple-content-section {
+            background: #fff !important;
+            padding: 48px 0;
+        }
+
+        .simple-h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1C355E;
+            margin-bottom: 16px;
+        }
+
+        .simple-p {
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .simple-p:last-child {
+            margin-bottom: 0;
+        }
+
+        .simple-list {
+            padding-left: 20px;
+            margin: 12px 0 16px;
+        }
+
+        .simple-list li {
+            line-height: 1.8;
+            margin-bottom: 4px;
+            list-style: disc;
+        }
+
+        .simple-ol {
+            padding-left: 20px;
+            margin: 12px 0 16px;
+        }
+
+        .simple-ol li {
+            line-height: 1.8;
+            margin-bottom: 6px;
+            list-style: decimal;
+        }
+
+        /* ===== BENEFIT CARDS ===== */
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .benefit-card {
+            background: #f8fafd;
+            border: 1.5px solid #dce6f5;
+            border-radius: 14px;
+            padding: 24px 24px 20px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+        }
+
+        .benefit-card:hover {
+            box-shadow: 0 6px 24px rgba(0, 92, 185, 0.10);
+            border-color: #005CB9;
+            transform: translateY(-2px);
+        }
+
+        .benefit-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: #e6eef8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .benefit-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .benefit-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1C355E;
+            margin-bottom: 6px;
+        }
+
+        .benefit-card-desc {
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media(max-width: 767px) {
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CTA SECTION ===== */
+        .investment-cta-section {
+            position: relative;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #005CB9, #005CB9);
+            overflow: hidden;
+            color: #fff;
+        }
+
+        /* BACKGROUND SHAPES */
+
+        .cta-bg-shape {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            top: -150px;
+            left: -150px;
+        }
+
+        .cta-bg-shape2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -120px;
+            right: -120px;
+        }
+
+        /* GRID */
+
+        .cta-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* LEFT CONTENT */
+
+
+
+
+
+        /* FORM CARD */
+
+        .cta-form-box {
+            background: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-form-box h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* FORM */
+
+        .cta-form-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cta-form-box input {
+            height: 48px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .cta-form-box input:focus {
+            border-color: #005CB9;
+        }
+
+        /* PHONE */
+
+        .phone-field {
+            display: flex;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .phone-field span {
+            background: #f3f4f6;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .phone-field input {
+            border: none;
+            flex: 1;
+        }
+
+        /* BUTTON */
+
+        .cta-form-box button {
+            height: 48px;
+            background: #005CB9;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .cta-form-box button:hover {
+            background: #005CB9;
+        }
+
+        /* TABLET */
+
+        @media(max-width:992px) {
+
+            .cta-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-left p {
+                margin: auto;
+            }
+
+            .cta-right {
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media(max-width:576px) {
+
+            .investment-cta-section {
+                padding: 80px 0;
+            }
+
+
+
+            .cta-form-box {
+                padding: 25px;
+            }
+
+        }
+
+        .investment-cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #005CB9, #005cb9c5);
+            color: #fff;
+        }
+
+        /* TEXT */
+
+        .cta-left h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .cta-left p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #fff;
+            opacity: .9;
+            margin-bottom: 30px;
+            max-width: 520px;
+        }
+
+        /* APP BUTTONS */
+
+        .services-bottom-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .store-btn .icon {
+            font-size: 22px;
+        }
+
+        .store-btn .small-text {
+            font-size: 11px;
+            display: block;
+        }
+
+        .store-btn .big-text {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* BUTTON */
+
+        .cta-store-wrapper {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* BUTTON */
+
+        .cta-store-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+            min-width: 210px;
+        }
+
+        .cta-store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ICON */
+
+        .cta-store-btn i {
+            font-size: 24px;
+        }
+
+        /* TEXT */
+
+        .cta-store-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .cta-store-text span {
+            font-size: 11px;
+            opacity: .9;
+        }
+
+        .cta-store-text strong {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:576px) {
+
+            .cta-store-wrapper {
+                justify-content: center;
+            }
+
+            .cta-store-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+        }
+
+
+        /* ===== PAGE LAYOUT ===== */
+        .sip-page {
+            background: #fff;
+        }
+
+        .calc-section {
+            background: #fff;
+            padding: 56px 0 64px;
+        }
+
+        /* Breadcrumb */
+        .page-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+            color: #5a6a85;
+            font-size: 13px;
+        }
+
+        .page-breadcrumb a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #5a6a85;
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        .page-breadcrumb a:hover {
+            color: #005CB9;
+        }
+
+        .page-breadcrumb .bc-home-icon {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        .page-breadcrumb .bc-sep {
+            color: #b0bac8;
+            line-height: 1;
+        }
+
+        .page-breadcrumb .bc-current {
+            color: #1C355E;
+            font-weight: 600;
+        }
+
+        /* ===== GSC WIDGET ===== */
+        .calc-widget {
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(28, 53, 94, 0.10);
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .gsc-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 520px;
+        }
+
+        .gsc-left {
+            padding: 36px 40px 36px 36px;
+            border-right: 1px solid #eaf0fb;
+        }
+
+        .gsc-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1C355E;
+            margin-bottom: 28px;
+        }
+
+        .gsc-field {
+            margin-bottom: 20px;
+        }
+
+        .gsc-field-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            gap: 12px;
+        }
+
+        .gsc-field-top label {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1C355E;
+            margin: 0;
+            flex: 1;
+        }
+
+        .gsc-input-wrap {
+            display: flex;
+            align-items: center;
+            border: 1.5px solid #c5d5ee;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f4f8ff;
+            flex-shrink: 0;
+        }
+
+        .gsc-input-wrap .gsc-prefix,
+        .gsc-input-wrap .gsc-suffix {
+            padding: 0 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #1C355E;
+            background: #e6eef8;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .gsc-num-input {
+            width: 90px;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1C355E;
+            text-align: right;
+            padding: 0 10px;
+            height: 38px;
+            outline: none;
+        }
+
+        .gsc-num-input::-webkit-inner-spin-button,
+        .gsc-num-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .gsc-range {
+            width: 100%;
+            accent-color: #005CB9;
+            height: 4px;
+            cursor: pointer;
+        }
+
+        .gsc-range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #8a9bb5;
+            margin-top: 4px;
+        }
+
+        .gsc-right {
+            padding: 36px 36px 36px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
+        }
+
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .gsc-result-col-box {
+            flex: 1;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+
+        .gsc-result-col-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+
+        .gsc-result-col-val.green {
+            color: #00ae42;
+        }
+
+        .gsc-chart-wrap {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 12px;
+        }
+
+        .gsc-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .gsc-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            color: #3a4f6e;
+        }
+
+        .gsc-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .gsc-divider {
+            border: none;
+            border-top: 1px solid #eaf0fb;
+            margin: 4px 0 12px;
+        }
+
+        .gsc-result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f4fb;
+        }
+
+        .gsc-result-row:last-child {
+            border-bottom: none;
+        }
+
+        .gsc-result-label {
+            font-size: 13px;
+            color: #3a4f6e;
+        }
+
+        .gsc-result-val {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1C355E;
+        }
+
+        .gsc-result-val.highlight {
+            color: #005CB9;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .gsc-cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #1C355E;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .gsc-cta-btn:hover {
+            background: #005CB9;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        /* Child tabs */
+        .child-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .child-tab {
+            padding: 7px 18px;
+            border-radius: 20px;
+            border: 1.5px solid #c5d5ee;
+            background: #f4f8ff;
+            color: #1C355E;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s;
+        }
+
+        .child-tab.active {
+            background: #005CB9;
+            color: #fff;
+            border-color: #005CB9;
+        }
+
+        /* Loading */
+        .gsc-loading {
+            display: none;
+            text-align: center;
+            padding: 30px 20px;
+            color: #5a6a85;
+            font-size: 13px;
+        }
+
+        .gsc-loading.show {
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .gsc-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .gsc-left {
+                border-right: none;
+                border-bottom: 1px solid #eaf0fb;
+                padding: 28px 24px;
+            }
+
+            .gsc-right {
+                padding: 28px 24px;
+            }
+
+            .cta-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .calc-section h1 {
+                font-size: 22px;
+            }
+
+            .gsc-num-input {
+                width: 72px;
+            }
+
+            .gsc-maturity-value {
+                font-size: 18px;
+            }
+        }
+
+        .faq-item h3 {
+            font-size: 16px;
+        }
+    </style>
+    <style>
+        .ep-wrap {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(28, 53, 94, 0.10);
+            overflow: hidden;
+        }
+
+        .ep-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .ep-child-card {
+            padding: 28px 28px 24px;
+            border: 1px solid #e4ecf7;
+            border-radius: 12px;
+            margin: 20px 12px 0;
+            background: #fff;
+        }
+
+        .ep-child-card:first-child {
+            margin-left: 20px;
+        }
+
+        .ep-child-card:last-child {
+            margin-right: 20px;
+        }
+
+        .ep-child-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1C355E;
+            margin-bottom: 18px;
+        }
+
+        .ep-field {
+            margin-bottom: 16px;
+        }
+
+        .ep-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #3a4f6e;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .ep-input {
+            width: 100%;
+            height: 42px;
+            border: 1.5px solid #d0dcea;
+            border-radius: 8px;
+            padding: 0 12px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #1C355E;
+            outline: none;
+            background: #f9fbff;
+            box-sizing: border-box;
+            transition: border-color .2s;
+        }
+
+        .ep-input:focus {
+            border-color: #005CB9;
+            background: #fff;
+        }
+
+        .ep-input[type=number]::-webkit-inner-spin-button {
+            opacity: 1;
+        }
+
+        /* Common bottom row */
+        .ep-common {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            padding: 20px 20px 24px;
+            border-top: 1px solid #eaf0fb;
+            margin-top: 4px;
+        }
+
+        .ep-common-field {}
+
+        /* Calculate button row */
+        .ep-btn-row {
+            padding: 0 20px 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ep-calc-btn {
+            height: 48px;
+            padding: 0 48px;
+            background: #1ec760;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            cursor: pointer;
+            transition: .25s;
+            text-transform: uppercase;
+        }
+
+        .ep-calc-btn:hover {
+            background: #17a851;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(30, 199, 96, .3);
+            color: white;
+        }
+
+        /* Results area */
+        .ep-results-area {
+            border-top: 1px solid #eaf0fb;
+            padding: 24px 20px;
+        }
+
+        .ep-results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .ep-result-card {
+            border: 1px solid #e4ecf7;
+            border-radius: 12px;
+            padding: 20px;
+            background: #f9fbff;
+        }
+
+        .ep-result-card-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C355E;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e4ecf7;
+        }
+
+        .ep-res-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .ep-res-box-label {
+            font-size: 12px;
+            opacity: .85;
+            margin-bottom: 3px;
+        }
+
+        .ep-res-box-val {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .ep-res-cols {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .ep-res-col {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #e4ecf7;
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .ep-res-col-lbl {
+            font-size: 11px;
+            color: #8a9bb5;
+            margin-bottom: 3px;
+        }
+
+        .ep-res-col-val {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+
+        .ep-res-col-val.green {
+            color: #00ae42;
+        }
+
+        .ep-res-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f4fb;
+            font-size: 13px;
+        }
+
+        .ep-res-row:last-child {
+            border: none;
+        }
+
+        .ep-res-row-lbl {
+            color: #3a4f6e;
+        }
+
+        .ep-res-row-val {
+            font-weight: 600;
+            color: #1C355E;
+        }
+
+        .ep-res-row-val.highlight {
+            color: #005CB9;
+            font-weight: 700;
+        }
+
+        .ep-chart-wrap {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 10px;
+            position: relative;
+        }
+
+        .ep-legend {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .ep-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: #3a4f6e;
+        }
+
+        .ep-legend-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .ep-placeholder {
+            text-align: center;
+            padding: 30px 10px;
+            color: #8a9bb5;
+        }
+
+        .ep-placeholder svg {
+            margin-bottom: 10px;
+        }
+
+        .ep-placeholder p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .ep-loading {
+            text-align: center;
+            padding: 30px;
+            color: #5a6a85;
+            font-size: 13px;
+            display: none;
+        }
+
+        .ep-loading.show {
+            display: block;
+        }
+
+        @media(max-width:767px) {
+            .ep-top {
+                grid-template-columns: 1fr;
+            }
+
+            .ep-child-card:first-child,
+            .ep-child-card:last-child {
+                margin: 12px 12px 0;
+            }
+
+            .ep-common {
+                grid-template-columns: 1fr;
+            }
+
+            .ep-results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Thing",
+        "@id": "https://www.integratedindia.in/",
+        "name": "Home"
+      }
+    },
+ 
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://www.integratedindia.in/calculators.html",
+        "name": "Calculators"
+      }
+    },
+ 
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://www.integratedindia.in/calculators/champs-investment-calculator.html",
+        "name": "Champs Investment Calculator"
+      }
+    }
+]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.integratedindia.in/calculators/champs-investment-calculator.html"
+  },
+  "name": "Champs Investment Calculator for Minor Investments",
+  "description": "Plan your child’s future with Integrated’s online Champs investment calculator designed for disciplined minor investments.",
+  "url": "https://www.integratedindia.in",
+  "author": {
+    "@type": "Organization",
+    "name": "Integrated"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Integrated",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png"
+    }
+  },
+  "datePublished": ""
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is a Champs Investment Calculator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>Champs Investment Calculator is an online tool that helps estimate how investments made for a child today may grow over time.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why should I start investing for my child early?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>Starting early gives investments more time to grow through compounding, which may help build a larger fund for future needs.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What details are required to use the calculator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>You typically need to enter the investment amount, expected rate of return, and investment duration.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can this calculator help plan my child’s future goals?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>Yes, it helps give an estimate of how investments may grow and support financial goals such as education or career plans.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are the results from the calculator guaranteed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>No, the results are only estimates based on the inputs provided. Actual returns may vary depending on investment performance.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I change the values in the calculator?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>Yes, you can adjust the investment amount, duration, or expected returns to explore different scenarios.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Who can invest for a child using such plans?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>Parents or guardians typically invest on behalf of a child and manage the investments until the child becomes an adult.</p>"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can relatives or guardians invest for a child’s future?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "<p>Yes, in many cases, guardians or family members can invest on behalf of a child, depending on the investment platform and account structure.</p>"
+   }
+  }
+ ]
+}
+</script>
+    <!-- GTM -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+         <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v7xqj2p6tp");
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+</head>
+
+<body class="sip-page">
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+
+    <main>
+        <script src="../assets/js/header-blogs.js"></script>
+        <script src="../assets/js/footer-blogs.js"></script>
+
+        <!-- ===== CALCULATOR SECTION ===== -->
+        <section class="calc-section">
+            <div class="container">
+
+                <!-- Breadcrumb -->
+                <nav class="page-breadcrumb" aria-label="breadcrumb">
+                    <a href="/">
+                        <svg class="bc-home-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9.5L10 3l7 6.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke="currentColor"
+                                stroke-width="1.8" stroke-linejoin="round" />
+                        </svg>
+                        Home
+                    </a>
+                    <span class="bc-sep">/</span>
+                    <a href="../calculators.html">Calculators</a>
+                    <span class="bc-sep">/</span>
+                    <span class="bc-current">Champs Investment Calculator</span>
+                </nav>
+
+                <div class="section-title mb-30 tg-heading-subheading animation-style3 my-4">
+                    <h1 class="title tg-element-title mb-2">Champs Investment Calculator</h1>
+                    <p class="mt-0">A Champs Investment Calculator helps you estimate how small and consistent
+                        investments made today for a child may grow over time. It allows parents or guardians to plan
+                        financially for important milestones such as education, career goals, or other future needs.</p>
+                    <p class="mt-0">By entering details like the investment amount, expected return, and investment
+                        duration, the calculator gives an estimate of how the investment may grow over the years.</p>
+                </div>
+
+                <!-- ===== NEW SIDE-BY-SIDE LAYOUT ===== -->
+
+
+                <div class="ep-wrap">
+
+                    <!-- TOP: Child 1 & Child 2 side by side -->
+                    <div class="ep-top">
+
+                        <!-- Child 1 Card -->
+                        <div class="ep-child-card">
+                            <div class="ep-child-title">Child 1</div>
+                            <div class="ep-field">
+                                <label class="ep-label">Name:</label>
+                                <input type="text" class="ep-input" id="c1_name" placeholder="e.g. Riya">
+                            </div>
+                            <div class="ep-field">
+                                <label class="ep-label">Current Age:</label>
+                                <input type="number" class="ep-input" id="c1_age" placeholder="e.g. 5" min="0" max="17"
+                                    value="">
+                            </div>
+                            <div class="ep-field">
+                                <label class="ep-label">Higher Education Age:</label>
+                                <input type="number" class="ep-input" id="c1_edu_age" placeholder="e.g. 18" min="5"
+                                    max="25" value="">
+                            </div>
+                            <div class="ep-field">
+                                <label class="ep-label">Higher Education Amount (₹):</label>
+                                <input type="number" class="ep-input" id="c1_edu_amt" placeholder="e.g. 500000"
+                                    min="10000" value="">
+                            </div>
+                        </div>
+
+                        <!-- Child 2 Card -->
+                        <div class="ep-child-card">
+                            <div class="ep-child-title">Child 2</div>
+                            <div class="ep-field">
+                                <label class="ep-label">Name:</label>
+                                <input type="text" class="ep-input" id="c2_name" placeholder="e.g. Arjun">
+                            </div>
+                            <div class="ep-field">
+                                <label class="ep-label">Current Age:</label>
+                                <input type="number" class="ep-input" id="c2_age" placeholder="e.g. 3" min="0" max="17"
+                                    value="">
+                            </div>
+                            <div class="ep-field">
+                                <label class="ep-label">Higher Education Age:</label>
+                                <input type="number" class="ep-input" id="c2_edu_age" placeholder="e.g. 18" min="5"
+                                    max="25" value="">
+                            </div>
+                            <div class="ep-field">
+                                <label class="ep-label">Higher Education Amount (₹):</label>
+                                <input type="number" class="ep-input" id="c2_edu_amt" placeholder="e.g. 300000"
+                                    min="10000" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COMMON Fields Row -->
+                    <div class="ep-common">
+                        <div class="ep-common-field">
+                            <label class="ep-label">Inflation Rate (%):</label>
+                            <input type="number" class="ep-input" id="ep_inflation" placeholder="e.g. 8" min="1"
+                                max="20" value="">
+                        </div>
+                        <div class="ep-common-field">
+                            <label class="ep-label">Expected Return (%):</label>
+                            <input type="number" class="ep-input" id="ep_return" placeholder="e.g. 12" min="1" max="30"
+                                value="">
+                        </div>
+                        <div class="ep-common-field">
+                            <label class="ep-label">Savings Amount (₹):</label>
+                            <input type="number" class="ep-input" id="ep_savings" placeholder="e.g. 2000" min="0"
+                                value="">
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div class="ep-btn-row">
+                        <button type="button" class="ep-calc-btn" id="calculateBtn">Calculate</button>
+                    </div>
+
+                    <!-- Loading -->
+                    <div class="ep-loading" id="loadingState">
+                        <svg width="32" height="32" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
+                            stroke="#005CB9">
+                            <g fill="none" fill-rule="evenodd">
+                                <g transform="translate(1 1)" stroke-width="2">
+                                    <circle stroke-opacity=".3" cx="18" cy="18" r="18" />
+                                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                                        <animateTransform attributeName="transform" type="rotate" from="0 18 18"
+                                            to="360 18 18" dur="1s" repeatCount="indefinite" />
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <p style="margin-top:8px;">Calculating...</p>
+                    </div>
+
+                    <!-- Results: Child 1 & Child 2 side by side -->
+                    <div class="ep-results-area" id="resultsArea" style="display:none;">
+                        <div class="ep-results-grid">
+
+                            <!-- Child 1 Result -->
+                            <div class="ep-result-card">
+                                <div class="ep-result-card-title" id="r1_title">Child 1 — Education Summary</div>
+                                <div class="ep-res-box">
+                                    <div class="ep-res-box-label">Inflation Adjusted Education Cost</div>
+                                    <div class="ep-res-box-val" id="r1_inflationAdj">—</div>
+                                </div>
+                                <div class="ep-res-cols">
+                                    <div class="ep-res-col">
+                                        <div class="ep-res-col-lbl">Monthly Savings Needed</div>
+                                        <div class="ep-res-col-val green" id="r1_monthlySavings">—</div>
+                                    </div>
+                                    <div class="ep-res-col">
+                                        <div class="ep-res-col-lbl">Current Monthly Savings</div>
+                                        <div class="ep-res-col-val" id="r1_currentSavings">—</div>
+                                    </div>
+                                </div>
+                                <div class="ep-chart-wrap"><canvas id="chart1"></canvas></div>
+                                <div class="ep-legend">
+                                    <div class="ep-legend-item"><span class="ep-legend-dot"
+                                            style="background:#005CB9;"></span>Cost Today</div>
+                                    <div class="ep-legend-item"><span class="ep-legend-dot"
+                                            style="background:#00AE42;"></span>Inflation Impact</div>
+                                </div>
+                                <hr class="gsc-divider">
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Child's Name</span><span
+                                        class="ep-res-row-val" id="r1_name">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Current Age</span><span
+                                        class="ep-res-row-val" id="r1_age">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Education Start Age</span><span
+                                        class="ep-res-row-val" id="r1_eduAge">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Education Cost Today</span><span
+                                        class="ep-res-row-val" id="r1_eduAmt">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Inflation Rate</span><span
+                                        class="ep-res-row-val" id="r1_inflation">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl" style="font-weight:700;">Monthly
+                                        Savings Required</span><span class="ep-res-row-val highlight"
+                                        id="r1_required">—</span></div>
+                            </div>
+
+                            <!-- Child 2 Result -->
+                            <div class="ep-result-card" id="result2Card">
+                                <div class="ep-result-card-title" id="r2_title">Child 2 — Education Summary</div>
+                                <div class="ep-res-box">
+                                    <div class="ep-res-box-label">Inflation Adjusted Education Cost</div>
+                                    <div class="ep-res-box-val" id="r2_inflationAdj">—</div>
+                                </div>
+                                <div class="ep-res-cols">
+                                    <div class="ep-res-col">
+                                        <div class="ep-res-col-lbl">Monthly Savings Needed</div>
+                                        <div class="ep-res-col-val green" id="r2_monthlySavings">—</div>
+                                    </div>
+                                    <div class="ep-res-col">
+                                        <div class="ep-res-col-lbl">Current Monthly Savings</div>
+                                        <div class="ep-res-col-val" id="r2_currentSavings">—</div>
+                                    </div>
+                                </div>
+                                <div class="ep-chart-wrap"><canvas id="chart2"></canvas></div>
+                                <div class="ep-legend">
+                                    <div class="ep-legend-item"><span class="ep-legend-dot"
+                                            style="background:#005CB9;"></span>Cost Today</div>
+                                    <div class="ep-legend-item"><span class="ep-legend-dot"
+                                            style="background:#00AE42;"></span>Inflation Impact</div>
+                                </div>
+                                <hr class="gsc-divider">
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Child's Name</span><span
+                                        class="ep-res-row-val" id="r2_name">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Current Age</span><span
+                                        class="ep-res-row-val" id="r2_age">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Education Start Age</span><span
+                                        class="ep-res-row-val" id="r2_eduAge">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Education Cost Today</span><span
+                                        class="ep-res-row-val" id="r2_eduAmt">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl">Inflation Rate</span><span
+                                        class="ep-res-row-val" id="r2_inflation">—</span></div>
+                                <div class="ep-res-row"><span class="ep-res-row-lbl" style="font-weight:700;">Monthly
+                                        Savings Required</span><span class="ep-res-row-val highlight"
+                                        id="r2_required">—</span></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Placeholder -->
+                    <div id="placeholderState" class="ep-placeholder">
+                        <svg width="52" height="52" fill="none" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="56" height="56" rx="14" fill="#e6eef8" />
+                            <path d="M28 16v12l6 4" stroke="#005CB9" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="28" cy="28" r="14" stroke="#005CB9" stroke-width="2" />
+                        </svg>
+                        <p>Fill in the details and click <strong>Calculate</strong> to see education savings plan for
+                            both children.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHAT IS CHAMPS INVESTMENT ===== -->
+        <section class="simple-content-section">
+            <div class="container">
+                <h2 class="simple-h2">What is Champs Investment?</h2>
+                <p class="simple-p">Champs investment refers to investing for a child's future with a long term
+                    perspective. Parents or guardians often start early so that the investment has more time to grow and
+                    support major milestones later in life.</p>
+                <p class="simple-p">Many families choose to <a href="../open-minor-demat-account.html" class="fw-bold"
+                        target="_blank"> open a minor demat account online</a> to start investing on behalf of their
+                    children, making it easier to build a financial foundation for their future.</p>
+            </div>
+        </section>
+
+        <!-- ===== WHAT IS A CHAMPS INVESTMENT CALCULATOR ===== -->
+        <section class="simple-content-section">
+            <div class="container">
+                <h2 class="simple-h2">What is a Champs Investment Calculator?</h2>
+                <p class="simple-p">A Champs Investment Calculator is an online tool that helps estimate how investments
+                    made for a child today may grow over time. It considers factors such as the investment amount, the
+                    expected rate of return, and the number of years the money stays invested.</p>
+                <p class="simple-p">This helps parents get a clearer picture of how consistent investments may support
+                    their child's future financial needs.</p>
+            </div>
+        </section>
+
+        <!-- ===== HOW DOES IT WORK ===== -->
+        <section class="simple-content-section">
+            <div class="container">
+                <h2 class="simple-h2">How Does the Champs Investment Calculator Work?</h2>
+                <p class="simple-p">The calculator estimates the future value of investments based on a few simple
+                    inputs:</p>
+                <ul class="simple-list">
+                    <li>Investment amount</li>
+                    <li>Investment duration</li>
+                    <li>Expected rate of return</li>
+                </ul>
+                <p class="simple-p">Using these inputs, the calculator projects how the investment may grow through
+                    compounding over time.</p>
+            </div>
+        </section>
+
+        <!-- ===== BENEFITS ===== -->
+        <section class="simple-content-section">
+            <div class="container">
+                <h3 class="simple-h2">Benefits of Using the Champs Investment Calculator</h3>
+                <p class="simple-p">See how early investments today may grow to support your child's future goals.</p>
+
+                <div class="benefit-grid">
+
+                    <!-- Card 1 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                                    stroke="#005CB9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="benefit-card-title">Helps Plan for a Child's Future</h4>
+                            <p class="benefit-card-desc">It helps parents estimate how investments made today may
+                                support future financial goals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#005CB9" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="benefit-card-title">Encourages Early Investing</h4>
+                            <p class="benefit-card-desc">Starting early gives investments more time to grow through
+                                compounding.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"
+                                    fill="#005CB9" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="benefit-card-title">Provides Clear Financial Estimates</h4>
+                            <p class="benefit-card-desc">The calculator shows an approximate future value of the
+                                investment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-5h2v5zm0-7h-2V7h2v2.5z"
+                                    fill="#005CB9" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="benefit-card-title">Supports Long Term Planning</h4>
+                            <p class="benefit-card-desc">It helps parents understand how consistent investing can build
+                                a financial foundation for their child.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HOW TO USE ===== -->
+        <section class="simple-content-section">
+            <div class="container">
+                <h2 class="simple-h2">How to Use the Champs Investment Calculator</h2>
+                <p class="simple-p">Using the calculator is simple:</p>
+                <ol class="simple-ol">
+                    <li>Enter the investment amount.</li>
+                    <li>Choose the number of years you plan to invest.</li>
+                    <li>Enter the expected rate of return.</li>
+                </ol>
+                <p class="simple-p">The calculator will then estimate the potential future value of the investment based
+                    on these inputs.</p>
+            </div>
+        </section>
+
+        <!-- ===== GET IN TOUCH ===== -->
+        <section class="investment-cta-section">
+            <div class="cta-bg-shape"></div>
+            <div class="cta-bg-shape2"></div>
+            <div class="container">
+                <div class="cta-wrapper">
+                    <div class="cta-left">
+                        <h2 class="title tg-element-title mb-2 text-white">Start Your Investment Journey</h2>
+                        <p>From planning to investing, manage your financial journey in one place.</p>
+                        <div class="cta-store-wrapper text-b">
+                            <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                                target="_blank" class="cta-store-btn">
+                                <i class="fab fa-google-play text-b"></i>
+                                <div class="cta-store-text">
+                                    <span class="text-b">Download on the</span>
+                                    <strong>Google Play</strong>
+                                </div>
+                            </a>
+                            <a href="https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589" target="_blank"
+                                class="cta-store-btn">
+                                <i class="fab fa-apple text-b"></i>
+                                <div class="cta-store-text">
+                                    <span class="text-b">Download on the</span>
+                                    <strong>App Store</strong>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cta-right">
+                        <div class="cta-form-box">
+                            <h4>Get in Touch</h4>
+                            <form>
+                                <div class="phone-field text-b">
+                                    <span>+91</span>
+                                    <input type="tel" placeholder="Enter Mobile Number" id="ctaMobile">
+                                </div>
+                                <input type="text" placeholder="Pincode" id="ctaPincode">
+                                <button type="button" id="ctaSubmit">Submit Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQs ===== -->
+        <section class="Insurance-faqs about__area-four tg-color-gray">
+            <div class="container">
+                <h2 class="text-center">FAQs</h2>
+                <div class="limited-faq-content">
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>What is a Champs Investment Calculator?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">A Champs Investment Calculator is an online tool that
+                            helps estimate how investments made for a child today may grow over time.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>Why should I start investing for my child early?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">Starting early gives investments more time to grow
+                            through compounding, which may help build a larger fund for future needs.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>What details are required to use the calculator?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">You typically need to enter the investment amount,
+                            expected rate of return, and investment duration.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>Can this calculator help plan my child's future goals?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">Yes, it helps give an estimate of how investments may
+                            grow and support financial goals such as education or career plans.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>Are the results from the calculator guaranteed?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">No, the results are only estimates based on the inputs
+                            provided. Actual returns may vary depending on investment performance.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>Can I change the values in the calculator?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">Yes, you can adjust the investment amount, duration,
+                            or expected returns to explore different scenarios.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>Who can invest for a child using such plans?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">Parents or guardians typically invest on behalf of a
+                            child and manage the investments until the child becomes an adult.</div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="question" aria-expanded="false">
+                            <h3>Can relatives or guardians invest for a child's future?</h3>
+                            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#1d3557" d="M12 15.5L4.5 8h15z"></path>
+                            </svg>
+                        </div>
+                        <div class="answer" style="display:none;">Yes, in many cases, guardians or family members can
+                            invest on behalf of a child, depending on the investment platform and account structure.
+                        </div>
+                        <div class="sub-faqs" style="display:none;"></div>
+                        <div class="table-container faq-table" style="display:none;"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.querySelectorAll('.Insurance-faqs .faq-item .question').forEach(function (question) {
+                var faqItem = question.closest('.faq-item');
+                var answer = faqItem.querySelector('.answer');
+                var subFaqs = faqItem.querySelector('.sub-faqs');
+                var tableContainer = faqItem.querySelector('.table-container');
+                var toggleIcon = question.querySelector('.toggle-icon');
+                question.addEventListener('click', function () {
+                    var isOpen = faqItem.classList.toggle('open');
+                    if (answer) answer.style.display = isOpen ? 'block' : 'none';
+                    if (subFaqs) subFaqs.style.display = isOpen ? 'block' : 'none';
+                    if (tableContainer) tableContainer.style.display = isOpen ? 'block' : 'none';
+                    if (toggleIcon) toggleIcon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                    question.setAttribute('aria-expanded', isOpen);
+                });
+            });
+        </script>
+
+    </main>
+
+    <!-- JS here -->
+    <script src="../assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="../assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../assets/js/p9_language.js" defer></script>
+    <script src="../assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="../assets/js/chatbot.js" defer></script>
+    <script src="../assets/js/faqs.js" defer></script>
+
+    <!-- Get in Touch shared script -->
+    <script src="../assets/js/cta-submit.js"></script>
+
+    <!-- ===== EDUCATION PLANNER CALCULATOR LOGIC (NEW SIDE-BY-SIDE) ===== -->
+    <script>
+
+        var chart1Inst, chart2Inst;
+        var API_KEY = 'bf27810f-27a3-44f3-b28d-c0a863d04ffb';
+        var API_URL = 'https://mfapi.advisorkhoj.com/calc/getEducationPlannerResult';
+
+        function fmt(v) {
+            return '₹' + Math.round(v).toLocaleString('en-IN');
+        }
+
+        function drawChart(canvasId, eduAmt, inflationAdj, instance) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
+            if (instance) instance.destroy();
+            return new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Education Cost Today', 'Inflation Impact'],
+                    datasets: [{
+                        data: [eduAmt, Math.max(0, inflationAdj - eduAmt)],
+                        backgroundColor: ['#005CB9', '#00AE42'],
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '65%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (ctx) { return ctx.label + ': ' + fmt(ctx.raw); }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderChild(prefix, data, inflationRate) {
+            var inflAdj = data[prefix + '_inflation_adjust_education_amount'] || 0;
+            var monthly = data[prefix + '_monthly_savings'] || 0;
+            var eduAmt = data[prefix + '_education_amount'] || 0;
+            var curAge = data[prefix + '_current_age'] || 0;
+            var eduAge = data[prefix + '_education_age'] || 0;
+            var savings = data[prefix + '_savings_amount'] || 0;
+            var name = data[prefix + '_name'] || '';
+
+            var n = prefix === 'child1' ? '1' : '2';
+
+            document.getElementById('r' + n + '_title').textContent = (name || 'Child ' + n) + ' — Education Summary';
+            document.getElementById('r' + n + '_inflationAdj').textContent = fmt(inflAdj);
+            document.getElementById('r' + n + '_monthlySavings').textContent = fmt(monthly);
+            document.getElementById('r' + n + '_currentSavings').textContent = fmt(savings);
+            document.getElementById('r' + n + '_name').textContent = name;
+            document.getElementById('r' + n + '_age').textContent = curAge + ' Yr';
+            document.getElementById('r' + n + '_eduAge').textContent = eduAge + ' Yr';
+            document.getElementById('r' + n + '_eduAmt').textContent = fmt(eduAmt);
+            document.getElementById('r' + n + '_inflation').textContent = inflationRate + '% p.a.';
+            document.getElementById('r' + n + '_required').textContent = fmt(monthly);
+
+            if (n === '1') {
+                chart1Inst = drawChart('chart1', eduAmt, inflAdj, chart1Inst);
+            } else {
+                chart2Inst = drawChart('chart2', eduAmt, inflAdj, chart2Inst);
+            }
+        }
+
+        document.getElementById('calculateBtn').addEventListener('click', function () {
+
+            var c1name = document.getElementById('c1_name').value.trim() || 'Child1';
+            var c1age = document.getElementById('c1_age').value || '';
+            var c1eduAge = document.getElementById('c1_edu_age').value || '';
+            var c1eduAmt = document.getElementById('c1_edu_amt').value || '';
+
+            var c2name = document.getElementById('c2_name').value.trim() || '';
+            var c2age = document.getElementById('c2_age').value || '';
+            var c2eduAge = document.getElementById('c2_edu_age').value || '';
+            var c2eduAmt = document.getElementById('c2_edu_amt').value || '';
+
+            var inflation = document.getElementById('ep_inflation').value || '8';
+            var ret = document.getElementById('ep_return').value || '12';
+            var savings = document.getElementById('ep_savings').value || '0';
+
+            // Show loading
+            document.getElementById('placeholderState').style.display = 'none';
+            document.getElementById('resultsArea').style.display = 'none';
+            document.getElementById('loadingState').classList.add('show');
+
+            var params = new URLSearchParams({
+                key: API_KEY,
+                child1_name: c1name,
+                child2_name: c2name,
+                child1_current_age: c1age,
+                child2_current_age: c2age,
+                child1_education_age: c1eduAge,
+                child2_education_age: c2eduAge,
+                child1_education_amount: c1eduAmt,
+                child2_education_amount: c2eduAmt,
+                inflation_rate: inflation,
+                expected_return: ret,
+                savings_amount: savings
+            });
+
+            fetch(API_URL + '?' + params.toString())
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.json();
+                })
+                .then(function (data) {
+                    document.getElementById('loadingState').classList.remove('show');
+                    if (data.status === 200) {
+                        var inflRate = data['inflation_rate'] || inflation;
+
+                        renderChild('child1', data, inflRate);
+
+                        // Show child2 result only if data exists
+                        var has2 = data['child2_inflation_adjust_education_amount'];
+                        document.getElementById('result2Card').style.display = has2 ? '' : 'none';
+                        if (has2) renderChild('child2', data, inflRate);
+
+                        document.getElementById('resultsArea').style.display = 'block';
+                    } else {
+                        throw new Error(data.status_msg || 'API error');
+                    }
+                })
+                .catch(function (err) {
+                    console.error('[EducationCalc]', err);
+                    document.getElementById('loadingState').classList.remove('show');
+                    document.getElementById('placeholderState').style.display = 'block';
+                    document.getElementById('placeholderState').innerHTML =
+                        '<p style="color:#e74c3c;font-size:13px;">Unable to fetch results. Please try again.</p>';
+                });
+        });
+
+        window.addEventListener('resize', function () {
+            if (chart1Inst) chart1Inst.resize();
+            if (chart2Inst) chart2Inst.resize();
+        });
+
+    </script>
+
+</body>
+
+</html>

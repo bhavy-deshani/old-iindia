@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Details</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+
+    
+    <!-- <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'> -->
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        /* Page transition animation */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .page-enter {
+            animation: slideInRight 0.4s ease-out forwards;
+        }
+
+        .nav-tabs .nav-link {
+            color: #6c757d;
+            border-bottom-width: 2px;
+            padding: 11px 29px !important;
+            margin-bottom: 20px;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #00AE42;
+            border-color: #dee2e6 #dee2e6 #00AE42;
+            font-weight: 600;
+        }
+
+        .btn::after {
+            content: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <script src="./assets/js/header.js" defer></script>
+    <script src="./assets/js/footer.js" defer></script>
+    <!-- Container for the Detail View -->
+    <div id="detail-page">
+        <!-- Content will be injected by JavaScript -->
+    </div>
+
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+    <script>
+        // --- Mock Data (should be consistent with initial-public-offering.html) ---
+        const mockApiData = {
+            upcoming: [{ id: 'futuretech-solutions', name: "FutureTech Solutions", sme: false, logo: "https://placehold.co/40x40/7C3AED/FFFFFF?text=FS", issueDate: "Aug 5 - Aug 9", openDate: "5 Aug 2025", closeDate: "9 Aug 2025", allotmentDate: "14 Aug 2025", listingDate: "19 Aug 2025", listinggain:"-", price: "₹250 - ₹265", priceRange: "₹250 - ₹265", lotSize: "55 Shares", issueSize: "₹1,200 Cr", issueType: "Book Building", minInvestment: "₹14,575", subscribedTimes: "N/A", about: "FutureTech Solutions is a leading provider of cloud computing and AI-driven analytics services, helping businesses to innovate and scale.", status: 'Upcoming', statusText: 'UPCOMING', statusColor: 'bg-primary-subtle text-primary-emphasis' }, { id: 'greenenergy-innovations', name: "GreenEnergy Innovations", sme: true, logo: "https://placehold.co/40x40/10B981/FFFFFF?text=GI", issueDate: "Aug 12 - Aug 16", openDate: "12 Aug 2025", closeDate: "16 Aug 2025", allotmentDate: "21 Aug 2025", listingDate: "26 Aug 2025", listinggain:"--", price: "₹420 - ₹435", priceRange: "₹420 - ₹435", lotSize: "34 Shares", issueSize: "₹2,500 Cr", issueType: "Book Building", minInvestment: "₹14,790", subscribedTimes: "N/A", about: "GreenEnergy Innovations is at the forefront of renewable energy technology, specializing in solar panel manufacturing and sustainable power solutions.", status: 'Upcoming', statusText: 'UPCOMING', statusColor: 'bg-primary-subtle text-primary-emphasis' }],
+            current: [{ id: 'digital-payments-inc', name: "Digital Payments Inc.", sme: true, logo: "https://placehold.co/40x40/F59E0B/FFFFFF?text=DP", issueDate: "Jul 22 - Jul 26", openDate: "22 Jul 2025", closeDate: "26 Jul 2025", allotmentDate: "31 Jul 2025", listingDate: "5 Aug 2025", listinggain:"--", price: "₹550 - ₹560", priceRange: "₹550 - ₹560", lotSize: "27 Shares", issueSize: "₹3,100 Cr", issueType: "Book Building", minInvestment: "₹15,120", subscribedTimes: "2.5x", about: "Digital Payments Inc. is a fintech company revolutionizing online transactions with its secure and user-friendly payment gateway.", status: 'Apply Now', statusText: 'ISSUE OPEN', statusColor: 'bg-success-subtle text-success-emphasis' }],
+            closed: [{ id: 'autodrive-corp', name: "AutoDrive Corp", sme: false, logo: "https://placehold.co/40x40/6366F1/FFFFFF?text=AC", issueDate: "Jul 1 - Jul 5", openDate: "1 Jul 2025", closeDate: "5 Jul 2025", allotmentDate: "10 Jul 2025", listingDate: "15 Jul 2025", listinggain:"20%", price: "₹190 - ₹195", priceRange: "₹190 - ₹195", lotSize: "76 Shares", issueSize: "₹950 Cr",  issueType: "Book Building", minInvestment: "₹14,820", subscribedTimes: "58.2x", about: "AutoDrive Corp develops advanced autonomous driving systems and software for the next generation of vehicles.", status: 'Closed', statusText: 'CLOSED', statusColor: 'bg-danger-subtle text-danger-emphasis' }]
+        };
+
+        // --- Function to Create Detail Page HTML ---
+        function createDetailPage(ipo) {
+            // --- MODIFIED: Back button is now a direct link ---
+            return `<div class="page-enter">
+                        <div style="background: linear-gradient(to bottom, #f0f2ff, #ffffff, #ffffff);">
+                            <div class="container p-4 p-sm-5">
+                                 <div class="mb-4">
+                        <a href="initial-public-offering.html#main-page" class="  text-decoration-none">
+                            <span class="fw-medium"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+  <path d="M11.3011 14.0059L21.7758 3.53073C22.0642 3.24299 22.2229 2.85828 22.2229 2.44806C22.2229 2.03763 22.0642 1.65314 21.7758 1.36494L20.8579 0.447545C20.57 0.158894 20.185 0 19.7748 0C19.3646 0 18.9801 0.158894 18.6919 0.447545L6.22008 12.9192C5.93074 13.2083 5.77231 13.5946 5.77344 14.0052C5.77231 14.4177 5.93052 14.8036 6.22008 15.0929L18.6803 27.5525C18.9685 27.8411 19.353 28 19.7634 28C20.1736 28 20.5581 27.8411 20.8465 27.5525L21.7642 26.6351C22.3613 26.0379 22.3613 25.0659 21.7642 24.469L11.3011 14.0059Z" fill="#1C355E"/>
+</svg></span>
+                        </a>
+                    </div>
+                                <div class="text-center mb-5">
+                                    <img class="rounded-circle object-fit-cover mx-auto mb-4 border border-4 border-white shadow-lg" src="${ipo.logo.replace('40x40', '80x80')}" alt="${ipo.name} logo" style="width: 80px; height: 80px;">
+                                    <h1 class="display-6 fw-bold text-dark">${ipo.name} IPO</h1>
+                                    <div class="badge ${ipo.statusColor} fs-6 fw-semibold rounded-pill px-3 py-2 mt-3">${ipo.statusText}</div>
+                                </div>
+                                <div class="row g-3 g-lg-4 mb-5 text-center justify-content-between">
+                                    <div class="col-6 col-md-2"><div class="bg-white bg-opacity-75 backdrop-blur-sm p-3 rounded-3 shadow-sm h-100"><p class="text-muted mb-1">Min Investment</p><p class="fs-5 fw-bold text-dark mb-0">${ipo.minInvestment}</p></div></div>
+                                    <div class="col-6 col-md-2"><div class="bg-white bg-opacity-75 backdrop-blur-sm p-3 rounded-3 shadow-sm h-100"><p class="text-muted mb-1">Subscribed</p><p class="fs-5 fw-bold text-dark mb-0">${ipo.subscribedTimes}</p></div></div>
+                                    <div class="col-6 col-md-2"><div class="bg-white bg-opacity-75 backdrop-blur-sm p-3 rounded-3 shadow-sm h-100"><p class="text-muted mb-1">Price Range</p><p class="fs-5 fw-bold text-dark mb-0">${ipo.priceRange}</p></div></div>
+                                    <div class="col-6 col-md-2"><div class="bg-white bg-opacity-75 backdrop-blur-sm p-3 rounded-3 shadow-sm h-100"><p class="text-muted mb-1">Issue Size</p><p class="fs-5 fw-bold text-dark mb-0">${ipo.issueSize}</p></div></div>
+                                    <div class="col-6 col-md-2"><div class="bg-white bg-opacity-75 backdrop-blur-sm p-3 rounded-3 shadow-sm h-100"><p class="text-muted mb-1">Listing Date Gain</p><p class="fs-5 fw-bold text-dark mb-0">${ipo.listinggain}</p></div></div>
+                                </div>
+                                <div class="card shadow-lg border-0">
+                                    <div class="card-body p-4 p-sm-5">
+                                        <nav>
+                                            <div class="nav nav-tabs mb-4" id="detail-nav-tabs" role="tablist">
+                                                <button class="nav-link active" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-details" type="button" role="tab">IPO Details</button>
+                                                <button class="nav-link" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab">About Company</button>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="nav-details" role="tabpanel">
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3"><span class="text-muted">Open Date</span><span class="fw-bold text-dark">${ipo.openDate}</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3"><span class="text-muted">Close Date</span><span class="fw-bold text-dark">${ipo.closeDate}</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3"><span class="text-muted">Allotment Date</span><span class="fw-bold text-dark">${ipo.allotmentDate}</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3"><span class="text-muted">Listing Date</span><span class="fw-bold text-dark">${ipo.listingDate}</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3"><span class="text-muted">Lot Size</span><span class="fw-bold text-dark">${ipo.lotSize}</span></li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3"><span class="text-muted">Issue Type</span><span class="fw-bold text-dark">${ipo.issueType}</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav-about" role="tabpanel"><p class="text-muted lh-base">${ipo.about}</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                ${ipo.status === 'Apply Now' ? `<div class="sticky-bottom p-3 bg-white bg-opacity-75 backdrop-blur-sm mt-4 text-center"><button class="btn btn-primary " style="max-width: 400px;">APPLY NOW</button></div>` : ''}
+                            </div>
+                        </div>
+                           
+                    </div>`;
+        }
+
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailPageContainer = document.getElementById('detail-page');
+
+            // Get IPO ID and category from hash (#/id/category)
+            const hash = window.location.hash.substring(1); // Remove '#'
+            const [ipoId, category] = hash.split('/');
+
+            if (ipoId && category && mockApiData[category]) {
+                const ipo = mockApiData[category].find(p => p.id === ipoId);
+
+                if (ipo) {
+                    detailPageContainer.innerHTML = createDetailPage(ipo);
+                } else {
+                    detailPageContainer.innerHTML = '<div class="container text-center py-5"><p class="text-danger">IPO not found.</p><a href="initial-public-offering.html" class="btn btn-primary">Back to List</a></div>';
+                }
+            } else {
+                detailPageContainer.innerHTML = '<div class="container text-center py-5"><p class="text-danger">Could not load IPO details. Invalid link.</p><a href="initial-public-offering.html" class="btn btn-primary">Back to List</a></div>';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

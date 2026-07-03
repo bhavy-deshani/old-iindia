@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- Meta Title -->
+    <title>Retirement Savings Calculator | Plan Your Retirement Online</title>
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Use Integrated India's Retirement Savings Calculator to estimate how much you need to save for a comfortable retirement. Start planning your future today with confidence.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.integratedindia.in/retirement-savings-calculators.html">
+    <meta property="og:title" content="Retirement Savings Calculator | Plan Your Retirement Online">
+    <meta property="og:site_name" content="Integrated India">
+    <meta property="og:url" content="https://www.integratedindia.in/retirement-savings-calculators.html">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Use Integrated India's Retirement Savings Calculator to estimate how much you need to save for a comfortable retirement. Start planning your future today with confidence.">
+    <meta property="og:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png">
+    <meta property="og:image" content="https://www.instagram.com/integratedenterprises/">
+    <meta property="og:image" content="https://www.facebook.com/IntegratedEnterprises">
+    <meta property="og:image" content="https://x.com/IntegratedTweet">
+    <meta property="og:image" content="https://www.youtube.com/@integratedenterprises2653">
+    <meta property="og:image" content="https://www.linkedin.com/company/integratedenterprises/?viewAsMember=true">
+    <meta property="og:image"
+        content="https://www.threads.com/@integratedenterprises?xmt=AQGzhhZ0dev7wSSHxV2Jfk3U4gY7SWUp9Qe8sKPGmC-XfdQ">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Retirement Savings Calculator | Plan Your Retirement Online">
+    <meta name="twitter:site" content="@IntegratedTweet">
+    <meta name="twitter:description"
+        content="Use Integrated India's Retirement Savings Calculator to estimate how much you need to save for a comfortable retirement. Start planning your future today with confidence.">
+    <meta name="twitter:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png">
+    <meta name="twitter:image:alt" content="Integrated India">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+    <link rel="preload" as="image" href="./assets/img/bg/calculator.jpg" fetchpriority="high">
+    <style>
+        :root {
+            --primary: #1C355E;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --error: #dc2626;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+
+        .calculator {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .calculator-header {
+            grid-column: 1 / -1;
+            background: var(--gray-900);
+            color: white;
+            padding: 0.2rem 2rem;
+            border-bottom: 1px solid var(--gray-700);
+        }
+
+        .calculator-header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .calculator-header p {
+            color: var(--gray-300);
+            font-size: 0.875rem;
+        }
+
+        .input-section {
+            padding: 1.5rem 2rem;
+            border-right: 1px solid var(--gray-200);
+        }
+
+        .result-section {
+            padding: 1.5rem 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-label span {
+            color: var(--gray-500);
+            font-weight: 400;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .input-container input[type="text"] {
+            flex: 1;
+            padding: 0.625rem 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.15s ease;
+            max-width: 18%;
+            text-align: end;
+        }
+
+        .input-container input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .input-slider {
+            width: 100%;
+            padding: 0 !important;
+            margin-top: 0.5rem;
+            -webkit-appearance: none;
+            height: 0.375rem;
+            background: var(--gray-200);
+            border-radius: 0.25rem;
+            outline: none;
+        }
+
+        .input-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .input-slider::-webkit-slider-thumb:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        .error-message {
+            font-size: 0.75rem;
+            color: var(--error);
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .results {
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .results-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .results-title svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--primary);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .result-value {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .chart-container {
+            height: 300px;
+            margin-top: 1.5rem;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .calculate-btn:hover {
+            background: var(--primary-light);
+        }
+
+        .calculate-btn:active {
+            transform: translateY(1px);
+        }
+
+        @media (max-width: 768px) {
+            .calculator {
+                grid-template-columns: 1fr;
+            }
+
+            .input-section {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-200);
+            }
+        }
+    </style>
+    <!-- BreadcrumbList Schema markup -->
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Thing",
+        "@id": "https://www.integratedindia.in/",
+        "name": "Home"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://www.integratedindia.in/financial-calculators.html",
+        "name": "Financial Calculators"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://www.integratedindia.in/retirement-savings-calculators.html",
+        "name": "Plan Your Retirement Savings with Our Calculator"
+      }
+    }
+  ]
+}
+</script>
+
+    <!-- WebPage Schema markup -->
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Plan Your Retirement Savings with Our Calculator",
+  "url": "https://www.integratedindia.in/retirement-savings-calculators.html",
+  "description": "Use Integrated India's Retirement Savings Calculator to estimate how much you need to save for a comfortable retirement. Start planning your future today with confidence.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Integrated India",
+    "url": "https://www.integratedindia.in/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png"
+    }
+  }
+}
+  
+</script>
+
+<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+	<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+
+
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+    <main class="fix">
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/calculator.jpg">
+            <script src="./assets/js/header.js" defer ></script>
+            <script src="./assets/js/footer.js" defer ></script>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content">
+                            <h2 class="title">Retirement Savings Calculator</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="financial-calculators.html">Calculator</a></li>
+
+                                    <li class="breadcrumb-item" aria-current="page">Retirement Savings Calculator
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape">
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated" class="rightToLeft" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+                
+            </div>
+        </section>
+        <section class="pt-120 pb-120">
+            <div class="container">
+                <div class="section-title mb-40 tg-heading-subheading animation-style3 text-center">
+                    <h1 class="tg-element-title"> Plan Your Retirement Savings with Our Calculator</h1>
+                </div>
+                <div class="calculator">
+
+                    <div class="input-section">
+                        <div class="form-group">
+                            <div class="input-container">
+                                <label class="form-label">Current Savings <span>(₹)</span></label>
+                                <input type="text" id="CS_Txt" value="1000">
+                            </div>
+                            <input type="range" class="input-slider" id="CS_Range" min="0" max="10000000" step="10000"
+                                value="1000">
+                            <div class="error-message" id="CS_Txt_error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-container">
+                                <label class="form-label">Current Age <span>(years)</span></label>
+                                <input type="text" id="RA_Txt" value="30">
+                            </div>
+                            <input type="range" class="input-slider" id="RA_Range" min="0" max="75" step="1"
+                                value="30">
+                            <div class="error-message" id="RA_Txt_error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-container">
+                                <label class="form-label">Retirement Age <span>(years)</span></label>
+                                <input type="text" id="PA_Txt" value="60">
+                            </div>
+                            <input type="range" class="input-slider" id="PA_Range" min="40" max="75" step="1"
+                                value="60">
+                            <div class="error-message" id="PA_Txt_error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-container">
+                                <label class="form-label">Monthly Expenses <span>(₹)</span></label>
+                                <input type="text" id="RSP_Txt" value="30000">
+                            </div>
+                            <input type="range" class="input-slider" id="RSP_Range" min="1000" max="100000" step="1000"
+                                value="30000">
+                            <div class="error-message" id="RSP_Txt_error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-container">
+                                <label class="form-label">Inflation Rate <span>(%)</span></label>
+                                <input type="text" id="RSR_Txt" value="6">
+                            </div>
+                            <input type="range" class="input-slider" id="RSR_Range" min="0.1" max="20" step="0.1"
+                                value="6">
+                            <div class="error-message" id="RSR_Txt_error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-container">
+                                <label class="form-label">Investment Growth <span>(%)</span></label>
+                                <input type="text" id="RSG_Txt" value="10">
+                            </div>
+                            <input type="range" class="input-slider" id="RSG_Range" min="0.1" max="30" step="0.1"
+                                value="10">
+                            <div class="error-message" id="RSG_Txt_error"></div>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="chart-container">
+                            <canvas id="savingsChart" class=" m-auto"></canvas>
+                        </div>
+                        <div class="results" id="Result_Container" style="display: none;">
+                            <h3 class="results-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                                Retirement Plan Summary
+                            </h3>
+
+                            <div class="result-item">
+                                <span class="result-label">Sum Required on Retirement</span>
+                                <span class="result-value" id="SE_Cont">₹0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Monthly Expenses on Retirement</span>
+                                <span class="result-value" id="ME_Cont">₹0</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-label">Monthly Savings Required</span>
+                                <span class="result-value" id="SR_Cont">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <!-- main-area-end -->
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js"  ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer ></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+    <script src="./assets/js/faqs.js" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer ></script>
+
+    <!-- <script src="./assets/js/calculators/calculator-sip.js" defer ></script> -->
+    <script>
+        // Format number with commas
+        function RupeeSeparator(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Input validation function
+        function isValidInput(elementId, min, max, fieldName) {
+            const element = $("#" + elementId);
+            const errorElement = $("#" + elementId + "_error");
+            let value = element.val().replace(/,/g, "");
+            value = Number(value);
+
+            if (isNaN(value) || value < min || value > max) {
+                errorElement.text(`Please enter a valid ${fieldName} between ${min} and ${max}`);
+                errorElement.show();
+                element.css("border-color", "var(--error)");
+                return false;
+            } else {
+                errorElement.hide();
+                element.css("border-color", "var(--gray-300)");
+                return true;
+            }
+        }
+
+        // Main calculation function
+        $("#Result_Container").css("display", "none");
+
+        // Global chart variable
+        let savingsChart = null;
+
+        function RS_Calc() {
+            if (!isValidInput("CS_Txt", 0, 10000000, 'Current Savings if any')) { return false; }
+            if (!isValidInput("RA_Txt", 0, 75, 'Your present age')) { return false; }
+            if (!isValidInput("PA_Txt", 40, 75, 'What age do you plan to retire')) { return false; }
+            if (!isValidInput("RSP_Txt", 1, 10000000, 'Current Monthly Expenses')) { return false; }
+            if (!isValidInput("RSR_Txt", 0.1, 20.00, 'Inflation rate')) { return false; }
+            if (!isValidInput("RSG_Txt", 0.1, 30.00, 'Growth Rate')) { return false; }
+
+            var mytemp = $('#CS_Txt').val();
+            mytemp = mytemp.replace(/,/g, "");
+            var CS = Number(mytemp);
+
+            var mytemp = $('#RA_Txt').val();
+            mytemp = mytemp.replace(/,/g, "");
+            var RA = Number(mytemp);
+
+            mytemp = $('#PA_Txt').val();
+            mytemp = mytemp.replace(/,/g, "");
+            var PA = Number(mytemp);
+
+            mytemp = $('#RSP_Txt').val();
+            mytemp = mytemp.replace(/,/g, "");
+            var RSP = Number(mytemp);
+
+            mytemp = $('#RSR_Txt').val();
+            mytemp = mytemp.replace(/,/g, "");
+            var RSR = Number(mytemp);
+
+            mytemp = $('#RSG_Txt').val();
+            mytemp = mytemp.replace(/,/g, "");
+            var RSG = Number(mytemp);
+
+            var n = PA - RA; // Years to retirement
+            var ir = (RSR / 100);
+            var gr = (RSG / 100);
+
+            var RES_MER = RSP * (Math.pow((1 + ir), n));
+            var RES_SRR = (RES_MER * 12) / (gr);
+            var RES_PS = CS * (Math.pow((1 + gr), n));
+            var RES_P = RES_SRR - RES_PS;
+            var RES_MS = (RES_P * (gr / 12)) / (Math.pow((1 + (gr / 12)), (n * 12)) - 1);
+
+            // Display results
+            $("#Result_Container").css("display", "block");
+            $("#SE_Cont").html("₹" + RupeeSeparator(RES_SRR.toFixed(0).toString()));
+            $("#ME_Cont").html("₹" + RupeeSeparator(RES_MER.toFixed(0).toString()));
+            $("#SR_Cont").html("₹" + RupeeSeparator(RES_MS.toFixed(0).toString()));
+
+            // Generate chart
+            generateChart(CS, RES_MS, gr, n, RES_SRR);
+        }
+
+        // Chart generation function
+        function generateChart(currentSavings, monthlySavings, growthRate, yearsToRetirement, retirementGoal) {
+            const ctx = document.getElementById('savingsChart').getContext('2d');
+
+            if (savingsChart) {
+                savingsChart.destroy();
+            }
+
+            const totalMonthlySavings = monthlySavings * 12 * yearsToRetirement;
+
+            // Monthly expenses at retirement
+            const monthlyExpensesAtRetirement = parseFloat($("#ME_Cont").text().replace(/[₹,]/g, ''));
+
+            savingsChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Sum Required on Retirement',
+                        'Monthly Expenses on Retirement',
+                        'Total Monthly Savings till Retirement'
+                    ],
+                    datasets: [{
+                        data: [retirementGoal, monthlyExpensesAtRetirement * 12, totalMonthlySavings],
+                        backgroundColor: ['#005CB9', '#00AE42', '#1C355E'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.label + ': ₹' + RupeeSeparator(Math.round(context.raw).toString());
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            // Auto-format currency inputs
+            $('input[type="text"]').on('input', function () {
+                let value = $(this).val().replace(/,/g, '');
+                if (!isNaN(value)) {
+                    $(this).val(RupeeSeparator(value));
+                }
+                // Trigger calculation on text input change
+                RS_Calc();
+            });
+
+            // Sync range sliders with number inputs and trigger calculation
+            function syncInputs(numberId, rangeId) {
+                $(`#${numberId}, #${rangeId}`).on('input', function () {
+                    const sourceId = $(this).attr('id');
+                    let value = $(this).val();
+
+                    if (sourceId === rangeId) {
+                        $(`#${numberId}`).val(value);
+                    } else {
+                        value = value.replace(/,/g, '');
+                        $(`#${rangeId}`).val(value);
+                    }
+
+                    // Always trigger calculation when any input changes
+                    RS_Calc();
+                });
+            }
+
+            // Set up sync for all input pairs
+            syncInputs('CS_Txt', 'CS_Range');
+            syncInputs('RA_Txt', 'RA_Range');
+            syncInputs('PA_Txt', 'PA_Range');
+            syncInputs('RSP_Txt', 'RSP_Range');
+            syncInputs('RSR_Txt', 'RSR_Range');
+            syncInputs('RSG_Txt', 'RSG_Range');
+
+            // Format initial values
+            $('#CS_Txt').val(RupeeSeparator($('#CS_Txt').val()));
+            $('#RSP_Txt').val(RupeeSeparator($('#RSP_Txt').val()));
+
+            // Initialize the calculator
+            RS_Calc();
+        });
+    </script>
+</body>
+
+
+</html>

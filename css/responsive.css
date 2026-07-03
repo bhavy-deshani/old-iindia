@@ -1,0 +1,655 @@
+.Bcarosuel_ins_img img
+{
+  height: 100%;
+}
+.marquee-child-1 {
+  white-space: nowrap;
+}
+@media (min-width: 1080px) and (max-width:1920px) and (orientation : landscape)
+{
+  /* .slideshow-container,.BannerImaghes
+  {
+    height: 670px !important;
+  } */
+  #YearofServiceDiv
+  {
+    top: 98% !important;
+  }
+}
+@media (min-width: 1500px) and (max-width:1920px)
+{
+  
+  #YearofServiceDiv {
+    top: 72% !important;
+  }
+  .Bcarosuel {
+    height: 240px !important;
+    
+  }
+  .Bcarosuel_1{height: 100% !important;}
+  .AcOpenImg
+  {
+    height: 55px !important;
+  }
+  #YearofServiceDiv
+  {
+    top: 62% !important;
+  }
+   .slideshow-container,.BannerImaghes
+  {
+   /* height: 740px !important;*/
+   margin-top: 2% !important;
+  }
+  #IndexLogoDiv
+  {
+    width: 20% !important;
+  }
+} 
+@media  only screen and (min-width: 1920px) and (max-width:2080px) and (orientation : landscape)
+{
+  #IndexLogoDiv
+  {
+    width: 22% !important;
+  }
+  /*.marquee-root
+  {
+    margin-top: 7% !important;
+  } */
+  .AcOpenImg
+  {
+    top: 68.5% !important;
+    height: 70px !important;
+  }
+  .Bcarosuel
+  {
+    width: 90.5% !important;
+  }
+  .GreatPalceMenuLogo
+  {
+    height: 95%;
+  }
+  .NPSOprnlinkHome
+  {
+    top: 250px !important;
+  }
+  #YearofServiceDiv
+  {
+    top: 60% !important;
+  }
+}
+@media (min-width: 1366px) and (max-width:630px)
+{
+  .Bcarosuel
+  {
+    width: 99.5% !important;
+    height: 240px !important;
+  }
+  .Bcarosuel_1{height: 100% !important;}
+  /* #YearofServiceDiv {
+    top: 100% !important;
+  } */
+} 
+  #MobileLogo
+  {
+    display: none;
+  }
+  .mySlides{display: none;}
+  .slideshow-container img
+  {
+    vertical-align: middle;
+    height: 700px;
+  }
+  /* Slideshow container */
+  .slideshow-container {
+    width: 100% ;
+    margin-top: 6%;
+    height: 700px;
+    position: relative;
+  }
+  .prev, .next
+  {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px; 
+    opacity: 1;
+    color: #555555;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  /* Position the "next button" to the right */
+  .next
+  {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* .prev:hover, .next:hover {
+    color: rgba(0,0,0,0.8) !important;
+  } */
+  /* On hover, add a black background color with a little bit see-through 
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0.8;
+  }
+    The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .activeDots, .dot:hover {
+    background-color: #717171;
+  }
+  /* Fading animation */
+  .fade1 {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  .GreatPalceMenuMobLogo{
+    width:40px;
+    height:50px;
+    position: absolute;
+    right: 30%;top: 4px;
+    display: none;
+  }
+  .GreatPalceMenuLogo{height: 100%;}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+#content-slider { list-style: none outside none; }
+/*.OurPartnerSlider .item  {  /*margin-bottom: 60px;*/ /*}*/
+.content-slider li { background-color: #FFF;text-align: center;color: #FFF;/*padding: 20px 0px 0px 2px;*/ }
+.content-slider h3 { margin: 0;padding: 50px 0; }
+.OurPartnerSlider { width: 90%;/*border: 1px solid #000;*/margin-left:5%; }  
+/*Laptops*/  
+@media (min-width:1024px) and (max-width: 1366px)   
+{
+  #IntegChoose { width: 100%; }
+  /*#OurParnerSlide { margin-left: 20%; }*/
+}
+@media (min-width:1200px) and (max-width: 1300px)   
+{
+  .navbar-expand-lg .navbar-nav .nav-link { padding-right: 0 !important;}
+  /*#OurParnerSlide { margin-left: 20%; }*/
+}
+
+/*Large Screem*/
+@media (min-width: 1080px) and (max-width:1920px) and (orientation : landscape)
+{
+  #header-wrap { width: 100%; } 
+  #HeaderNavBar { width: 100%; }
+  #sliders { width: 100%; }
+  #FooterReal { width: 100%; }
+  #IntegChoose { width: 100%; }
+  /*#OurParnerSlide { margin-left: 30%; }*/
+}
+@media (min-width: 1441px) and (max-width:1920px) and (orientation : landscape)
+{
+  #AboutIntegImg
+  {
+    height: 370px;
+  }
+  .text_Class_2
+  {
+    margin-top:0%;
+  }
+  .MaskContainer > div 
+  {
+    width: 39%;
+  }
+  #CNBCAwardImg
+  {
+    height: 470px;width:360px;margin-left: 0%;margin-top: 3%;
+  }
+}
+/* only small desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .top-nav-collapse .navbar-brand img {
+    width: 48%;
+  }
+  #StartInvestDiv
+  {
+    width: 25%;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:18%;
+    left: 70%;
+    height: 30%;
+    opacity: 0.8;
+    padding: 0px;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+
+/* tablets */
+@media (max-width: 991px) {
+  .ProductOutline h6{
+    height: 80px !important;
+  }
+  .ProductOutline .DName
+{
+  top: 2% !important;
+}
+.VisionMission
+{
+  text-align: center !important;
+}
+.QuickFooter
+  {
+    padding-left: 5% !important;
+  }
+  .section-title
+  {
+    margin-left: 0% !important;
+    text-align: center !important;
+  }
+.DotsDiv {margin-top: -30px;}
+.prev, .next {top:70%;}
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .pricing-table-item {
+    margin-bottom: 30px;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+@media (min-width: 800px) and (max-width:1234px) 
+{
+  .AcOpenImg
+  {
+    top: 69% !important;
+    height: 80px !important;
+  }
+  #IndexLogoDiv
+  {
+    width: 30% !important;
+  }
+  .GreatPalceMenuMobLogo{display: block !important;
+    width: 60px !important;
+    height: 80px !important;
+    right: 58% !important;
+    top: 5% !important;
+  }
+  .GreatPalceMenuLogo{display: none !important;}
+}
+/* only small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .DotsDiv1
+  {
+    margin-top: -100px !important;
+  }
+  .NPSOprnlinkHome
+  {
+    top:250px;
+  }
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  .top-nav-collapse .navbar-brand img {
+    width: 48%;
+  }
+  .pricing-table-item {
+    margin-bottom: 30px;
+  }
+  .testimonial-item {
+    padding: 10px;
+  }
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  #copyright .nav-inline {
+    line-height: 28px;
+    text-align: left !important;
+  }
+  #copyright .nav-inline li a {
+    padding: 0px 0px 0px 4px;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }
+  #StartInvestDiv
+  {
+    width: 25%;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:18%;
+    left: 70%;
+    height: 30%;
+    opacity: 0.8;
+    padding: 0px;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+
+/* mobile or only mobile */
+@media (max-width: 767px) 
+{
+  .NammeSangeeMobile
+  {
+    top: 10%;
+    display: block !important;
+  }
+  #TestmonialsBtnDiv > .NewsLetterSignUpBtn
+  {
+    margin-left: 0% !important;
+  }
+  #TestmonialsBtnDiv 
+  {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+  }
+  #BlogContainer
+  {
+    margin-bottom: 5% !important;
+  }
+  .GreatPalceMenuMobLogo{display: block !important;}
+  .GreatPalceMenuLogo,.Rotate{display: none;}
+  .slideBox{display: block;}
+  .GreatPalceMenuLogo {
+
+    width: 20% !important;
+    height: 58px !important;
+    width: 50px !important;
+  }
+  .NPSOprnlinkHome {
+    top: 102px !important;
+  }
+  .slideshow-container img,.slideshow-container{height: 300px !important;}
+  .NPSOprnlinkHome img{height: 70px !important;}
+  .NPSOprnlinkHome img:nth-child(2) {
+    height: 40px !important;
+}
+  #Firstcarousel a img{height: 30px !important;}
+  .DotsDiv {margin-top: -30px !important;}
+  .prev, .next {top:70% !important; opacity: 0.4 !important;}
+  /*.section-padding {
+    padding: 50px 0;
+  }*/
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .top-nav-collapse .navbar-brand img {
+    width: 48%;
+  }
+  .btn-lg {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+  .btn-border {
+    font-size: 9px;
+    padding: 5px 9px;
+  }
+  .navbar-brand img {
+    margin: 5px 0;
+    width: 48%;
+  }
+  #carousel-area .carousel-item .carousel-caption h3 {
+    font-size: 12px;
+  }
+  #carousel-area .carousel-item .carousel-caption h5 {
+    font-size: 10px;
+  }
+  #carousel-area .btn-lg{
+    margin: 3px;
+  }
+  #carousel-area .carousel-control-next i, #carousel-area .carousel-control-prev i {
+    border: none;
+  }
+  #carousel-area .carousel-control-next i:hover, #carousel-area .carousel-control-prev i:hover {
+    background: transparent;
+    border: none;
+  }
+  .portfoli-content::before {
+    left: 30px;
+  }
+  .testimonial-item {
+    padding: 0;
+  }
+  .client-item-wrapper img {
+    width: 70%;
+  }
+  .pricing-table-item {
+    margin-bottom: 30px;
+  }
+  .title-head, .contact-info-title {
+    font-size: 22px;
+  }
+  .contact-form {
+    margin-bottom: 30px;
+  }
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  #copyright .nav-inline {
+    line-height: 20px;
+    text-align: left !important;
+  }
+  #copyright .nav-inline li a {
+    padding: 0px 0px 0px 4px;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }  
+  
+  #StartInvestDiv
+  {
+    width: 150px;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:15%;
+    left: 70%;
+    height: 150px;
+    opacity: 0.8;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  }
+  .FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+	}
+}
+
+
+@media only screen and (max-width: 600px) 
+{
+  body 
+  {
+    /*background-color: lightblue;*/
+  }
+  #MobileLogo
+  {
+	display: block;
+  }
+  #MsgImgDiv
+  {
+    display: none;
+  }
+
+  /*#StartInvestDiv
+  {
+    width: 250px;
+    background-color: #474242;
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:250px;
+    left:20%;
+    height: 100px;
+    opacity: 0.8;
+  }
+
+  #StartInvestDiv h3 {
+    font-size: 12px;
+  }
+  #StartInvestDiv h5 {
+    font-size: 10px;
+  }*/
+  /**/
+  #StartInvestDiv
+  {
+    width: 30%;
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    text-shadow: none;
+    color: #ffffff;
+    position: absolute;
+    top:15%;
+    left: 60%;
+    height: 80%;
+    opacity: 0.8;
+    padding: 0px;
+  }
+  #StartInvestDiv  h3 
+  {
+    color: #ffffff;
+  }
+  #StartInvestDiv h5 
+  {
+    color: #ffffff;
+  } 
+	.FooterText
+	{
+	  float: left;
+	  width: 25%;
+	  background-color: #F3DAC4;
+	  color: #E79335;
+	  font-size: 1em;
+	  vertical-align: middle;
+	  height: 6.1em;
+	  padding: 0.5em;
+	  border: 0px solid #000000;
+	  line-height: 1.5em;
+	  font-weight: bolder;
+	  text-align: center;
+  }
+
+  .FooterText
+  {
+    float: left;
+    /*width: 25%;*/
+    background-color: #F3DAC4;
+    color: #E79335;
+    font-size: 0.5em;
+    vertical-align: middle;
+    height: 7.1em;
+    padding: 1.5em;
+    border: 0px solid #000000;
+    line-height: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+  }
+}

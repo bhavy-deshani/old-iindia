@@ -1,0 +1,217 @@
+.Crer_flex-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 7% 0% 0% 0%;
+    background-color: #00a3e8;
+}
+.Crer_GPTWDiv{
+    width: 26%;
+    text-align: center;
+    margin: 0.5% 0% 0% 0%;
+}
+.GPTWNImgCls{
+    width: 56%;
+}
+.JDYRDivCls{
+    display: flex;
+    flex-wrap: wrap;
+    width: 68%;
+}
+.JDYRDivCls div{
+    padding: 15px 0px;
+}
+.JDYRDivCls div:nth-child(odd){
+    width: 50%;
+    align-self: center;
+}
+.JDYRDivCls div:nth-child(even){
+    width: 49%;
+    align-self: center;
+    text-indent: 10%;
+}
+.JDYRDivCls div h1{
+    font-size: 26px;
+    letter-spacing: 0px;
+    font-weight: 800;
+}
+.JDYRDivCls div:nth-child(1){
+    width: 86%;
+    text-align: center;
+    align-self: center;
+    margin: 3% 0% 0% 0%;
+}
+.CareerTxt{
+    width: 67%;
+    padding: 13px 0px;
+    text-indent: 2%;
+    border-radius: 4px;
+}
+.JDYRDivCls div:nth-child(6),.JDYRDivCls div:nth-child(7){
+    width: 99%;
+    text-indent: 5%;
+}
+.JDYRDivCls div:nth-child(8){
+    text-indent: 5%;
+    width: 90%;
+}
+.JDYRDivCls div:nth-child(9){
+    width: 20%;
+    text-indent: 24%;
+}
+.CareerJobApplyTxt,.MessageTxt  {
+    width: 78.2%;
+}
+.MessageTxt{
+    padding: 8px 0px 45px 0px;
+}
+.JDYRDivCls div:nth-child(11){
+    width: 90%;
+    text-align: center;
+    text-indent: 0%;
+} 
+.JDYRDivCls div:nth-child(8){
+    padding: 0px 0px;
+}
+.UpldResumeBtn:hover {
+    color: blue;
+    /* font-size: 18px; */
+    border-bottom: 1px solid blue;
+    /* width: 40%; */
+  }
+.UpldResumeBtn{
+    /* width: 13%;
+    padding: 9px 0px;
+    border-radius: 8px;
+    background-color: #50b847;
+    color: white;
+    font-weight: bold;
+    border: none; */
+    width: 46%;
+    padding: 9px 0px 0px 0px;
+    background-color: #00a3e8;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid #cdcdcd;
+}
+.SubmitBtn{
+    width: 16%;
+    padding: 10px 0px;
+    border-radius: 16px;
+    background-color: #1a476e;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+.CareerTxt{
+    background-color: #e5e9ec;
+    border: none;
+}
+#ResumeNameLbl{
+    color: white;
+    font-weight: bold;
+    width: 52%;
+    text-align: center;
+    padding: 11px 0px;
+    font-size: 18px;
+}
+.CaptchaStyle{
+    width:200px; 
+    border:2px solid #666666;
+    border-radius:10px;  
+    padding: 6px 0px;
+    font-size:30px; 
+    text-align:center; 
+    padding:px; 
+    font-weight:bold; 
+    background-image: linear-gradient(to right, #39232373 , #00ff1e2e);
+    color: #0000006b;
+    text-decoration: line-through;
+    letter-spacing: 9px;
+    opacity: 4;
+}
+.imgcaptcha {
+    width: 30px;
+    margin-top: -8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.inputText{
+    width: 65%;
+    padding: 13px 12px;
+    border-radius: 4px;
+    border: none;
+}
+
+.SuccessfullyDiv,.AlredySuccessfullyDiv{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+    margin: 0% 0% 18% 0%;
+}
+.AlredySuccessfullyDiv{
+    color: red;
+}
+ @media screen and (min-device-width: 300px) and (max-device-width: 700px)
+/* @media (max-width:799px)  */
+{
+    #MobIndexLogoImg {
+        display: block !important;
+        width: 34% !important;
+    }
+    .JDYRDivCls div h1 {
+        font-size: 45px;}
+    .CareerTxt {
+        width: 88%;
+        background-color: white;
+        padding: 20px 0px;
+        font-size: 25px;
+    }
+    .Crer_flex-container {
+        margin: 14% 0% 0% 0%;
+    }
+    .JDYRDivCls {
+        width: 100%;
+    }
+    .JDYRDivCls div:nth-child(1) {
+        width: 100%!important;
+        text-align: center!important;
+        margin: 3% 0% 0% 0%!important;
+        text-indent: 0%!important;
+    }
+    .JDYRDivCls div:nth-child(odd){
+        width: 100%;
+        text-indent: 6%;
+    }
+    .JDYRDivCls div:nth-child(even){
+        width: 100%;
+        text-indent: 6%;
+    }
+    .UpldResumeBtn {
+        width: 42%;
+    }
+    .JDYRDivCls div:nth-child(8) {
+        width: 100%!important;
+        text-indent: 6%;
+    }
+    .CareerJobApplyTxt, .MessageTxt {
+        width: 88%;
+    }
+    .JDYRDivCls div:nth-child(9) {
+        width: 34%;
+        text-indent: 18%;
+    }
+    .JDYRDivCls div:nth-child(10) {
+        width: 64%;
+    }
+    .JDYRDivCls div:last-child{
+        text-indent: 0%;
+    }
+    .SubmitBtn {
+        width: 20%;
+    }
+}

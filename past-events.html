@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>All Past Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- CSS here -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+    <style>
+        :root {
+            --primary-dark: #1C355E;
+            --primary-green: #00AE42;
+            --primary-blue: #005CB9;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(28, 53, 94, 0.8), rgba(28, 53, 94, 0.9)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            color: var(--primary-dark);
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+
+        .highlight-card {
+            border-left: 5px solid var(--primary-green);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-badge {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        .filter-controls {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .placeholder-img {
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="fix">
+        <script src="assets/js/header.js" defer ></script>
+        <script src="assets/js/footer.js" defer ></script>
+        <!-- Breadcrumb Area -->
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/past-event.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content">
+                            <h2 class="title">All Past Events</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="event.html">STRI Event</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Past Events</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Events Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">All Past Events</h2>
+                
+                <!-- Filter Controls -->
+                <div class="filter-controls">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="categoryFilter" class="form-label">Category</label>
+                            <select id="categoryFilter" class="form-select">
+                                <option value="all">All Categories</option>
+                                <option value="financial">Financial</option>
+                                <option value="health">Health</option>
+                                <option value="wellness">Wellness</option>
+                                <option value="launch">Launch</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="yearFilter" class="form-label">Year</label>
+                            <select id="yearFilter" class="form-select">
+                                <option value="all">All Years</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="pastEventsContainer">
+                    <!-- Past events will be loaded here by JavaScript -->
+                </div>
+                 <a href="event.html" class="btn btn-outline-secondary">
+                                Back to Events
+                            </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS here -->
+   <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer ></script>
+    <script src="./assets/js/jquery.parallaxScroll.min.js" defer ></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+    <script>
+        // Event data (same as in event.html)
+        const events = [
+         {
+                id: 1,
+                title: "The Wealth Workshop",
+                date: "2025-06-14",
+                category: "financial",
+                location: "Vani Mahal, Chennai",
+                description: "Building financial confidence with <br> Ms. Bharathi Bhaskar (PROGRAM DIRECTOR STRI) <br> Mr. Ravi from 360 ONE Asset Management",
+                image: "./assets/img/event-1.jpg",
+                registerLink: "./stri-event-reg.html?type=wealth-workshop&title=The+Wealth+Workshop&date=June+14,+2025&location=Vani+Mahal,+Chennai"
+            },
+            {
+                id: 2,
+                title: "Happy Healthy Proposer Life",
+                date: "2025-06-14",
+                category: "health",
+                location: "Lakshmi Hotel, Thanjavur",
+                description: "Interactive session with <br> Mr. T Thiyagarajan (DRO) <br> Dr. Radhika Michael (OBGYN)",
+                image: "./assets/img/event-3.jpg",
+                registerLink: "./stri-event-reg.html?type=health-proposer&title=Happy+Healthy+Proposer+Life&date=June+14,+2025&location=Lakshmi+Hotel,+Thanjavur"
+            },
+            {
+                id: 3,
+                title: "Pathways to Prosperity: Health and Wealth Combined",
+                date: "2025-06-14",
+                category: "wellness",
+                location: "Hotel Eldorado, Ahmedabad",
+                description: "Session with <br> Ms. Shweta Nagar (Vitazia Wellness) <br> Mr. Parth Pathak (Prosperity Coach)",
+                image: "./assets/img/event-2.jpg",
+                registerLink: "./stri-event-reg.html?type=pathways-prosperity&title=Pathways+to+Prosperity:+Health+and+Wealth+Combined&date=June+14,+2025&location=Hotel+Eldorado,+Ahmedabad"
+            },
+            {
+                id: 4,
+                title: "Wellness Session & Financial Literacy",
+                date: "2025-06-28",
+                category: "wellness",
+                location: "Mirch Masala Hall, Kolkata",
+                description: "Interactive session with <br> Dr. Gouri Kumra (MBBS, MD - OBS & GYNAE) <br> Ms. Jayati Basu (M.Sc Nutrition) on Pre and Post Menopause Lifestyle",
+                image: "./assets/img/event-4.jpg",
+                registerLink: "./stri-event-reg.html?type=wellness-financial&title=Wellness+Session+%26+Financial+Literacy&date=June+28,+2025&location=Mirch+Masala+Hall,+Kolkata"
+            },
+            {
+                id: 5,
+                title: "Empowering Women on Personal Finance",
+                date: "2025-06-19",
+                category: "financial",
+                location: "Belgaum Branch, 4th Floor, CTS 27/1, 'Nasco Ishaanya', Khanapur Road, Tilakwadi, Belgaum 590006",
+                description: "Interactive session with <br> Ms. Pradnya Kesarkar (Asst Manager, Sales-HDFC Mutual Fund)",
+                image: "./assets/img/event-5.jpg", // You'll need to add this image to your assets
+                registerLink: "./stri-event-reg.html?type=empowering-women&title=Empowering+Women+on+Personal+Finance&date=June+19,+2025&location=Belgaum+Branch"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPastEvents();
+            
+            // Set up event listeners for filters
+            document.getElementById('categoryFilter').addEventListener('change', renderPastEvents);
+            document.getElementById('yearFilter').addEventListener('change', renderPastEvents);
+        });
+
+        function renderPastEvents() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const yearFilter = document.getElementById('yearFilter').value;
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            let filteredEvents = events.filter(event => {
+                const eventDate = new Date(event.date);
+                eventDate.setHours(0, 0, 0, 0);
+
+                // Only include past events
+                if (eventDate >= today) {
+                    return false;
+                }
+
+                // Apply category filter
+                if (categoryFilter !== 'all' && event.category !== categoryFilter) {
+                    return false;
+                }
+
+                // Apply year filter
+                if (yearFilter !== 'all') {
+                    const eventYear = eventDate.getFullYear().toString();
+                    if (eventYear !== yearFilter) {
+                        return false;
+                    }
+                }
+
+                return true;
+            });
+
+            // Sort events by date (newest first)
+            filteredEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            const container = document.getElementById('pastEventsContainer');
+            container.innerHTML = '';
+
+            if (filteredEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <h5>No past events found matching your criteria</h5>
+                        <p class="text-muted">Try adjusting your filters</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredEvents.forEach(event => {
+                const eventCard = createEventCard(event);
+                container.appendChild(eventCard);
+            });
+        }
+
+        function createEventCard(event) {
+    const eventDate = new Date(event.date);
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+    const day = eventDate.getDate();
+    const month = monthNames[eventDate.getMonth()];
+    const year = eventDate.getFullYear();
+
+    // Extract city from location
+    let city = event.location.split(',')[0];
+    if (city.split(' ').length > 2) {
+        city = city.split(' ')[0];
+    }
+
+    // Construct the URL for event details
+    const detailsUrl = `event-details.html?id=${event.id}&title=${encodeURIComponent(event.title)}&date=${encodeURIComponent(event.date)}&location=${encodeURIComponent(event.location)}&description=${encodeURIComponent(event.description)}&category=${encodeURIComponent(event.category)}&image=${encodeURIComponent(event.image)}`;
+
+    const eventCard = document.createElement('div');
+    eventCard.className = 'col-md-6 col-lg-4 mb-4';
+    eventCard.innerHTML = `
+        <div class="card highlight-card h-100">
+            ${event.image ? 
+                `<img loading="lazy" src="${event.image}" class="card-img-top" alt="${event.title}" 
+                 onerror="this.parentNode.innerHTML='<div class=\\'placeholder-img\\'><i class=\\'fas fa-image fa-3x\\'></i></div>'">` : 
+                `<div class="placeholder-img"><i class="fas fa-image fa-3x"></i></div>`}
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="badge event-badge">${city}</span>
+                    <small class="text-muted">${month} ${day}, ${year}</small>
+                </div>
+                <h5 class="card-title">${event.title}</h5>
+                <p class="card-text">${event.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-success"><i class="fas fa-users me-1"></i> 120+ attendees</small>
+                    <a href="${detailsUrl}" class="btn btn-sm btn-outline-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    `;
+    return eventCard;
+}
+    </script>
+</body>
+</html>

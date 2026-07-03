@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Integrated </title>
+    <meta name="description" content="Integrated " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" /> 	<script src="./assets/js/app-link.js" defer ></script>
+
+    <style>
+        tbody,
+        td,
+        tfoot,
+        th,
+        thead,
+        tr {
+            border-width: 1px !important;
+        }
+    </style>
+<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+	<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+
+
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+    <!--Preloader-->
+
+    <!--Preloader-end -->
+    <!-- Scroll-top -->
+
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/invest_In_fixed_income.png">
+            <script src="./assets/js/header.js" defer ></script>
+            <script src="./assets/js/footer.js" defer ></script>
+			</section>
+        <section>
+            <div class="container mt-5">
+                <div class="d-flex justify-content-center mb-4" id="Referrerbtns">
+                    <button class="btn btn-primary mx-2" onclick="showForm('newRegistrationForm')">NEW
+                        REGISTRATION</button>
+                    <button class="btn btn-primary mx-2" onclick="showForm('subsequentContributionForm')">SUBSEQUENT
+                        CONTRIBUTION</button>
+                    <button class="btn btn-primary mx-2" onclick="showForm('sipRegistrationForm')">SIP
+                        REGISTRATION</button>
+                </div>
+                <div class="col-md-6 m-auto">
+                    <div class="card-body" id="newRegistrationForm">
+                        <h5 class="card-title text-center">NEW REGISTRATION</h5>
+                        <form id="registrationForm1">
+                            <div class="form-group">
+                                <label for="serviceProvider">Service Provider <span class="text-danger">*</span></label>
+                                <!-- <input type="text" class="form-control" id="serviceProvider" value="CAMS" > -->
+                                <select class="form-control" id="FreshServiceProvider">
+                                    <option value="CAMS">CAMS</option>
+                                    <option value="NSDL">NSDL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="name" placeholder="NAME AS PER PAN">
+                                <small class="form-text text-muted">Name as per PAN Database (ie. Full Name in First,
+                                    Middle & Last Name Format)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="pan">Pan <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="pan" placeholder="PAN">
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="mobile" placeholder="Mobile">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="referredBy">Referred by</label>
+                                <input type="text" class="form-control" id="referredBy" value="" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="language">My Preferred Language for Consent</label>
+                                <select class="form-control" id="language-select" onchange="updateText()">
+                                  <option value="">My Preferred Language for Consent</option>
+                                            <option value="English">English</option>
+                                            <option value="Bengali">Bengali</option>
+                                            <option value="Gujarathi">Gujarati</option>
+                                            <option value="Hindi">Hindi</option>
+                                            <option value="Kannada">Kannada</option>
+                                            <option value="Malayalam">Malayalam</option>
+                                            <option value="Marathi">Marathi</option>
+                                            <option value="Tamil">Tamil</option>
+                                            <option value="Telugu">Telugu</option>
+                                </select>
+                            </div>
+                            <div id="text-container" class="mt-4 ">
+                                <!-- Consent text will be updated here based on language selection -->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body" id="subsequentContributionForm">
+                        <h5 class="card-title text-center">SUBSEQUENT CONTRIBUTION</h5>
+                        <form id="registrationForm2">
+                            <div class="form-group">
+                                <label for="serviceProvider">Service Provider <span class="text-danger">*</span></label>
+                                <!-- <input type="text" class="form-control" id="serviceProvider" value="CAMS" > -->
+                                <select id="ServiceProviderCont" class="form-control">
+                                    <option value="CAMS">CAMS</option>
+                                    <option value="NSDL">NSDL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="SubPran">PRAN <span class="text-danger">*</span></label>
+                                <input type="tel" id="PranCont" class="form-control" placeholder="PRAN" maxlength="12" minlength="12"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailCont">EMAIL ID <span class="text-danger">*</span></label>
+                                <input type="email" id="emailCont" class="form-control" placeholder="EMAIL ID" maxlength="100" minlength="5"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobileCont">MOBILE NO <span class="text-danger">*</span></label>
+                                <input type="tel" id="mobileCont" class="form-control" placeholder="MOBILE NO" maxlength="10" minlength="10"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="referredBy">Referred by</label>
+                                <input type="text" class="form-control" id="referredByCont" value="" disabled>
+                            </div>
+                            <button type="submit" id="submitCont"
+                                class="bg-b hover-top text-white px-3 py-1 rounded-2 border-0">Continue</button>
+                        </form>
+                        <p class="fs--1"><b>Disclaimer:</b> By clicking the following link you are being directed to a third-party website
+                            owned by NSDL. All liabilites acts and omissions arising therefrom, would be at your and
+                            third party website Owner's risk and responsibility. Integrated will not be liable for any
+                            act or omission arising therefrom.</p>
+                    </div>
+                    <div class="card-body" id="sipRegistrationForm">
+                        <h5 class="card-title text-center">SIP REGISTRATION</h5>
+                        <form id="registrationForm3">
+                            <div class="form-group">
+                                <label for="SipserviceProvider">Service Provider <span class="text-danger">*</span></label>
+                                <!-- <input type="text" class="form-control" id="serviceProvider" value="CAMS" > -->
+                                <select id="ServiceProviderSip" class="form-control">
+                                    <option value="CAMS">CAMS</option>
+                                    <option value="NSDL">NSDL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="SipPran">PRAN <span class="text-danger">*</span></label>
+                                <input type="tel" id="PranSip" class="form-control" placeholder="PRAN" maxlength="12" minlength="12"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">EMAIL ID <span class="text-danger">*</span></label>
+                                <input type="email" name="" id="emailSip" class="form-control" placeholder="EMAIL ID" maxlength="100" minlength="5"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">MOBILE NO <span class="text-danger">*</span></label>
+                                <input type="tel" name="" id="mobileSip" class="form-control" placeholder="MOBILE NO" maxlength="10" minlength="10"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="referredBy">Referred by</label>
+                                <input type="text" class="form-control" id="referredBySip" value="" disabled>
+                            </div>
+                            <button type="submit" id="submitSip"
+                                class="bg-b hover-top text-white px-3 py-1 rounded-2 border-0">Continue</button>
+                        </form>
+                        <p class="fs--1"><b>Disclaimer:</b> By clicking the following link you are being directed to a third-party website
+                            owned by NSDL. All liabilites acts and omissions arising therefrom, would be at your and
+                            third party website Owner's risk and responsibility. Integrated will not be liable for any
+                            act or omission arising therefrom.</p>
+                    </div>
+                    <div id="otpContainer" style="display: none;">
+                        <p>A One-Time Password has been sent to your Mobile No <span
+                                id="displayMobile"></span></p>
+                                  <!--& Email-Id--> <span id="displayEmail" style="display:none"></span></p> 
+                            <input  class="mb-xl-4 w-100 py-2 rounded-2 border-1"  type="text" id="otpInput" placeholder="Enter OTP">
+                            <button class="mb-xl-4 bg-b text-white py-xl-1  px-xl-5 rounded-4 border-0 text-center" id="verifyOTPBtn" class="">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <input type="hidden" value="" id="RefnoHidden" />
+    <input type="hidden" value="" id="RegRefRefno" />
+    <input type="hidden" value="" id="EmpId" />
+    <input type="hidden" value="" id="ReferType" />
+    <input type="hidden" value="" id="ReferalId" />
+    
+    <script type="text/javascript" src="https://www.integratedindia.in/Scripts/jquery.js" defer ></script>
+
+  <script src="./assets/js/jquery-3.5.1.js" defer ></script>
+  <script src="vendors/@popperjs/popper.min.js" defer ></script>
+  <script src="vendors/bootstrap/bootstrap.min.js" defer ></script>    <script src="./assets/js/theme.js" defer ></script>
+  <script src="./assets/js/chartbot.js" defer ></script>
+	<script src="./assets/js/nps-form.js" defer ></script>
+    <script>
+        //alert(window.location.href)
+        var urlparams=window.location.href.split('=')[1];
+        $("#ReferalId").val(urlparams);
+
+        $("#Referrerbtns button").prop("disabled",true);
+        fetch('https://www.integratedindia.in/api/CDSLAPI.aspx',{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+            body: JSON.stringify({
+                Type: "NPSREFERRAL",
+                Mode: "STATUS",
+                ReferralId:  urlparams
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            
+            const statusdata =data.Msg; 
+            const SuccessMeg=statusdata.split("@@")[0]; 
+            $("#newRegistrationForm,#subsequentContributionForm,#sipRegistrationForm").hide();
+            if(SuccessMeg == "OK")
+            {
+                const RefferName=statusdata.split("@@")[1]; 
+                $("#RefnoHidden").val(statusdata.split("@@")[2]); 
+                $("#referredBy").val(RefferName) 
+                $("#referredByCont").val(RefferName) 
+                $("#referredBySip").val(RefferName) 
+                $("#Referrerbtns button").prop("disabled",false);
+                $("#ReferType").val(statusdata.split("@@")[3]);
+                $("#EmpId").val(statusdata.split("@@")[4]);
+                
+            }
+            else
+            {
+             
+                $("#Referrerbtns button").prop("disabled",true);
+                
+                
+                
+            }
+        })
+            
+
+        function showForm(formId) {
+            const forms = document.querySelectorAll('.form-section');
+            forms.forEach(form => {
+                form.style.display = form.id === formId ? 'block' : 'none';
+            });
+            $("#newRegistrationForm,#subsequentContributionForm,#sipRegistrationForm").hide();            
+            $("#"+formId).show();            
+        }
+		function hideForm(formId) {
+            const forms = document.querySelectorAll('.form-section');
+            forms.forEach(form => {
+                form.style.display = form.id === formId ? 'block' : 'none';
+            });
+            $("#newRegistrationForm,#subsequentContributionForm,#sipRegistrationForm").hide();            
+            $("#"+formId).hide();            
+        }
+
+        var Refurl
+        if(window.location.href.split("=")[1] == undefined)
+        {
+            Refurl ="ReferralLink";    
+        }
+        else
+        {
+            Refurl = window.location.href.split("=")[1];
+        }
+        
+        document.getElementById("registrationForm1").addEventListener("submit", function (event) {
+            handleFormSubmit(event, 1,"Registration");
+        });
+        document.getElementById("registrationForm2").addEventListener("submit", function (event) {
+            handleFormSubmit(event, 2,"Cont");
+        });
+        document.getElementById("registrationForm3").addEventListener("submit", function (event) {
+            handleFormSubmit(event, 3,"Sip");
+        });
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        // const form = document.getElementById("registrationForm");
+        // form.addEventListener("submit", handleFormSubmit);
+        
+        function handleFormSubmit(event,FormNo,RequestType) {
+            event.preventDefault(); // Prevent the default form submission
+            //alert(RequestType)
+            // Perform form validation
+            if (formIsValid(RequestType)) {
+                // Get location before sending data to the server
+                getLocation().then(location => {
+                    // Send a request to the server to save data and generate/send the OTP
+                    //saveDataAndSendOTPRequest(location).then(showOTPModal).catch(handleError);
+                    if(RequestType == "Registration")
+                    {
+                        saveDataAndSendOTPRequest(location).then(showOTPModal(location)).catch(handleError);
+                    }
+                    else if(RequestType == "Cont" || RequestType == "Sip")
+                    {
+                        sendOTPRequest(RequestType,location).then(ContribueshowOTPModal(RequestType,FormNo,location)).catch(handleError);
+                    }
+                }).catch(handleError);
+            } else {
+                // Display validation errors
+                displayValidationErrors();
+            }
+        }
+        function getLocation() {
+            return new Promise((resolve, reject) => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        const altitude = position.coords.altitude;
+                        const accuracy = position.coords.accuracy;
+                        resolve({ latitude, longitude, altitude, accuracy });
+                    }, error => {
+                        reject("Error getting location: " + error.message);
+                    });
+                } else {
+                    reject("Geolocation is not supported by this browser.");
+                }
+            });
+        }
+
+        function sendOTPRequest(RequestType,location)
+        {
+            //alert(RequestType)
+            const PRAN = document.getElementById('Pran'+ RequestType).value;
+            const email = document.getElementById('email'+RequestType).value;
+            const MobileNo = document.getElementById('mobile'+RequestType).value;
+            return fetch("https://www.integratedindia.in/api/CDSLAPI.aspx", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    Name: "", Email: "", Type: 'NPSCONTRIBUTE',Mode: 'OTPREQUEST',Mobile:MobileNo,PinCode:"",SaveInd:"0"
+                }),
+            })
+            .then((response) => {
+                    
+                if (!response.ok) {
+                    return Promise.reject("Network response was not ok.");
+                }
+                return response.json();
+            })
+            .then((data) => {
+            //    alert(data.ErrorCode);
+                if (data.ErrorCode === "0") {
+                    // Store the reference number for later use
+                    document.getElementById("otpContainer").dataset.refNo = data.RefNo;
+                    return Promise.resolve();
+                } else {
+                    return Promise.reject(data.Msg);
+                }
+            })
+            .catch((error) => {
+                console.error("Error during fetch:", error);
+                return Promise.reject(error);
+            });
+
+        }
+
+        function saveDataAndSendOTPRequest(location) {
+			document.getElementById("otpContainer").dataset.refNo = "";
+            const mobileNo = document.getElementById("mobile").value;
+            const email = document.querySelector('input[placeholder="email"]').value;
+            const name = document.getElementById('name').value;
+            const pan = document.querySelector('input[placeholder="PAN"]').value;
+            const referredBy = Refurl;//document.getElementById("referredBy").value;
+            const state = 0;//document.getElementById("state").value;
+            const city = '';//document.getElementById("city").value;
+            const branch = '';//document.getElementById("cityBranch").value;
+            const language = document.getElementById("language-select").value;
+               //  alert(email)
+              
+            return fetch("https://www.integratedindia.in/api/CDSLAPI.aspx", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    Type: "NPSREG",
+                    Mobile: mobileNo,
+                    Mode: "DATASAVE",
+                    SaveInd: "1",
+                    EmailID: email,
+                    Name: name,
+                    PinCode: "999999", // Assuming a placeholder
+                    Panno: pan,
+                    Refered: $("#ReferType").val(), //"ReferralLink",
+                    State: 1,
+                    City: city,
+                    Branch: branch,
+                    EmpID: $("#EmpId").val(), // Placeholder
+                    EmpName: $("#RefnoHidden").val(), // Pla
+                    Lng: language,
+                    Status: "1",
+                    RefNo: "1", // Initially setting RefNo to "1" or generate a unique reference number
+                    GLAT: location.latitude.toString(), // Using location data
+                    GLNG: location.longitude.toString(), // Using location data
+                    GACC: location.accuracy.toString(), // Using location data
+                    GALT: location.altitude !== null ? location.altitude.toString() : "0", // Using location data
+                    Provider: $("#FreshServiceProvider").val()
+                }),
+            })
+                .then((response) => {
+                     
+                    if (!response.ok) {
+                        return Promise.reject("Network response was not ok.");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                //    alert(data.ErrorCode);
+				
+                    if (data.ErrorCode === "0") {
+                        // Store the reference number for later use
+						//alert(data.RefNo)
+                        document.getElementById("otpContainer").dataset.refNo = data.RefNo;
+                        $("#RegRefRefno").val(data.RegRefNo);
+						//alert(document.getElementById("otpContainer").dataset.refNo)
+						showOTPModal(location);
+                        return Promise.resolve();
+                    } else {
+                        return Promise.reject(data.Msg);
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error during fetch:", error);
+                    return Promise.reject(error);
+                });
+        }
+
+        function showOTPModal(location) {
+			if(document.getElementById("otpContainer").dataset.refNo=="")
+			{ 
+				
+				hideForm("newRegistrationForm")
+				//document.getElementById("registrationForm1").style.display = "none";
+				//window.location.href=window.location.href;
+				return false 
+			}
+			
+            const mobileNo = document.getElementById("mobile").value;
+            const email = document.querySelector('input[placeholder="email"]').value;
+
+            // Hide the form
+            document.getElementById("registrationForm1").style.display = "none";
+
+            // Display the OTP container with mobile number and email
+            document.getElementById("otpContainer").style.display = "block";
+            document.getElementById("displayMobile").textContent = `+9********${mobileNo.slice(-4)}`;
+            document.getElementById("displayEmail").textContent = email.replace(/^(.{2})(.*)(.@.*)$/, "$1***$3");
+
+            // Add event listener to the Verify OTP button
+            const verifyOTPBtn = document.getElementById("verifyOTPBtn");
+            //verifyOTPBtn.addEventListener("click", verifyOTP("NPSREG","NPSREG"));
+            verifyOTPBtn.onclick = function () {
+                verifyOTP("NPSREG","NPSREG",location)
+            };
+        }
+        function ContribueshowOTPModal(RequestType,FormNo,location) {
+            // const mobileNo = document.getElementById("mobileCont").value;
+            // const email = document.getElementById("emailCont").value;
+            const email = document.getElementById(`email${RequestType}`).value;
+            const mobileNo = document.getElementById(`mobile${RequestType}`).value;
+            // Hide the form
+            document.getElementById(`registrationForm${FormNo}`).style.display = "none";
+
+            // Display the OTP container with mobile number and email
+            document.getElementById("otpContainer").style.display = "block";
+            document.getElementById("displayMobile").textContent = `+9********${mobileNo.slice(-4)}`;
+            document.getElementById("displayEmail").textContent = email.replace(/^(.{2})(.*)(.@.*)$/, "$1***$3");
+
+            // Add event listener to the Verify OTP button
+            const verifyOTPBtn = document.getElementById(`verifyOTPBtn`);
+            verifyOTPBtn.onclick = function () {
+                verifyOTP("NPSCONTRIBUTE",RequestType,location)
+            };
+        }
+
+
+        function verifyOTP(OTPType,RequestType,location) {
+            const otpInput = document.getElementById("otpInput").value;
+            const refNo = document.getElementById("otpContainer").dataset.refNo;
+            if(document.getElementById('otpInput').value==""){alert("Enter OTP");return false;}
+            let PRAN ="";
+            let email ="";
+            let MobileNo ="";
+            let referredBy ="";
+            let SendType="";
+            let SendMode="";
+            
+            if(RequestType !="" && RequestType!="NPSREG")
+            {
+               PRAN = document.getElementById(`Pran${RequestType}`).value;
+               email = document.getElementById(`email${RequestType}`).value;
+               MobileNo = document.getElementById(`mobile${RequestType}`).value;
+               referredBy = document.getElementById(`referredBy${RequestType}`).value;
+            }
+
+            fetch("https://www.integratedindia.in/api/CDSLAPI.aspx", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    Type: OTPType,
+                    Mode: "OTPVERIFY",
+                    RefNo: refNo,
+                    ENTEREDOTP : otpInput
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.ErrorCode === "0") {
+                        //alert(PRAN+","+email+","+MobileNo+","+referredBy)
+                        var ReqProvider=""
+                        if(RequestType=="NPSREG")
+                        {
+                            SendType="NPSREFERRAL";
+                            SendMode="SAVEDGETURL";
+                            ReqProvider=$("#FreshServiceProvider").val();
+                            
+                            //alert($("#RegRefRefno").val())
+                            //return false
+                            $("#RefnoHidden").val($("#RegRefRefno").val())
+                        }
+                        else if(RequestType=="Cont")
+                        {
+                            SendType="NPSREFERRALCONTRIBUTION";
+                            SendMode="DATASAVE";
+                            ReqProvider=$("#ServiceProvider"+RequestType).val();
+                        }
+                        else if(RequestType=="Sip")
+                        {
+                            SendType="NPSREFERRALSIP";
+                            SendMode="DATASAVE";
+                            ReqProvider=$("#ServiceProvider"+RequestType).val();
+                        }
+                        fetch("https://www.integratedindia.in/api/CDSLAPI.aspx", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            Type: SendType,
+                            Mode: SendMode,
+                            EmailID: email,
+                             
+                            Mobile:MobileNo,
+                            Panno:PRAN,                           
+                            RefNo: refNo,
+                            Name:"",
+                            PinCode:"",
+                            SaveInd:"0",
+                            Lng:"english",
+                            Refered: $("#ReferType").val(),
+                            EmpID: $("#EmpId").val()+"",
+                            Provider: ReqProvider,
+                            ReferralId : $("#ReferalId").val(),
+                            GLAT: location.latitude.toString(), // Using location data
+                            GLNG: location.longitude.toString(), // Using location data
+                            GACC: location.accuracy.toString(), // Using location data
+                            GALT: location.altitude !== null ? location.altitude.toString() : "0" // Using location data
+                            
+                            
+                        }),
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            //alert(data.Msg)
+                            if (data.ErrorCode === "0") {
+                                if(RequestType=="NPSREG")
+                                { window.location.href=data.Msg.split("^")[1]; }
+                                else 
+                                { window.location.href=data.Msg; }
+                            }
+                        });
+                        //window.location.href="https://app.camsnps.com/CRA/auth/enps/register?source=eNPS&users=Integrated_Enterprises";
+                    } else {
+                        // OTP verification failed, display an error message
+                        handleError(data.Msg);
+                    }
+                })
+                .catch((error) => handleError(error));
+        }
+
+        function handleError(error) {
+            // Display the error message to the user
+            console.error(error);
+            alert(error);
+        }
+
+        function formIsValid(RequestType) {
+            let isValid = true;
+            if(RequestType=="REG" || RequestType=="Registration")
+            {
+            const nameInput = document.getElementById('name');
+            const panInput = document.querySelector('input[placeholder="PAN"]');
+            const mobileInput = document.getElementById("mobile");
+            const emailInput = document.querySelector('input[placeholder="email"]');
+
+            // Clear previous validation errors
+            clearValidationErrors();
+
+            // Validate name
+            if (nameInput.value.trim() === "") {
+                isValid = false;
+                setInputError(nameInput, "Please enter your name");
+            }
+
+            // Validate PAN
+            const panRegex = /^[A-Za-z]{5}\d{4}[A-Za-z]{1}$/;
+            if (!panRegex.test(panInput.value.trim())) {
+                isValid = false;
+                setInputError(panInput, "Please enter a valid PAN number");
+            }
+
+            // Validate mobile number
+            const mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobileInput.value.trim())) {
+                isValid = false;
+                setInputError(mobileInput, "Please enter a valid 10-digit mobile number");
+            }
+
+            // Validate email (optional)
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value.trim() !== "" && !emailRegex.test(emailInput.value.trim())) {
+                isValid = false;
+                setInputError(emailInput, "Please enter a valid email address");
+            }
+            }
+            return isValid;
+        }
+
+        function setInputError(input, errorMessage) {
+            const errorElement = document.createElement("div");
+            errorElement.classList.add("error-message");
+            errorElement.textContent = errorMessage;
+            input.parentNode.appendChild(errorElement);
+        }
+
+        function clearValidationErrors() {
+            const errorMessages = document.querySelectorAll(".error-message");
+            errorMessages.forEach((errorMessage) => errorMessage.remove());
+        }
+
+        function displayValidationErrors() {
+            // Add code to display validation errors to the user
+            // You can create a separate container or use alert messages
+            alert("Please fix the validation errors and try again.");
+        }
+  //  });
+
+
+
+
+
+ 
+    </script>
+</body>
+
+</html>

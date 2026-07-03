@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.integratedindia.in/sitemap.html" />
+
+    <!-- Meta Title -->
+    <title>Integrated Sitemap</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="View the complete sitemap of Integrated India." />
+    <meta property="og:title" content="Integrated Sitemap">
+    <meta property="og:site_name" content="Integrated India">
+    <meta property="og:url" content="https://www.integratedindia.in/sitemap.html">
+    <meta property="og:type" content="website">
+    <meta property="og: description" content="View the complete sitemap of Integrated India.">
+    <meta property="og:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png">
+    <meta property="og:image" content="https://www.instagram.com/integratedenterprises/">
+    <meta property="og:image" content="https://www.facebook.com/IntegratedEnterprises">
+    <meta property="og:image" content="https://x.com/IntegratedTweet">
+    <meta property="og:image" content="https://www.youtube.com/@integratedenterprises2653">
+    <meta property="og:image" content="https://www.linkedin.com/company/integratedenterprises/?viewAsMember=true">
+    <meta property="og:image"
+        content="https://www.threads.com/@integratedenterprises?xmt=AQGzhhZ0dev7wSSHxV2Jfk3U4gY7SWUp9Qe8sKPGmC-XfdQ">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Integrated Sitemap">
+    <meta name="twitter:site" content="@IntegratedTweet">
+    <meta name="twitter:description" content="View the complete sitemap of Integrated India.">
+    <meta name="twitter:image"
+        content="https://www.integratedindia.in/assets/img/integrated_enterprises_india_pvt_ltd.png">
+    <meta name="twitter:image:alt" content="Integrated India">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        /* Reset and Base Styles */
+        .sitemap {
+            --color-primary: #2563eb;
+            --color-primary-light: #dbeafe;
+            --color-text: #1c355e;
+            --color-text-light: #6b7280;
+            --color-bg: #f9fafb;
+            --color-card-bg: #ffffff;
+            --color-border: #e5e7eb;
+            --spacing-unit: 1rem;
+            --border-radius: 0.5rem;
+            --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --box-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: var(--color-text);
+            /* background-color: var(--color-bg); */
+            padding: var(--spacing-unit);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sitemap__header {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .sitemap__title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: calc(var(--spacing-unit) / 2);
+            color: var(--color-text);
+        }
+
+        .sitemap__subtitle {
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Component */
+        .sitemap__search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto calc(var(--spacing-unit) * 2) auto;
+        }
+
+        .sitemap__search-icon {
+            position: absolute;
+            left: var(--spacing-unit);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-light);
+        }
+
+        .sitemap__search-input {
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 3);
+            border: 2px solid var(--color-border);
+            border-radius: 2rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .sitemap__search-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px var(--color-primary-light);
+        }
+
+        /* Category Sections */
+        .sitemap__category {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .sitemap__category-title {
+            font-size: 1.5rem;
+            color: var(--color-primary) !important;
+            padding-bottom: calc(var(--spacing-unit) / 2);
+            border-bottom: 2px solid var(--color-primary-light);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* Page Grid */
+        .sitemap__page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-unit);
+        }
+
+        .sitemap__page-card {
+            background: var(--color-card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-unit);
+            box-shadow: var(--box-shadow);
+            transition: all 0.2s ease;
+            border: 1px solid var(--color-border);
+        }
+
+        .sitemap__page-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-hover);
+            border-color: var(--color-primary);
+        }
+
+        .sitemap__page-link {
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            display: block;
+            margin-bottom: calc(var(--spacing-unit) / 4);
+        }
+
+        .sitemap__page-link:hover {
+            color: var(--color-primary);
+        }
+
+        .sitemap__page-url {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+            word-break: break-word;
+        }
+
+        /* No Results State */
+        .sitemap__no-results {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 3);
+            display: none;
+        }
+
+        .sitemap__no-results--visible {
+            display: block;
+        }
+
+        .sitemap__no-results-icon {
+            font-size: 3rem;
+            color: var(--color-border);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .sitemap {
+                padding: calc(var(--spacing-unit) * 0.75);
+            }
+
+            .sitemap__page-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "v7xqj2p6tp");
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <main>
+
+        <script src="./assets/js/header.js" defer></script>
+        <script src="./assets/js/footer.js" defer></script>
+        <section class="about__area-four">
+            <div class="sitemap">
+
+                <header class="sitemap__header">
+                    <h1 class="sitemap__title">Integrated Sitemap</h1>
+                    <p class="sitemap__subtitle">Browse all pages of our website</p>
+                </header>
+
+                <div class="sitemap__search-container">
+                    <span class="sitemap__search-icon">🔍</span>
+                    <input type="text" class="sitemap__search-input" placeholder="Search pages..." autocomplete="off">
+                </div>
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Main Pages</h2>
+                    <div class="sitemap__page-grid">
+                        <div class="sitemap__page-card">
+                            <a href="/" class="sitemap__page-link">Homepage</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/about-us.html" class="sitemap__page-link">About Us</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/contact-us.html" class="sitemap__page-link">Contact</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Products</h2>
+                    <div class="sitemap__page-grid">
+
+                        <div class="sitemap__page-card">
+                            <a href="/equity-stock-trading.html" class="sitemap__page-link">Equities</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/open-demat-trading-account.html" class="sitemap__page-link">Demat Account</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/online-commodity-trading.html" class="sitemap__page-link">Commodities</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/health-life-insurance-providers.html" class="sitemap__page-link">Life & Health
+                                Insurance</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/mutual-funds.html" class="sitemap__page-link">Mutual Fund</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/nps-national-pension-system.html" class="sitemap__page-link">NPS</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/invest-in-gold-etf.html" class="sitemap__page-link">Gold</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/fixed-deposit-income-option.html" class="sitemap__page-link">Fixed Income</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/nri-investments.html" class="sitemap__page-link">NRI</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/investment-options-for-women.html" class="sitemap__page-link">STRI</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/mtf-margin-trading-facility.html" class="sitemap__page-link">Margin Trade Facility
+                                (MTF)</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/equity-sip-investment.html" class="sitemap__page-link">Equity SIP</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/derivative-trading.html" class="sitemap__page-link">Derivative</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/instant-free-trading-demat-account.html" class="sitemap__page-link">DigiTrade
+                                Account</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/open-minor-demat-account.html" class="sitemap__page-link">Minor Account</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Services</h2>
+                    <div class="sitemap__page-grid">
+
+                        <div class="sitemap__page-card">
+                            <a href="/secretarial-services.html" class="sitemap__page-link">Secretarial Services</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/customer-kyc-status.html" class="sitemap__page-link">KYC Status</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/pan-card-tan-tds-services.html" class="sitemap__page-link">Pan/Tax Services</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/competitive-brokerage.html" class="sitemap__page-link">Competitive Brokerage</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/freezing-policy.html" class="sitemap__page-link">Freezing Policy</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/registry-services.html" class="sitemap__page-link">Registry Services</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Knowledge Center</h2>
+                    <div class="sitemap__page-grid">
+
+                        <div class="sitemap__page-card">
+                            <a href="/calculators.html" class="sitemap__page-link">Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/sip-calculator.html" class="sitemap__page-link">SIP Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/swp-calculator.html" class="sitemap__page-link">SWP Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/retirement-calculator.html" class="sitemap__page-link">Retirement Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/step-up-sip-calculator.html" class="sitemap__page-link">Step Up SIP Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/goal-saving-calculator.html" class="sitemap__page-link">Goal Saving Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/life-insurance-calculator.html" class="sitemap__page-link">Life Insurance Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/lumpsum-calculator.html" class="sitemap__page-link">Lumpsum Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/champs-investment-calculator.html" class="sitemap__page-link">Champs Investment Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="https://npstrust.org.in/nps-calculator" class="sitemap__page-link"
+                                target="_blank">Pension Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="https://cra-nsdl.com/CRAOnline/aspQuote.html" class="sitemap__page-link"
+                                target="_blank">Annuity Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/crorepati-sip-planner.html" class="sitemap__page-link">Crorepati SIP Planner</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="calculators/fd-calculator.html" class="sitemap__page-link">FD Calculator</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/faqs-frequently-asked-questions.html" class="sitemap__page-link">Faqs</a>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Blogs</h2>
+                    <div class="sitemap__page-grid">
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-is-nps-national-pension-system-how-it-works.html"
+                                class="sitemap__page-link">
+                                What is NPS (National Pension System) and How It Works?
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/import-duty-hike-on-gold-and-silver-what-it-means-for-you.html"
+                                class="sitemap__page-link">
+                                Import Duty Hike on Gold and Silver: What It Means for You 
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/difference-between-flexi-cap-and-multi-cap-funds-made-simple.html"
+                                class="sitemap__page-link">
+                               Difference Between Flexi Cap and Multi Cap Funds Made Simple
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/difference-between-life-insurance-and-health-insurance.html"
+                                class="sitemap__page-link">
+                               Difference Between Life Insurance and Health Insurance
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/5-sip-secrets-every-investor-should-know.html"
+                                class="sitemap__page-link">
+                               5 SIP Secrets Every Investor Should Know
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/sebi-proposes-gift-cards-for-mutual-fund-investments.html"
+                                class="sitemap__page-link">
+                               SEBI Proposes Gift Cards for Mutual Fund Investments
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/how-to-handle-stock-market-crashes-without-panic.html"
+                                class="sitemap__page-link">
+                                How to Handle Stock Market Crashes without Panic
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-are-life-cycle-funds-and-how-do-they-work.html"
+                                class="sitemap__page-link">
+                                What are Life Cycle Funds and How Do They Work?
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/different-investment-styles-every-investor-should-know.html"
+                                class="sitemap__page-link">
+                                Different Investment Styles Every Investor Should Know
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-is-the-dfference-between-cagr-and-xirr.html"
+                                class="sitemap__page-link">
+                                What is the Difference Between CAGR and XIRR?
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-is-cagr-a-simple-guide-for-investors.html"
+                                class="sitemap__page-link">
+                                What is CAGR? A Simple Guide for Investors
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-is-xirr-a-simple-guide-for-investors.html"
+                                class="sitemap__page-link">
+                                What is XIRR? A Simple Guide for Investors
+                            </a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/5-things-you-should-do-before-investing-money.html"
+                                class="sitemap__page-link">
+                                5 Things You Should Do Before Investing Money
+                            </a>
+                        </div>
+
+                        <div class="sitemap__page-card">
+                            <a href="/blog/difference-between-gold-etf-and-physical-gold-explained-simply.html"
+                                class="sitemap__page-link">
+                                Difference Between Gold ETF and Physical Gold Explained Simply
+                            </a>
+                        </div>
+                        
+
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-is-stri-and-how-it-empowers-women-to-take-charge-of-their-finances.html"
+                                class="sitemap__page-link">
+                                What is STRI and How It Empowers Women to Take Charge of Their Finances
+                            </a>
+                        </div>
+
+                        <div class="sitemap__page-card">
+                            <a href="/blog/how-to-choose-the-best-mutual-fund-for-your-finacial-goals.html"
+                                class="sitemap__page-link">
+                                How to Choose the Best Mutual Fund for Your Financial Goals
+                            </a>
+                        </div>
+
+                        <div class="sitemap__page-card">
+                            <a href="/blog/how-market-fluctuations-can-become-your-best-friend-in-investing.html"
+                                class="sitemap__page-link">
+                                How Market Fluctuations Can Become Your Best Friend in Investing
+                            </a>
+                        </div>
+
+                        <div class="sitemap__page-card">
+                            <a href="/blog/sebi-meaning-functions-and-its-role-in-the-stock-market.html"
+                                class="sitemap__page-link">
+                                SEBI: Meaning, Functions, and Its Role in the Stock Market
+                            </a>
+                        </div>
+
+                        <div class="sitemap__page-card">
+                            <a href="/blog/rbi-keeps-repo-rate-unchanged.html" class="sitemap__page-link">RBI Keeps Repo
+                                Rate Unchanged at 5.25%</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/union-budget-2026-27-new-tds-compliance-change-means-nri-property-sellers.html"
+                                class="sitemap__page-link">Union Budget 2026-27: What the New TDS Compliance Change
+                                Means for NRI Property Sellers</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/union-budget-2026-27-compliance-relief-for-property-buyers-from-non-residents.html"
+                                class="sitemap__page-link">Union Budget 2026-27: Big Compliance Relief for Buyers
+                                Purchasing Property from Non-Residents</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/budget-2026-explained-what-costs-less-and-what-costs-more.html"
+                                class="sitemap__page-link">Budget 2026 Explained: What Costs Less and What Costs
+                                More</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/what-is-stt-a-clear-guide-to-securities-transaction-tax-in-india.html"
+                                class="sitemap__page-link">What is STT? A Clear Guide to Securities Transaction Tax in
+                                India</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/union-budget-2026-india-what-changed-why-it-matters.html"
+                                class="sitemap__page-link">Union Budget 2026 of India: What Actually Changed and Why It
+                                Matters</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/stock-market-holidays-2026-nse-bse-calendar.html"
+                                class="sitemap__page-link">Stock Market Holidays 2026: NSE and BSE Trading Calendar</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/major-upcoming-ipos-in-2026.html" class="sitemap__page-link">Major Upcoming
+                                IPOs in 2026</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/indias-mutual-fund-revolution-why-sips-are-winning.html"
+                                class="sitemap__page-link">India's Mutual Fund Revolution: Why SIPs Are Winning</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/major-nps-changes-december-2025-what-it-means-for-your-retirement.html"
+                                class="sitemap__page-link">Major NPS Changes in December 2025: What It Means for Your
+                                Retirement</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/rupee-at-90-what-indian-investors-need-to-know.html"
+                                class="sitemap__page-link">Rupee at 90: What Indian Investors Need to Know</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/sebi-mutual-fund-fee-structure-update.html" class="sitemap__page-link">SEBI
+                                Updates Mutual Fund Fee Structure to Benefit Investors</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/equity-sip-investment-strategy.html" class="sitemap__page-link">Equity SIP: A
+                                Smarter Way to Invest in Stocks</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/margin-trading-facility.html" class="sitemap__page-link">MTF: A Complete
+                                Guide to Margin Trading Facility</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/price-to-book-ratio-in-equity-investing.html"
+                                class="sitemap__page-link">Understanding Price-to-Book Ratio: A Valuation Tool for
+                                Equity Investors</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/start-investing-with-demat-trading-account.html" class="sitemap__page-link">A
+                                Smart Way to Start Investing: Open Your Demat and Trading Account</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/sebi-warning-on-digital-gold-regulated-investment-options.html"
+                                class="sitemap__page-link">SEBI Warning on Digital Gold</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/active-vs-passive-mutual-funds.html" class="sitemap__page-link">Active Fund
+                                vs Passive Fund: Which Fund to Invest In?</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/ipos-early-access-to-growth.html" class="sitemap__page-link">IPOs: Early
+                                Access to Growth</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/term-insurance-in-your-financial-plan.html" class="sitemap__page-link">Why
+                                Term Insurance Is a Must-Have in Your Financial Plan</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/nps-vs-ppf-vs-epf-retirement-planning.html" class="sitemap__page-link">NPS
+                                vs. PPF vs. EPF: Which One Is Right for Your Retirement?</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/not-investing-could-be-risky.html" class="sitemap__page-link">Not to Invest
+                                Could Be Risky</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/mutual-fund-benefits-india.html" class="sitemap__page-link">Mutual Fund</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/saving-and-investing-guide.html" class="sitemap__page-link">Savings vs.
+                                Investment</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/section-80c-tax-benefits-guide.html" class="sitemap__page-link">Tax planning
+                                and 80 C</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/open-demat-account.html" class="sitemap__page-link">Demat</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/elss-funds-tax-saving-guide.html" class="sitemap__page-link">ELSS</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/choose-right-insurance.html" class="sitemap__page-link">Insurance</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/financial-planning.html" class="sitemap__page-link">Financial Planning</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/bonds-beginners-guide.html" class="sitemap__page-link">Bond</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/blog/return-on-equity.html" class="sitemap__page-link">Return On Equity</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Events</h2>
+                    <div class="sitemap__page-grid">
+
+                        <div class="sitemap__page-card">
+                            <a href="/gallery_5.html" class="sitemap__page-link">New Jersey</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/gallery_4.html" class="sitemap__page-link">Raleigh</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/gallery.html" class="sitemap__page-link">Austin, Texas</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/gallery_1.html" class="sitemap__page-link">San Francisco</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/gallery_2.html" class="sitemap__page-link">Cleveland</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/gallery_3.html" class="sitemap__page-link">Dallas</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Research</h2>
+                    <div class="sitemap__page-grid">
+
+                        <div class="sitemap__page-card">
+                            <a href="/research-daily-market-insights.html" class="sitemap__page-link">Daily Market
+                                Insights</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/market-insights-equity-futures-options.html"
+                                class="sitemap__page-link">Equity/F&O</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/trading-strategy.html" class="sitemap__page-link">Trading Strategy</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/stellar-picks.html" class="sitemap__page-link">Stellar Picks</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/research-technical-reports.html" class="sitemap__page-link">Technical Reports</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/special-reports.html" class="sitemap__page-link">Special Reports</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/research-basket.html" class="sitemap__page-link">Basket</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/initial-public-offering.html" class="sitemap__page-link">IPO</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="sitemap__category">
+                    <h2 class="sitemap__category-title">Other Pages</h2>
+                    <div class="sitemap__page-grid">
+
+                        <div class="sitemap__page-card">
+                            <a href="/investor-charter.html" class="sitemap__page-link">Investor Charter</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/e-voting.html" class="sitemap__page-link">E-Voting</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/assets/pdf/Attention-Investors-Annexure-III.pdf" class="sitemap__page-link"
+                                target="_blank">Attention Investors</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/kyc.html" class="sitemap__page-link">KYC</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/kyc-forms.html" class="sitemap__page-link">KYC Forms</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="https://bo.integrated.investments/support/spanmargin/spanmargin1.asp"
+                                class="sitemap__page-link" target="_blank">Span Margin</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/regulators.html" class="sitemap__page-link">Regulators</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/disclaimer.html" class="sitemap__page-link">Disclaimer</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/assets/pdf/Policy_for_Freezing.pdf" class="sitemap__page-link"
+                                target="_blank">Freezing Policy</a>
+                        </div>
+                        <div class="sitemap__page-card">
+                            <a href="/privacy-policy.html" class="sitemap__page-link">Privacy Policy</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sitemap__no-results">
+                    <div class="sitemap__no-results-icon">☹️</div>
+                    <h3>No pages found</h3>
+                    <p>Try different search terms</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.querySelector('.sitemap__search-input');
+            const pageCards = document.querySelectorAll('.sitemap__page-card');
+            const noResults = document.querySelector('.sitemap__no-results');
+
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                pageCards.forEach(card => {
+                    const linkText = card.querySelector('.sitemap__page-link').textContent.toLowerCase();
+                    const urlText = card.querySelector('.sitemap__page-link').textContent.toLowerCase();
+                    //const urlText = card.querySelector('.sitemap__page-url').textContent.toLowerCase();
+
+                    if (linkText.includes(searchTerm) || urlText.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (visibleCount === 0 && searchTerm !== '') {
+                    noResults.classList.add('sitemap__no-results--visible');
+                } else {
+                    noResults.classList.remove('sitemap__no-results--visible');
+                }
+            });
+
+            // Focus search input on page load
+        });
+    </script>
+</body>
+
+</html>

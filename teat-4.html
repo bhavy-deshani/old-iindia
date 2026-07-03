@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Life Value Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4bb543;
+            --error-color: #ff3333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .calculator-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .calculator-tabs {
+            display: flex;
+            background-color: var(--light-color);
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background-color: white;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .calculator-content {
+            padding: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input[type="number"]:focus, input[type="text"]:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+        
+        .range-container {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .range-container input[type="range"] {
+            flex: 1;
+            margin-right: 15px;
+        }
+        
+        .range-value {
+            width: 60px;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .result-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .result-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .result-header h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .result-value {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .result-value h3 {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .result-value .amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .result-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .detail-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .detail-card h4 {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-card p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .info-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-tabs {
+                flex-direction: column;
+            }
+            
+            .result-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Human Life Value Calculator</h1>
+            <p class="subtitle">Calculate the financial value of your life to ensure adequate insurance coverage</p>
+        </header>
+        
+        <div class="calculator-container">
+            <div class="calculator-tabs">
+                <div class="tab active">Calculator</div>
+            </div>
+            
+            <div class="calculator-content">
+                <div class="input-group">
+                    <label for="annual-income">Annual Income (₹)</label>
+                    <input type="number" id="annual-income" placeholder="Enter your annual income">
+                </div>
+                
+                <div class="input-group">
+                    <label for="income-growth">Expected Annual Increase in Income (%)</label>
+                    <div class="range-container">
+                        <input type="range" id="income-growth" min="0" max="30" step="0.1" value="10">
+                        <span class="range-value" id="income-growth-value">10%</span>
+                    </div>
+                    <p class="info-text">Typical salary growth ranges between 5-15% annually</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="existing-loans">Existing Loans/Financial Obligations (₹)</label>
+                    <input type="number" id="existing-loans" placeholder="Enter any existing loans">
+                    <p class="info-text">Include home loans, car loans, personal loans, etc.</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="years">Coverage Period (Years)</label>
+                    <div class="range-container">
+                        <input type="range" id="years" min="5" max="30" step="1" value="15">
+                        <span class="range-value" id="years-value">15</span>
+                    </div>
+                    <p class="info-text">Typically until retirement age or financial independence</p>
+                </div>
+                
+                <button id="calculate-btn" class="btn">Calculate Human Life Value</button>
+            </div>
+        </div>
+        
+        <div class="result-container" id="result-container">
+            <div class="result-header">
+                <h2>Your Human Life Value</h2>
+            </div>
+            
+            <div class="result-value">
+                <h3>Recommended Life Insurance Coverage</h3>
+                <div class="amount" id="coverage-amount">₹0</div>
+            </div>
+            
+            <div class="result-details">
+                <div class="detail-card">
+                    <h4>Annual Income</h4>
+                    <p id="result-income">₹0</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h4>Income Growth Rate</h4>
+                    <p id="result-growth">0%</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h4>Existing Loans</h4>
+                    <p id="result-loans">₹0</p>
+                </div>
+                
+                <div class="detail-card">
+                    <h4>Coverage Period</h4>
+                    <p id="result-years">0 years</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Range input handlers
+            const incomeGrowth = document.getElementById('income-growth');
+            const incomeGrowthValue = document.getElementById('income-growth-value');
+            const years = document.getElementById('years');
+            const yearsValue = document.getElementById('years-value');
+            
+            incomeGrowth.addEventListener('input', function() {
+                incomeGrowthValue.textContent = this.value + '%';
+            });
+            
+            years.addEventListener('input', function() {
+                yearsValue.textContent = this.value;
+            });
+            
+            // Calculate button handler
+            document.getElementById('calculate-btn').addEventListener('click', function() {
+                calculateHumanLifeValue();
+            });
+            
+            // Function to format currency
+            function formatCurrency(amount) {
+                return '₹' + amount.toLocaleString('en-IN');
+            }
+            
+            // Main calculation function
+            function calculateHumanLifeValue() {
+                const annualIncome = parseFloat(document.getElementById('annual-income').value) || 0;
+                const growthRate = parseFloat(incomeGrowth.value) || 0;
+                const existingLoans = parseFloat(document.getElementById('existing-loans').value) || 0;
+                const coverageYears = parseInt(years.value) || 0;
+                
+                if (annualIncome <= 0) {
+                    alert('Please enter a valid annual income');
+                    return;
+                }
+                
+                // Show loading state
+                const calculateBtn = document.getElementById('calculate-btn');
+                calculateBtn.textContent = 'Calculating...';
+                calculateBtn.disabled = true;
+                
+                // API call
+                const apiUrl = `https://mfapi.advisorkhoj.com/calc/getHumanLifeValueCalcResultByYear?key=bf27810f-27a3-44f3-b28d-c0a863d04ffb&annual_income_expense=${annualIncome}&expected_increase_income_expense=${growthRate}&loan_amount=${existingLoans}&no_years=${coverageYears}`;
+                
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update results
+                        document.getElementById('coverage-amount').textContent = formatCurrency(data.life_cover_value);
+                        document.getElementById('result-income').textContent = formatCurrency(data.annual_income_expense);
+                        document.getElementById('result-growth').textContent = data.expected_increase_income_expense + '%';
+                        document.getElementById('result-loans').textContent = formatCurrency(data.loan_amount);
+                        document.getElementById('result-years').textContent = data.no_years + ' years';
+                        
+                        // Show results
+                        document.getElementById('result-container').style.display = 'block';
+                        
+                        // Reset button
+                        calculateBtn.textContent = 'Calculate Human Life Value';
+                        calculateBtn.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while calculating. Please try again.');
+                        
+                        // Reset button
+                        calculateBtn.textContent = 'Calculate Human Life Value';
+                        calculateBtn.disabled = false;
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Event Registration | STRI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        :root {
+            --primary-dark: #1A2E4D;
+            --primary-green: #00A859;
+            --primary-blue: #1E88E5;
+            --primary-blue-light: #E3F2FD;
+            --light-gray: #f8f9fa;
+            --dark-gray: #2D3748;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --error-color: #E53935;
+            --success-color: #43A047;
+            --input-border: #D1D5DB;
+            --input-focus: #90CAF9;
+        }
+
+        .registration-hero {
+            background: linear-gradient(135deg, rgba(26, 46, 77, 0.95), rgba(30, 136, 229, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 100px;
+            margin-bottom: 60px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .registration-hero h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.5px;
+            color: white !important;
+        }
+
+        .registration-hero p {
+            font-weight: 400;
+            font-size: 1.35rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            color: white !important;
+
+        }
+
+        .registration-card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-top: -80px;
+            position: relative;
+            z-index: 2;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .registration-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+            color: white;
+            padding: 28px;
+            text-align: center;
+            position: relative;
+        }
+
+        .registration-header h2 {
+            font-weight: 600;
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: -0.3px;
+            color: white !important;
+
+        }
+
+        .registration-body {
+            padding: 40px;
+        }
+
+        /* Improved Form Styling */
+        .form-group {
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: var(--error-color);
+            margin-left: 4px;
+        }
+
+        .form-control {
+            height: 52px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--input-border);
+            padding: 12px 16px;
+            font-size: 15px;
+            transition: var(--transition);
+            width: 100%;
+            background-color: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+            outline: none;
+        }
+
+        .form-control.is-invalid {
+            border-color: var(--error-color);
+            background-image: none;
+            padding-right: 16px;
+        }
+
+        .form-control.is-invalid:focus {
+            box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
+        }
+
+        .invalid-feedback {
+            color: var(--error-color);
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .form-control.is-invalid~.invalid-feedback {
+            display: block;
+        }
+
+        /* Customer Type Selection */
+        .customer-type-selection {
+            margin-bottom: 2rem;
+        }
+
+        .customer-type-options {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .customer-type-btn {
+            flex: 1;
+            border: 1px solid var(--input-border);
+            background: white;
+            padding: 24px 16px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .customer-type-btn:hover::after {
+            opacity: 1;
+        }
+
+        .customer-type-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .customer-type-btn h5,
+        .customer-type-btn p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .customer-type-btn.active::after {
+            opacity: 1;
+            background: linear-gradient(135deg, rgba(0, 168, 89, 0.1), rgba(0, 168, 89, 0.2));
+        }
+
+        .customer-type-btn:hover {
+            border-color: var(--primary-blue);
+            background-color: rgba(30, 136, 229, 0.03);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .customer-type-btn.active {
+            border-color: var(--primary-green);
+            background-color: rgba(0, 168, 89, 0.05);
+            box-shadow: 0 0 0 2px rgba(0, 168, 89, 0.2);
+        }
+
+        .customer-type-btn i {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+            transition: var(--transition);
+        }
+
+        .customer-type-btn.active i {
+            color: var(--primary-green);
+        }
+
+        .customer-type-btn h5 {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--primary-dark);
+            font-size: 17px;
+        }
+
+        .customer-type-btn p {
+            font-size: 14px;
+            color: #64748B;
+            margin: 0;
+        }
+
+        /* Terms Checkbox */
+        .terms-checkbox {
+            margin: 2.5rem 0;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: rgba(30, 136, 229, 0.03);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .terms-checkbox .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-top: 0.25em;
+        }
+
+        .terms-checkbox .form-check-label {
+            margin-left: 10px;
+            color: var(--dark-gray);
+        }
+
+        .terms-checkbox .form-check-input:checked {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .terms-checkbox .form-check-input:focus {
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.25);
+        }
+
+        .terms-checkbox a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .terms-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Event Info Card */
+        .event-info-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 28px;
+            margin-bottom: 32px;
+            border-left: 4px solid var(--primary-green);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .event-info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-title {
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .event-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .event-meta i {
+            color: var(--primary-blue);
+            margin-right: 14px;
+            width: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .event-meta span {
+            color: var(--dark-gray);
+        }
+
+        /* Thank You Message */
+        .thank-you-message {
+            text-align: center;
+            padding: 80px 20px;
+            display: none;
+        }
+
+        .thank-you-message i {
+            font-size: 96px;
+            color: var(--primary-green);
+            margin-bottom: 32px;
+            animation: bounce 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .thank-you-message h2 {
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .thank-you-message p {
+            font-size: 18px;
+            margin-bottom: 28px;
+            color: #4B5563;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .thank-you-message strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .thank-you-message .btn {
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .registration-hero {
+                padding: 100px 0 80px;
+            }
+
+            .registration-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .registration-card {
+                margin-top: -60px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .registration-hero {
+                padding: 80px 0 60px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .registration-hero h1 {
+                font-size: 2rem;
+            }
+
+            .registration-hero p {
+                font-size: 1.15rem;
+            }
+
+            .registration-card {
+                margin-top: -40px;
+            }
+
+            .registration-body {
+                padding: 28px;
+            }
+
+            .customer-type-options {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .customer-type-btn {
+                min-height: auto;
+                padding: 20px;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 16px;
+            }
+
+            .customer-type-btn i {
+                margin-bottom: 0;
+                font-size: 28px;
+            }
+
+            .thank-you-message {
+                padding: 60px 20px;
+            }
+
+            .thank-you-message i {
+                font-size: 72px;
+            }
+
+            .thank-you-message h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .registration-hero {
+                padding: 60px 0 40px;
+            }
+
+            .registration-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .event-title {
+                font-size: 1.3rem;
+            }
+
+
+        }
+
+        /* Add to your CSS */
+        .input-with-icon {
+            position: relative;
+        }
+
+        .icon-left {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-blue);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+
+
+        /* Floating label animation */
+        .form-group.floating-label {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .form-group.floating-label .form-label {
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            background: white;
+            padding: 0 8px;
+            font-size: 13px;
+            color: var(--primary-blue);
+            transform-origin: left center;
+            transform: translateY(0) scale(1);
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        /* Animated focus effect */
+        .form-control:focus~.icon-left {
+            color: var(--primary-green);
+            transform: translateY(-50%) scale(1.1);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Button loading animation */
+        .submit-btn.loading {
+            position: relative;
+            color: transparent;
+        }
+
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Success checkmark animation */
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 5;
+            stroke: var(--primary-green);
+            stroke-miterlimit: 10;
+            margin: 0 auto 30px;
+            box-shadow: 0 0 0 rgba(0, 168, 89, 0.4);
+            animation: checkmark-fill 0.4s ease-in-out 0.4s forwards, checkmark-scale 0.3s ease-in-out 0.9s both;
+        }
+
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 5;
+            stroke-miterlimit: 10;
+            stroke: var(--primary-green);
+            fill: none;
+            animation: checkmark-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .checkmark-check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: checkmark-stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes checkmark-stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes checkmark-scale {
+
+            0%,
+            100% {
+                transform: none;
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        @keyframes checkmark-fill {
+            100% {
+                box-shadow: inset 0 0 0 100px rgba(0, 168, 89, 0.1);
+            }
+        }
+
+        /* Bounce animation for form elements */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .registration-card {
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        .form-group {
+            animation: fadeInUp 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        /* Stagger animations for form groups */
+        .form-group:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .form-group:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .form-group:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .form-group:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .form-group:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .customer-type-selection {
+            animation-delay: 0.6s;
+        }
+
+        .terms-checkbox {
+            animation-delay: 0.7s;
+        }
+
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating label effect */
+        /* Floating label effect */
+        .form-group.floating {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .form-group.floating .form-label {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dark-gray);
+            background: white;
+            padding: 0 4px;
+            transition: 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-group.floating .form-control:focus+.form-label,
+        .form-group.floating .form-control:not(:placeholder-shown)+.form-label {
+            top: -0px;
+            left: 12px;
+            font-size: 13px;
+            color: var(--primary-blue);
+            background: white;
+        }
+
+        .brand-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px;
+            z-index: 10;
+        }
+
+        @media (max-width: 767.98px) {
+            .brand-logo {
+                max-height: 40px;
+                top: 15px;
+                left: 15px;
+            }
+        }
+
+        .btn-1 {
+            user-select: none;
+            -moz-user-select: none;
+            background: var(--tg-theme-primary) none repeat scroll 0 0;
+            border: medium none;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -o-border-radius: 10px;
+            -ms-border-radius: 10px;
+            border-radius: 10px;
+            color: var(--tg-color-white-default);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 1;
+            margin-bottom: 0;
+            padding: 18px 24px;
+            text-align: center;
+            text-transform: uppercase;
+            touch-action: manipulation;
+            -webkit-transition: all 0.3s ease-out 0s;
+            -moz-transition: all 0.3s ease-out 0s;
+            -ms-transition: all 0.3s ease-out 0s;
+            -o-transition: all 0.3s ease-out 0s;
+            transition: all 0.3s ease-out 0s;
+            vertical-align: middle;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+
+        .btn-1:hover,
+        .btn-1:focus-visible {
+            color: var(--tg-color-white-default);
+            background: var(--tg-theme-primary);
+        }
+
+        .btn-1:hover:before,
+        .btn-1:focus-visible:before {
+            top: -40%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="registration-hero">
+        <img loading="lazy" src="./assets/img/drack-logo.png" alt="STRI Logo" class="brand-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="mb-3">Event Registration</h1>
+                    <p class="lead">Secure your spot at our exclusive event</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card registration-card">
+                    <div class="registration-header">
+                        <h2 class="mb-0">Complete Your Registration</h2>
+                    </div>
+
+                    <div class="registration-body">
+                        <form id="registrationForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group floating">
+                                        <input type="text" class="form-control" id="fullnName" placeholder=""
+                                            required />
+                                        <label for="fullnName" class="form-label required-field">First Name</label>
+                                        <div class="invalid-feedback">Please provide your first name</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group floating">
+                                        <input type="email" class="form-control" id="email" required placeholder=" ">
+                                        <label for="email" class="form-label required-field">Email Address</label>
+                                        <div class="invalid-feedback">Please provide a valid email address</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group floating">
+                                        <input type="tel" class="form-control" id="phone" required placeholder=" ">
+                                        <label for="phone" class="form-label required-field">Phone Number</label>
+                                        <div class="invalid-feedback">Please provide your phone number</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group floating">
+                                        <input type="tel" class="form-control" id="pincode" required placeholder=" ">
+                                        <label for="pincode" class="form-label required-field">Pincode</label>
+                                        <div class="invalid-feedback">Please provide your pincode</div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-12">
+                                    <div class="customer-type-selection">
+                                        <label class="form-label required-field">Are you a new or existing
+                                            customer?</label>
+                                        <div class="customer-type-options">
+                                            <div class="customer-type-btn" data-type="new" id="newCustomerBtn">
+                                                <i class="fas fa-user-plus"></i>
+                                                <div class="customer-type-btn-content">
+                                                    <h5>New Customer</h5>
+                                                    <p>I'm attending for the first time</p>
+                                                </div>
+                                            </div>
+                                            <div class="customer-type-btn" data-type="existing"
+                                                id="existingCustomerBtn">
+                                                <i class="fas fa-user-check"></i>
+                                                <div class="customer-type-btn-content">
+                                                    <h5>Existing Customer</h5>
+                                                    <p>I've attended before</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="customerType" required>
+                                        <div class="invalid-feedback" style="display: none;">Please select customer type
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between">
+                                    <div class="col">
+                                        <button type="submit" class="btn float-lg-end submit-btn">
+                                            Complete Registration
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="thank-you-message" id="thankYouMessage">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                            </svg>
+                            <h2>Thank You for Registering!</h2>
+                            <p>We've sent a confirmation email to <strong id="confirmedEmail">user@example.com</strong>
+                                with event details.</p>
+                            <a href="/" class="btn btn-primary mt-3">
+                                Home
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+
+    <script src="./assets/js/jquery.odometer.min.js" defer></script>
+
+
+    <script src="./assets/js/ScrollTrigger.js" defer></script>
+    <script src="./assets/js/SplitText.js" defer></script>
+
+    <script src="./assets/js/jquery.parallaxScroll.min.js" defer></script>
+    <script src="./assets/js/swiper-bundle.js" defer></script>
+    <script src="./assets/js/ajax-form.js" defer></script>
+    <script src="./assets/js/wow.min.js" defer></script>
+    <script src="./assets/js/aos.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Customer type selection logic (remains the same)
+        const newCustomerBtn = document.getElementById('newCustomerBtn');
+        const existingCustomerBtn = document.getElementById('existingCustomerBtn');
+        const customerTypeInput = document.getElementById('customerType');
+        const customerTypeFeedback = document.querySelector('.customer-type-selection .invalid-feedback');
+
+        newCustomerBtn.addEventListener('click', function () {
+            this.classList.add('active');
+            existingCustomerBtn.classList.remove('active');
+            customerTypeInput.value = 'new';
+            customerTypeFeedback.style.display = 'none';
+        });
+
+        existingCustomerBtn.addEventListener('click', function () {
+            this.classList.add('active');
+            newCustomerBtn.classList.remove('active');
+            customerTypeInput.value = 'existing';
+            customerTypeFeedback.style.display = 'none';
+        });
+
+        // Pincode validation
+        const pincodeInput = document.getElementById('pincode');
+        const pincodeFeedback = pincodeInput.nextElementSibling.nextElementSibling;
+
+        pincodeInput.addEventListener('input', function() {
+            // Allow only numbers
+            this.value = this.value.replace(/\D/g, '');
+            
+            // Validate length (6 digits for Indian pincode)
+            if (this.value.length > 6) {
+                this.value = this.value.slice(0, 6);
+            }
+        });
+
+        // Form validation and submission
+        const form = document.getElementById('registrationForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let isValid = true;
+            const requiredFields = form.querySelectorAll('[required]');
+
+            // Validate pincode separately
+            if (pincodeInput.value.length !== 6) {
+                pincodeInput.classList.add('is-invalid');
+                pincodeFeedback.textContent = 'Pincode must be 6 digits';
+                pincodeFeedback.style.display = 'block';
+                isValid = false;
+            } else {
+                pincodeInput.classList.remove('is-invalid');
+                pincodeFeedback.style.display = 'none';
+            }
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('is-invalid');
+                    isValid = false;
+                    if (field.id === 'customerType') {
+                        customerTypeFeedback.style.display = 'block';
+                    }
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+
+            if (!isValid) return;
+
+            const formData = {
+                fullnName: document.getElementById('fullnName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                pincode: document.getElementById('pincode').value,
+                customerType: customerTypeInput.value,
+            };
+
+            showThankYou(formData);
+        });
+
+        // Function to send data to Google Sheets
+        function sendDataToGoogleSheets(formData) {
+            // !!! IMPORTANT: PASTE YOUR DEPLOYED WEB APP URL HERE !!!
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbwrAup1JQKXinwFInZ5w8AIhduyuvpPo7RDTCDGtRnBY-5eFRqBYDaBGzVZ7nBpBZXf3w/exec'; 
+            const formDataEncoded = new URLSearchParams();
+            for (const key in formData) {
+                formDataEncoded.append(key, formData[key]);
+            }
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formDataEncoded
+            })
+            .then(() => {
+                console.log('Data sent (response not readable in no-cors mode)');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        
+        // Function to show the thank you message
+        function showThankYou(data) {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            // Send data to Google Sheets
+            sendDataToGoogleSheets(data);
+
+            setTimeout(() => {
+                form.style.display = 'none';
+                thankYouMessage.style.display = 'block';
+                document.getElementById('confirmedEmail').textContent = data.email;
+                thankYouMessage.scrollIntoView({ behavior: 'smooth' });
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }, 1500);
+        }
+    });
+</script>
+
+</body>
+
+</html>

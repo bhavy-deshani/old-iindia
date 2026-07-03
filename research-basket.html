@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <!-- Meta Tags for SEO -->
+    <title>Research Basket</title>
+    <link rel="canonical" href="https://www.integratedindia.in/research-basket.html">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+
+    <style>
+        .date-picker {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .active-main-tab {
+            color: #0ba46c;
+            font-weight: bold;
+        }
+
+        .active-main-tab::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: #0ba46c;
+            margin-top: 5px;
+        }
+    </style>
+<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+	<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+
+
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/research.png">
+            <script src="./assets/js/header.js" defer ></script>
+            <script src="./assets/js/footer.js" defer ></script>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content">
+                            <h1 class="title">Research Basket</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item" aria-current="page">Research Basket</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape">
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated" class="rightToLeft" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+                
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+
+        <!-- services-area -->
+        <section class="services__area-six services__bg-six position-relative">
+            <!-- <div class="bg-img-2 position-absolute top-0 bottom-0 start-0 w-100 h-100" data-background="assets/img/bg/h3_services_bg.jpg"></div> -->
+            <div class="container ">
+                <!-- Daily/Monthly Toggle -->
+                <div class=" col-md-6  m-auto">
+
+                     <div class="date-picker text-center">
+                        <label for="month-select" class="form-label">Select Month & Year:</label>
+                        <div class="d-flex justify-content-center gap-2 w-50 m-auto">
+                            <select id="month-select" class="form-select">
+                                <option value="all">All Months</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+
+                            <select id="year-select" class="form-select">
+                                <!-- Populate dynamically with JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table class="table text-center W-100">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Titles</th>
+                                <th>File</th>
+                            </tr>
+                        </thead>
+                        <tbody id="basket-body"></tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </section>
+          <section>
+            <div class="container mt-4">
+                <h2 class="text-center fw-bold pb-4">Grievance Redressal / Escalation Matrix - Research Analysts</h2>
+                <div class="row flex-center">
+                    <div class="col-lg-10 m-auto">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item mb-2">
+                                    <h5 class="accordion-header" id="heading1">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true"
+                                            aria-controls="collapse1">
+                                            <span class="mb-0 fw-bold text-start  text-1000">Customer Care
+                                            </span>
+                                            <!-- <span class="accordion-icon"></span> -->
+                                        </button>
+                                    </h5>
+                                    <div class="accordion-collapse collapse " id="collapse1" aria-labelledby="heading1"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                            <p><b>Contact Person:</b> Ms Anitha K & Ms Sridevi N</p>
+                                            <p><b>Contact No:</b> <a href="tel:044-28140646">044-28140646</a></p>
+                                            <p><b>Email Id:</b> <a
+                                                    href="mailto:eshare@integratedindia.in">eshare@integratedindia.in</a>
+                                            </p>
+                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street, T.Nagar, Chennai - 600017</p>
+                                            <p><b>Working hours:</b> MMonday – Friday 9:00 am to 12:30 pm. & 2:00 pm to 6:00 pm. 
+                                                Saturday 9:30 am to 1:30 pm.
+                                                </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item mb-2">
+                                    <h5 class="" id="heading2">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true"
+                                            aria-controls="collapse2"><span
+                                                class="mb-0 fw-bold text-start  text-1000">Head of Customer care
+                                            </span></button>
+                                    </h5>
+                                    <div class="accordion-collapse collapse" id="collapse2" aria-labelledby="heading2"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                            <p><b>Contact Person:</b> Ms Anusha</p>
+                                            <p><b>Contact No:</b> <a href="tel:044-28140646">044-28140646</a></p>
+                                            <p><b>Email Id:</b> <a
+                                                    href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
+                                            </p>
+                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street, T.Nagar, Chennai - 600017</p>
+                                            <p><b>Working hours:</b> Monday – Friday
+                                                9:00 am to 12:30 pm.
+                                                2:00 pm to 6:00 pm.
+                                                Saturday
+                                                9:30 am to 1:30 pm.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item mb-2">
+                                    <h5 class="accordion-header" id="heading3">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true"
+                                            aria-controls="collapse3"><span
+                                                class="mb-0 fw-bold text-start  text-1000">Compliance Officer
+                                            </span></button>
+                                    </h5>
+                                    <div class="accordion-collapse collapse" id="collapse3" aria-labelledby="heading3"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                            <p><b>Contact Person:</b> Ms Prabha V</p>
+                                            <p><b>Contact No:</b> <a href="tel:044-281406457">044-281406457</a></p>
+                                            <p><b>Email Id:</b> <a
+                                                    href="mailto:compliance@integratedindia.in">compliance@integratedindia.in</a>
+                                            </p>
+                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street, T.Nagar, Chennai - 600017</p>
+                                            <p><b>Working hours:</b> Monday – Friday
+                                                9:00 am to 12:30 pm.
+                                                2:00 pm to 6:00 pm.
+                                                Saturday
+                                                9:30 am to 1:30 pm.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item mb-2">
+                                    <h5 class="accordion-header" id="heading4">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true"
+                                            aria-controls="collapse4"><span
+                                                class="mb-0 fw-bold text-start  text-1000">CEO
+                                            </span></button>
+                                    </h5>
+                                    <div class="accordion-collapse collapse" id="collapse4" aria-labelledby="heading4"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                            <p><b>Contact Person:</b> Sriram V</p>
+                                            <p><b>Contact No:</b> <a href="tel:044-28143045">044-28143045</a></p>
+                                            <p><b>Email Id:</b> <a
+                                                    href="mailto:ceo@integratedindia.in">ceo@integratedindia.in</a>
+                                            </p>
+                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street, T.Nagar, Chennai - 600017</p>
+
+                                            <p><b>Working hours:</b> Monday – Friday
+                                                9:00 am to 12:30 pm.
+                                                2:00 pm to 6:00 pm.
+                                                Saturday
+                                                9:30 am to 1:30 pm.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item mb-2">
+                                    <h5 class="accordion-header" id="heading5">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true"
+                                            aria-controls="collapse5"><span class="mb-0 fw-bold text-start  text-1000">
+                                                Principal Officer                                            </span></button>
+                                    </h5>
+                                    <div class="accordion-collapse collapse" id="collapse5" aria-labelledby="heading5"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body bg-100 lh-lg">
+                                            <p><b>Contact Person:</b> Ms Prabha V</p>
+                                            <p><b>Contact No:</b> <a href="tel:044-28140650">044-28140650</a></p>
+                                            <p><b>Email Id:</b> <a
+                                                    href="mailto:kmp1@integratedindia.in">kmp1@integratedindia.in</a>
+                                            </p>
+                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street, T.Nagar, Chennai - 600017</p>
+
+                                            <p><b>Working hours:</b> Monday – Friday
+                                                9:00 am to 12:30 pm.
+                                                2:00 pm to 6:00 pm.
+                                                Saturday
+                                                9:30 am to 1:30 pm.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <!-- main-area-end -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Ensure FAQs are fetched, then load MTF FAQs
+            fetchFAQs().then(() => {
+                loadLimitedFAQs("MTF");
+            });
+
+            // Add functionality to the "View All" button
+            document.querySelector(".view-all-button").addEventListener("click", () => {
+                sessionStorage.setItem("selectedCategory", "Equity");
+                window.location.href = "faqs-frequently-asked-questions.html";
+            });
+        });
+    </script>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer ></script>
+    
+    <script src="./assets/js/jquery.odometer.min.js" defer ></script>
+    
+    
+    <script src="./assets/js/ScrollTrigger.js" defer ></script>
+    <script src="./assets/js/SplitText.js" defer ></script>
+    
+    <script src="./assets/js/jquery.parallaxScroll.min.js" defer ></script>
+    <script src="./assets/js/swiper-bundle.js" defer ></script>
+    <script src="./assets/js/ajax-form.js" defer ></script>
+    <script src="./assets/js/wow.min.js" defer ></script>
+    <script src="./assets/js/aos.js" defer ></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+    <script src="./assets/js/faqs.js" defer ></script>
+    <script src="Scripts/GlobalApi.js" defer ></script>
+    <script>
+     /**
+ * Trading Strategy - Main JS
+ * Handles date selection, API calls, and data display for Trading Strategy
+ */
+const yearSelect = document.getElementById('year-select');
+        const monthSelect = document.getElementById('month-select');
+        const currentMonth = String(new Date().getMonth() + 1).padStart(2, '0');
+        monthSelect.value = currentMonth;
+        const currentYear = new Date().getFullYear();
+        for (let year = currentYear; year >= 2014; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+        yearSelect.value = new Date().getFullYear();
+        // Listen to dropdown changes
+        document.getElementById('month-select').addEventListener('change', updateData);
+        document.getElementById('year-select').addEventListener('change', updateData);
+
+        function updateData() {
+            const month = document.getElementById('month-select').value;
+            const year = document.getElementById('year-select').value;
+            const monthYear = `${year}-${month}`;
+            loadAllData(monthYear);
+        }
+// API Configuration
+const API_BASE_URL = 'https://your-api-endpoint.com/api'; // Replace with your actual API
+const API_ENDPOINTS = {
+    TRADING_STRATEGY: '/Stellar-Picks'
+};
+
+// DOM Elements
+const elements = {
+    datePicker: document.getElementById('date'),
+    tradingStrategyTable: document.getElementById('Stellar-Picks-body'),
+    loadingIndicator: null
+};
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+    initLoadingIndicator();
+    setTodayAsDefaultDate();
+    setupEventListeners();
+    loadInitialData();
+});
+
+// Initialize loading spinner
+function initLoadingIndicator() {
+    const spinner = document.createElement('div');
+    spinner.className = 'loading-spinner';
+    spinner.innerHTML = `
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    `;
+    spinner.style.display = 'none';
+    spinner.style.position = 'fixed';
+    spinner.style.top = '50%';
+    spinner.style.left = '50%';
+    spinner.style.transform = 'translate(-50%, -50%)';
+    spinner.style.zIndex = '1000';
+    document.body.appendChild(spinner);
+    elements.loadingIndicator = spinner;
+}
+
+// Set today's date as default
+function setTodayAsDefaultDate() {
+    if (elements.datePicker) {
+        const today = new Date();
+        const formattedDate = formatDateForInput(today);
+        elements.datePicker.value = formattedDate;
+    }
+}
+
+// Format date as YYYY-MM-DD
+function formatDateForInput(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+// Set up event listeners
+function setupEventListeners() {
+    if (elements.datePicker) {
+        elements.datePicker.addEventListener('change', handleDateChange);
+    }
+}
+
+// Load initial data
+function loadInitialData() {
+    const initialDate = elements.datePicker ? elements.datePicker.value : formatDateForInput(new Date());
+    loadTradingStrategyData(initialDate);
+}
+
+// Handle date change
+function handleDateChange(event) {
+    showLoading(true);
+    const selectedDate = event.target.value;
+    loadTradingStrategyData(selectedDate);
+}
+
+// Load trading strategy data
+async function loadTradingStrategyData(date) {
+    showLoading(true);
+    
+    try {
+        const data = await fetchData(API_ENDPOINTS.TRADING_STRATEGY, { date });
+        populateTradingStrategyTable(data);
+    } catch (error) {
+        console.error('Error loading trading strategy data:', error);
+        showError('Failed to load trading strategy data. Please try again.');
+    } finally {
+        showLoading(false);
+    }
+}
+
+// Enhanced fetch function with timeout
+async function fetchData(endpoint, params = {}) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
+    try {
+        const queryString = Object.keys(params).length 
+            ? `?${new URLSearchParams(params).toString()}`
+            : '';
+        
+        const response = await fetch(`${API_BASE_URL}${endpoint}${queryString}`, {
+            signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        return await response.json();
+    } catch (error) {
+        clearTimeout(timeoutId);
+        throw error;
+    }
+}
+
+// Populate trading strategy table with detailed data
+function populateTradingStrategyTable(data) {
+    const tableBody = elements.tradingStrategyTable;
+    if (!tableBody) return;
+
+    // Clear existing rows
+    tableBody.innerHTML = '';
+
+    if (!data || data.length === 0) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan="3" class="text-muted">No trading strategies available for selected date</td>`;
+        tableBody.appendChild(row);
+        return;
+    }
+
+    // Add new rows with detailed data
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        
+        // Date cell
+        const dateCell = document.createElement('td');
+        dateCell.textContent = item.date || 'N/A';
+        
+        // Title cell
+        const titleCell = document.createElement('td');
+        if (item.link) {
+            const titleLink = document.createElement('a');
+            titleLink.href = item.link;
+            titleLink.textContent = item.title || 'No title available';
+            titleLink.target = '_blank';
+            titleCell.appendChild(titleLink);
+        } else {
+            titleCell.textContent = item.title || 'No title available';
+        }
+        
+        // File cell with download button
+        const fileCell = document.createElement('td');
+        if (item.fileUrl) {
+            const fileLink = document.createElement('a');
+            fileLink.href = item.fileUrl;
+            fileLink.className = 'btn btn-sm btn-outline-primary';
+            
+            // Add appropriate icon based on file type
+            const fileIcon = document.createElement('i');
+            if (item.fileUrl.endsWith('.pdf')) {
+                fileIcon.className = 'fas fa-file-pdf me-2';
+                fileLink.textContent = 'Download PDF';
+            } else if (item.fileUrl.endsWith('.xlsx') || item.fileUrl.endsWith('.xls')) {
+                fileIcon.className = 'fas fa-file-excel me-2';
+                fileLink.textContent = 'Download Excel';
+            } else {
+                fileIcon.className = 'fas fa-file-download me-2';
+                fileLink.textContent = 'Download';
+            }
+            
+            fileLink.prepend(fileIcon);
+            fileCell.appendChild(fileLink);
+        } else {
+            fileCell.textContent = 'N/A';
+        }
+        
+        row.appendChild(dateCell);
+        row.appendChild(titleCell);
+        row.appendChild(fileCell);
+        
+        tableBody.appendChild(row);
+    });
+}
+
+// Show loading indicator
+function showLoading(show) {
+    if (elements.loadingIndicator) {
+        elements.loadingIndicator.style.display = show ? 'block' : 'none';
+    }
+}
+
+// Enhanced error display using Bootstrap toast
+function showError(message) {
+    const errorToast = document.createElement('div');
+    errorToast.className = 'position-fixed bottom-0 end-0 p-3';
+    errorToast.style.zIndex = '1100';
+    errorToast.innerHTML = `
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-danger text-white">
+                <strong class="me-auto">Error</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">${message}</div>
+        </div>
+    `;
+    document.body.appendChild(errorToast);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        errorToast.remove();
+    }, 5000);
+}
+
+// Add CSS for loading spinner and file icons
+const style = document.createElement('style');
+style.textContent = `
+    .loading-spinner {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+    }
+    .toast {
+        max-width: 350px;
+    }
+    .table a:not(.btn) {
+        color: #0ba46c;
+        text-decoration: none;
+    }
+    .table a:not(.btn):hover {
+        text-decoration: underline;
+    }
+    .fa-file-pdf {
+        color: #d63031;
+    }
+    .fa-file-excel {
+        color: #1d6f42;
+    }
+`;
+document.head.appendChild(style);
+    </script>
+</body>
+
+
+</html>

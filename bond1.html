@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Funds</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/app-link.js" defer></script>
+     <style>
+        
+        .gradient-bg {
+            background-color: #f0f4f8;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .goal-icon {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <script src="assets/js/header.js"></script>
+        <script src="assets/js/footer.js"></script>
+         <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/open_demat_account.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content" style="position: sticky; top:120px;">
+                            <h2 class="title">Bonds</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/">Home</a>
+                                    </li>
+
+                                    <li class="breadcrumb-item" aria-current="page">
+                                        Bonds
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape">
+                <img src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated" class="rightToLeft" />
+                <img src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+                <img src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+                <img src="./assets/img/images/breadcrumb_shape05.png" alt="Integrated" class="alltuchtopdown" />
+            </div>
+        </section>
+        <section class="about__area-four">
+			<div class="container">
+				<div class="row align-items-center justify-content-center">
+					<div class="col-lg-6 col-md-9 col-sm-10">
+						<div class="about__img-wrap-four p-0">
+							<img loading="lazy" src="./assets/img/images/inner_about01.jpg" class="img-fluid"
+								alt="Integrated" />
+
+							<div class="shape">
+								<img loading="lazy" src="./assets/img/images/inner_about_shape.jpg" alt="Integrated"
+									class="alltuchtopdown" />
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="about__content-four">
+							<div class="section-title mb-40 tg-heading-subheading animation-style3">
+								<h2 class="title tg-element-title">Enhance Your Savings Through Bonds</h2>
+							</div>
+                            <p>Achieve stable returns and boost savings with strategic bond investments.</p>
+							<div class="about__content-inner-three">
+								<div class="about__list-box">
+									<ul class="list-wrap">
+										<li><i class="flaticon-arrow-button"></i>Diversify your portfolio</li>
+										<li><i class="flaticon-arrow-button"></i>Regular and stable growth</li>
+										<li><i class="flaticon-arrow-button"></i>Consistent and Reliable Returns</li>
+									</ul>
+								</div>
+							</div>
+                              <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+                        <a href="#" class="btn btn-success btn-lg px-4 me-md-2 rounded-pill fw-bold">Explore Bonds</a>
+                        <a href="#" class="btn btn-outline-secondary btn-lg px-4 rounded-pill fw-bold">Learn More</a>
+                    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container px-3">
+            <div class="row g-5 align-items-center mb-5 pb-5">
+                <div class="col-md-6">
+                    <h2 class="h2 fw-bold text-dark mb-4">Choose from a wide range of bonds</h2>
+                    <p class="text-secondary">Discover a comprehensive range of bonds on INRBonds, including corporate bonds, G-Sec, PSU bonds, tax-free bonds, and more to align with your investment horizon and goals. All conveniently available in one place.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://placehold.co/500x350/E0F2F1/333?text=Bonds+Portfolio&font=inter" alt="Illustration of a diverse bond portfolio" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mb-5 pb-5">
+                <div class="col-md-6 order-md-last">
+                    <h2 class="h2 fw-bold text-dark mb-4">Safe and secure</h2>
+                    <p class="text-secondary">Your transaction money is safe because we use the stock exchange for fund settlement, which minimizes the risk of off-market trades.</p>
+                </div>
+                <div class="col-md-6 order-md-first">
+                    <img src="https://placehold.co/500x350/FFE0B2/333?text=Secure+Transaction&font=inter" alt="Illustration of a secure transaction" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mb-5 pb-5">
+                <div class="col-md-6">
+                    <h2 class="h2 fw-bold text-dark mb-4">Complete bond insights</h2>
+                    <p class="text-secondary">INRBonds provides you with comprehensive information on all listed bonds, with details on price, yield, rating, and other key metrics. You can get access to unbiased insights from our experienced analyst team to help you make informed bond choices with confidence.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://placehold.co/500x350/D1C4E9/333?text=Data+Insights&font=inter" alt="Illustration of data insights and charts" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center">
+                 <div class="col-md-6 order-md-last">
+                    <h2 class="h2 fw-bold text-dark mb-4">Simple and Easy transaction process</h2>
+                    <p class="text-secondary">INRBonds makes it easy to buy and sell bonds with a user-friendly interface and seamless, speedy transactions. Our platform is easy to use, so you can quickly find the bonds that are right for you.</p>
+                </div>
+                <div class="col-md-6 order-md-first">
+                    <img src="https://placehold.co/500x350/C8E6C9/333?text=Easy+Process&font=inter" alt="Illustration of a simple transaction process" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Block -->
+    <section class="py-5">
+        <div class="container px-3">
+            <div class="bg-white rounded-4 shadow-lg p-5 text-center">
+                 <h2 class="h2 fw-bold text-dark mb-4">Discover INRBonds</h2>
+                 <p class="text-secondary mx-auto" style="max-width: 50rem;">Your trusted source for independent bond information and transactions. Gain access to unbiased insights that empower you to make informed bond choices with confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Goals Section -->
+    <section class="py-5 gradient-bg">
+        <div class="container px-3">
+            <h2 class="h2 fw-bold text-center text-dark mb-5">Investing in bonds can help you achieve your investment goals</h2>
+            <div class="row g-4 gx-lg-5" style="max-width: 56rem; margin: auto;">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start">
+                        <div class="me-3">
+                            <svg class="goal-icon text-success" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold fs-5 text-dark mb-1">Generate Income</h4>
+                            <p class="text-secondary">Bonds provide a dependable income source through fixed interest rates, ensuring a steady income stream for investors. They also have the potential to offer higher returns compared to fixed deposits or debt mutual funds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start">
+                        <div class="me-3">
+                            <svg class="goal-icon text-success" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold fs-5 text-dark mb-1">Diversify Portfolio</h4>
+                            <p class="text-secondary">Adding bonds to an investment portfolio diversifies assets beyond stocks, helping to improve portfolio performance and reduce overall risk.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start">
+                        <div class="me-3">
+                            <svg class="goal-icon text-success" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold fs-5 text-dark mb-1">Mitigate Risk</h4>
+                            <p class="text-secondary">Bonds carry lower risk than stocks, making them a valuable asset for investors looking to minimize overall portfolio risk. This is especially important for retirement planning or for those focused on preserving capital.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start">
+                        <div class="me-3">
+                            <svg class="goal-icon text-success" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold fs-5 text-dark mb-1">Achieve Specific Financial Goals</h4>
+                            <p class="text-secondary">Bonds are flexible investment tools that can be customized for different financial goals, like retirement savings, college funds, or tax planning. Choosing the right types of bonds allows investors to effectively match their investments to specific needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-success btn-lg fw-bold py-3 px-4 rounded-pill shadow-sm">Get Started</a>
+            </div>
+        </div>
+    </section>
+    </main>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+
+</body>
+
+</html>

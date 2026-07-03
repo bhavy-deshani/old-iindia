@@ -1,0 +1,62 @@
+User-agent: *
+Allow: /
+Disallow: /iepweb/
+Disallow: /login/
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /strireg/
+Disallow: /api/
+Disallow: /backup/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /sp/DigiTradeOnboarding_V4/DigiTradeLoginDetails.aspx
+Disallow: /sp/DigiTradeOnboarding_V4/DigiTradeTrack.aspx
+Disallow: /sp/Newicr/EKYCInstantAcOpen.aspx
+Disallow: /sp/Newicr/eKycInstantStatusVerify.aspx
+Disallow: /caoportfolio/nv2/weblogin/AuxMobileLogin.aspx
+Disallow: /caoportfolio/nv2/weblogin/Login.aspx
+Disallow: /caoportfolio/nv2/weblogin/ForgotCustomerID.aspx
+Disallow: /caoportfolio/nv2/weblogin/Mpin.aspx
+Disallow: /sp/businesspartner/FRLogin/ForgotMpin.aspx
+Disallow: /sp/digiTradeOnboardingMinor/digiTradeOnboardingMinor.aspx
+Disallow: /nsdl-nps-registation.html
+Disallow: /cams-nps-registration.html
+Disallow: /sp/businesspartner/FRLogin/login.aspx
+
+# Allow AI search agents
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: AndiBot
+Allow: /
+
+# Block AI training crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Diffbot
+Disallow: /
+User-agent: omgili
+Disallow: /
+User-agent: FacebookBot
+Disallow: /
+User-agent: PerplexityBot
+Allow: /
+
+# Allow traditional search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.integratedindia.in/sitemap.xml

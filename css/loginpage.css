@@ -1,0 +1,129 @@
+.header{
+    background-color: rgb(199, 198, 198);
+    font-size: 25px;
+    padding-top:10px;
+    padding-bottom: 10px; 
+    width: 50%;
+}
+
+.maindiv{
+    width: 100%;
+    background-color: rgb(22, 71, 121);
+}
+.maindiv td{
+    padding: 7px;
+    padding-left: 30px;
+}
+.span{
+    color: red;
+}
+.lbl{
+    color: white;
+    font-size: 15px;
+}
+.subdiv{
+    border-top:4px solid rgb(0, 197, 0); 
+    width: 50%;
+    text-align: left;
+}
+.textbox{
+    padding: 3px;
+    background-color:#FFFFFF;
+	font-size:15px;
+    color:#000000;
+    height: 20px;
+    width: 250px;
+    border: 1px solid rgb(22, 71, 121);
+    text-transform: uppercase;
+}
+
+.close{
+    float: right;
+    border: 1px solid #666464;
+    border-radius: 50%;
+    color: white;
+    background: #666464;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+.mesgdiv{
+    color: rgb(0, 197, 0);
+    font-size: 25px;
+}
+@media (min-width: 300px) and (max-width:700px)
+{
+    table tr td 
+    {
+        display: block;
+        float: left;
+    }
+    .header{
+        background-color: rgb(199, 198, 198);
+        font-size: 25px;
+        padding-top:10px;
+        padding-bottom: 10px;
+        width: 100%;
+        margin-left: 0%;
+    }
+    .lbl{
+        color: white;
+        font-size: 20px;
+    }
+    .subdiv
+    {
+        border-top:4px solid rgb(0, 197, 0); 
+        margin-left: 0%;
+        float: left;
+        width: 100%;
+        height: 600px;
+    }
+}
+@media (max-width: 300px)
+{
+    table tr td 
+    {
+        display: block;
+        float: left;
+    }
+    .header{
+        background-color: rgb(199, 198, 198);
+        font-size: 25px;
+        padding-top:10px;
+        padding-bottom: 10px;
+        width: 300px;
+        margin-left: 0%;
+    }
+   
+    .subdiv
+    {
+        width: 300px;
+        border-top:4px solid rgb(0, 197, 0); 
+        margin-left: 0%;
+        float: left;
+    }
+}
+@media (min-width: 700px) and (max-width:1232px)
+{
+    .header{
+        background-color: rgb(199, 198, 198);
+        font-size: 30px;
+        padding-top:10px;
+        padding-bottom: 10px;
+        width: 100%;
+        margin-left: 0%;
+    }
+    .subdiv
+    {
+        border-top:4px solid rgb(0, 197, 0); 
+        margin-left: 0%;
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+    .lbl{
+        color: white;
+        font-size: 25px;
+    }
+}

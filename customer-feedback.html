@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    
+    
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer ></script>
+
+    <style>
+        :root {
+            --primary-color: #1c355e;
+            --secondary-color: #00ae42;
+            --accent-color: #00ae42;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #00ae42;
+            --warning-color: #f72585;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+
+
+        /* Card Styling */
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            padding: 15px 20px;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        /* Form Styling */
+        .form-control,
+        .form-select {
+            border-radius: var(--border-radius);
+            padding: 12px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        /* Button Styling */
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+
+            i {
+                color: #fff !important;
+            }
+        }
+
+        .btn-primary i {
+            color: #fff !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+        }
+
+        .btn-success:hover {
+            background-color: #3aa8d8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-secondary {
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Tab Styling */
+        .nav-tabs {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            padding: 12px 25px;
+            font-weight: 500;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            transition: var(--transition);
+            margin-right: 5px;
+        }
+
+        .nav-tabs .nav-link:hover {
+            color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background-color: transparent;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .tab-content {
+            padding: 25px 0;
+        }
+
+        /* Feedback Textarea */
+        .feedback-textarea {
+            min-height: 150px;
+            resize: none;
+        }
+
+        /* Rating Stars */
+        .rating-stars {
+            display: flex;
+            gap: 10px;
+        }
+
+        .rating-stars i {
+            font-size: 28px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: #ddd;
+        }
+
+        .rating-stars i:hover {
+            transform: scale(1.2);
+        }
+
+        .rating-stars .fas {
+            color: #ffc107;
+        }
+
+        .rating-label {
+            font-weight: 500;
+            margin-top: 5px;
+            color: var(--dark-color);
+        }
+
+        /* CAPTCHA Styling */
+        .captcha-box {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            user-select: none;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 10px;
+            display: inline-block;
+            border: 1px solid #dee2e6;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .captcha-container canvas {
+            border-radius: var(--border-radius);
+            border: 1px solid #dee2e6;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide-up {
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Image */
+        .comp-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .comp-img img:hover {
+            transform: scale(1.02);
+        }
+
+
+        /* Token Display */
+        .token-display {
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+
+        .token-display strong {
+            font-size: 1.5rem;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e9ecef;
+            z-index: 1;
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            z-index: 2;
+            transition: width 0.5s ease;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #6c757d;
+            transition: var(--transition);
+        }
+
+        .step.active .step-number {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .step.completed .step-label {
+            color: var(--success-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                min-width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+
+            #sidebar .logo-small {
+                display: none;
+            }
+
+            #sidebar .logo-full {
+                display: inline-block;
+                height: 30px;
+            }
+
+            .progress-steps {
+                flex-wrap: wrap;
+            }
+
+            .step {
+                width: 50%;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Custom Checkbox */
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Floating Labels */
+        .form-floating label {
+            color: #6c757d;
+        }
+
+        /* Input Group */
+        .input-group-text {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+
+        /* Alert Styling */
+        .alert {
+            border-radius: var(--border-radius);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 10px;
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #ddd;
+            /* empty star color */
+            transition: all 0.2s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+            /* yellow color for selected stars */
+            transform: scale(1.1);
+        }
+
+        .rating-label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+        .btn::after{
+            content: "" !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <script src="./assets/js/header.js" defer ></script>
+        <script src="./assets/js/footer.js" defer ></script>
+        <!-- Page Content -->
+        <div class="animate__animated animate__fadeIn">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card">
+                            <div class="card-header bg-white d-flex justify-content-between">
+                                <h4 class="mb-0"><i class="fas fa-headset me-2"></i> Customer Support Portal</h4>
+
+
+
+                            </div>
+                            <div class="card-body">
+                                <!-- Progress Steps -->
+
+
+                                <!-- Feedback Tab -->
+                                <div class="card-body slide-up">
+                                    <h5 class="mb-4"><i class="fas fa-comment-alt me-2"></i> Share Your Feedback
+                                    </h5>
+                                    <div class="row">
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="feedbackName"
+                                                placeholder="Your name">
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Mobile</label>
+                                            <input type="tel" class="form-control" id="feedbackMobile"
+                                                placeholder="10-digit mobile number">
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="feedbackEmail"
+                                                placeholder="Your email address">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Feedback</label>
+                                        <textarea class="form-control feedback-textarea" id="feedbackInput" rows="5"
+                                            maxlength="1000" placeholder="Share your thoughts with us..."></textarea>
+                                        <small class="text-muted" id="feedbackCharCount">1000 characters
+                                            remaining</small>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">Rating</label>
+                                        <div class="rating-stars">
+                                            <span class="star" data-value="1">☆</span>
+                                            <span class="star" data-value="2">☆</span>
+                                            <span class="star" data-value="3">☆</span>
+                                            <span class="star" data-value="4">☆</span>
+                                            <span class="star" data-value="5">☆</span>
+                                        </div>
+                                        <div id="ratingLabel" class="rating-label">Please rate your experience</div>
+                                    </div>
+
+                                    <!-- CAPTCHA Section for Feedback -->
+                                    <div class="feedback-captcha-container mb-4">
+                                        <label class="form-label">Enter CAPTCHA</label>
+                                        <div class="captcha-container">
+                                            <canvas id="feedbackCaptchaCanvas" width="120" height="40" role="img" aria-label="Feedback CAPTCHA verification code. Use the audio button to hear the code." tabindex="0"
+                                                class="border rounded"></canvas>
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                onclick="generateFeedbackCaptcha()" title="Refresh CAPTCHA">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary" type="button" id="audioFeedbackCaptcha" title="Play audio CAPTCHA" aria-label="Play audio CAPTCHA">
+                                                <i class="fas fa-volume-up"></i>
+                                            </button>
+                                            <input type="text" class="form-control feedback-captcha-input"
+                                                id="feedbackCaptchaInput" placeholder="Enter CAPTCHA" aria-describedby="feedbackCaptchaHint">
+                                            <div id="feedbackCaptchaHint" class="visually-hidden">This CAPTCHA is case-sensitive. Press the audio CAPTCHA button to hear the code.</div>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-between pt-2">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary  py-2" onclick="submitFeedback()">
+                                                <i style="color: #fff;" class="fas fa-paper-plane me-2"></i>Submit
+                                                Feedback
+                                            </button>
+                                        </div>
+                                        <div class=" col-md-6 text-end">
+                                            <a href="contact-us.html" class="btn btn-primary "> Back</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Query Tab -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center py-4">
+                        <div class="mb-4">
+                            <div class="bg-success bg-opacity-10 p-3 rounded-circle d-inline-block">
+                                <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
+                            </div>
+                        </div>
+                        <h5 class="modal-title mb-3" id="successModalLabel">Thank You!</h5>
+                        <p class="mb-4">Your feedback has been submitted successfully.</p>
+                        <a href="contact-us.html" type="button" class="btn btn-success px-4">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer ></script>
+    
+    <script src="./assets/js/jquery.odometer.min.js" defer ></script>
+    
+    
+    <script src="./assets/js/ScrollTrigger.js" defer ></script>
+    <script src="./assets/js/SplitText.js" defer ></script>
+
+    <script src="./assets/js/jquery.parallaxScroll.min.js" defer ></script>
+    <script src="./assets/js/swiper-bundle.js" defer ></script>
+    <script src="./assets/js/ajax-form.js" defer ></script>
+    <script src="./assets/js/wow.min.js" defer ></script>
+    <script src="./assets/js/aos.js" defer ></script>
+    <script src="./assets/js/p9_language.js" defer ></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer ></script>
+    <script src="./assets/js/chatbot.js" defer ></script>
+    <script src="Scripts/contact.js" defer ></script>
+    <script src="Scripts/GlobalApi.js" defer ></script>
+    <script>
+
+
+        function generateToken() {
+            const now = new Date();
+            const year = String(now.getFullYear()).slice(-2);
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const date = String(now.getDate()).padStart(2, '0');
+            const currentDate = `${year}${month}${date}`;
+
+            // Department prefixes
+            const departmentPrefixes = {
+                "insurance": "INS",
+                "mutual fund": "MF",
+                "demat account": "DP",
+                "equity trading": "EQTRD",
+                "national pension system": "NPS",
+                "pan / tan department": "PAN",
+                "registry service department": "REG",
+                "secretarial service": "SEC",
+                "other": "GEN"
+            };
+
+            // Get the selected department
+            const department = $('#department').val();
+
+            // Get the prefix for the department or default to "INTG"
+            let prefix = departmentPrefixes[department] || "INTG";
+
+            // Retrieve the last counter and date from localStorage
+            let lastCounter = localStorage.getItem('lastCounter');
+            let lastDate = localStorage.getItem('lastDate');
+
+            // Initialize the counter
+            let counter;
+
+            if (lastDate === currentDate) {
+                // If the date is the same, increment the counter
+                counter = parseInt(lastCounter, 10) + 1;
+            } else {
+                // If the date is different, continue from the last counter (do not reset)
+                counter = parseInt(lastCounter, 10) || 1; // Fallback to 1 if no counter exists
+            }
+
+            // Update localStorage with the new counter and date
+            localStorage.setItem('lastCounter', counter);
+            localStorage.setItem('lastDate', currentDate);
+
+            // Format the counter as a 4-digit string
+            let counterPart = String(counter).padStart(4, '0');
+
+            // Generate the token with department prefix
+            return `${prefix}-${year}${month}${date}${counterPart}`;
+        }
+
+        function generateCustomerId() {
+            return 'CUST' + Math.floor(1000 + Math.random() * 9000);
+        }
+
+        // Generate CAPTCHA for feedback form
+        function generateFeedbackCaptcha() {
+            const canvas = document.getElementById("feedbackCaptchaCanvas");
+            const ctx = canvas.getContext("2d");
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let captchaText = "";
+
+            // Generate a random 5-character CAPTCHA
+            for (let i = 0; i < 5; i++) {
+                captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+
+            // Store CAPTCHA text for validation
+            canvas.setAttribute("data-captcha", captchaText);
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw background
+            ctx.fillStyle = "#f8f9fa";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw slight distortion with lines and dots
+            for (let i = 0; i < 5; i++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.strokeStyle = "#ddd";
+                ctx.lineWidth = Math.random() * 1;
+                ctx.stroke();
+            }
+
+            for (let i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, 1.5, 0, 2 * Math.PI);
+                ctx.fillStyle = "#ddd";
+                ctx.fill();
+            }
+
+            // Draw CAPTCHA text with different styles
+            for (let i = 0; i < captchaText.length; i++) {
+                let fontSize = 24 + Math.floor(Math.random() * 6);
+                let rotation = (Math.random() - 0.5) * 0.3;
+                let x = 20 + i * 20;
+                let y = 30 + Math.random() * 10 - 5;
+
+                ctx.font = `${fontSize}px Arial`;
+                ctx.fillStyle = "#4361ee";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate(rotation);
+                ctx.fillText(captchaText[i], 0, 0);
+                ctx.restore();
+            }
+        }
+
+        // Validate feedback CAPTCHA
+        function validateFeedbackCaptcha() {
+            const userInput = document.getElementById("feedbackCaptchaInput").value.trim().toUpperCase();
+            const captchaText = document.getElementById("feedbackCaptchaCanvas").getAttribute("data-captcha");
+
+            if (userInput === captchaText) {
+                return true;
+            } else {
+                showAlert("Invalid CAPTCHA. Please try again.", 'warning');
+                generateFeedbackCaptcha();
+                return false;
+            }
+        }
+
+        function getSpokenFeedbackCaptchaText(code) {
+            return 'Audio CAPTCHA: ' + code.split('').map(ch => {
+                return /[0-9]/.test(ch) ? 'digit ' + ch : 'letter ' + ch;
+            }).join(', ') + '.';
+        }
+
+        function speakFeedbackCaptcha() {
+            const code = document.getElementById('feedbackCaptchaCanvas').getAttribute('data-captcha') || '';
+            if (!code) {
+                return;
+            }
+            if (!('speechSynthesis' in window)) {
+                alert('Audio CAPTCHA is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(getSpokenFeedbackCaptchaText(code));
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function showAlert(message, type) {
+            // Remove any existing alerts first
+            $('.alert-dismissible').remove();
+
+            // Create alert element
+            const alertDiv = $(`
+        <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    `);
+
+            // Add to the card body
+            $('.card-body').prepend(alertDiv);
+
+            // Auto dismiss after 5 seconds
+            setTimeout(() => {
+                alertDiv.alert('close');
+            }, 5000);
+        }
+        function submitFeedback() {
+            const name = $('#feedbackName').val().trim();
+            const mobile = $('#feedbackMobile').val().trim();
+            const email = $('#feedbackEmail').val().trim();
+            const feedback = $('#feedbackInput').val().trim();
+            const rating = $('.rating-stars .active').length;
+
+            if (!name) {
+                showAlert("Please enter your name.", 'warning');
+                return;
+            }
+
+            if (!/^\d{10}$/.test(mobile)) {
+                showAlert("Please enter a valid 10-digit mobile number.", 'warning');
+                return;
+            }
+
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                showAlert("Please enter a valid email address.", 'warning');
+                return;
+            }
+
+            if (!feedback) {
+                showAlert("Please enter your feedback.", 'warning');
+                return;
+            }
+
+            if (rating === 0) {
+                showAlert("Please provide a rating.", 'warning');
+                return;
+            }
+
+            // Validate CAPTCHA
+            if (!validateFeedbackCaptcha()) {
+                return;
+            }
+
+            // Save feedback to localStorage
+            let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+            feedbacks.push({
+                name: name,
+                mobile: mobile,
+                email: email,
+                feedback: feedback,
+                rating: rating,
+                date: new Date().toLocaleDateString('en-GB')
+            });
+            localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+            // Show success modal
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            // Clear form
+            $('#feedbackName').val('');
+            $('#feedbackMobile').val('');
+            $('#feedbackEmail').val('');
+            $('#feedbackInput').val('');
+            $('#feedbackCaptchaInput').val('');
+            $('.rating-stars span').removeClass('active').text('☆');
+            $('#ratingLabel').text('Please rate your experience');
+
+            // Regenerate CAPTCHA
+            generateFeedbackCaptcha();
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const stars = document.querySelectorAll('.star');
+            const ratingLabel = document.getElementById('ratingLabel');
+            let currentRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    currentRating = parseInt(this.getAttribute('data-value'));
+
+                    // Update stars
+                    stars.forEach(s => {
+                        const value = parseInt(s.getAttribute('data-value'));
+                        if (value <= currentRating) {
+                            s.classList.add('active');
+                            s.textContent = '★'; // filled star
+                        } else {
+                            s.classList.remove('active');
+                            s.textContent = '☆'; // empty star
+                        }
+                    });
+
+                    // Update label
+                    const labels = ["Poor", "Fair", "Average", "Good", "Excellent"];
+                    ratingLabel.textContent = labels[currentRating - 1];
+                });
+
+                // Optional hover effect
+                star.addEventListener('mouseover', function () {
+                    const hoverRating = parseInt(this.getAttribute('data-value'));
+                    stars.forEach(s => {
+                        const value = parseInt(s.getAttribute('data-value'));
+                        s.textContent = value <= hoverRating ? '★' : '☆';
+                    });
+                });
+
+                star.addEventListener('mouseout', function () {
+                    stars.forEach(s => {
+                        const value = parseInt(s.getAttribute('data-value'));
+                        s.textContent = value <= currentRating ? '★' : '☆';
+                    });
+                });
+            });
+        });
+        $(document).ready(function () {
+            // Initialize modal
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'), {
+                keyboard: false
+            });
+
+            // Generate CAPTCHA on load for feedback form
+            generateFeedbackCaptcha();
+            document.getElementById('audioFeedbackCaptcha').addEventListener('click', speakFeedbackCaptcha);
+
+            // Handle Character Count for Feedback Input
+            $('#feedbackInput').on('input', function () {
+                const maxLength = 1000;
+                const remaining = maxLength - $(this).val().length;
+                $('#feedbackCharCount').text(`${remaining} characters remaining`);
+            });
+        });
+    </script>
+</body>
+
+</html>

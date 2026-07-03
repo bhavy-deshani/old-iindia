@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Exciting Launch Ahead</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        h1 {
+
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        p {
+          
+            animation: slideUp 1s ease-out 0.5s both;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            animation: fadeIn 2s ease-out 1s both;
+        }
+
+        .feature {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 200px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(28, 53, 94, 0.15);
+            border-color: rgba(0, 174, 66, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #00ae42;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #1c355e;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        .notify-form {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            animation: slideUp 1s ease-out 1.5s both;
+        }
+
+        .email-input {
+            padding: 1rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px 0 0 50px;
+            width: 300px;
+            font-size: 1rem;
+            background: white;
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .email-input:focus {
+            border-color: #00ae42;
+            box-shadow: 0 0 0 3px rgba(0, 174, 66, 0.2);
+        }
+
+        .notify-btn {
+            padding: 1rem 1.8rem;
+            border: none;
+            border-radius: 50px 50px;
+            background: #00ae42;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .notify-btn:hover {
+            background: #008c34;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 174, 66, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            animation: fadeIn 1s ease-out 2s both;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1c355e;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .social-link:hover {
+            background: #00ae42;
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 174, 66, 0.4);
+            border-color: #00ae42;
+        }
+
+        /* .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        } */
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 174, 66, 0.05);
+            animation: float 15s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-duration: 20s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-duration: 25s;
+            background: rgba(28, 53, 94, 0.05);
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-duration: 15s;
+        }
+
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            left: 70%;
+            animation-duration: 30s;
+            background: rgba(28, 53, 94, 0.05);
+        }
+
+        .shape:nth-child(5) {
+            width: 50px;
+            height: 50px;
+            top: 10%;
+            left: 50%;
+            animation-duration: 18s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .features {
+                gap: 1rem;
+            }
+
+            .feature {
+                width: 160px;
+                padding: 1.2rem;
+            }
+
+            .email-input {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .notify-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .email-input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+                width: 250px;
+            }
+
+            .notify-btn {
+                border-radius: 50px;
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="sticky-header" class="tg-header__area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tgmenu__wrap">
+                            <nav class="tgmenu__nav">
+                                <div class="logo">
+                                    <a href="/"><img loading="lazy" src="assets/img/Integrated_logo_new.png"
+                                            alt="Integrated Enterprises (India) Pvt. Ltd"
+                                            title="Integrated Enterprises (India) Pvt. Ltd" /></a>
+                                </div>
+                                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex pe-xl-4">
+                                    <ul class="navigation">
+                                        <li class="">
+                                            <a href="about-us.html">About Us</a>
+
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Products</a>
+                                            <ul class="sub-menu sub-menu-w1">
+                                                <div class="row row-cols-1 row-cols-lg-4 ">
+                                                    <div class="col py-1">
+                                                        <a href="equity-stock-trading.html" class="m-0 p-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 ">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/equity-icon.png"
+                                                                        alt="Equities" title="Equities">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 p-0 fw-bold">Equities</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="online-commodity-trading.html" class="m-0 p-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 ">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/Commodity-icon.png"
+                                                                        alt="Commodity" title="Commodity">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Commodity</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col py-1">
+                                                        <a href="mutual-funds.html" class="m-0 p-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/mutu-icon.png"
+                                                                        alt="Mutual Fund" title="Mutual Fund">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Mutual Fund
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col py-1">
+                                                        <a href="fixed-deposit-income-option.html"
+                                                            class="m-0 p-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/fixed-icon.png"
+                                                                        alt="Fixed Income" title="Fixed Income">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Fixed Income
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="open-demat-trading-account.html"
+                                                            class="m-0 p-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/demao-icon.png"
+                                                                        alt="Demat Account" title="Demat Account">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Demat Account
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="health-life-insurance-providers.html"
+                                                            class="m-0 p-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/insurance-icon.png"
+                                                                        alt="Life & Health Insurance"
+                                                                        title="Life & Health Insurance">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Life & Health
+                                                                        Insurance</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="nps-national-pension-system.html"
+                                                            class="m-0 p-0 text-b">
+
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/nps-icon.png"
+                                                                        alt="NPS" title="NPS">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">NPS</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="pan-card-tan-tds-services.html" class="m-0 p-0 text-b">
+
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/pan-tan-icon.png"
+                                                                        alt="PAN/TAX Services" title="PAN/TAX Services">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">PAN/TAX
+                                                                        Services</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="secretarial-services.html" class="m-0 p-0 text-b">
+
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/secretarial-icon.png"
+                                                                        alt="Secretarial Services"
+                                                                        title="Secretarial Services">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Secretarial
+                                                                        Services</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="registry-services.html" class="m-0 p-0 text-b">
+
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/Registry-icon.png"
+                                                                        alt="Registry Services"
+                                                                        title="Registry Services">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Registry
+                                                                        Services</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="invest-in-gold-etf.html" class="m-0 p-0 text-b">
+
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/gold-icon.png"
+                                                                        alt="Gold" title="Gold">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">Gold</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <!-- <div class="col py-2">
+														<a href="best-bond-investment-platform-in-india.html"
+															class="m-0 p-0 text-b">
+															<li class="premium-bond-card position-relative overflow-hidden"
+																style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+
+																<div class="gradient-animator" style="position: absolute; inset: 0; 
+                background: linear-gradient(135deg, #1c355e 0%, #00ae42 100%);
+                background-size: 200% 200%; animation: gradientPulse 8s ease infinite alternate;"></div>
+																<div class="new-badge" style="position: absolute; top: 0; right: 2px; 
+                background: linear-gradient(135deg, #ff8a00 0%, #ff0058 100%);
+                color: white; font-size: 10px; font-weight: bold; padding: 3px 10px;
+                border-bottom-left-radius: 8px; z-index: 3; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                animation: badgePulse 2s ease infinite;">
+																	NEW
+																</div>
+																<div class="shimmer-overlay" style="position: absolute; inset: 0; 
+                background: linear-gradient(90deg, 
+                    rgba(255,255,255,0) 0%, 
+                    rgba(255,255,255,0.15) 50%, 
+                    rgba(255,255,255,0) 100%);
+                transform: translateX(-100%);"></div>
+
+																<div class="position-relative"
+																	style="z-index: 2; padding: 8px; display: flex; align-items: center; gap: 12px;">
+																	<div class="icon-container"
+																		style="position: relative;">
+																		<div class="icon-glow" style="position: absolute; width: 40px; height: 40px; 
+                        border-radius: 50%; background: rgba(255,255,255,0.2); 
+                        animation: glowPulse 3s ease infinite;"></div>
+																		<img loading="lazy" src="assets/img/bonds.png"
+																			alt="Bonds" style="width: 28px; height: 28px; position: relative; z-index: 2;
+                        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
+																	</div>
+
+																	<div style="flex: 1;">
+																		<p class="m-0  fw-bold text-white">Bonds</p>
+
+																	</div>
+																</div>
+
+																<div class="particle" style="position: absolute; width: 3px; height: 3px; 
+                background: white; border-radius: 50%; opacity: 0.5; top: 20%; left: 15%;"></div>
+																<div class="particle" style="position: absolute; width: 2px; height: 2px; 
+                background: white; border-radius: 50%; opacity: 0.3; top: 60%; left: 80%;"></div>
+															</li>
+														</a>
+													</div> -->
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Knowledge Center </a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col py-1">
+                                                        <a href="financial-calculators.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/Calculators-con.png"
+                                                                        alt="Calculators" title="Calculators">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Calculators</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="blogs.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/blogs-icon.png"
+                                                                        alt="Blogs" title="Blogs">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Blogs</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="faqs-frequently-asked-questions.html"
+                                                            class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/faqs-icon.png"
+                                                                        alt="FAQs" title="FAQs">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">FAQs</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Event </a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col py-1">
+                                                        <a href="gallery_7.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/san-antonio.svg"
+                                                                        alt="San Antonio" title="San Antonio">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">San Antonio</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="gallery_6.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/dubai.svg"
+                                                                        alt="Dubai" title="Dubai">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Dubai</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="gallery.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/texas.svg"
+                                                                        alt="Austin, texas" title="Austin, texas">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Austin, texas</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col py-1">
+                                                        <a href="gallery_1.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/san-fransisco.svg"
+                                                                        alt="San Francisco" title="San Francisco">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">San Francisco</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="gallery_2.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/cleveland.svg"
+                                                                        alt="Cleveland" title="Cleveland">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Cleveland</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="gallery_3.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/dallas.svg"
+                                                                        alt="Dallas" title="Dallas">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Dallas</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="gallery_4.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/raleigh.svg"
+                                                                        alt="Raleigh" title="Raleigh">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Raleigh</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="gallery_5.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/new-jersey.svg"
+                                                                        alt="New Jersey" title="New Jersey">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">New Jersey</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+<div class="col py-1">
+                    <ul>
+                        <li class="d-flex gap-2 hover-effect mb-3">
+                            <a href="gallery_5.html" class="p-0 m-0 text-b d-flex gap-2 w-100">
+                                <div class="m-y">
+                                    <img loading="lazy" src="assets/img/switzerland.png" alt="Switzerland" title="Switzerland">
+                                </div>
+                                <div class="my-auto">
+                                    <p class="m-0 fs--14 p-0 fw-bold">Chaitra Mahotsav 2026</p>
+                                </div>
+                                <div class="ani"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact-us.html">contact</a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Research</a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col py-1">
+                                                        <a href="research-daily-market-insights.html"
+                                                            class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/daily-market.jpg"
+                                                                        alt="Austin, texas" title="Austin, texas">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Daily Market
+                                                                        Insights</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col py-1">
+                                                        <a href="market-insights-equity-futures-options.html"
+                                                            class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/equity-f-o.jpg"
+                                                                        alt="San Francisco" title="San Francisco">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Equity/F&O</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="trading-strategy.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/trading_strategy.jpg"
+                                                                        alt="San Francisco" title="San Francisco">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Trading Strategy
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="stellar-picks.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/stellar_picks.jpg"
+                                                                        alt="San Francisco" title="San Francisco">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Stellar Picks</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="research-technical-reports.html"
+                                                            class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/technical_reports.jpg"
+                                                                        alt="San Francisco" title="San Francisco">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Technical Reports
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="special-reports.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/special_reports.jpg"
+                                                                        alt="San Francisco" title="San Francisco">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Special Reports
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="research-basket.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/basket.jpg"
+                                                                        alt="" title="">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class=" m-0 fs--14 p-0 fw-bold">Basket</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col py-1">
+                                                        <a href="initial-public-offering.html" class="m-0 p-0 text-b">
+
+                                                            <li class="d-flex gap-2 hover-effect mb-3">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/ipo-icon.png"
+                                                                        alt="IPO" title="IPO">
+                                                                </div>
+                                                                <div class="my-auto">
+                                                                    <p class="m-0 fs--14 fw-bold p-0">IPO</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <li><a href="nri-investments.html">NRI</a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Gift City</a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col">
+                                                        <a href="gift-city-ifsc.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/gift-city/about_us.png"
+                                                                        alt="About Us" title="About Us">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">About Us</p>
+
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="indiainxga.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/gift-city/products.png"
+                                                                        alt="Products" title="Products">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">Products</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="policies-procedures.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/gift-city/policies_procedures.png"
+                                                                        alt="Policies & Procedures"
+                                                                        title="Policies & Procedures">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">Policies
+                                                                        & Procedures</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">STRI</a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col">
+                                                        <a href="investment-options-for-women.html"
+                                                            class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/stri.png"
+                                                                        alt="STRI" title="STRI">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">STRI</p>
+
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="event.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/stri_event.png"
+                                                                        alt="STRI Event" title="STRI Event">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">STRI Event
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </li>
+
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Login/Register</a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col">
+                                                        <!-- //New Altered -->
+                                                        <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                                                            id="app-link2" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/Equity.png"
+                                                                        alt="Equity" title="Equity">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">Equity</p>
+
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="mf-dp.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/mf-dp.png"
+                                                                        alt="MF & DP" title="MF & DP">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">MF & DP</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col india-inx-col" id="india-inx-container">
+														<div class="p-0 m-0 text-b cursor-pointer">
+															<a href="#" class="p-0 m-0 text-b">
+
+																<li class="d-flex gap-2 hover-effect  mb-3 ">
+																	<div class="m-y">
+																		<img loading="lazy"
+																			src="assets/img/gift-city/Indiainxga.png"
+																			alt="India Inx GA" title="India Inx GA">
+																	</div>
+																	<div class="lh-1 my-auto">
+																		<p class="lh-1 m-0 fs--14 p-0 fw-bold">India Inx GA <small class="text-green" >(Global Stock)</small></p>
+																	</div>
+																	<div class="ani"></div>
+																</li>
+															</a>
+														</div>
+
+														<div class="inx-action-popup" id="inx-buttons">
+															<a href="https://trade.clientbridge.in/login?IGIL"
+																target="_blank" class="inx-btn btn-login p-2">
+																<i class="fi fi-rr-sign-in-alt"></i> Login
+															</a>
+															<a href="https://trade.clientbridge.in/register?IGIL"
+																target="_blank" class="inx-btn btn-register p-2">
+																<i class="fi fi-rr-user-add"></i> Register
+															</a>
+														</div>
+													</div>
+                                                    <div class="col">
+                                                        <a href="nps-login.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/nps-login.png"
+                                                                        alt="NPS" title="NPS">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">NPS</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- New Altered -->
+                                                        <!-- <a href="sp/businesspartner/FRLogin/Login.aspx" target="_blank" -->
+                                                        <a href="https://www.integratedindia.in/sp/businesspartner/FRLogin/login.aspx"
+                                                            target="_blank" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/franchisee.png"
+                                                                        alt="Franchisee" title="Franchisee">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">Franchisee
+                                                                    </p>
+
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="https://bo.integrated.investments:9443/ldclientlevelH/#Login"
+                                                            target="_blank" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/ld-back-office.png"
+                                                                        alt="LD Back Office" title="LD Back Office">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">LD Back
+                                                                        Office</p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Open Demat A/c</a>
+                                            <ul class="sub-menu sub-menu-w2">
+                                                <div class="row row-cols-1 ">
+                                                    <div class="col">
+                                                        <!-- //New Altered -->
+                                                        <a href="instant-free-trading-demat-account.html"
+                                                            class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/residential_individual.png"
+                                                                        alt="Equity" title="Equity">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">Resident
+                                                                        Individual</p>
+
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="open-minor-demat-account.html" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy"
+                                                                        src="assets/img/minor_account.png"
+                                                                        alt="Minor Account" title="Minor Account">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">Minor Account
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <a href="https://www.integratedindia.in/sp/NRIOnboarding_V2/NRIAccountOpenHome.aspx"
+                                                            target="_blank" class="p-0 m-0 text-b">
+                                                            <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
+                                                                <div class="m-y">
+                                                                    <img loading="lazy" src="assets/img/nri-ac.png"
+                                                                        alt="NRI" title="NRI">
+                                                                </div>
+                                                                <div class="lh-1 my-auto">
+                                                                    <p class="lh-1 m-0 fs--14 p-0 fw-bold">NRI
+                                                                    </p>
+                                                                </div>
+                                                                <div class="ani"></div>
+                                                            </li>
+                                                        </a>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="tgmenu__action d-none d-md-block">
+                                    <ul class="list-wrap">
+                                        <!-- <li class="header-btn">
+											<div class="dark-light-switcher d-flex justify-content-center align-items-center shadow rounded-3">
+												<i class="theme-icon fas fa-sun"></i>
+												<i class="theme-icon fas fa-moon"></i>
+											</div>
+										</li> -->
+
+                                        <li class="offCanvas-menu">
+                                            <a href="javascript:void(0)" class="menu-tigger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                                                    <path
+                                                        d="M0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M0 9C0 7.89543 0.895431 7 2 7C3.10457 7 4 7.89543 4 9C4 10.1046 3.10457 11 2 11C0.895431 11 0 10.1046 0 9Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M0 16C0 14.8954 0.895431 14 2 14C3.10457 14 4 14.8954 4 16C4 17.1046 3.10457 18 2 18C0.895431 18 0 17.1046 0 16Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M7 2C7 0.895431 7.89543 0 9 0C10.1046 0 11 0.895431 11 2C11 3.10457 10.1046 4 9 4C7.89543 4 7 3.10457 7 2Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M7 16C7 14.8954 7.89543 14 9 14C10.1046 14 11 14.8954 11 16C11 17.1046 10.1046 18 9 18C7.89543 18 7 17.1046 7 16Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M14 2C14 0.895431 14.8954 0 16 0C17.1046 0 18 0.895431 18 2C18 3.10457 17.1046 4 16 4C14.8954 4 14 3.10457 14 2Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9Z"
+                                                        fill="currentcolor" />
+                                                    <path
+                                                        d="M14 16C14 14.8954 14.8954 14 16 14C17.1046 14 18 14.8954 18 16C18 17.1046 17.1046 18 16 18C14.8954 18 14 17.1046 14 16Z"
+                                                        fill="currentcolor" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <!-- <li class="header-btn"><a
+												href="instant-free-trading-demat-account.html" class="btn"
+												alt="Open Demat A/C" title="Open Demat A/C">Open Demat A/C</a></li> -->
+                                    </ul>
+                                </div>
+
+                                <div class="mobile-nav-toggler">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+                                        <path
+                                            d="M0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M0 9C0 7.89543 0.895431 7 2 7C3.10457 7 4 7.89543 4 9C4 10.1046 3.10457 11 2 11C0.895431 11 0 10.1046 0 9Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M0 16C0 14.8954 0.895431 14 2 14C3.10457 14 4 14.8954 4 16C4 17.1046 3.10457 18 2 18C0.895431 18 0 17.1046 0 16Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M7 2C7 0.895431 7.89543 0 9 0C10.1046 0 11 0.895431 11 2C11 3.10457 10.1046 4 9 4C7.89543 4 7 3.10457 7 2Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M7 16C7 14.8954 7.89543 14 9 14C10.1046 14 11 14.8954 11 16C11 17.1046 10.1046 18 9 18C7.89543 18 7 17.1046 7 16Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M14 2C14 0.895431 14.8954 0 16 0C17.1046 0 18 0.895431 18 2C18 3.10457 17.1046 4 16 4C14.8954 4 14 3.10457 14 2Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9Z"
+                                            fill="currentcolor" />
+                                        <path
+                                            d="M14 16C14 14.8954 14.8954 14 16 14C17.1046 14 18 14.8954 18 16C18 17.1046 17.1046 18 16 18C14.8954 18 14 17.1046 14 16Z"
+                                            fill="currentcolor" />
+                                    </svg>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="tgmobile__menu">
+                            <nav class="tgmobile__menu-box">
+                                <div class="close-btn"><i class="fi fi-br-cross-small"></i></div>
+                                <div class="nav-logo">
+                                    <a href="/"><img loading="lazy"
+                                            src="assets/img/integrated_enterprises_india_pvt_ltd.png"
+                                            alt="Integrated Enterprises (India) Pvt. Ltd"
+                                            title="Integrated Enterprises (India) Pvt. Ltd" /></a>
+                                </div>
+
+                                <div class="tgmobile__menu-outer">
+                                </div>
+                                <div class="tgmobile__menu-bottom">
+                                    <div class="contact-info">
+                                        <ul class="list-wrap">
+                                            <li><a
+                                                    href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="tgmobile__menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-popup-overlay"></div>
+        <!-- header-search-end -->
+        <!-- offCanvas-menu -->
+        <div class="offCanvas__info">
+            <div class="offCanvas__close-icon menu-close">
+                <button><i class="fi fi-br-cross-small"></i></button>
+            </div>
+            <div class="offCanvas__logo mb-30">
+                <a href="/"><img loading="lazy" src="assets/img/integrated_enterprises_india_pvt_ltd.png"
+                        alt="Integrated Enterprises (India) Pvt. Ltd"
+                        title="Integrated Enterprises (India) Pvt. Ltd" /></a>
+            </div>
+            <div class="offCanvas__side-info mb-30">
+                <div class="contact-list mb-30">
+                    <h4>Registered Office</h4>
+                    <p>5A, 5th Floor, Kences Towers, 1, Ramakrishna Street, <br>
+                        T. Nagar, Chennai - 600 017.</p>
+                </div>
+                <div class="contact-list mb-30">
+                    <h4>Phone Number</h4>
+                    <p><a class="text-b" href="tel:04428143045">044 - 28143045/</a><a class="text-b"
+                            href="tel:04428143046">46</a></p>
+                    <p> <a class="text-b" href="tel:180042523456"> 1800 425 23456</a></p>
+                    <p><a class="text-b" href="tel:02240661800"> 022 - 4066 1800</a></p>
+                </div>
+                <div class="contact-list mb-30">
+                    <h4>Email Address</h4>
+                    <a class="text-b" href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
+                </div>
+            </div>
+        </div>
+        <div class="offCanvas__overly"></div>
+        <!-- offCanvas-menu-end -->
+    </header>
+    <div class="z-99">
+        <div class="chatbot-icon">
+            <img loading="lazy" src="assets/img/chanakya-removebg-preview.png" alt="Chatbot Icon" />
+            <h5 class="fw-bold text-white">Hi, I am Chanakya</h5>
+        </div>
+        <div class="chatbot hidden">
+            <header class="chatbot-header">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-3 chatbot-image">
+                        <img loading="lazy" src="assets/img/chatbot-icon.svg" class="img-fluid" alt="Chanakya Logo" />
+                    </div>
+                    <div class="col-4">
+                        <h5 class="text-b m-0 fw-bold">Chanakya</h5>
+                    </div>
+                    <div class="col-5">
+                        <div class="d-flex align-items-center button-group justify-content-end">
+                            <button class="btn-maximize hidden text-white border-0 action-button">︽</button>
+                            <button class="btn-minimize text-white border-0 action-button">︾</button>
+                            <button class="chat-close text-white border-0 action-button">〤</button>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <p>Myself Chanakya, I am here to assist you today 🌟🚀 I can help you with the queries relating to
+                        the products dealt by Integrated.</p>
+                </li>
+                <li class="chat incoming">
+                    <p>Choose the product for which you are seeking information from me.</p>
+                </li>
+            </ul>
+            <div class="button-options"></div>
+        </div>
+    </div>
+    <main>
+        <section>
+
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+
+                    <div class="col-12 col-md-7 pt-120 pb-120">
+                        <h1 class="text-center pt-md-5">Coming Soon</h1>
+                        <p class="text-center">We're working hard to bring you an incredible experience. Our team is
+                            putting the final touches
+                            on something special that will revolutionize how you work and create.</p>
+                        <div class="notify-form">
+                            <a href="/" class="notify-btn ">Home page </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="footer-area footer__area-two">
+            <div class="footer-top" style="padding: 80px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 mb-5 mb-lg-0">
+                            <div class="footer-widget">
+                                <h4 class="fw-title text-white mb-4" style="font-size: 1.25rem;">Registered Office</h4>
+
+                                <div class="d-flex gap-3 text-white-50 mb-3">
+                                    <div class="icon-box" style="width: 24px; min-width: 24px;">
+                                        <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i>
+                                    </div>
+                                    <p class="mb-0 text-white" style="line-height: 1.6;">
+                                        Unit No. 75, The Platform – Ground Floor,<br>
+                                        11 T2, Block 11, GIFT SEZ, GIFT City,<br>
+                                        Gandhinagar, Gujarat – 382 355
+                                    </p>
+                                </div>
+
+                                <div class="d-flex gap-3 text-white-50 mb-3">
+                                    <div class="icon-box" style="width: 24px; min-width: 24px;">
+                                        <i class="fas fa-phone-alt" style="color: var(--primary);"></i>
+                                    </div>
+                                    <p class="mb-0 text-white" style="line-height: 1.6;">
+                                        <a href="tel:+918925801947" class="text-white text-decoration-none">+91
+                                            8925801947</a>
+                                    </p>
+                                </div>
+
+                                <div class="d-flex gap-3 text-white-50">
+                                    <div class="icon-box" style="width: 24px; min-width: 24px;">
+                                        <i class="fas fa-envelope" style="color: var(--primary);"></i>
+                                    </div>
+                                    <p class="mb-0 text-white" style="line-height: 1.6;">
+                                        <a href="mailto:giftcity@integratedindia.in"
+                                            class="text-white text-decoration-none">giftcity@integratedindia.in</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="footer-widget">
+                                <h4 class="fw-title text-white mb-4" style="font-size: 1.25rem;">Registration
+                                    Information</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="text-white"
+                                            style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                            <small
+                                                style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">CIN</small>
+                                            <div class="text-white mt-1 fw-bold">U66190GJ2024PTC155317</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-white"
+                                            style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                            <small
+                                                style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">IFSCA
+                                                Registration No.</small>
+                                            <div class="text-white mt-1 fw-bold">CMI2025BDK0871</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-white"
+                                            style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                            <small
+                                                style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">NSE
+                                                IX Registration ID</small>
+                                            <div class="text-white mt-1 fw-bold">10092</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-white"
+                                            style="background: rgba(255,255,255,0.05); padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                                            <small
+                                                style="color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;">India
+                                                INX GA Registration ID</small>
+                                            <div class="text-white mt-1 fw-bold">100189</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+    <script>
+        // Email notification form
+        document.querySelector('.notify-btn').addEventListener('click', function () {
+            const emailInput = document.querySelector('.email-input');
+            if (emailInput.value && emailInput.value.includes('@')) {
+                alert('Thank you! We will notify you when we launch.');
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Add some interactive animations to features
+        const features = document.querySelectorAll('.feature');
+        features.forEach(feature => {
+            feature.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+
+            feature.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,951 @@
+﻿/*----------Contact Page Styles----------*/
+.Contact_HeaderDiv{font-size:100%;text-align:center; font-family:"Rubik", sans-serif; font-weight:bold;}
+.Contact_SelRegion{float:left; width:12%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px}
+.Contact_Semi{float:left; width:1%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px}
+.Contact_Region{float:left; width:32%}
+.Contact_SelBranch{ float:left; width:12%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px}
+.Contact_Branch{float:left; width:32%}
+.Contact_Submit{float:left; width:10%}
+
+.Contact_Submit >div:nth-of-type(odd){background-color:#EEEEEE;border-bottom:0px dotted #999999;width:100%;}
+.Contact_Submit >div:nth-of-type(even){background-color:#FEFEFE;border-bottom:1px dotted #999999;font-family:"Rubik", sans-serif;color:#333333;width:100%;}
+
+.Contact_SnoHead{clear:both;float:left; width:5%;display: block; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; line-height:20px;}
+.Contact_BranchHead{float:left; width:25%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; line-height:20px;}
+.Contact_AddressHead{float:left; width:70%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; line-height:20px;}
+
+.Contact_State{clear:both;float:left; width:100%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; background-color:#006599; color:#FFFFFF}
+.Contact_Sno{clear:both;float:left; width:5%;display: block; font-family:"Rubik", sans-serif; font-weight:normal; font-size:14px; line-height:20px;}
+.Contact_BranchName{float:left; width:25%; font-family:"Rubik", sans-serif; font-weight:normal; font-size:14px; line-height:20px;}
+.Contact_AddressName{float:left; width:70%; font-family:"Rubik", sans-serif; font-weight:normal; font-size:14px; line-height:20px;}
+.ContactlinkD3{ margin-top:8%}
+@media screen and (max-width:800px)
+{
+	.ContactlinkD3{ margin-top:15%}
+}
+@media screen and (max-width:680px)
+{
+	.ContactlinkD3{ margin-top:40%}
+    .Contact_SelRegion{float:left; width:100%; font-family:"Rubik", sans-serif; font-weight:bold}
+    .Contact_Semi{display: none;}
+    .Contact_Region{clear:both;float:left; width:100%}
+    .Contact_SelBranch{clear:both;float:left; width:100%; font-family:"Rubik", sans-serif; font-weight:bold}
+    .Contact_Branch{clear:both;float:left; width:100%}
+    .Contact_Submit{clear:both;float:left; width:100%}
+    .Contact_Sno{display: none;}
+    .Contact_SnoHead{display: none;}
+    .Contact_BranchHead{display: none;}
+    .Contact_AddressHead{display: none;}
+    .Contact_State{clear:both;float:left; width:100%}
+    .Contact_BranchName{clear:both;float:left; width:100%; padding-left:3%; font-weight:bold;}
+    .Contact_AddressName{clear:both;float:left; width:100%; padding-left:5%}
+}
+/*----------General Feedback Page Styles----------*/
+.GF_BtnHeaderDiv{font-size:100%;text-align:center; font-family:"Rubik", sans-serif; font-weight:bold;}
+.GF_HeaderDiv{clear:both;font-family:"Rubik", sans-serif; font-size:12px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; text-align:left; float:left; background-color:#FFFFFF; color:#000000; width:100%; margin:0 auto; text-align:center}
+.GF_LeftCaption{clear:both;float:left; width:20%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; padding-top:2%; text-align:left}
+
+.GF_Semi{float:left; width:1%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; display:block; padding-top:2%}
+.GF_RightCaptions{float:left; width:76%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; padding-top:2%; text-align:left; padding-left:2%}
+
+#feedback_submit_btn,#RstBtn{ background-color:#1EA839; color:#FFFFFF; margin-bottom:1%; margin-top:1%}
+.GF_RightCaptions input[type=text]{ width:70%; text-transform:uppercase; height:20px; border-radius:5px;}
+.GF_RightCaptions textarea{ width:90%; text-transform:uppercase; height:100px; border-radius:5px;}
+
+@media screen and (max-width:680px)
+{
+    .GF_Caption{clear:both;float:left; width:100%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px}
+    .GF_Semi{display:none}
+    .GF_RightCaptions{clear:both;float:left; width:100%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px}
+
+ .CUNPS_H8{float:left; width:100%; height:30px; text-align:center; padding:0%; font-family:"Rubik", sans-serif; text-align:center;background:#2da6d9;padding-top:1%;}
+.CUNPS_H2{float:left;width: 7%;text-align:center;padding:0.5%;font-family:"Rubik", sans-serif;}
+.CUNPS_H3{float:left; width:27%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H4{float:left; width:14%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H5{float:left; width:10%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H6{float:left; width:15%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H7{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+
+}
+
+
+/*----------FD and Bonds Menu----------*/
+#Invest_FD_Link{border-top:2px solid #006699; margin-top:1%;font-family:"Rubik", sans-serif;}
+#Invest_BD_Link{border-top:2px solid #006699; margin-top:1%;font-family:"Rubik", sans-serif;}
+#Dmat_Head_Link{border-top:2px solid #006699; margin-top:1%;font-family:"Rubik", sans-serif;}
+#Corporate_Head_Link{border-top:2px solid #006699; margin-top:1%;font-family:"Rubik", sans-serif;}
+
+.Inv_Container_Left{clear:both; float:left; margin-left:5%; width:19%;font-family:"Rubik", sans-serif; font-size:14px;margin-top: 2em;}
+.Inv_Container_Right{float:left; width:69%; background-color:#FFFFFF;margin-top: 2em;}
+/*.Inv_Container_Right{float:left; width:69%; background-color:#FFFFFF;margin-top: 2em;}*/
+
+.Inv_Container_Main_Menu{padding:1%; background-color:#FFFFFF; font-weight:bold; height:45px; line-height:30px; padding-left:3%; border-bottom:2px dotted #000000; border-right:1px solid #006699; font-family:open_sans_condensedbold;font-size:20px; /*font-size:15px;*/}
+.Inv_Container_Sub_Menu{padding:1%; padding-left:10%; background-color:#FFFFFF; height:45px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+
+
+
+
+/*
+.Inv_Container_Sub_Menu:hover{padding:1%; padding-left:10%; background-color:#555; color:#FFFFFF;transition:  background-color 750ms ease; height:30px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+*/
+.Inv_Container_Sub_Menu:hover{padding:1%; padding-left:10%; background-color:#999999; color:#FFFFFF;transition: background-color 750ms ease; height:45px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+.Inv_Container_Sub_Menu:after {
+	content: '';
+	display: block;
+	position: absolute;
+	/*
+	left: 100%;
+	top: 50%;
+    */
+    text-align:right;
+	margin-left: -25px;
+	transition:margin-left 0.5s ease;
+	margin-top: -25px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #1EA839;
+}
+
+.Inv_Container_Sub_Menu:hover:after
+{
+    content: '';
+	display: block;  
+	position: absolute;
+    text-align:right;
+	margin-left: -15px;
+	transition:margin-left 0.5s ease;
+	margin-top: -25px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #FFFFFF;
+}
+
+.Inv_Container_Sub_Menu_active{padding:1%; padding-left:10%; background-color:#555; color:#FFFFFF;transition:  background-color 750ms ease; height:45px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+.Inv_Container_Sub_Menu_active:after
+{
+    content: '';
+	display: block;  
+	position: absolute;
+    text-align:right;
+	margin-left: 14.90%;
+	transition:margin-left 0.5s ease;
+	margin-top: -30px;
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-right: 15px solid #FFFFFF;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid transparent;
+}
+
+
+@media screen and (max-width: 1024px)
+{
+    .Inv_Container_Left{margin-top: 1%}
+    .Inv_Container_Right{margin-top: 1%}
+   	/*.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; text-align: center;font-family:"Rubik", sans-serif; line-height:100px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}*/
+   	.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; text-align: center; height:100px; font-family:"Rubik", sans-serif; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}
+}
+
+
+/*.AWContainer{margin-left: 15%;transition:margin-left 0.5s ease; visibility:hidden;}*/
+
+/*.AWContainer{margin-left: 10%;visibility:visible;}*/
+.NWContainer{margin-left: 15%;transition:margin-left 1s ease;}
+
+.Content_S1{font-family:"Rubik", sans-serif; color:#333; font-size:16px;}
+.DmatFaq_S1{font-family:"Rubik", sans-serif; color:#444444; font-size:14px;}
+.Content_S2{font-family:"Rubik", sans-serif; background:#2DA6D9; color:#FFF; font-size:18px;width:100%; border-bottom:1px dotted #999999;
+            height:30px; line-height:30px; border-radius:5px; text-align:center; text-transform:uppercase;
+            }
+
+.Content_S3{font-family:"Rubik", sans-serif; color:#333; font-size:13px;font-weight: bolder;}
+
+ul.DMFList>li{ list-style-position:outside; line-height:30px;}
+
+@media screen and (max-width:680px)
+{
+    .Inv_Container_Left{clear:both; float:left; width:99%;font-family:"Rubik", sans-serif; font-size:14px; margin-left:0.5%; margin-top:0px;}
+    .Inv_Container_Right{clear:both; float:left; width:96%; background-color:#FFFFFF; margin-left:1%;margin-top:0px;}
+    .Inv_Container_Main_Menu{clear:both; padding:1%; background-color:#FFFFFF; height:45px; line-height:30px; padding-left:0%}
+    .Inv_Container_Main_Menu:after {
+	content: '';
+	display: block;
+	position: absolute;
+	
+    text-align:right;
+	margin-left: 90%;
+	margin-top: -20px;
+	width: 0;
+	height: 0;
+	border-top: 13px solid #999999;
+	border-right: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid transparent;
+    }
+    .Inv_Container_Sub_Menu{clear:both; padding:1%; padding-left:2%; background-color:#FFFFFF; height:45px;}
+    
+    .Inv_Container_Sub_Menu_active{padding:1%; padding-left:10%; background-color:#555; color:#FFFFFF;transition: background-color 750ms ease; height:45px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+    .Inv_Container_Sub_Menu_active:after{display: none;}
+    
+    .OPreface{display:none;}
+    .Page_Preface{display:none;}
+    .Content_S2{height:100%; line-height:100%; padding:1%}
+}
+.AbtBdr{border:1px solid #dddddd; margin:1%; float:left}
+.Abt_Tbl_Content1{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:8%; float:left}
+.Abt_Tbl_Content2{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:28%; float:left}
+.Abt_Tbl_Content3{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:58%; float:left}
+
+.Abt_Journey_Left{clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:10%; float:left}
+.Abt_Journey_Semi{font-size:14px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:2%; float:left}
+.Abt_Journey_Right{font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:78%; float:left}
+
+.Bond_SGB_Left{clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:20%; float:left}
+.Bond_SGB_Semi{font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:2%; float:left}
+.Bond_SGB_Right{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:72%; float:left}
+
+.Abt_Top{text-align:center; border:1px solid #000000;}
+.Abt_Dir{margin:0%;float:left;width:37%;height:450px; border:1px solid #999999; border-radius:5px; overflow:hidden; margin-left:5%; margin-top:3%; margin-bottom:3%; padding:1%;}
+.Abt_Dir__{margin:0%;float:left;width:28%; height:360px; border:1px solid #999999; border-radius:5px; overflow:hidden; margin-left:12%; margin-top:3%; margin-bottom:3%; padding:1%;}
+
+
+
+
+.Abt_Dir_Inr_Img{margin: 0px; float: left; height: 325px; width: 100%; background:#FFFFFF;}
+.Abt_Dir_Inr_Cont{margin: 0px; float: left; height: 325px; width: 100%; background:#FFFFFF;}
+.Abt_Dir_Img{margin:0px;float:left;height:250px; width:100%;}
+
+.Abt_Dir_Name{margin: 0px; height: 29px; line-height:29px; width: 100%; background-color:#FFFFFF; border-top:0px solid #000000; color:#1a476e; text-align:center; font-family:"Rubik", sans-serif; font-weight: bold; font-size:25px;}
+.Abt_Dir_Dsn{margin: 0px;height: 20px; height: 20x; line-height:20px; width: 100%; background-color:#FFFFFF; border-top:0px solid #999999; color:#1a476e; text-align:center; font-family:"Rubik", sans-serif; font-size:23px; margin-top:5px;margin-bottom:5px; }
+.Abt_Dir_Op{margin: 0px;height: 40px; height: 40px; line-height:20px; width: 100%; background-color:#FFFFFF; border-bottom:0px solid #999999; color:#1a476e; text-align:center; font-family:"Rubik", sans-serif; font-size:18px; margin-top:5px;margin-bottom:5px;}
+.Abt_Dir_Cont{margin: 0px;height: 250px; line-height:23px; width: 95%; background-color:#FFFFFF; border-top:1px solid #999999; color:#1a476e; text-align:justify; font-family:"Rubik", sans-serif; font-size:14px;  padding:2%}
+
+.Investment1{list-style: circle;font-family:"Rubik", sans-serif; font-size:15px; font-weight:normal; margin-top:1%; line-height:25px; padding-left:1%; padding-right:1%; text-align:justify}
+.Investment{list-style: circle;font-family:"Rubik", sans-serif; font-size:15px; font-weight:normal; margin-top:1%; line-height:25px; padding-left:1%; padding-right:1%; text-align:justify}
+.InvestmentBold{font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify}
+.Investment_Bonds_GOI{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; width:98%}
+
+.GOIContainer >div:nth-child(odd){background:#F8F8F8; float:left; border-bottom:1px solid #E3E3E3; border-left:1px solid #E3E3E3; border-right:1px solid #E3E3E3; width:100%; border-radius:4px;}
+.GOIContainer >div:nth-child(even){background:#FFFFFF; float:left; border-bottom:1px solid #E3E3E3; border-left:0px solid #E3E3E3; border-right:0px solid #E3E3E3; width:100%; border-radius:4px;}
+
+.Inv_Bonds_GOI_Feature_HLeft{ clear:both; float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:28%}
+.Inv_Bonds_GOI_Feature_HRight{float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:68%}
+.Inv_Bonds_GOI_Feature_Left{ clear:both; float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:28%}
+.Inv_Bonds_GOI_Feature_Right{float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:68%}
+
+.Inv_Bonds_CGB_Head{ float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:23%}
+.Inv_Bonds_CGB_Left{ clear:both; float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:23%}
+.Inv_Bonds_CGB_Right{float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:23%}
+
+
+/*.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; text-align: center;font-family:"Rubik", sans-serif; line-height:150px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}*/
+.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; height:150px; text-align: center;font-family:"Rubik", sans-serif; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}
+
+@media screen and (max-width:680px)
+{
+    
+    .Investment{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:center !important;}
+    .Investment span{
+        text-align: center;
+        width: 100%;
+        float: left;
+    }   
+
+    .Investment1{font-family:"Rubik", sans-serif; font-size:11.5px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:center !important;}
+    .Investment1 span{
+        text-align: center;
+        width: 100%;
+        float: left;
+    }   
+    
+    /*.Investment{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify}
+	*/
+    .Investment_Bonds_GOI{clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify;}
+    .Investment_Bonds_GOI_Feature_Left{clear:both; float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:48%}
+    .Investment_Bonds_GOI_Feature_Right{float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:48%}
+    
+    .Inv_Bonds_GOI_Feature_HLeft{ clear:both; float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:48%}
+    .Inv_Bonds_GOI_Feature_HRight{float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:48%}
+    .Inv_Bonds_GOI_Feature_Left{ clear:both; float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:48%}
+    .Inv_Bonds_GOI_Feature_Right{float:left; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:left; width:48%}
+    
+    .Abt_Dir{margin:0%;float:left;width:94%;  border:0px; border-bottom:1px solid #666666; overflow:hidden; margin:2%;}
+    .Abt_Dir_Cont{height:auto;}
+	/*.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; text-align: center;font-family:"Rubik", sans-serif; line-height:75px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}*/
+	.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; height:75px; text-align: center;font-family:"Rubik", sans-serif; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}
+}
+.OPreface
+{
+border-top:2px solid #EEEEEE;border-bottom:2px solid #BBBBBB; float:left; width:100%;
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+height:30px;
+display:block;
+}
+.Page_Preface
+{
+    float:left;
+    font-family:metropolis-light;
+    font-size:13px; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; letter-spacing:1px; width:98%;
+    background-color:none;
+    height:30px;
+    line-height:5px;
+    display:block;
+}
+/*
+@media screen and (max-width:680px)
+{
+    .Page_Preface{font-family:"Rubik", sans-serif; font-size:13px; font-weight:bold;margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; letter-spacing:2px}
+}
+*/
+
+/*.AppContainer >div:nth-child(odd){background:#EEEEEE;}*/
+
+.AppContainer >div:nth-child(odd){background:#F8F8F8; float:left; border-bottom:1px solid #E3E3E3; border-left:1px solid #E3E3E3; border-right:1px solid #E3E3E3; width:100%; border-radius:4px;}
+.AppContainer >div:nth-child(even){background:#FFFFFF; float:left; border-bottom:1px solid #E3E3E3; border-left:0px solid #E3E3E3; border-right:0px solid #E3E3E3; width:100%; border-radius:4px;}
+
+.AppSno{ clear:both; padding:1%;border:0px solid #000000; width:2%; display:block; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; text-align:justify;}
+.AppCompName{padding:1%;border:0px solid #000000; width:48%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; text-align:justify}
+.AppDwnld{padding:0.5%;border:0px solid #000000; width:15%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; text-align:justify}
+.AppCompInfo{padding:0.5%;border:0px solid #000000; width:15%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; text-align:justify}
+.Appsplitter{margin:5px 5px 5px 5px;float:left;border-bottom:1px dotted #666666; width:100%}
+.GHFormName{padding:1%;border:0px solid #000000; width:28%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; text-align:justify}
+
+@media screen and (max-width:1024px)
+{
+.AppCompName{padding:1%;border:0px solid #000000; width:40%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; text-align:justify}
+.AppDwnld{padding:0.25%;border:0px solid #000000; width:22%; float:left;font-family:"Rubik", sans-serif; font-size:12px; font-weight:normal; text-align:justify}
+.AppCompInfo{padding:0.25%;border:0px solid #000000; width:20%; float:left;font-family:"Rubik", sans-serif; font-size:12px; font-weight:normal; text-align:justify}
+}
+
+@media screen and (max-width:680px)
+{
+    .AppSno{ display:none;}
+    .AppCompName{ clear:both;padding:1%;width:98%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; line-height:18px; text-align:justify}
+    .AppDwnld{ clear:both;padding:0.5%;width:48%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; line-height:18px; text-align:justify}
+    .AppCompInfo{ width:48%;padding:0.5%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; line-height:18px; text-align:justify}
+    .downloadbut{margin:0px;height:23px; line-height:20px; background:#FFFFFF; color:#2DA6D9; font-family:"Rubik", sans-serif; text-align:center; padding:2%; border:1px solid #2DA6D9; border-radius:6px; width:103%;
+    -webkit-transition: background-color 300ms linear;-ms-transition: background-color 300ms linear;transition: background-color 300ms linear;cursor:pointer;}
+    .infobut{height:20px; line-height:20px; background:#FFFFFF; color:#2F752D; font-family:"Rubik", sans-serif; text-align:center; padding:2%; border:1px solid #2F752D; border-radius:6px; width:92%;
+    -webkit-transition: background-color 300ms linear;-ms-transition: background-color 300ms linear;transition: background-color 300ms linear;cursor:pointer;}
+}
+/*tr:last-child td{ border-bottom:1pt solid #000000;}
+td{ border-top:1pt solid #000000;}
+td:first-child{ border-left:1pt solid #000000;}
+td:last-child{ border-right:1pt solid #000000;}
+*/
+.ManuImg{ clear:both; width:30%; float:left; margin-top:2%; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; line-height:18px; padding-left:1%; padding-right:1%;}
+.ManuTbl{ width:40%; float:left; margin-top:2%}
+.ManuTbl > table{ border-spacing: 0px;}
+.ManuTbl > table td{ padding:3px 3px 3px 3px; text-align:center; border-bottom:1px solid #999999; border-right:1px solid #999999;}
+.ManuTbl > table tr{ padding:3px 3px 3px 3px; text-align:center;}
+.ManuTbl > table td:first-child{ border-left:1px solid #999999;}
+.ManuTbl > table tr:first-child td{ border-top:1px solid #999999;}
+
+.ManuInt{ width:25%; float:left; margin-left:1%; margin-top:2%; text-align:center;}
+
+
+.ManuImg1{clear:both;width: 30%;float:left;margin-top:2%;text-align:center;font-family:"Rubik", sans-serif;font-size:14px;font-weight:normal;line-height:18px;padding-left:1%;padding-right:1%;}
+.ManuTbl1{width: 70%;float:left;margin-top:2%}
+.ManuTbl1 > table{ border-spacing: 0px;}
+.ManuTbl1 > table td{ padding:3px 3px 3px 3px; text-align:center; border-bottom:1px solid #999999; border-right:1px solid #999999;}
+.ManuTbl1 > table tr{ padding:3px 3px 3px 3px; text-align:center;}
+.ManuTbl1 > table td:first-child{ border-left:1px solid #999999;}
+.ManuTbl1 > table tr:first-child td{ border-top:1px solid #999999;}
+
+.ManuInt1{width: 124%;float:left;margin-left:1%;margin-top:2%;text-align:center;}
+
+@media screen and (max-width:680px)
+{
+    .ManuImg{ clear:both; width:98%; float:left; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%;}
+    .ManuTbl{ clear:both;width:100%; float:left; margin-top:1%; }
+    .ManuInt{ clear:both;width:99%; float:left; margin-left:1%; margin-top:1%}
+
+    .ManuImg1{ clear:both; width:98%; float:left; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%;}
+    .ManuTbl1{ clear:both;width:100%; float:left; margin-top:1%; }
+    .ManuInt1{ clear:both;width:99%; float:left; margin-left:1%; margin-top:1%}
+}
+/*Corporate Services*/
+.Corp_Comp_Table1_head1{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:center; height:20px; width:18%; float:left}
+.Corp_Comp_Table1_head2{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:center; height:20px; width:28%; float:left}
+.Corp_Comp_Table1_head3{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:center; height:20px; width:23%; float:left}
+.Corp_Comp_Table1_head4{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:center; height:20px; width:23%; float:left}
+
+.Corp_Comp_Table1_Content1{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; padding-left:1%; padding-right:1%; text-align:left; width:18%; float:left}
+.Corp_Comp_Table1_Content2{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; padding-left:1%; padding-right:1%; text-align:left; width:28%; float:left}
+.Corp_Comp_Table1_Content3{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; padding-left:1%; padding-right:1%; text-align:left; width:23%; float:left}
+.Corp_Comp_Table1_Content4{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; padding-left:1%; padding-right:1%; text-align:left; width:23%; float:left}
+
+
+.Corp_Comp_Table2_head1{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left;  width:8%; float:left}
+.Corp_Comp_Table2_head2{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:38%; float:left}
+.Corp_Comp_Table2_head3{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:48%; float:left}
+
+.Corp_Comp_Table2_Content1{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:8%; float:left}
+.Corp_Comp_Table2_Content2{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:38%; float:left}
+.Corp_Comp_Table2_Content3{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:48%; float:left}
+
+.Corp_Comp_Table3_head1{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left;  width:38%; float:left}
+.Corp_Comp_Table3_head2{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:18%; float:left}
+.Corp_Comp_Table3_head3{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:38%; float:left}
+.Corp_Comp_Table3_head4{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:98%; float:left}
+
+.Corp_Comp_Table3_Content1{ clear:both;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:38%; float:left}
+.Corp_Comp_Table3_Content2{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:18%; float:left}
+.Corp_Comp_Table3_Content3{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:38%; float:left}
+.Corp_Comp_Table3_Content4{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:100%; float:left}
+
+/* Tax Services */
+#Tax_Main_Link,#NPS_Main_Link,#Dwnld_Main_Link,#Invest_MF_Link,#Invest_Equity_Link,#Invest_Ins_Link,#Abt_Head_Link,#Invest_KC_Link{border-top:2px solid #006699; margin-top:1%;font-family:"Rubik", sans-serif;}
+.Tax_Container_Left{clear:both; float:left; margin-left:5%; width:19%;font-family:"Rubik", sans-serif; font-size:14px;}
+.Tax_Container_Right{float:left; width:69%; background-color:#FFFFFF;margin-top: 2em;}
+.Tax_Container_Main_Menu{padding:1%; background-color:#FFFFFF; font-weight:bold; height:30px; line-height:30px; padding-left:3%; border-bottom:2px dotted #000000; border-right:1px solid #006699; font-family:open_sans_condensedbold;font-size:20px; /*font-size:15px;*/ }
+.Tax_Container_Sub_Menu{padding:1%; padding-left:10%; background-color:#FFFFFF; height:30px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+/*.Tax_Container_Sub_Menu:hover{padding:1%; padding-left:10%; background-color:#555; color:#FFFFFF;transition:  background-color 750ms ease; height:30px; border-right:3px solid #006699; border-bottom:1px dotted #000000; line-height:30px;}*/
+
+@media screen and (max-width:680px)
+{
+    .Tax_Container_Left{clear:both; float:left; width:99%;font-family:"Rubik", sans-serif; font-size:14px;margin-left:0%;}
+    .Tax_Container_Right{clear:both; float:left; width:99%; background-color:#FFFFFF;}
+    .Tax_Container_Main_Menu{clear:both; padding:1%; background-color:#FFFFFF; height:30px; line-height:30px; padding-left:0%}
+    .Tax_Container_Sub_Menu{clear:both; padding:1%; padding-left:0%; background-color:#FFFFFF; height:30px;}
+    
+    .Tax_Container_Main_Menu:after {
+	content: '';
+	display: block;  
+	position: absolute;
+	/*
+	left: 100%;
+	top: 50%;
+    */
+    text-align:right;
+	margin-left: 90%;
+	margin-top: -20px;
+	width: 0;
+	height: 0;
+	border-top: 13px solid #999999;
+	border-right: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid transparent;
+    }
+    .Tax_Container_Sub_Menu{clear:both; padding:1%; padding-left:2%; background-color:#FFFFFF; height:30px; display:none;}
+    
+    .Tax_Container_Sub_Menu_active{padding:1%; padding-left:10%; background-color:#555; color:#FFFFFF;transition:  background-color 750ms ease; height:30px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+    .Tax_Container_Sub_Menu_active:after{display: none; }
+    
+    
+    .OPreface{display:none;}
+    .Page_Preface{display:none;}
+    
+}
+
+.Tax_Container_Sub_Menu:hover{padding:1%; padding-left:10%; background-color:#999999; color:#FFFFFF;transition: background-color 750ms ease; height:30px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+.Tax_Container_Sub_Menu:after {
+	content: '';
+	display: block;  
+	position: absolute;
+	/*
+	left: 100%;
+	top: 50%;
+    */
+    text-align:right;
+	margin-left: -25px;
+	transition:margin-left 0.5s ease;
+	margin-top: -25px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #1EA839;
+}
+
+.Tax_Container_Sub_Menu:hover:after
+{
+    content: '';
+	display: block;  
+	position: absolute;
+    text-align:right;
+	margin-left: -15px;
+	transition:margin-left 0.5s ease;
+	margin-top: -25px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #FFFFFF;
+}
+
+.Tax_Container_Sub_Menu_active{padding:1%; padding-left:10%; background-color:#555; color:#FFFFFF;transition:  background-color 750ms ease; height:30px; border-right:1px solid #006699; border-bottom:1px dotted #000000; line-height:30px; cursor:pointer;}
+.Tax_Container_Sub_Menu_active:after
+{
+    content: '';
+	display: block;  
+	position: absolute;
+    text-align:right;
+	margin-left: 14.90%;
+	transition:margin-left 0.5s ease;
+	margin-top: -30px;
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-right: 15px solid #FFFFFF;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid transparent;
+}
+
+.Tax_Dwnld_Header{ font-family:"Rubik", sans-serif; font-size:16px; font-weight:normal; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:center; background-color:#FFFFAA; border:1px dashed #000000; height:30px; vertical-align:middle; width:98%; float:left}
+.Tax_Dwnld{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify}
+.Tax_Dwnld_Left{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; width:78%; float:left}
+.Tax_Dwnld_Right{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; width:18%; float:left}
+
+@media screen and (max-width:680px)
+{
+    .Tax_Dwnld_Header{ clear:both; font-family:"Rubik", sans-serif; font-size:16px; font-weight:normal; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:center; background-color:#FFFFAA; border:1px dashed #000000; height:30px; vertical-align:middle; width:98%; float:left}
+    .Tax_Dwnld{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; width:98%; float:left}
+    .Tax_Dwnld_Left{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; width:98%; float:left}
+    .Tax_Dwnld_Right{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify; width:98%; float:left}
+}
+
+.TcsTds_Header_left{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left;  width:10%; float:left}
+.TcsTds_Header_Right{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:30%; float:left}
+
+.TcsTds_Content_left{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left;  width:10%; float:left}
+.TcsTds_Content_Right{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:30%; float:left}
+
+.Tx24G_Header_left{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left;  width:10%; float:left}
+.Tx24G_Header_Right{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:30%; float:left}
+
+.Tx24G_Content_left{ clear:both; font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left;  width:10%; float:left}
+.Tx24G_Content_Right{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:30px; padding-left:1%; padding-right:1%; text-align:left; width:30%; float:left}
+
+.TxAppContainer >div:nth-child(odd){background:#F8F8F8; float:left; border-bottom:1px solid #E3E3E3; border-left:1px solid #E3E3E3; border-right:1px solid #E3E3E3; width:100%; border-radius:4px;}
+.TxAppContainer >div:nth-child(even){background:#FFFFFF; float:left; border-bottom:1px solid #E3E3E3; border-left:0px solid #E3E3E3; border-right:0px solid #E3E3E3; width:100%; border-radius:4px;}
+
+.TxDueQuater{ width:40%; float:left; height:40px; line-height:40px; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold;}
+.TxDueTDSHead{ width:30%; float:left; height:20px; line-height:20px; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold;}
+.TxDueTCSHead{ width:30%; float:left; height:20px; line-height:20px; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold;}
+.TxDueAllHead{ width:60%; float:left; height:20px; line-height:20px; text-align:center;font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold;}
+        
+.TxDueQuaterContent{ width:35%; float:left; height:30px; line-height:30px; text-align:left; padding-left:5%;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal;}
+.TxDueTDSContent{ width:20%; float:left; height:30px; line-height:30px; text-align:left; padding-left:10%;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal;}
+.TxDueTCSContent{ width:20%; float:left; height:30px; line-height:30px; text-align:left; padding-left:10%;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal;}
+
+.CORSER>div{font-family:"Rubik", sans-serif;font-size:14px; text-align:center; width:70%;}
+
+.CorFRow{float:left;border-bottom:1px solid #000000;border-top:1px solid #000000; margin-bottom:0.25%;border:1px solid #CCCCCC;border-radius:25px;
+	font-family:"Rubik", sans-serif;font-size:14px;margin-left:20%;margin-Right:20%;
+	}
+.Corp_H2{float:left; width:50%; text-align:left; padding:4.5%; font-family:"Rubik", sans-serif; color:black;}
+.Corp_H3{float:left; width:50%; text-align:left; padding:4.5%; font-family:"Rubik", sans-serif; color:black;}
+
+.CorFRow2{float:left; margin-bottom:0.25%;
+	margin-left:20%;margin-Right:20%;
+	}
+@media screen and (max-width:680px)
+{	
+   .CORSER>div{
+        width: 80%;
+    }
+    .Investment ul, ol {
+        text-align: left;
+    }
+    .Investment1 ul, ol {
+        text-align: left;
+    }
+    .CorFRow
+    {
+        margin: 0 10%;
+    }
+    
+    .Corp_H2{clear:both;float:left; width:100%}
+	.Corp_H3{clear:both;float:left; width:100%}
+
+}
+
+.TAXSER>div{font-family:"Rubik", sans-serif;font-size:14px; text-align:left; width:100%;}
+.TaxFRow{float:left;border-bottom:1px solid #000000;border-top:1px solid #000000; width:90%; margin-bottom:0.25%;background:#F6F6F6;border:1px solid #CCCCCC;border-radius:5px;font-family:"Rubik", sans-serif;font-size:14px;}
+.TaxRow{float:left;width:90%;}
+.TaxRow:nth-child(odd){background:#F6F6F6;border:1px solid #CCCCCC;border-radius:5px;}
+.TaxRow:nth-child(even){border:1px solid #CCCCCC;border-radius:5px;}
+.TaxRow:last-child{border-bottom:1px solid #CCCCCC;}
+.TAIR_H1{float:left; width:3%; margin-left:0.35%; font-family:"Rubik", sans-serif;}
+.TAIR_H2{float:left; width:30%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.TAIR_H3{float:left; width:30%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.TAIR_H4{float:left; width:30%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+
+.TAIR_C1{clear:both;float:left; width:3%; margin-left:0.35%}
+.TAIR_C2{float:left; width:30%; margin-left:0.35%; text-align:justify; padding:0.5%;}
+.TAIR_C3{float:left; width:30%; margin-left:0.35%; text-align:justify; padding:0.5%;}
+.TAIR_C4{float:left; width:30%; margin-left:0.35%; text-align:justify; padding:0.5%;}
+
+.TaxRow1{float:left;width:70%; clear:right; flex: 0 0 50px; display: flex;flex-direction: column;flex-wrap: wrap;}
+.TaxRow1:nth-child(odd){background:#F6F6F6;border:1px solid #CCCCCC;border-radius:5px;}
+.TaxRow1:last-child{border-bottom:1px solid #CCCCCC;}
+
+/*.CUNPS_H8{float:left; width:100%; height:30px; text-align:center; padding:0%; font-family:"Rubik", sans-serif; text-align:center;background:#2da6d9;padding-top:1%;}
+.CUNPS_H2{float:left; width:5%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H3{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H4{float:left; width:12%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H5{float:left; width:12%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H6{float:left; width:12%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H7{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}/*
+
+
+/*
+.BYCARNPS_H2{float:left; width:5%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BYCARNPS_H3{float:left; width:30%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BYCARNPS_H4{float:left; width:15%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BYCARNPS_H5{float:left; width:15%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BYCARNPS_H6{float:left; width:28%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+*/
+
+.CUNPS_H8{float:left; width:100%; height:30px; text-align:center; padding:0%; font-family:"Rubik", sans-serif; text-align:center;background:#2da6d9;padding-top:1%;}
+.CUNPS_H2{float:left;width: 7%;text-align:center;padding:0.5%;font-family:"Rubik", sans-serif;}
+.CUNPS_H3{float:left; width:23%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H4{float:left; width:14%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H5{float:left; width:13%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H6{float:left; width:13%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.CUNPS_H7{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+
+.BYCARNPS_H2{float:left;width: 6%;text-align:center;padding:0.5%;font-family:"Rubik", sans-serif;}
+.BYCARNPS_H3{float:left;width: 34%;text-align:center;padding:0.5%;font-family:"Rubik", sans-serif;}
+.BYCARNPS_H4{float:left;width: 20%;text-align:center;padding:0.5%;font-family:"Rubik", sans-serif;}
+.BYCARNPS_H5{float:left; width:13%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BYCARNPS_H6{float:left;width: 27%;text-align:left;padding:0.5%;font-family:"Rubik", sans-serif;}
+
+.BOI_H2{float:left; width:17%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BOI_H3{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BOI_H4{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.BOI_H5{float:left; width:25%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+
+.QAndF_H2{float:left; width:17%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.QAndF_H3{float:left; width:10%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.QAndF_H4{float:left; width:20%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.QAndF_H5{float:left; width:10%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.QAndF_H6{float:left; width:23%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+.QAndF_H7{float:left; width:20%; text-align:center; padding:0.5%; font-family:"Rubik", sans-serif;}
+
+
+/*.CUNPS_C1{clear:both;float:left; width:3%; margin-left:0.35%}
+.CUNPS_C2{float:left; width:5%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C3{float:left; width:25%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C4{float:left; width:12%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C5{float:left; width:12%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C6{float:left; width:12%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C7{float:left; width:25%; margin-left:0.35%; text-align:left; padding:0.5%;} */
+/*
+.BYCARNPS_C2{float:left; width:5%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BYCARNPS_C3{float:left; width:30%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BYCARNPS_C4{float:left; width:15%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BYCARNPS_C5{float:left; width:15%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BYCARNPS_C6{float:left; width:28%; margin-left:0.35%; text-align:left; padding:0.5%;}
+*/
+.CUNPS_C1{clear:both;float:left; width:3%; margin-left:0.35%}
+.CUNPS_C2{float:left; width:5%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C3{float:left;width: 24%;margin-left:0.35%;text-align:left;padding:0.5%;}
+.CUNPS_C4{float:left; width:15%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C5{float:left; width:12%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C6{float:left; width:12%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.CUNPS_C7{float:left; width:25%; margin-left:0.35%; text-align:left; padding:0.5%;}
+
+.BYCARNPS_C2{float:left; width:5%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BYCARNPS_C3{float:left;width: 40%;margin-left:0.35%;text-align:left;padding:0.5%;}
+.BYCARNPS_C4{float:left;width: 15%;margin-left:0.35%;text-align:left;padding:0.5%;}
+.BYCARNPS_C5{float:left; width:12%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BYCARNPS_C6{float:left; width:26%; margin-left:0.35%; text-align:left; padding:0.5%;}
+
+.BOI_C2{float:left; width:17%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BOI_C3{float:left; width:25%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BOI_C4{float:left; width:25%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.BOI_C5{float:left; width:25%; margin-left:0.35%; text-align:left; padding:0.5%;}
+
+.QAndF_C2{float:left; width:17%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.QAndF_C3{float:left; width:10%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.QAndF_C4{float:left; width:20%; margin-left:0.35%; text-align:left; padding:0.5%;}
+.QAndF_C5{float:left; width:10%; margin-left:0%; text-align:left; padding:0.5%;padding-left:0%;}
+.QAndF_C6{float:left; width:20%; margin-left:0%; text-align:left; padding:0.5%;padding-left:0%;}
+.QAndF_C7{float:left; width:20%; margin-left:1%; text-align:left; padding:0.5%;}
+
+
+
+@media screen and (max-width:680px)
+{
+    /*.TAIR_H1{display:none;}
+    .TAIR_H2{display:none;}
+    .TAIR_H3{display:none;}
+    .TAIR_H4{display:none;}
+    
+    .TAIR_C1{display:none}
+    .TAIR_C2{float:left; width:94%; margin:2%;}
+    .TAIR_C3{float:left; width:94%; margin:2%;}
+    .TAIR_C4{float:left; width:94%; margin:2%;}
+    
+    .TAIR_C2:before{content:"Class of Person(2)"; float:left; width:100%; font-weight:bold; border-bottom:1px dotted #000000}
+    .TAIR_C3:before{content:"Nature and Value of transaction(3)"; float:left; width:100%; font-weight:bold; border-bottom:1px dotted #000000}
+    .TAIR_C4:before{content:"Clarifications by Central Board of Direct Taxes vide Circular No.07/2005 dated 24thAug, 2005(4)"; float:left; width:100%; font-weight:bold; border-bottom:1px dotted #000000}
+*/
+}
+
+.Rating{font-family:"Rubik", sans-serif; color:#555; font-size:14px;}
+.Offer_Logos_Href{cursor:hand;}
+.Scheme_Main{font-family:Arial, Helvetica, sans-serif;font-size:14px;font-weight:bold;color:#19476e;cursor:hand;}
+
+
+.SchemeContainer
+{
+    float:left; width:100%; padding:0%;
+}
+.SchemeContainer >div
+{
+    float:left; width:47%; border:1px solid #000000;max-height:450px; margin-left:2.5%;
+    border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.Schedule{float:left; width:100%; padding:1%;font-family:"Rubik", sans-serif; font-size:13px; font-weight:normal; display:inline-block;}
+.Schedule >div:nth-child(1){float:left; width:100%; padding:0%; text-align:center; font-family:"Rubik", sans-serif; font-size:14px; height:25px;border-top:1px solid #999999; line-height:25px}
+.Schedule >div:nth-child(2)>div{width:48%; text-align:left; float:left;font-family:"Rubik", sans-serif;}
+.Schedule >div:nth-of-type(odd)
+{
+    background-color:#EEEEEE;
+}
+.Schedule >div:nth-of-type(even)
+{
+	background-color:#FEFEFE;
+}
+.Schedule >div{ width:100%;border-bottom:1px solid #999999;border-left:1px solid #999999;border-right:1px solid #999999; text-align:left; float:left;display:inline-table;}
+
+.Schedule >div>div:nth-of-type(even){height:100%;display:inline-table;}
+.Schedule >div>div{width:48%;font-family:"Rubik", sans-serif; font-size:13px; font-weight:normal; text-align:left; float:left; height:100%; padding:0.5%;} 
+
+.IScheme >div
+{
+    text-align:center;
+    font-family:"Rubik", sans-serif; font-size:13px; font-weight:normal; 
+    padding:2px;
+}
+.IScheme >div:nth-of-type(odd)
+{
+    background-color:#EEEEEE;
+    border-bottom:0px dotted #999999;
+    text-align:left;
+}
+.IScheme >div:nth-of-type(even)
+{
+    background-color:#FEFEFE;
+    border-bottom:1px dotted #999999;
+    /*font-family:"Rubik", sans-serif;*/
+    color:#333333;
+    text-align:left;
+}
+.ISchemeTC
+{
+    text-align:justify;
+    font-family:"Rubik", sans-serif; font-size:13px; font-weight:normal; 
+    padding:2px; float:left;
+}
+.ISchemeTC >ul>li
+{
+    padding:0px;
+    margin:0px;
+}
+
+/*.faq_bodytxt
+{
+    float:left;
+}
+.DematFAQimg
+{
+clear:both;
+float:left;
+background:url('/images/Expand.gif'); background-repeat:no-repeat; width:20px; height:20px;
+padding:5px;
+cursor:pointer;
+width:3%;
+}
+.Collapseimg
+{
+clear:both;
+float:left;
+background:url('/images/Expand.gif'); background-repeat:no-repeat; width:20px; height:20px;
+padding:5px;
+cursor:pointer;
+width:3%;
+}
+
+.DematQuest
+{
+    float:left;
+    cursor:pointer;
+    width:95%
+}*/
+.DMsgDiv
+{
+    float:left;
+    display: block;
+    margin:1%;
+    width:100%;
+    min-height:350px;
+    font-size:35px;
+    font-family:"Rubik", sans-serif;
+    color:#B8CCE1;
+    text-align:center;
+    vertical-align:middle;
+    border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.MsgDiv
+{
+    float:left;
+    margin:1%;
+    width:70%;
+    min-height:350px;
+    font-size:35px;
+    font-family:"Rubik", sans-serif;
+    color:#B8CCE1;
+    text-align:center;
+    vertical-align:middle;
+    border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.DematAOP
+{
+    float:left;
+    margin:1%;
+    width:47%;
+    min-height:350px;
+    border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.DematAOP>div:first-child{padding:1%;}
+.DematAOP_1{ float:left; margin:1%; width:96.5%; border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
+.DematDownloadLeft{width:83%; clear:both; float:left;font-family:"Rubik", sans-serif; font-size:12px; font-weight:normal; line-height:30px; padding-left:1%; padding-right:1%; text-align:justify; height:30px}
+.DematDownloadRight{width:13%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; line-height:30px; padding-left:1%; padding-right:1%; text-align:justify; height:30px}
+.DmathomeOverallLeft{float:left; width:48%; margin-left:0.5%;}
+.DmathomeOverallRight{float:left; width:45%; margin-left:3%;}
+
+.DmatFaqInvestment{font-family:"Rubik", sans-serif; font-size:16px; font-weight:normal; margin:0.5%; line-height:18px; text-align:justify}
+.DematFAQimg{ clear:both;float:left;background:url('https://www.integratedindia.in/images/Expand.gif'); background-repeat:no-repeat; width:20px; height:20px;padding:5px;cursor:pointer;width:3%;}
+.Collapseimg{ clear:both;float:left;background:url('https://www.integratedindia.in/images/Collapse.gif'); background-repeat:no-repeat; width:20px; height:20px;padding:5px;cursor:pointer;width:3%;}
+.DematQuest{float:left;cursor:pointer;width:95%;border:0px solid #000000;}
+.faq_bodytxt{float:left;padding:5px;border:1px solid #999999;margin-left:4%;margin-bottom:1%;width:95%;border-radius:5px;}
+
+.DematAppContainer >div:nth-child(odd){background:#F8F8F8; float:left; border-bottom:1px solid #E3E3E3; border-left:1px solid #E3E3E3; border-right:1px solid #E3E3E3; width:100%; border-radius:4px;}
+.DematAppContainer >div:nth-child(even){background:#FFFFFF; float:left; border-bottom:1px solid #E3E3E3; border-left:0px solid #E3E3E3; border-right:0px solid #E3E3E3; width:100%; border-radius:4px;}
+.DematAppSno{padding:1%;border:0px solid #000000; width:2%; display:block; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; padding-left:1%; padding-right:3%; text-align:justify;}
+.DematAppCompName{padding:1%;border:0px solid #000000; width:65%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; padding-left:1%; padding-right:1%; text-align:justify}
+.DematAppDwnld{padding:0.5%;border:0px solid #000000; width:15%; float:left;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; padding-left:1%; padding-right:1%; text-align:justify}
+
+@media screen and (max-width:680px)
+{
+    .DmathomeOverallLeft{ clear:both; float:left; width:100%; margin-left:0%;}
+    .DmathomeOverallRight{ clear:both;float:left; width:100%; margin-left:0%;}
+    
+    .DmatFaqInvestment{font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin:0.5%; line-height:18px; text-align:justify}
+    .DematFAQimg{ clear:both; float:left;background:url('https://www.integratedindia.in/images/Expand.gif'); background-repeat:no-repeat; width:20px; height:20px;padding:5px;cursor:pointer;width:5%;}
+    .Collapseimg{ clear:both;float:left;background:url('https://www.integratedindia.in/images/Collapse.gif'); background-repeat:no-repeat; width:20px; height:20px;padding:5px;cursor:pointer;width:3%;}
+    .DematQuest{float:left;cursor:pointer;width:90%;border:0px solid #000000;}
+    .faq_bodytxt{float:left;padding:5px;border:1px solid #999999;margin-left:0%;margin-bottom:1%;width:98%;border-radius:5px;}
+    
+    .DematAOP{float:left; margin:1%; width:96%; border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+    .DematAOP_1{float:left; margin:1%; width:96.5%; border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+    .SchemeContainer >div:nth-of-type(odd){float:left; width:96.5%; border:1px solid #000000; margin-left:1%;border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top:3%;}
+    .SchemeContainer >div:nth-of-type(even){float:left; width:96.5%; border:1px solid #000000; margin-left:1%;border:1px solid #EEEEEE; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top:10%;}
+}
+
+.NPS_Home_Tbl_left{ clear:both;font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:38%; float:left}
+.NPS_Home_Tbl_Right{ font-family:"Rubik", sans-serif; font-size:14px; font-weight:normal; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left; width:58%; float:left}
+
+.Ac_HeaderDiv1{clear:both;font-family:"Rubik", sans-serif; font-size:14px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; padding-right:1%; text-align:left;  width:50%; float:left; color:#000000}
+.AcOpen_Ldiv{clear: both; width:100%; border:1px solid #999999; padding-left:1%; padding-right:1%; float:left; text-align:center}
+.Ac_HeaderDiv{clear:both;font-family:"Rubik", sans-serif; font-size:12px; font-weight:bold; margin-top:1%; line-height:20px; padding-left:1%; text-align:left;  width:99%; float:left; background-color:#006599; color:#FFFFFF}
+
+.Ac_RightCaptions{float:left; width:100%; font-family:"Rubik", sans-serif; font-weight:bold; font-size:14px; padding-top:2%; text-align:left}
+
+.Ac_Auth{ clear: both;font-size:11px; font-family:"Rubik", sans-serif; font-weight:normal; text-align:left}
+#AcOpen_sub_btn{ background-color:#1EA839; color:#FFFFFF; margin-bottom:1%;}
+
+.AcOpen_Ldiv input[type=text]{ width:99%; text-transform:uppercase; height:30px; border-radius:0px;
+	-webkit-box-shadow: none;
+	-webkit-border-radius: 0px; 
+	-moz-border-radius: 0px; 
+	border-radius: 0px; 
+	border: 0px solid #848484; 
+	border-bottom: 1px solid #848484; 
+	-webkit-border: 0px solid #848484; 
+	-webkit-border-bottom: 1px solid #848484; 
+
+    outline:0; 
+    height:25px; 
+}
+.AcOpen_Ldiv input[type=text]:focus{border-bottom:2px solid #006699; }
+
+.AcOpen_Ldiv #pin_txt{ width:30%; text-transform:uppercase; height:20px; border-radius:5px;}
+
+
+.PrivacyPolicy_Overall{clear:both; width:75%; margin: 0 auto; border: 5px solid #DDDDDD; padding:5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.PrivacyPolicy{font-family:"Rubik", sans-serif; font-size:13px; font-weight:normal; margin-top:1%; line-height:18px; padding-left:1%; padding-right:1%; text-align:justify}
+.PrivacyPolicy_Head{font-family:"Rubik", sans-serif; color:#333; font-size:14px; margin-top:1%; line-height:18px;}
+
+@media screen and (max-width:680px)
+{
+    .PrivacyPolicy_Overall{clear:both; width:98%; margin: 0 auto;border: 1px solid #DDDDDD;padding:0px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+    .AcOpen_Ldiv input[type=text]{ width:100%; text-transform:uppercase; border-radius:5px;}
+}
+
+.leftimgdiv{width:29%;margin-right:1%;float:left;}
+.rightimgdiv{width:70%;float:left;}
+.leftsubdiv{width:100%; margin-top:1%}
+.rightsubdiv{width:100%; margin-top:1%}
+/*.ImgLcls{ width:235px; height:248px; margin-top:0%}*/
+
+.Imgcls{ width:651px; height:248px; margin-top:0%}
+@media screen and (max-width:600px)
+{
+    .leftdiv{width:99%;margin-right:1%;float:left}
+    .rightdiv{width:100%;float:left; clear:both}
+    .leftsubdiv{width:100%;}
+    .rightsubdiv{width:100%;}
+    .Imgcls{ width:100%; height:100%}
+}
+
+@media screen and (max-width:1024px)
+{
+    .Abt_Dir{margin:0%;float:left;width:38%;  border:1px solid #999999; border-radius:5px; overflow:hidden; margin-left:6%; margin-top:3%; margin-bottom:3%; padding:1%;}
+}
+@media screen and (max-width:400px)
+{
+    .Inv_Container_Left{margin-top: 0%}
+    .Inv_Container_Right{margin-top: 0%}
+   	/*.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; text-align: center;font-family:"Rubik", sans-serif; line-height:100px;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}*/
+   	.NIF{font-family:"Rubik", sans-serif; font-size:18px; font-weight:normal; color:#999999; height:100px; text-align: center;font-family:"Rubik", sans-serif; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);}
+    .Abt_Dir{margin:0%;float:left;width:96%; border:0px solid #999999; border-radius:5px;margin-left:1%; margin-top:2%; margin-bottom:1%; padding:1%;}
+    .Abt_Dir_Name{margin: 0px; line-height:29px; width: 100%; background-color:#FFFFFF; border-top:0px solid #000000; color:#1a476e; text-align:center; font-family:"Rubik", sans-serif; font-weight: bold; font-size:25px;}
+    .Abt_Dir_Dsn{margin: 0px; line-height:20px; width: 100%; background-color:#FFFFFF; border-top:0px solid #999999; color:#1a476e; text-align:center; font-family:"Rubik", sans-serif; font-size:23px; margin-top:5px;margin-bottom:5px;}
+    .Abt_Dir_Op{margin: 0px; line-height:20px; width: 100%; background-color:#FFFFFF; border-bottom:0px solid #999999; color:#1a476e; text-align:center; font-family:"Rubik", sans-serif; font-size:18px; margin-top:5px;margin-bottom:5px;}
+    .Abt_Dir_Cont{margin: 0px; line-height:23px; width: 95%; background-color:#FFFFFF; border-top:1px solid #999999; color:#1a476e; text-align:justify; font-family:"Rubik", sans-serif; font-size:14px; padding:2%}
+}
+
+.Investment ul > li {list-style:circle;list-style-type: circle;list-style-position: outside;padding: 3px;}
+.Investment ol > li {list-style:circle;list-style-type: circle;list-style-position: outside;padding: 3px;}
+.Investment ul, ol {list-style:circle;list-style-type: circle;list-style-position: outside;padding-left: 5%;}
+.Investment ul > li > ul > li {list-style:square;list-style-type: square;list-style-position: outside;padding: 3px;}
+
+
+.Investment1 ul > li {list-style:circle;list-style-type: circle;list-style-position: outside;padding: 3px;}
+.Investment1 ol > li {list-style:circle;list-style-type: circle;list-style-position: outside;padding: 3px;}
+.Investment1 ul, ol {list-style:circle;list-style-type: circle;list-style-position: outside;padding-left: 5%;}
+.Investment1 ul > li > ul > li {list-style:square;list-style-type: square;list-style-position: outside;padding: 3px;}
+

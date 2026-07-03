@@ -1,0 +1,139 @@
+﻿body{
+    font-family: Trebuchet ms;
+}
+.wrapper{
+    width: 450px;
+    height:  100%;
+    /* background: linear-gradient(to bottom, #a4fbb6,#abd9ff); */
+    background: #EBF6F0;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    box-shadow:2px 2px 5px #ffffff;
+    z-index: 99999;
+}
+.input_field_cap
+{
+    width:100%;
+    display:block !important;
+    text-align:center;
+}
+#CaptchImg
+{
+    border-radius: 10px;
+    border: 2px solid #b3cebb;
+}
+.title{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #0b1110;
+}
+.WCForm
+{
+    width: 80%;
+    margin: 2% 10%;
+    color: #0b1110;
+    font-size: 16px;
+    font-weight: 500;
+    text-align:justify;
+}
+.form{
+    width: 100%;
+}
+.input_field{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.input1{
+    width: 80%;
+    margin: 1% 10%;
+    padding: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 2px solid #b3cebb;
+    outline:none;
+    border-radius: 10px;
+    color:#666666;
+}
+
+.spncls{
+    color: #FFFFFF;
+    font-size:20px;
+    
+}
+.labelcls{
+    width: 150px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 15px;
+    font-size: 17px;
+    font-weight:bold;
+}
+.Contactbtn{
+    
+    width: 80%;
+    padding: 8px 0px;
+    margin:1% 10%;
+    font-size: 15px;
+    border: 2px solid #4AB26C;
+    background:#4AB26C;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+}
+@media (min-width: 799px) and (max-width:900px) 
+{
+    .CallbackMaskContainer > div {
+        width: 61%;
+        margin: 25% 20%;
+    }
+}
+@media (min-width: 300px) and (max-width:500px) 
+{
+    /*.wrapper{width: 100%;margin-left: 0;padding: 0;}*/
+
+    .input_field{flex-direction: column;align-items: flex-start;}
+
+    .labelcls{margin-bottom: 5px;margin-left: 0px;}
+
+    .wrapper{
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+}
+.MaskContainer_Close {
+    top: 9px;
+    right: 12px;
+    }
+    .input1,.Contactbtn {
+        width: 98%;
+        margin: 1% 2%;
+    }
+.CallbackMaskContainer > div  
+{
+  width: 100%; position: relative; top:54px; margin: 20px auto; padding: 0px 20px 14px 18px;
+  text-align:center;    
+  position: relative; border-radius: 10px;
+  /*background: #fff; background: -moz-linear-gradient(#fff, #999); background: -webkit-linear-gradient(#fff, #999); background: -o-linear-gradient(#fff, #999);*/
+  display: flex;  
+  flex-wrap: wrap;
+}
+.title {
+    font-size: 21px;
+    letter-spacing: 1px;
+    line-height: 22px;}
+.input_field_cap
+{
+    margin-left: 18px!important;
+    flex-direction:row;
+    align-items:center;
+}
+}
+.labelcls 
+{
+    text-align: left;	
+}

@@ -1,0 +1,375 @@
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5 
+{
+    position: absolute;
+    display: block;
+    /*top: 4em;  */  
+    width: 10%;
+    font-size: 1.5em;
+	animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    /*animation-timing-function: steps(1,5);*/
+    animation-iteration-count: infinite;
+    /*animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);*/
+    color: #033A43;
+}
+.InvestText1
+{
+    position: absolute;
+    display: block;
+    top: 42.5%;
+    left :94.5%;    
+    width: 10%;
+    font-size: 4.5em;
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 1s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+.item-1
+{
+    animation-name: anim-1;
+    top: 20%;
+    /*top: 3.5em;*/ 
+}
+
+.item-2
+{
+    animation-name: anim-2;
+    /*top: 55%;*/
+    /*top: 9.5em;*/
+    /*top: 20%;*/
+    top:55%;
+}
+
+.item-3
+{
+    animation-name: anim-3;
+    /*top: 25%;*/
+    /*top: 4em;*/
+    top: 25%;
+}
+
+.item-4
+{
+    animation-name: anim-4;
+    /*top: 58%;*/
+    /*top: 10em;*/
+    top: 48%;
+}
+
+.item-5
+{
+    animation-name: anim-5;
+    /*top: 4em;*/
+    top: 20%;
+}
+
+
+@keyframes anim-1 
+{
+    /*0%, 3% { left: -100%; opacity: 0; }
+    10%, 15% { left: 10%; opacity: 1; }
+    20%, 100% { left: 5%; opacity: 0;}*/
+    /*0%, 5% { left: -100%; opacity: 0; }
+    5%, 20% { left: 10%; opacity: 1; }
+    20%, 100% { left: 110%; opacity: 0; }*/
+    0%, 5% { left: -100%; opacity: 0; }
+    5%, 100% { left: 4%; opacity: 1; }
+}
+
+@keyframes anim-2 
+{
+    /*0%, 21% { left: -100%; opacity: 0; }
+    30%, 35% { left: 28%; opacity: 1; }
+    40%, 100% { left: 20%; opacity: 0; }*/
+    /*0%, 35% { left: -100%; opacity: 0; }
+    35%, 45% { left: 25%; opacity: 1; }
+    45%, 100% { left: 110%; opacity: 0; }*/
+    0%, 32% { left: -100%; opacity: 0; }
+    32%, 100% { left: 18%; opacity: 1; }
+}
+
+@keyframes anim-3 
+{
+    /*0%, 41% { left: -100%; opacity: 0; }
+    50%, 55% { left: 43%; opacity: 1; }
+    60%, 100% { left: 20%; opacity: 0; }*/
+	/*0%, 58% { left: -100%; opacity: 0; }
+    58%, 60% { left: 25%; opacity: 1; }
+    60%, 100% { left: 110%; opacity: 0; }*/
+    0%, 38% { left: -100%; opacity: 0; }
+    42%, 100% { left: 33%; opacity: 1; }
+}
+
+@keyframes anim-4 
+{
+    /*0%, 61% { left: -30%; opacity: 0; }
+    70%, 75% { left: 50%; opacity: 1; }
+    80%, 100% { left: 20%; opacity: 0; }*/
+	/*0%, 50% { left: -100%; opacity: 0; }
+    60%, 80% { left: 25%; opacity: 1; }
+    80%, 100% { left: 110%; opacity: 0; }*/
+    0%, 50% { left: -100%; opacity: 0; }
+    60%, 100% { left: 45%; opacity: 1; }
+}
+
+@keyframes anim-5 
+{
+    /*0%, 81% { left: -30%; opacity: 0; }
+    90%, 95% { left: 58%; opacity: 1; }
+    100%, 100% { left: 10%; opacity: 0; }*/
+    /*0%, 70% { left: -100%; opacity: 0; }
+    80%, 100% { left: 25%; opacity: 1; }
+    100%, 100% { left: 110%; opacity: 0; }*/
+    0%, 70% { left: -100%; opacity: 0; }
+    80%, 100% { left: 60%; opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+
+/*For Other Devices*/
+@media (min-width: 300px) and (max-width: 767px) 
+{
+    .item-1, 
+    .item-2, 
+    .item-3,
+    .item-4,
+    .item-5 
+    {
+        position: absolute;
+        display: block;
+        /*top: 4em;*/  
+        width: 12%;
+        font-size: 0.5em;
+        animation-duration: 20s;
+        animation-timing-function: ease-in-out;
+        /*animation-timing-function: steps(1,5);*/
+        animation-iteration-count: infinite;
+        /*animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);*/
+        color: #033A43;
+    }
+
+    .item-1
+    {
+        animation-name: anim-1;
+        top: 20%;
+        /*top: 3.5em;*/ 
+    }
+
+    .item-2
+    {
+        animation-name: anim-2;
+        /*top: 55%;*/
+        /*top: 9.5em;*/
+        /*top: 20%;*/
+        top:60%;
+    }
+
+    .item-3
+    {
+        animation-name: anim-3;
+        /*top: 25%;*/
+        /*top: 4em;*/
+        top: 25%;
+    }
+
+    .item-4
+    {
+        animation-name: anim-4;
+        /*top: 58%;*/
+        /*top: 10em;*/
+        top: 48%;
+    }
+
+    .item-5
+    {
+        animation-name: anim-5;
+        /*top: 4em;*/
+        top: 20%;
+    }
+    .InvestText1
+    {
+        position: absolute;
+        display: block;
+        top: 36%;
+        left :94.5%;    
+        width: 10%;
+        font-size: 1em;
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 1s;
+
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+    .item-1, 
+    .item-2, 
+    .item-3,
+    .item-4,
+    .item-5 
+    {
+        position: absolute;
+        display: block;
+        /*top: 4em;*/  
+        width: 12%;
+        font-size: 1em;
+        animation-duration: 20s;
+        animation-timing-function: ease-in-out;
+        /*animation-timing-function: steps(1,5);*/
+        animation-iteration-count: infinite;
+        /*animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);*/
+        color: #033A43;
+        line-height: 100%;
+    }
+
+    .item-1
+    {
+        animation-name: anim-1;
+        top: 20%;
+        /*top: 3.5em;*/ 
+    }
+
+    .item-2
+    {
+        animation-name: anim-2;
+        /*top: 55%;*/
+        /*top: 9.5em;*/
+        /*top: 20%;*/
+        top:60%;
+    }
+
+    .item-3
+    {
+        animation-name: anim-3;
+        /*top: 25%;*/
+        /*top: 4em;*/
+        top: 25%;
+    }
+
+    .item-4
+    {
+        animation-name: anim-4;
+        /*top: 58%;*/
+        /*top: 10em;*/
+        top: 48%;
+    }
+
+    .item-5
+    {
+        animation-name: anim-5;
+        /*top: 4em;*/
+        top: 20%;
+    }
+    .InvestText1
+    {
+        position: absolute;
+        display: block;
+        top: 39%;
+        left :94.5%;    
+        width: 10%;
+        font-size: 2em;
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 1s;
+
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+    }
+}
+
+@media (min-width:1024px) and (max-width: 1366px) 
+{
+    .item-1, 
+    .item-2, 
+    .item-3,
+    .item-4,
+    .item-5 
+    {
+        position: absolute;
+        display: block;
+        /*top: 4em;*/  
+        width: 12%;
+        font-size: 1.5em;
+        animation-duration: 20s;
+        animation-timing-function: ease-in-out;
+        /*animation-timing-function: steps(1,5);*/
+        animation-iteration-count: infinite;
+        /*animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);*/
+        color: #033A43;
+        line-height: 100%;
+    }
+
+    .item-1
+    {
+        animation-name: anim-1;
+        top: 20%;
+        /*top: 3.5em;*/ 
+    }
+
+    .item-2
+    {
+        animation-name: anim-2;
+        /*top: 55%;*/
+        /*top: 9.5em;*/
+        /*top: 20%;*/
+        top:50%;
+    }
+
+    .item-3
+    {
+        animation-name: anim-3;
+        /*top: 25%;*/
+        /*top: 4em;*/
+        top: 25%;
+    }
+
+    .item-4
+    {
+        animation-name: anim-4;
+        /*top: 58%;*/
+        /*top: 10em;*/
+        top: 48%;
+    }
+
+    .item-5
+    {
+        animation-name: anim-5;
+        /*top: 4em;*/
+        top: 20%;
+    }
+    .InvestText1
+    {
+        position: absolute;
+        display: block;
+        top: 40%;
+        left :94.5%;    
+        width: 10%;
+        font-size: 3em;
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 1s;
+
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+    }
+}

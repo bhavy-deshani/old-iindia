@@ -1,0 +1,41 @@
+.BlogtotalContent{margin:0 auto; width:80%}
+.BlogHead{color:#1DA838;font-size: 40px;padding: 0px 5px;}
+.BlogSubHeadBold{color: #2f5fa1;font-size: 20px;font-weight: bold;display: block;}
+.BlogSubHead{color: #2f5fa1;font-size: 26px;padding: 15px 0px;display: block;}
+.BlogContent{width: 65%;padding: 0px 5px;margin-bottom: 10px;}
+.Blogimages{width: 35%;padding: 0px 5px;margin-bottom: 10px;}
+.Blogul{margin-left: 22px;padding:5px}
+.Blogli{list-style-type: disc;color: #000000;line-height: 22px;padding: 3px 0px;}
+.Blogli::marker 
+{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.BlogViewContainer{border:1px solid #cccccc;padding: 20px;}
+.BlogElssTbl{width: 80%;border-collapse: collapse;padding: 5px;border: 1px solid #ddd; margin-left: 10%;text-align: center;}
+.BlogElssTbl tr th {background: #1DA838;border: 1px solid #cccccc;padding: 5px;color: #000000;}
+.BlogElssTbl tr td{color: #000000;border: 1px solid #cccccc;padding: 5px;}
+@media only screen and (min-width:770px) and (max-width:1234px)
+{ 
+  .BlogtotalContent{margin:0 auto; width:98%}
+  .BlogElssTbl{width: 90%;border-collapse: collapse;padding: 5px;border: 1px solid #ddd; margin-left: 5%;text-align: center;}
+}
+@media only screen and (max-width:760px)
+{
+    .BlogtotalContent{margin:0 auto; width:99%}
+    .BlogContent{width: 98%;padding: 0px 5px;margin-bottom: 10px;}
+    .Blogimages{width: 98%;padding: 0px 5px;margin-bottom: 10px;}
+    .Blogul{margin-left: 10px;padding:5px}
+    .BlogViewContainer{border:1px solid #cccccc;padding: 10px;}
+    .BlogHead{color:#1DA838;font-size: 34px;padding: 0px 5px;line-height: 30px;}
+    .BlogSubHeadBold{color: #2f5fa1;font-size: 18px;font-weight: bold;display: block;}
+    .BlogSubHead{color: #2f5fa1;font-size: 22px;padding: 15px 0px;display: block;}
+    .BlogElssTbl thead {display: none;}
+    .BlogElssTbl,tbody,tr,td {display: block;}
+    .BlogElssTbl tr {margin-bottom: 15px;}
+    .BlogElssTbl tr td {padding-left: 45%;text-align: left;word-break: break-word;}
+    
+    .BlogElssTbl{width: 99%;border-collapse: collapse;padding: 5px;border: 0px solid #ddd; margin-left: 0%;text-align: center;}
+    .BlogElssTbl td::before {content: attr(data-label);position: absolute;left: 0;width: 45%;padding-left: 20px;font-size: 15px;font-weight: bold;text-align: left;}
+}
+    

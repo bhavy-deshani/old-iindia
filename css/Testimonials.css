@@ -1,0 +1,27 @@
+.TClientSpeak_Main{float:left; width:46%;margin-left:1.75%; height:120px; margin-top:2%}
+        .TClientSpeak_Sub{float:left; border:0px solid #CCCCCC; width:100%; margin-top:0px;}
+        .TClientSpeak_Img{float:left; width:18%;padding:2% 0.5% 0.5% 0%;}
+        .TClientSpeak_Img Img{height:110px;width:80%}
+        .TClientSpeak_H1{font-family:metropolis-bold;font-size: 13px; font-weight:normal; color:#000000;float:left; width:70%;padding:2% 1% 0.5% 0%;}
+        .TClientSpeak_H2{font-family:metropolis-medium;font-size: 12px; color:#000000;float:left; width:70%;padding: 0% 1% 1% 0%;}
+        .TClientSpeak_H3{font-family:metropolis-mediumitalic;font-size: 12px; color:#000000;float:left; width:70%;padding: 0% 1% 1% 0%;}
+        @media screen and (max-width:680px)
+        {
+            .TClientSpeak_Main{float:left; width:100%; margin-left:0%; margin-top:4%;height:100%; }
+            .TClientSpeak_Sub{float:left; border:0px solid #CCCCCC; width:100%; margin-top:10px;}
+            .TClientSpeak_Img{float:left; width:90%;padding:2% 0.5% 0.5% 0%; text-align:center}
+            .TClientSpeak_Img Img{height:110px;width:100%}
+            .TClientSpeak_H1{ clear:both;text-align:center;font-family:metropolis-bold;font-size: 13px; font-weight:normal; color:#000000;float:left; width:90%;padding:2% 1% 0.5% 0%;}
+	        .TClientSpeak_H2{ clear:both;text-align:center;font-family:metropolis-medium;font-size: 12px; color:#000000;float:left; width:90%;padding: 0% 2% 2% 0%;}
+	        .TClientSpeak_H3{ clear:both; text-align:center;font-family:metropolis-mediumitalic;font-size: 12px; color:#000000;float:left; width:90%;padding: 0% 2% 2% 0%; border:0px solid #000000}
+        }
+        @media screen and (max-width:600px)
+        {
+            .TClientSpeak_Main{float:left; width:100%; margin-left:0%; margin-top:4%;height:100%; }
+            .TClientSpeak_Sub{float:left; border:0px solid #CCCCCC; width:100%; height:100%; margin-top:10px;}
+            .TClientSpeak_Img{width:90%;padding:2% 0.5% 0.5% 0%; text-align:center; border:0px solid #000000}
+            .TClientSpeak_Img Img{height:110px;width:100px}
+            .TClientSpeak_H1{text-align:center;font-family:metropolis-bold;font-size: 13px; font-weight:normal; color:#000000;float:left; width:90%;padding:2% 2% 0.5% 0%;}
+	        .TClientSpeak_H2{text-align:center;font-family:metropolis-medium;font-size: 12px; color:#000000;float:left; width:90%;padding: 0% 2% 2% 0%;}
+	        .TClientSpeak_H3{ clear:both; text-align:center;font-family:metropolis-mediumitalic;font-size: 12px; color:#000000;float:left; width:90%;padding: 0% 2% 2% 0%; border:0px solid #000000}
+        }

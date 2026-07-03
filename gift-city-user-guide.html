@@ -1,0 +1,939 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Video Guides | Integrated Global Investments IFSC Private Limited</title>
+    <meta name="description" content="Watch quick video guides for the Global Trading Platform on India INX GA.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        /* --- CONSOLIDATED STYLES FOR gift-city-user-guide.html --- */
+
+/* 1. Page Header Style */
+.page-header-area {
+    background: linear-gradient(rgba(28, 53, 94, 0.9), rgba(28, 53, 94, 0.9)), url(./assets/img/bg/contact-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 50px;
+}
+
+.page-header-title {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.page-header-subtitle {
+    color: #aab6c5;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/* 2. User Guide Section Styles */
+.user-guide-area {
+    padding: 50px 0;
+    background-color: var(--tg-color-white-default);
+}
+
+.user-guide-flex-wrap {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Left Column: Title and CTA */
+.user-guide-info {
+    padding: 0 0 20px 0;
+}
+
+.user-guide-info .title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.user-guide-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Right Column: Interactive Guide Cards (4-column default) */
+.user-guide-list-wrap {
+    flex-grow: 1;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.guide-card-alt {
+    display: flex;
+    align-items: center;
+    background-color: var(--tg-color-gray-3);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guide-card-alt:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--tg-theme-primary);
+}
+
+.guide-icon-box {
+    flex: 0 0 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tg-theme-primary);
+    border-radius: 8px;
+    color: var(--tg-color-white-default);
+    font-size: 22px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.guide-card-alt:hover .guide-icon-box {
+    background-color: var(--tg-theme-secondary);
+    transform: rotateY(180deg);
+}
+
+.guide-card-title-alt {
+    flex-grow: 1;
+    margin: 0 15px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--tg-heading-color);
+    line-height: 1.4;
+}
+
+.card-play-indicator {
+    flex-shrink: 0;
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: var(--tg-theme-secondary-dark);
+    color: var(--tg-theme-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card-play-indicator i {
+    font-size: 12px;
+    line-height: 1;
+    transform: translateX(1px);
+}
+
+.guide-card-alt:hover .card-play-indicator {
+    background-color: var(--tg-theme-primary);
+    color: var(--tg-color-white-default);
+}
+
+/* 3. Media Queries for Responsiveness (Includes 3-column break) */
+@media (max-width: 991px) {
+    .user-guide-flex-wrap {
+        flex-direction: column;
+    }
+
+    .user-guide-info {
+        flex: 0 0 100%;
+        position: static;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .user-guide-info .title {
+        font-size: 32px;
+    }
+
+    .user-guide-info .tg-button-wrap {
+        justify-content: center;
+    }
+
+    /* Fallback to 2 columns on mid-size screens (below 992px) */
+    .user-guide-list-wrap {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guide-card-alt {
+        padding: 15px;
+    }
+}
+
+/* NEW Breakpoint for smooth transition: 3 columns for medium desktops/large tablets (992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .user-guide-list-wrap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ensure single column stack on small screens (max-width 576px) */
+@media (max-width: 576px) {
+    .user-guide-list-wrap {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .bank-guide-list {
+        grid-template-columns: 1fr;
+        /* Single column for bank list on small screens */
+    }
+}
+
+/* 4. Video Modal Styles */
+
+/* Overlay */
+.modal-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-video-overlay.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Modal Content Box */
+.modal-video-content {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    width: 95%;
+    max-width: 900px;
+    transform: translateY(-20px) scale(0.98);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal-video-overlay:not(.hidden) .modal-video-content {
+    transform: translateY(0) scale(1);
+}
+
+/* Header */
+.modal-video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--tg-theme-secondary);
+    border-radius: 12px 12px 0 0;
+}
+
+#modalVideoTitle {
+    color: var(--tg-color-white-default);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-video-close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-video-close-btn:hover {
+    color: var(--tg-theme-primary);
+    transform: rotate(90deg);
+}
+
+/* Body - Video Embed Container */
+.modal-video-body {
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 0 0 12px 12px;
+}
+
+.video-player-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-player-embed video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c355e;
+}
+
+.video-placeholder p {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Responsive Adjustments for Modal */
+@media (max-width: 768px) {
+    .modal-video-content {
+        width: 98%;
+        margin: 5px;
+    }
+
+    .modal-video-header {
+        padding: 12px 20px;
+    }
+
+    #modalVideoTitle {
+        font-size: 18px;
+    }
+
+    .modal-video-body {
+        padding: 15px;
+    }
+
+    .modal-video-close-btn {
+        font-size: 24px;
+    }
+}
+
+.btn::after {
+    display: none
+}
+
+/* 5. Accordion and Steps Styles */
+.user-guide-steps-area {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+#accountFundingAccordion {
+    margin-top: 30px;
+}
+
+.accordion-item {
+    border: 1px solid var(--tg-border-1);
+    background-color: var(--tg-color-white-default);
+    margin-bottom: 15px;
+    border-radius: 12px !important;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+    margin-bottom: 0;
+}
+
+.accordion-button {
+    background-color: var(--tg-color-white-default);
+    color: var(--tg-heading-color);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 30px;
+    border-bottom: 0;
+    box-shadow: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--tg-theme-secondary);
+    background-color: var(--tg-color-gray-3);
+}
+
+.accordion-button:not(.collapsed) .step1,
+.accordion-button:not(.collapsed) .step2 {
+    color: var(--tg-theme-secondary);
+}
+
+.accordion-button.collapsed {
+    border-radius: 12px !important;
+}
+
+.accordion-button::after {
+    content: "\f078";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--tg-theme-primary);
+    background-image: none;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+.accordion-body {
+    padding: 10px 30px 25px 30px;
+    border-top: 1px solid var(--tg-border-1);
+}
+
+/* Internal Headings (Bolding) */
+.accordion-body b {
+    color: var(--tg-theme-secondary);
+    font-weight: 700;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Link List Styling (for manuals/videos inside accordion) */
+.accordion-body .list-wrap {
+    list-style: none;
+    padding: 0;
+}
+
+.accordion-body .list-wrap li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.accordion-body .list-wrap li i {
+    color: var(--tg-theme-primary);
+    font-size: 18px;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.accordion-body .list-wrap li a {
+    color: var(--tg-body-color);
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.accordion-body .list-wrap li a:hover {
+    color: var(--tg-theme-primary);
+    text-decoration: none;
+}
+
+/* 6. Bank Fund Transfer Instructions: Card-Based List Styles (Final UI) */
+.bank-guide-list {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.bank-guide-list li {
+    background-color: var(--tg-color-gray-3);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--tg-theme-secondary);
+}
+
+.bank-guide-list li:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    background-color: #f0f0f0;
+}
+
+.bank-guide-list li .bank-name {
+    font-weight: 700;
+    color: var(--tg-heading-color);
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.bank-guide-list li a {
+    font-weight: 600;
+    color: var(--tg-theme-primary);
+    text-decoration: underline;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    white-space: nowrap;
+}
+
+.bank-guide-list li a:hover {
+    color: var(--tg-theme-secondary);
+    text-decoration: none;
+}
+
+.bank-guide-caption {
+    font-size: 13px;
+    color: var(--tg-body-color);
+    font-style: italic;
+    margin-top: 15px;
+    text-align: left;
+}
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <script src="assets/js/gift-city-header.js"></script>
+        <script src="assets/js/gift-city-footer.js"></script>
+
+        <section class="breadcrumb__area breadcrumb__bg" data-background="./assets/img/bg/user-guid.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="breadcrumb__content">
+                            <h2 class="title">User Guides</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="indiainxga.html">India INX GA</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">User Guides</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register-funding" class="user-guide-area user-guide-steps-area pt-0" >
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="section-title text-center mb-40 tg-heading-subheading animation-style3">
+                            <span class="sub-title">Registration & Funding</span>
+                            <h2 class="title tg-element-title">Registration & Funding Process</h2>
+                        </div>
+                        <div class="text-center">
+                            <h4>How to get started?</h4>
+                            <p class="mb-4">
+                                Link of Step-by-step guides & Video tutorials for account opening, fund transfer &
+                                Trading Terminals given below (Click on respective link) -
+                            </p>
+                        </div>
+
+                        <div class="accordion" id="accountFundingAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingStep1">
+                                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseStep1" aria-expanded="true"
+                                        aria-controls="collapseStep1">
+                                        <b class="step1 pe-1">Step 1:</b> Register your account and complete KYC
+                                    </button>
+                                </h2>
+                                <div id="collapseStep1" class="accordion-collapse collapse "
+                                    aria-labelledby="headingStep1" data-bs-parent="#accountFundingAccordion">
+                                    <div class="accordion-body pt-4">
+                                        <p><b class="userManual">USER MANUALS</b></p>
+                                        <ul class="list-wrap">
+                                            <li><i class="fas fa-file-pdf"></i> <a
+                                                    href="https://www.indiainx.com/download/INXGA-Account-Registration-UserManual-for-Resident-Indian-Clients.pdf"
+                                                    target="_blank">INXGA - Account Registration User Manual for
+                                                    Resident Indian Clients</a></li>
+                                            <li><i class="fas fa-file-pdf"></i> <a
+                                                    href="https://www.indiainx.com/download/INXGA-Account-Registration-UserManual-for-Non-Resident-Indian-Clients.pdf"
+                                                    target="_blank">INXGA - Account Registration User Manual for
+                                                    Non-Resident Indian Clients</a></li>
+                                        </ul>
+                                        <p class="mt-4"><b class="videos">VIDEOS</b></p>
+                                        <p>Video Tutorial on Account Opening - (Click here)</p>
+                                        <ul class="list-wrap">
+                                            <li><i class="fas fa-video"></i> <a
+                                                    href="https://www.youtube.com/embed/pt3suYudlJ8"
+                                                    target="_blank">INXGA Account Opening with Digi Locker KYC for
+                                                    Resident Indians</a></li>
+                                            <li><i class="fas fa-video"></i> <a
+                                                    href="https://www.youtube.com/embed/Wt5qkvXiBhg"
+                                                    target="_blank">INXGA Account Opening for Non-Resident Indians</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingStep2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseStep2" aria-expanded="false"
+                                        aria-controls="collapseStep2">
+                                        <b class="step2 pe-1">Step 2:</b> Fund your account
+                                    </button>
+                                </h2>
+                                <div id="collapseStep2" class="accordion-collapse collapse"
+                                    aria-labelledby="headingStep2" data-bs-parent="#accountFundingAccordion">
+                                    <div class="accordion-body pt-4">
+                                        <ul class="list-wrap">
+                                            <li><i class="fas fa-file-pdf"></i> <a
+                                                    href="https://www.indiainx.com/download/Funding-Instructions-and-Beneficiary-details.pdf"
+                                                    target="_blank">Funding Instructions and Beneficiary details</a>
+                                            </li>
+                                            <li><i class="fas fa-video"></i><a
+                                                    href="https://www.youtube.com/embed/NfW1dIkGaWM"
+                                                    target="_blank">INXGA Add funds using Axis Bank</a></li>
+                                        </ul>
+                                        <p class="mt-4">
+                                            Clients can remit fund from any bank in India that allow foreign remittance
+                                            under LRS.<br>
+                                            Client can also submit Form A2 at branch for fund transfer (purpose code is
+                                            S0001).
+                                        </p>
+                                        <p><b class="userManual">Banks Fund Transfer Instructions</b></p>
+<ul class="bank-guide-list">
+    <li>
+        <span class="bank-name">ICICI Bank</span>
+        <a href="https://www.indiainx.com/download/ICICI-Bank-Fund-UserGuide.pdf" target="_blank">
+            Step-by-step guide
+        </a>
+    </li>
+    <li>
+        <span class="bank-name">HDFC Bank</span>
+        <a href="https://www.indiainx.com/download/HDFC-Bank-Fund-UserGuide.pdf" target="_blank">
+            Step-by-step guide
+        </a>
+    </li>
+    <li>
+        <span class="bank-name">Axis Bank</span>
+        <a href="https://www.indiainx.com/download/Axis-Bank-Fund-UserGuide.pdf" target="_blank">
+            Step-by-step guide
+        </a>
+    </li>
+    <li>
+        <span class="bank-name">Other Banks</span>
+        <a href="https://www.indiainx.com/download/Funding-Instructions-and-Beneficiary-details.pdf" target="_blank">
+            Step-by-step guide
+        </a>
+    </li>
+</ul>
+<p class="bank-guide-caption">
+    * Fund transfer is possible from most of the banks in India, above list indicative
+</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta-global-area">
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center">
+                    <div class="col-lg-10">
+                        <div class="cta-content">
+                            <h2 class="text-white">Ready to Invest Globally?</h2>
+                            <p>Open your account today with Integrated Global Investments IFSC Private Limited and
+                                access international markets seamlessly.</p>
+                            <div class="tg-button-wrap justify-content-center gap-3 ">
+                                <a href="https://trade.clientbridge.in/register?IGIL" target="_blank"
+                                    class="btn btn-two btn-2">
+                                    Create Account <i class="fas fa-user-plus ms-2"></i>
+                                </a>
+                                <a href="https://trade.clientbridge.in/login?IGIL" target="_blank"
+                                    class="btn border-btn btn-2" style="color: #fff; border-color: #fff;">
+                                    Login Now <i class="fas fa-sign-in-alt ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="user-guide-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="section-title text-center mb-50 tg-heading-subheading animation-style3">
+                            <span class="sub-title">Watch & Learn</span>
+                            <h2 class="title tg-element-title">Seamlessly Navigate Our Global Trading Platform</h2>
+                            <p class="tg-element-title">
+                                Access quick video guides covering everything from account setup to advanced trading
+                                functions. We break down complex steps into simple, actionable tutorials so you can
+                                trade
+                                with confidence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-guide-flex-wrap">
+
+                    <div class="user-guide-list-wrap">
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Onboarding / Account Setup</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Login/Signup Procedures</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Funding / Withdrawal</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Viewing Stock Info</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Using the Search Function</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-list-ul"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Managing Your Watchlist</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Placing a Trade</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Modifying an Order</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Checking Your Portfolio</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Cancelling an Order</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Discover New Assets</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="guide-card-alt">
+                            <div class="guide-icon-box">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h4 class="guide-card-title-alt">Account & Settings</h4>
+                            <div class="card-play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center mb-50">
+            <a href="indiainxga.html" class="btn border-btn btn-2" style="border-color: var(--tg-theme-secondary); ">
+                <i class="fas fa-arrow-left me-2"></i> Back
+            </a>
+        </div>
+        <div id="videoModal" class="modal-video-overlay hidden">
+            <div class="modal-video-content">
+                <div class="modal-video-header">
+                    <h3 id="modalVideoTitle" class="text-white">Video Guide</h3>
+                    <button type="button" class="modal-video-close-btn" aria-label="Close" onclick="closeVideoModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-video-body">
+                    <div id="modalVideoPlayer" class="video-player-embed">
+                        <div class="video-placeholder">
+                            <p>Loading video...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+    <script>
+        /* === Video Modal Functions for Local MP4 Files === */
+
+        function openVideoModal(title, videoPath) {
+            const modal = document.getElementById('videoModal');
+            const titleElement = document.getElementById('modalVideoTitle');
+            const playerElement = document.getElementById('modalVideoPlayer');
+
+            // 1. Set Modal Title
+            titleElement.textContent = title;
+
+            // 2. Set Video Embed (using <video> tag for MP4 files)
+            const videoHtml = `
+        <video controls autoplay muted playsinline style="width: 100%; height: 100%; object-fit: contain;">
+            <source src="${videoPath}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>`;
+
+            playerElement.innerHTML = videoHtml;
+
+            // 3. Show Modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const playerElement = document.getElementById('modalVideoPlayer');
+
+            // 1. Stop the video by removing the video element and adding a placeholder
+            playerElement.innerHTML = `
+        <div class="video-placeholder">
+            <p>Video stopped.</p>
+        </div>`;
+
+            // 2. Hide Modal
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Add Event Listeners to all Guide Cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const guideCards = document.querySelectorAll('.user-guide-list-wrap .guide-card-alt');
+
+            // --- MAPPING CARD TITLE TO LOCAL VIDEO FILE PATHS ---
+            // NOTE: Please ensure these paths correctly point to where you host your .mp4 files.
+            // Ensure the keys here MATCH the text inside the <h4 class="guide-card-title-alt">
+            const videoMap = {
+                'Cancelling an Order': 'assets/img/gift-city/videos/Cancel-Order.mp4',
+                'Account & Settings': 'assets/img/gift-city/videos/Accounts-and-Settings.mp4',
+                'Discover New Assets': 'assets/img/gift-city/videos/Discover.mp4',
+                'Funding / Withdrawal': 'assets/img/gift-city/videos/Funding.mp4',
+                'Modifying an Order': 'assets/img/gift-city/videos/Modify-Order.mp4',
+                'Onboarding / Account Setup': 'assets/img/gift-city/videos/Onboarding.mp4',
+                'Checking Your Portfolio': 'assets/img/gift-city/videos/Portfolio.mp4',
+                'Using the Search Function': 'assets/img/gift-city/videos/Search.mp4',
+                'Login/Signup Procedures': 'assets/img/gift-city/videos/Sign_In_Sign_Up.mp4', // Reusing file for signup
+                'Viewing Stock Info': 'assets/img/gift-city/videos/Stock-Info.mp4',
+                'Placing a Trade': 'assets/img/gift-city/videos/Trading.mp4',
+                'Managing Your Watchlist': 'assets/img/gift-city/videos/Watchlist.mp4',
+            };
+
+            guideCards.forEach(card => {
+                const titleElement = card.querySelector('.guide-card-title-alt');
+                const title = titleElement ? titleElement.textContent.trim() : '';
+                const videoPath = videoMap[title];
+
+                if (videoPath) {
+                    card.addEventListener('click', () => {
+                        openVideoModal(title, videoPath);
+                    });
+                }
+            });
+
+            // 2. Close Modal on ESC key press
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' || event.key === 'Esc') {
+                    closeVideoModal();
+                }
+            });
+
+            // 3. Close Modal on clicking the overlay (outside the content)
+            document.getElementById('videoModal').addEventListener('click', function (event) {
+                // Only close if the click target is the overlay itself
+                if (event.target.id === 'videoModal') {
+                    closeVideoModal();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

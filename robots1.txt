@@ -1,0 +1,52 @@
+User-agent: *
+Allow: /
+User-agent: *
+
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/fonts/
+
+Disallow: /assets/pdf/
+Disallow: /*.pdf$
+Disallow: /*.zip$
+    Disallow: /iepweb/
+Disallow: /login/
+Disallow: /sp/DigiTradeOnboarding_V4/DigiTradeLoginDetails.aspx
+Disallow: /sp/DigiTradeOnboarding_V4/DigiTradeTrack.aspx
+Disallow: /sp/Newicr/EKYCInstantAcOpen.aspx
+Disallow: /sp/Newicr/eKycInstantStatusVerify.aspx
+Disallow: /caoportfolio/nv2/weblogin/AuxMobileLogin.aspx
+Disallow: /caoportfolio/nv2/weblogin/Login.aspx
+Disallow: /caoportfolio/nv2/weblogin/ForgotCustomerID.aspx
+Disallow: /caoportfolio/nv2/weblogin/Mpin.aspx
+Disallow: /sp/businesspartner/FRLogin/ForgotMpin.aspx
+Disallow: /sp/digiTradeOnboardingMinor/digiTradeOnboardingMinor.aspx
+Disallow: /nsdl-nps-registation.html
+Disallow: /cams-nps-registration.html
+Disallow: /sp/businesspartner/FRLogin/login.aspx
+Disallow: https://bo.integrated.investments:9443/ldclientlevelH/#Login
+Disallow: /sp/businesspartner/FRLogin/ForgotMpin.aspx
+Disallow: /strireg/
+
+# Allow AI search and agent use
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: AndiBot
+Allow: /
+
+# Disallow AI training data collection
+User-agent: GPTBot
+User-agent: CCBot
+User-agent: Google-Extended
+Disallow: /
+
+# Allow traditional search indexing
+User-agent: Googlebot
+User-agent: Bingbot
+Allow: /
+
+# Disallow access to admin areas for all bots
+User-agent: *
+Disallow: /admin/
+Disallow: /internal/
+sitemap: https://www.integratedindia.in/sitemap.xml

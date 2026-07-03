@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funds</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        .fund-table {
+            border-collapse: separate;
+            border-spacing: 0 1rem;
+        }
+
+        .fund-table thead th {
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .fund-item-row {
+            background-color: #fff;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .fund-item-row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(65, 84, 128, 0.15);
+            cursor: pointer;
+        }
+
+        .fund-item-row td {
+            border: none;
+            padding: 1.5rem;
+            vertical-align: middle;
+        }
+
+        .fund-item-row td:first-child {
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+
+        .fund-item-row td:last-child {
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        .fund-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: 2px solid #e8eef8;
+        }
+
+        .fund-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--tg-heading-color, #1c355e);
+        }
+
+        .fund-category-text {
+            font-size: 0.9rem;
+            color: #818298;
+        }
+
+        .return-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .positive-return {
+            color: #10b981;
+        }
+
+        .negative-return {
+            color: #ef4444;
+        }
+
+        .fund-rating i {
+            color: #f59e0b;
+            font-size: 0.8rem;
+        }
+
+        /* --- New Styles for Sidebar Navigation --- */
+        #fund-category-sidebar.sticky-top {
+            top: 100px;
+            /* Adjust spacing from the top */
+        }
+
+        #fund-category-sidebar .nav-pills .nav-link {
+            text-align: left;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            padding: 10px;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            transition: all 0.2s ease-in-out;
+            background-color: #f8f9fa;
+            border: 1px solid #e8eef8;
+        }
+
+        #fund-category-sidebar .nav-pills .nav-link:hover {
+            background-color: #e9f8f1;
+            border-color: #c5ebd7;
+            color: #005c24;
+        }
+
+        #fund-category-sidebar .nav-pills .nav-link.active {
+            background-color: var(--tg-theme-primary, #00ae42);
+            color: white;
+            font-weight: 600;
+            border-color: var(--tg-theme-primary, #00ae42);
+            box-shadow: 0 4px 15px rgba(0, 174, 66, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="">
+        <script src="assets/js/header.js"></script>
+        <script src="assets/js/footer.js"></script>
+        <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/funds.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="breadcrumb__content animate__animated animate__fadeInDown"
+                            style="position: sticky; top:120px;">
+                            <h2 class="title">Mutual Funds</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="mutual-funds.html">Invest in Mutual Fund</a>
+                                    </li>
+
+                                    <li class="breadcrumb-item" aria-current="page">
+                                        Funds
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb__shape">
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated"
+                    class="rightToLeft" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="pt-5">
+                    <div class="p-4 p-sm-5">
+
+                        <div class="row">
+
+                            <div class="col-lg-3">
+                             <aside id="fund-category-sidebar" class="sticky-top">
+    <h5 class="fw-bold mb-3 d-none d-lg-block">Fund Categories</h5>
+    <div class="nav flex-column nav-pills" id="fund-category-switcher">
+        <a class="nav-link category-link" href="#Equity-Funds" data-category="Equity Funds">Equity Funds</a>
+        <a class="nav-link category-link" href="#Debt-Funds" data-category="Debt Funds">Debt Funds</a>
+        <a class="nav-link category-link" href="#Hybrid-Funds" data-category="Hybrid Funds">Hybrid Funds</a>
+        <a class="nav-link category-link" href="#Index-Funds" data-category="Index Funds">Index Funds</a>
+        <a class="nav-link category-link" href="#Sectoral-Thematic-Funds" data-category="Sectoral & Thematic Funds">Sectoral & Thematic Funds</a>
+        <a class="nav-link category-link" href="#NFO" data-category="NFO">New Fund Offers (NFOs)</a>
+    </div>
+    <hr class="my-3">
+    <a href="compare-funds.html" class="btn btn-success w-100">
+        <i class="fas fa-balance-scale me-2"></i> Compare Funds
+    </a>
+</aside>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div>
+                                        <h1 id="page-title" class="fw-bold ">Funds</h1>
+                                        <p id="page-subtitle" class="mt-1">Details for the selected category</p>
+                                    </div>
+                                </div>
+
+                                <div id="fund-list-container">
+                                </div>
+
+                                <a href="#" onclick="window.history.back(); return false;"
+                                    class="btn-light btn-lg fw-bold shadow-sm mt-4">
+                                    Back
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+    <script>
+        // Function to navigate to the fund details page
+        function navigateToDetails(fundName) {
+            // Create a URL-friendly slug from the fund name
+            const formattedFundName = fundName.replace(/\s+/g, '-');
+            // Get the current category from the URL hash to pass it along
+            const fromHash = window.location.hash;
+            // Navigate to the details page, preserving the category
+            window.location.href = `fund-details.html#${formattedFundName}?from=${fromHash}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Unified and comprehensive fund data
+            const fundDetailsData = {
+                // Equity Thematic
+                'SBI PSU Direct Plan Growth': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], logo: 'S', rating: 4, returns: { '1Y': '45.2%', '3Y': '21.0%', '5Y': '19.8%' } },
+                'Invesco India PSU Equity Fund': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], logo: 'I', rating: 4, returns: { '1Y': '48.1%', '3Y': '22.5%', '5Y': '20.1%' } },
+                'Aditya Birla SL PSU Equity Fund': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], logo: 'AB', rating: 3, returns: { '1Y': '43.5%', '3Y': '20.2%', '5Y': '18.9%' } },
+                'Kotak PSU and Government Fund': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], logo: 'K', rating: 4, returns: { '1Y': '51.2%', '3Y': '24.1%', '5Y': 'N/A' } },
+
+                // Large Cap
+                'Axis Bluechip Fund': { category: 'Large Cap', tags: ['Large Cap'], logo: 'A', rating: 5, returns: { '1Y': '22.3%', '3Y': '14.1%', '5Y': '15.8%' } },
+                'ICICI Prudential Bluechip Fund': { category: 'Large Cap', tags: ['Large Cap'], logo: 'IC', rating: 5, returns: { '1Y': '24.1%', '3Y': '15.5%', '5Y': '16.2%' } },
+                'HDFC Top 100 Fund': { category: 'Large Cap', tags: ['Large Cap'], logo: 'H', rating: 4, returns: { '1Y': '21.8%', '3Y': '13.9%', '5Y': '15.1%' } },
+                'Mirae Asset Large Cap Fund': { category: 'Large Cap', tags: ['Large Cap'], logo: 'M', rating: 5, returns: { '1Y': '23.5%', '3Y': '14.8%', '5Y': '16.5%' } },
+
+                // Small Cap
+                'Axis Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'A', rating: 5, returns: { '1Y': '30.5%', '3Y': '25.1%', '5Y': '24.8%' } },
+                'SBI Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'S', rating: 5, returns: { '1Y': '28.9%', '3Y': '24.5%', '5Y': '23.9%' } },
+                'Kotak Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'K', rating: 4, returns: { '1Y': '35.8%', '3Y': '28.2%', '5Y': '25.1%' } },
+                'Nippon India Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'N', rating: 4, returns: { '1Y': '32.1%', '3Y': '26.8%', '5Y': '25.5%' } },
+                'Bandhan Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'B', rating: 5, returns: { '1Y': '8.8%', '3Y': '32.0%', '5Y': 'N/A' } },
+                'Invesco India Smallcap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'I', rating: 4, returns: { '1Y': '10.5%', '3Y': '27.9%', '5Y': 'N/A' } },
+                'Quant Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], logo: 'Q', rating: 4, returns: { '1Y': '-4.5%', '3Y': '27.0%', '5Y': 'N/A' } },
+
+
+                // Index Funds
+                'UTI Nifty 50 Index Fund': { category: 'Index Fund', tags: ['Index'], logo: 'U', rating: 4, returns: { '1Y': '5.5%', '3Y': '15.8%', '5Y': '18.5%' } },
+                'HDFC Index Fund - Nifty 50 Plan': { category: 'Index Fund', tags: ['Index'], logo: 'H', rating: 4, returns: { '1Y': '5.6%', '3Y': '15.9%', '5Y': '18.6%' } },
+
+                // ELSS (Tax Saver)
+                'Mirae Asset Tax Saver Fund': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], logo: 'M', rating: 5, returns: { '1Y': '7.2%', '3Y': '18.1%', '5Y': '20.3%' } },
+                'Axis Long Term Equity Fund': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], logo: 'A', rating: 5, returns: { '1Y': '6.5%', '3Y': '17.5%', '5Y': '19.8%' } },
+                'DSP Tax Saver Fund': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], logo: 'D', rating: 4, returns: { '1Y': '8.1%', '3Y': '19.2%', '5Y': '21.5%' } },
+                'Invesco India Tax Plan': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], logo: 'I', rating: 4, returns: { '1Y': '7.8%', '3Y': '18.8%', '5Y': '20.9%' } },
+
+                // Mid Cap
+                'PGIM India Midcap Opportunities Fund': { category: 'Mid Cap', tags: ['Mid Cap'], logo: 'P', rating: 5, returns: { '1Y': '10.2%', '3Y': '22.1%', '5Y': '25.3%' } },
+                'Kotak Emerging Equity Fund': { category: 'Mid Cap', tags: ['Mid Cap'], logo: 'K', rating: 4, returns: { '1Y': '9.8%', '3Y': '21.5%', '5Y': '24.1%' } },
+                'Axis Midcap Fund': { category: 'Mid Cap', tags: ['Mid Cap'], logo: 'A', rating: 5, returns: { '1Y': '11.5%', '3Y': '23.8%', '5Y': '26.5%' } },
+                'HDFC Mid-Cap Opportunities Fund': { category: 'Mid Cap', tags: ['Mid Cap'], logo: 'H', rating: 4, returns: { '1Y': '10.9%', '3Y': '22.9%', '5Y': '25.8%' } },
+
+                // Sectoral
+                'Nippon India Power & Infra Fund': { category: 'Equity Sectoral', tags: ['Sectoral', 'Infra'], logo: 'N', rating: 5, returns: { '1Y': '-10.0%', '3Y': '31.1%', '5Y': '32.3%' } },
+                'ICICI Prudential Infrastructure Fund': { category: 'Equity Sectoral', tags: ['Sectoral', 'Infra'], logo: 'IC', rating: 4, returns: { '1Y': '-9.5%', '3Y': '30.5%', '5Y': '31.8%' } },
+
+                // Debt Funds
+                'Aditya Birla Sun Life Medium Term Plan Fund': { category: 'Debt', tags: ['Debt', 'Medium Term'], logo: 'AB', rating: 5, returns: { '1Y': '13.9%', '3Y': '10.19%', '5Y': '13.01%' } },
+                'Nippon India Credit Risk Fund': { category: 'Debt', tags: ['Debt', 'Credit Risk'], logo: 'N', rating: 5, returns: { '1Y': '10.3%', '3Y': '9.04%', '5Y': '9.59%' } },
+                'ICICI Prudential Gilt Fund': { category: 'Debt', tags: ['Debt', 'Gilt'], logo: 'IC', rating: 5, returns: { '1Y': '8.3%', '3Y': '8.88%', '5Y': '6.84%' } },
+                'HDFC Short Term Debt Fund': { category: 'Debt', tags: ['Debt', 'Short Term'], logo: 'H', rating: 5, returns: { '1Y': '8.9%', '3Y': '8.52%', '5Y': '7.19%' } },
+
+                // Hybrid Funds
+                'SBI Magnum Children\'s Benefit Fund': { category: 'Hybrid', tags: ['Hybrid', 'Childrens'], logo: 'S', rating: 5, returns: { '1Y': '8.4%', '3Y': 'N/A', '5Y': 'N/A' } },
+                'ICICI Prudential Equity & Debt Fund': { category: 'Hybrid', tags: ['Hybrid', 'Equity Debt'], logo: 'IC', rating: 5, returns: { '1Y': '5.2%', '3Y': '19.66%', '5Y': '25.17%' } },
+                'HDFC Balanced Advantage Fund': { category: 'Hybrid', tags: ['Hybrid', 'Balanced Advantage'], logo: 'H', rating: 5, returns: { '1Y': '2.0%', '3Y': '19.6%', '5Y': '23.7%' } },
+                'Quant Multi Asset Allocation Fund': { category: 'Hybrid', tags: ['Hybrid', 'Multi Asset'], logo: 'Q', rating: 4, returns: { '1Y': 'N/A', '3Y': 'N/A', '5Y': '27.47%' } },
+
+                // ETF
+                'SBI-ETF Nifty 50': { category: 'ETF', tags: ['ETF', 'Nifty 50'], logo: 'S', rating: 4, returns: { '1Y': '28.52%', '3Y': 'N/A', '5Y': 'N/A' } },
+                'UTI Nifty Exchange Traded Fund': { category: 'ETF', tags: ['ETF', 'Nifty 50'], logo: 'U', rating: 4, returns: { '1Y': 'N/A', '3Y': 'N/A', '5Y': 'N/A' } },
+                'Nippon ETF Nifty BeES': { category: 'ETF', tags: ['ETF', 'Nifty 50'], logo: 'N', rating: 4, returns: { '1Y': '12.1%', '3Y': '44.25%', '5Y': '101.17%' } },
+                'ICICI Prudential Nifty ETF': { category: 'ETF', tags: ['ETF', 'Nifty 50'], logo: 'IC', rating: 4, returns: { '1Y': 'N/A', '3Y': 'N/A', '5Y': 'N/A' } },
+
+                // NFO
+                'DSP Nifty500 Flexicap Quality 30 Index Fund': { category: 'NFO', tags: ['NFO', 'Flexi Cap'], logo: 'D', rating: 0, returns: { '1Y': 'N/A', '3Y': 'N/A', '5Y': 'N/A' } },
+                'Kotak Nifty Alpha 50 Index Fund': { category: 'NFO', tags: ['NFO', 'Alpha 50'], logo: 'K', rating: 0, returns: { '1Y': 'N/A', '3Y': 'N/A', '5Y': 'N/A' } },
+            };
+
+            // const categoryDefinitions = {
+            //     'High Return': {
+            //         subtitle: 'Funds with high returns in the last 3-5 years',
+            //         funds: ['Nippon India Small Cap Fund', 'Kotak Small Cap Fund', 'Axis Small Cap Fund', 'SBI Small Cap Fund', 'HDFC Mid-Cap Opportunities Fund', 'Axis Midcap Fund', 'PGIM India Midcap Opportunities Fund', 'Kotak Emerging Equity Fund', 'Invesco India PSU Equity Fund', 'SBI PSU Direct Plan Growth']
+            //     },
+            //     'SIP with 500': {
+            //         subtitle: 'Start your investment journey with just ₹500',
+            //         funds: ['Axis Bluechip Fund', 'SBI PSU Direct Plan Growth', 'UTI Nifty 50 Index Fund', 'HDFC Index Fund - Nifty 50 Plan', 'ICICI Prudential Bluechip Fund', 'Mirae Asset Large Cap Fund', 'Kotak Small Cap Fund', 'Axis Small Cap Fund', 'DSP Tax Saver Fund', 'HDFC Mid-Cap Opportunities Fund']
+            //     },
+            //     'Large cap': {
+            //         subtitle: 'Invest in the biggest and most stable companies',
+            //         funds: ['ICICI Prudential Bluechip Fund', 'HDFC Top 100 Fund', 'Axis Bluechip Fund', 'Mirae Asset Large Cap Fund', 'UTI Nifty 50 Index Fund', 'HDFC Index Fund - Nifty 50 Plan', 'SBI PSU Direct Plan Growth', 'Invesco India PSU Equity Fund', 'DSP Tax Saver Fund', 'Mirae Asset Tax Saver Fund']
+            //     },
+            //     'Tax Saving': {
+            //         subtitle: 'Save on taxes under Section 80C with ELSS funds',
+            //         funds: ['Mirae Asset Tax Saver Fund', 'Axis Long Term Equity Fund', 'DSP Tax Saver Fund', 'Invesco India Tax Plan', 'ICICI Prudential Bluechip Fund', 'HDFC Top 100 Fund', 'Axis Bluechip Fund', 'Mirae Asset Large Cap Fund', 'SBI Small Cap Fund', 'Axis Midcap Fund']
+            //     },
+            //     'Mid cap': {
+            //         subtitle: 'High growth potential by investing in emerging companies',
+            //         funds: ['PGIM India Midcap Opportunities Fund', 'Kotak Emerging Equity Fund', 'Axis Midcap Fund', 'HDFC Mid-Cap Opportunities Fund', 'Nippon India Small Cap Fund', 'Quant Small Cap Fund', 'SBI Small Cap Fund', 'Invesco India PSU Equity Fund', 'Axis Small Cap Fund', 'Mirae Asset Large Cap Fund']
+            //     },
+            //     'Small cap': {
+            //         subtitle: 'Aggressive growth with investments in small-sized companies',
+            //         funds: ['Axis Small Cap Fund', 'SBI Small Cap Fund', 'Nippon India Small Cap Fund', 'Kotak Small Cap Fund', 'PGIM India Midcap Opportunities Fund', 'HDFC Mid-Cap Opportunities Fund', 'Invesco India Smallcap Fund', 'Quant Small Cap Fund', 'Bandhan Small Cap Fund', 'Axis Midcap Fund']
+            //     },
+            //     'Equity Funds': {
+            //         subtitle: 'Ideal for long-term capital growth, investing mainly in stocks and suited for investors comfortable with market-linked returns.',
+            //         funds: ['Axis Bluechip Fund', 'ICICI Prudential Bluechip Fund', 'HDFC Top 100 Fund', 'Mirae Asset Large Cap Fund', 'Axis Small Cap Fund', 'SBI Small Cap Fund', 'Nippon India Small Cap Fund', 'Kotak Small Cap Fund', 'PGIM India Midcap Opportunities Fund', 'Axis Midcap Fund']
+            //     },
+            //     'Debt Funds': {
+            //         subtitle: 'Lower risk investment in government bonds, corporate debt, and money market instruments.',
+            //         funds: ['Aditya Birla Sun Life Medium Term Plan Fund', 'Nippon India Credit Risk Fund', 'ICICI Prudential Gilt Fund', 'HDFC Short Term Debt Fund', 'SBI Magnum Children\'s Benefit Fund', 'ICICI Prudential Equity & Debt Fund', 'HDFC Balanced Advantage Fund', 'Quant Multi Asset Allocation Fund', 'UTI Nifty 50 Index Fund', 'HDFC Index Fund - Nifty 50 Plan']
+            //     },
+            //     'Hybrid Funds': {
+            //         subtitle: 'Balanced funds investing in both equity and debt investment are suitable for investors looking for stability and growth.',
+            //         funds: ['SBI Magnum Children\'s Benefit Fund', 'ICICI Prudential Equity & Debt Fund', 'HDFC Balanced Advantage Fund', 'Quant Multi Asset Allocation Fund', 'Aditya Birla Sun Life Medium Term Plan Fund', 'Nippon India Credit Risk Fund', 'ICICI Prudential Gilt Fund', 'HDFC Short Term Debt Fund', 'Axis Bluechip Fund', 'Mirae Asset Large Cap Fund']
+            //     },
+            //     'ETF': {
+            //         subtitle: 'These funds trade on stock exchanges and mirror the performance of indices or commodities, combining the benefits of mutual funds with real-time trading.',
+            //         funds: ['SBI-ETF Nifty 50', 'UTI Nifty Exchange Traded Fund', 'Nippon ETF Nifty BeES', 'ICICI Prudential Nifty ETF', 'UTI Nifty 50 Index Fund', 'HDFC Index Fund - Nifty 50 Plan', 'Axis Bluechip Fund', 'ICICI Prudential Bluechip Fund', 'HDFC Top 100 Fund', 'Mirae Asset Large Cap Fund']
+            //     },
+            //     'NFO': {
+            //         subtitle: 'Gain early access to new mutual fund schemes introduced by asset management companies.',
+            //         funds: ['DSP Nifty500 Flexicap Quality 30 Index Fund', 'Kotak Nifty Alpha 50 Index Fund', 'SBI PSU Direct Plan Growth', 'Invesco India PSU Equity Fund', 'Aditya Birla SL PSU Equity Fund', 'Kotak PSU and Government Fund', 'Axis Bluechip Fund', 'ICICI Prudential Bluechip Fund', 'HDFC Top 100 Fund', 'Mirae Asset Large Cap Fund']
+            //     }
+            // };
+
+            const categoryDefinitions = {
+                'Equity Funds': {
+                    subtitle: 'Ideal for long-term capital growth, investing mainly in stocks and suited for investors comfortable with market-linked returns.',
+                    funds: [
+                        'Axis Bluechip Fund',
+                        'ICICI Prudential Bluechip Fund',
+                        'HDFC Top 100 Fund',
+                        'Mirae Asset Large Cap Fund',
+                        'Axis Small Cap Fund',
+                        'SBI Small Cap Fund',
+                        'Nippon India Small Cap Fund',
+                        'Kotak Small Cap Fund',
+                        'PGIM India Midcap Opportunities Fund',
+                        'Axis Midcap Fund'
+                    ]
+                },
+                'Debt Funds': {
+                    subtitle: 'Lower risk investment in government bonds, corporate debt, and money market instruments.',
+                    funds: [
+                        'Aditya Birla Sun Life Medium Term Plan Fund',
+                        'Nippon India Credit Risk Fund',
+                        'ICICI Prudential Gilt Fund',
+                        'HDFC Short Term Debt Fund'
+                    ]
+                },
+                'Hybrid Funds': {
+                    subtitle: 'Balanced funds investing in both equity and debt investments are suitable for investors looking for stability and growth.',
+                    funds: [
+                        'SBI Magnum Children\'s Benefit Fund',
+                        'ICICI Prudential Equity & Debt Fund',
+                        'HDFC Balanced Advantage Fund',
+                        'Quant Multi Asset Allocation Fund'
+                    ]
+                },
+                'NFO': {
+                    subtitle: 'Gain early access to new mutual fund schemes introduced by asset management companies.',
+                    funds: [
+                        'DSP Nifty500 Flexicap Quality 30 Index Fund',
+                        'Kotak Nifty Alpha 50 Index Fund'
+                    ]
+                },
+                'Index Funds': {
+                    subtitle: 'Designed to track market indices like Nifty or Sensex, offering market linked returns with lower costs.',
+                    funds: [
+                        'UTI Nifty 50 Index Fund',
+                        'HDFC Index Fund - Nifty 50 Plan',
+                        'SBI-ETF Nifty 50',
+                        'UTI Nifty Exchange Traded Fund',
+                        'Nippon ETF Nifty BeES',
+                        'ICICI Prudential Nifty ETF'
+                    ]
+                },
+                'Sectoral & Thematic Funds': {
+                    subtitle: 'Focus on specific sectors such as pharma or IT, or broader investment themes that align with long term trends.',
+                    funds: [
+                        'SBI PSU Direct Plan Growth',
+                        'Invesco India PSU Equity Fund',
+                        'Aditya Birla SL PSU Equity Fund',
+                        'Kotak PSU and Government Fund',
+                        'Nippon India Power & Infra Fund',
+                        'ICICI Prudential Infrastructure Fund'
+                    ]
+                }
+            };
+            const pageTitleEl = document.getElementById('page-title');
+            const pageSubtitleEl = document.getElementById('page-subtitle');
+            const fundListContainer = document.getElementById('fund-list-container');
+            const categorySwitcher = document.getElementById('fund-category-switcher');
+            const categoryLinks = categorySwitcher.querySelectorAll('.category-link');
+
+            /**
+             * Main function to update the page content based on the URL hash.
+             */
+            function updatePageForCategory() {
+                const hash = window.location.hash.substring(1);
+                const category = decodeURIComponent(hash.replace(/-/g, ' ')) || 'Equity Funds';
+
+                const categoryData = categoryDefinitions[category];
+
+                if (categoryData) {
+                    pageTitleEl.textContent = category;
+                    pageSubtitleEl.textContent = categoryData.subtitle;
+                    renderFunds(categoryData.funds);
+                } else {
+                    pageTitleEl.textContent = 'Category Not Found';
+                    pageSubtitleEl.textContent = 'Please select a valid category.';
+                    fundListContainer.innerHTML = '<p class="text-center">No data available for this category.</p>';
+                }
+
+                // Update the active button in the switcher
+                categoryLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.category === category);
+                });
+            }
+
+            /**
+             * Renders the HTML for the fund list table.
+             * @param {string[]} fundNames - An array of fund names to display.
+             */
+            function renderFunds(fundNames) {
+                if (!fundNames || fundNames.length === 0) {
+                    fundListContainer.innerHTML = '<p class="text-center">No funds to display in this category.</p>';
+                    return;
+                }
+
+                let html = `
+                <div class="table-responsive">
+                    <table class="table fund-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="ps-4">Fund Name</th>
+                                <th scope="col" class="text-center">1Y</th>
+                                <th scope="col" class="text-center">3Y</th>
+                                <th scope="col" class="text-center">5Y</th>
+                                <th scope="col" class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+
+                fundNames.forEach(fundName => {
+                    const fund = fundDetailsData[fundName] || { name: fundName, category: 'N/A', rating: 0, returns: {}, logo: '?' };
+
+                    if (!fundDetailsData[fundName]) {
+                        console.warn(`Fund details not found for: ${fundName}`);
+                    };
+
+                    const returns = fund.returns;
+                    const ratingHtml = Array(5).fill(0).map((_, i) =>
+                        `<i class="fas fa-star ${i < fund.rating ? '' : 'text-gray-400'}"></i>`
+                    ).join('');
+
+                    html += `
+                    <tr class="fund-item-row" onclick="navigateToDetails('${fundName}')">
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="https://placehold.co/50x50/00ae42/FFFFFF?text=${fund.logo}" alt="${fundName} Logo" class="fund-logo me-3">
+                                <div>
+                                    <div class="fund-name">${fundName}</div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="fund-category-text me-2">${fund.category}</span>
+                                        ${fund.rating > 0 ? `<span class="fund-rating small">${ratingHtml}</span>` : ''}
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center return-value ${returns['1Y'] && returns['1Y'].startsWith('-') ? 'negative-return' : 'positive-return'}">${returns['1Y'] || 'N/A'}</td>
+                        <td class="text-center return-value ${returns['3Y'] && returns['3Y'].startsWith('-') ? 'negative-return' : 'positive-return'}">${returns['3Y'] || 'N/A'}</td>
+                        <td class="text-center return-value ${returns['5Y'] && returns['5Y'].startsWith('-') ? 'negative-return' : 'positive-return'}">${returns['5Y'] || 'N/A'}</td>
+                        <td class="text-center">
+                            <button class="btn btn-invest">Invest</button>
+                        </td>
+                    </tr>
+                `;
+                });
+
+                html += `
+                        </tbody>
+                    </table>
+                </div>
+            `;
+                fundListContainer.innerHTML = html;
+            }
+
+            // --- Event Listeners ---
+            window.addEventListener('hashchange', updatePageForCategory);
+            updatePageForCategory(); // Initial load
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Planning Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer ></script>
+    <style>
+        :root {
+            --primary: #00ae42;
+            --secondary: #1c355e;
+            --light: #f8f9fa;
+            --border: #e9ecef;
+            --text: #1c355e;
+            --text-light: #6c757d;
+            --radius: 8px;
+        }
+
+        .calculator-container {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .input-section,
+        .result-section {
+            padding: 20px;
+        }
+
+        .section-title {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-control,
+        .form-select {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(0, 174, 66, 0.1);
+        }
+
+        .slider-container {
+            margin-top: 0.5rem;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .slider-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .result-card {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .result-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.2rem;
+        }
+
+        .result-value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .highlight-card {
+            background-color: rgba(0, 174, 66, 0.1);
+        }
+
+        .highlight-value {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .info-icon {
+            color: var(--primary);
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                flex-direction: column;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-3">
+        <div class="calculator-container">
+            <div class="row g-0">
+                <!-- Input Section -->
+                <div class="col-md-6">
+                    <div class="input-section">
+                        <div class="section-title"><i class="fas fa-sliders-h"></i> Input Parameters</div>
+
+                        <div class="mb-3">
+                            <label for="currentAge" class="form-label">Current Age (years)</label>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" id="currentAgeSlider" min="18" max="80"
+                                    value="30" style="flex:1">
+                                <input type="number" class="form-control" id="currentAge" value="30"
+                                    style="width: 70px;">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="retirementAge" class="form-label">Retirement Age (years)</label>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" id="retirementAgeSlider" min="25" max="100"
+                                    value="60" style="flex:1">
+                                <input type="number" class="form-control" id="retirementAge" value="60"
+                                    style="width: 70px;">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="wealthAmount" class="form-label">
+                               Desired Wealth at Retirement (₹)
+                                <i class="fas fa-info-circle info-icon" title="Total amount needed at retirement"></i>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" id="wealthAmountSlider" min="1000000" max="50000000" step="100000" value="10000000" style="flex:1">
+                                <input type="text" class="form-control" id="wealthAmount" value="1,00,00,000" style="width: 120px;">
+                            </div>
+                            <div class="slider-label">
+                                <span>₹10 Lakh</span>
+                                <span>₹5 Cr</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="savingsAmount" class="form-label">
+                                Current Savings (₹/yr)
+                                <i class="fas fa-info-circle info-icon" title="Current annual retirement savings"></i>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" id="savingsAmountSlider" min="0" max="1000000" step="10000" value="250000" style="flex:1">
+                                <input type="text" class="form-control" id="savingsAmount" value="2,50,000" style="width: 120px;">
+                            </div>
+                            <div class="slider-label">
+                                <span>₹0</span>
+                                <span>₹10 Lakh</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inflationRate" class="form-label">
+                                Inflation Rate (%)
+                                <i class="fas fa-info-circle info-icon" title="Expected inflation rate"></i>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" id="inflationRateSlider" min="0" max="20"
+                                    step="0.1" value="5" style="flex:1">
+                                <input type="number" class="form-control" id="inflationRate" value="5"
+                                    style="width: 70px;">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="expectedReturn" class="form-label">
+                                Return Rate (%)
+                                <i class="fas fa-info-circle info-icon" title="Expected investment return"></i>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" id="expectedReturnSlider" min="0" max="30"
+                                    step="0.1" value="12" style="flex:1">
+                                <input type="number" class="form-control" id="expectedReturn" value="12"
+                                    style="width: 70px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="col-md-6">
+                    <div class="result-section position-relative">
+                        <div class="section-title"><i class="fas fa-chart-pie"></i> Results</div>
+
+                        <div id="resultsContent">
+                            <div class="result-card highlight-card">
+                                <div class="result-label">Monthly Savings Needed</div>
+                                <div class="result-value highlight-value">₹13,085</div>
+                            </div>
+
+                            <div class="chart-container">
+                                <canvas id="retirementChart"></canvas>
+                            </div>
+
+                            <div class="result-card">
+                                <div class="result-label">Years Until Retirement</div>
+                                <div class="result-value">30 years</div>
+                            </div>
+
+                            <div class="result-card">
+                                <div class="result-label">Total Amount Invested</div>
+                                <div class="result-value">₹0.47 Cr</div>
+                            </div>
+                        </div>
+
+                        <div class="loading-overlay" id="loadingOverlay" style="display:none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-DBx9Ss1C-g?start=68&amp;end=75" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer ></script>
+    <script>
+      // Global variables
+let retirementChart = null;
+let debounceTimer = null;
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize chart with empty data
+    initializeChart();
+
+    // Sync inputs and sliders
+    syncInputs('currentAge', 'currentAgeSlider');
+    syncInputs('retirementAge', 'retirementAgeSlider');
+    syncInputs('inflationRate', 'inflationRateSlider');
+    syncInputs('expectedReturn', 'expectedReturnSlider');
+    syncCurrencyInputs('wealthAmount', 'wealthAmountSlider');
+    syncCurrencyInputs('savingsAmount', 'savingsAmountSlider');
+
+    // Setup auto-calculation for all inputs
+    setupAutoCalculation();
+
+    // Initial calculation (without debounce)
+    calculateRetirement();
+});
+
+// Format number to Indian currency format
+function formatIndianCurrency(num) {
+    num = num.toString().replace(/,/g, '');
+    const n = Number(num);
+    if (isNaN(n)) return num;
+    
+    return n.toLocaleString('en-IN', {
+        maximumFractionDigits: 0
+    });
+}
+
+// Parse Indian currency format to number
+function parseIndianCurrency(str) {
+    return Number(str.replace(/,/g, ''));
+}
+
+// Initialize the chart
+function initializeChart() {
+    const ctx = document.getElementById('retirementChart').getContext('2d');
+
+    // Destroy existing chart if it exists
+    if (retirementChart) {
+        retirementChart.destroy();
+    }
+
+    retirementChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Invested Amount', 'Investment Growth'],
+            datasets: [{
+                data: [0, 0],
+                backgroundColor: [
+                    'rgba(0, 174, 66, 0.8)',
+                    'rgba(28, 53, 94, 0.8)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12,
+                        padding: 20,
+                        font: {
+                            family: 'Jost',
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.raw !== null) {
+                                label += '₹' + new Intl.NumberFormat('en-IN').format(context.raw);
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Sync input fields with their corresponding sliders for currency inputs
+function syncCurrencyInputs(inputId, sliderId) {
+    const input = document.getElementById(inputId);
+    const slider = document.getElementById(sliderId);
+
+    input.addEventListener('input', function () {
+        const numericValue = parseIndianCurrency(this.value);
+        if (!isNaN(numericValue)) {
+            slider.value = numericValue;
+            this.value = formatIndianCurrency(numericValue);
+            handleDebouncedCalculation();
+        }
+    });
+
+    slider.addEventListener('input', function () {
+        input.value = formatIndianCurrency(this.value);
+        handleDebouncedCalculation();
+    });
+}
+
+// Sync input fields with their corresponding sliders
+function syncInputs(inputId, sliderId) {
+    const input = document.getElementById(inputId);
+    const slider = document.getElementById(sliderId);
+
+    input.addEventListener('input', function () {
+        slider.value = this.value;
+        handleDebouncedCalculation();
+    });
+
+    slider.addEventListener('input', function () {
+        input.value = this.value;
+        handleDebouncedCalculation();
+    });
+}
+
+// Setup event listeners for all inputs
+function setupAutoCalculation() {
+    const inputs = [
+        'currentAge', 'currentAgeSlider',
+        'retirementAge', 'retirementAgeSlider',
+        'wealthAmount', 'wealthAmountSlider',
+        'savingsAmount', 'savingsAmountSlider',
+        'inflationRate', 'inflationRateSlider',
+        'expectedReturn', 'expectedReturnSlider'
+    ];
+
+    inputs.forEach(id => {
+        document.getElementById(id).addEventListener('input', function() {
+            // For immediate response to slider movements
+            if (id.includes('Slider')) {
+                const inputId = id.replace('Slider', '');
+                if (inputId === 'wealthAmount' || inputId === 'savingsAmount') {
+                    document.getElementById(inputId).value = formatIndianCurrency(this.value);
+                } else {
+                    document.getElementById(inputId).value = this.value;
+                }
+            }
+            handleDebouncedCalculation();
+        });
+    });
+}
+
+// Debounce function to prevent rapid firing of API calls
+function handleDebouncedCalculation() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        calculateRetirement();
+    }, 300); // 1-second delay
+}
+
+// Validate inputs before calculation
+function validateInputs() {
+    const currentAge = parseInt(document.getElementById('currentAge').value);
+    const retirementAge = parseInt(document.getElementById('retirementAge').value);
+    
+    if (retirementAge <= currentAge) {
+        alert("Retirement age must be greater than current age");
+        return false;
+    }
+    
+    if (currentAge < 18 || currentAge > 80) {
+        alert("Current age must be between 18 and 80");
+        return false;
+    }
+    
+    if (retirementAge < 25 || retirementAge > 100) {
+        alert("Retirement age must be between 25 and 100");
+        return false;
+    }
+    
+    return true;
+}
+
+// Main calculation function
+function calculateRetirement() {
+    if (!validateInputs()) return;
+
+    document.getElementById('loadingOverlay').style.display = 'flex';
+    
+    const params = {
+        current_age: document.getElementById('currentAge').value,
+        retirement_age: document.getElementById('retirementAge').value,
+        wealth_amount: parseIndianCurrency(document.getElementById('wealthAmount').value),
+        inflation_rate: document.getElementById('inflationRate').value,
+        expected_return: document.getElementById('expectedReturn').value,
+        savings_amount: parseIndianCurrency(document.getElementById('savingsAmount').value),
+        key: 'bf27810f-27a3-44f3-b28d-c0a863d04ffb'
+    };
+
+    const apiUrl = `https://mfapi.advisorkhoj.com/calc/getCrorepatiResult`;
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    
+    // First try direct API call
+    axios.get(apiUrl, { params })
+        .then(response => {
+            if (response.data && response.data.status === 200) {
+                updateResults(response.data);
+            } else {
+                throw new Error('Invalid API response');
+            }
+        })
+        .catch(error => {
+            console.error('Direct API call failed, trying with proxy:', error);
+            // If direct call fails, try with proxy
+            return axios.get(apiUrl, { params })
+                .then(proxyResponse => {
+                    if (proxyResponse.data && proxyResponse.data.status === 200) {
+                        updateResults(proxyResponse.data);
+                    } else {
+                        throw new Error('API returned error status');
+                    }
+                })
+                .catch(proxyError => {
+                    console.error('Proxy API Error:', proxyError);
+                    alert('Failed to get results from API. Using mock data instead.');
+                    useMockData();
+                });
+        })
+        .finally(() => {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+}
+
+// Fallback function with mock data
+function useMockData() {
+    const mockData = {
+        status: 200,
+        current_age: document.getElementById('currentAge').value,
+        retirement_age: document.getElementById('retirementAge').value,
+        wealth_amount: parseIndianCurrency(document.getElementById('wealthAmount').value),
+        inflation_rate: document.getElementById('inflationRate').value,
+        expected_return: document.getElementById('expectedReturn').value,
+        savings_amount: parseIndianCurrency(document.getElementById('savingsAmount').value),
+        target_wealth: 49930922,
+        target_savings: 748998,
+        target_amount: 424409418,
+        years: document.getElementById('retirementAge').value - document.getElementById('currentAge').value,
+        monthly_savings: 13085,
+        invested_amount: 47105640,
+        total_earnings: 377303778
+    };
+    updateResults(mockData);
+}
+
+// Update the UI with results
+function updateResults(data) {
+    const formatCurrency = amount => {
+        return '₹' + new Intl.NumberFormat('en-IN').format(Math.round(amount));
+    };
+
+    // Extract values from API response
+    const years = data.years || (data.retirement_age - data.current_age);
+    const monthlySavings = data.monthly_savings || (data.target_savings / 12);
+    const investedAmount = data.invested_amount || (data.target_savings * years);
+    const totalEarnings = data.total_earnings || (data.target_amount - investedAmount);
+    const targetAmount = data.target_amount || data.wealth_amount;
+
+    // Update the HTML
+    document.getElementById('resultsContent').innerHTML = `
+        <div class="result-card highlight-card">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="result-label">Monthly Savings Needed</div>
+                    <div class="result-value highlight-value">${formatCurrency(monthlySavings)}</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="result-label">Total Earnings:</div>
+                    <div class="result-value">${formatCurrency(totalEarnings)}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="retirementChart"></canvas>
+        </div>
+        
+        <div class="result-card">
+            <div class="result-label">Years Until Retirement</div>
+            <div class="result-value">${years} years</div>
+        </div>
+        <div class="result-card">
+            <div class="result-label">Total Amount Invested</div>
+            <div class="result-value">${formatCurrency(investedAmount)}</div>
+        </div>
+    `;
+
+    // Update the chart
+    if (retirementChart) {
+        retirementChart.destroy();
+    }
+    
+    const ctx = document.getElementById('retirementChart').getContext('2d');
+    retirementChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Invested Amount', 'Investment Growth'],
+            datasets: [{
+                data: [investedAmount, totalEarnings],
+                backgroundColor: [
+                    'rgba(0, 174, 66, 0.8)',
+                    'rgba(28, 53, 94, 0.8)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${formatCurrency(context.raw)}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+    </script>
+</body>
+
+</html>

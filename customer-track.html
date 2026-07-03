@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Complaint</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
+	<!-- Place favicon.ico in the root directory -->
+	<!-- CSS here -->
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./assets/css/animate.min.css" />
+	
+	<link rel="stylesheet" href="./assets/css/fontawesome-all.min.css" />
+	<link rel="stylesheet" href="./assets/css/flaticon.css" />
+	<link rel="stylesheet" href="./assets/css/odometer.css" />
+	<link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
+	<link rel="stylesheet" href="./assets/css/aos.css" />
+	<link rel="stylesheet" href="./assets/css/default.css" />
+	<link rel="stylesheet"  fetchpriority="high" href="./assets/css/main.css" />
+	<script src="./assets/js/app-link.js" defer ></script>
+    <style>
+        :root {
+            --primary-color: #1c355e;
+            --secondary-color: #00ae42;
+            --accent-color: #4cc9f0;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn-primary:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        .form-control {
+            border-radius: 30px;
+            padding: 12px 20px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+        }
+
+        .comp-img img {
+            transition: transform 0.5s ease;
+        }
+
+        .comp-img:hover img {
+            transform: scale(1.05) rotate(-5deg);
+        }
+
+
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        .btn-primary i {
+            color: #fff !important;
+         }
+        td,
+        th {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #f1f3ff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(67, 97, 238, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+            }
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            color: #a0400e !important;
+            background-color: #fef3c7 !important;
+        }
+
+        .status-resolved {
+            color: #166556 !important;
+            background-color: #dcfce7 !important;
+        }
+
+        .status-processing {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .progress-track {
+            height: 5px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transition: width 0.6s ease;
+            width: 0;
+        }
+
+        .otp-digit {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+            text-align: center;
+            font-size: 24px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .otp-digit:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(67, 97, 238, 0.5);
+            transform: scale(1.1);
+        }
+
+        .tracking-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .tracking-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .step.active .step-circle {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-label {
+            font-size: 12px;
+            color: #6c757d;
+            transition: all 0.3s;
+        }
+
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .otp-timer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .otp-timer span {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- Sidebar -->
+    <main>
+		<script src="./assets/js/header.js" defer ></script>
+		<script src="./assets/js/footer.js" defer ></script>
+    <!-- Page Content -->
+    <div class="container mt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="comp-img floating">
+                    <img loading="lazy" src="../assets/img/track.png" alt="" class="img-fluid animate__animated animate__fadeInLeft">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card animate__animated animate__fadeIn">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4 text-center ">Track Your Query</h4>
+
+                        <!-- Progress Steps -->
+                        <div class="d-flex col-md-9 justify-content-between mb-4 position-relative">
+                            <div class="progress-track">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            <div class="step step1 active">
+                                <div class="step-circle">1</div>
+                                <div class="step-label">Mobile</div>
+                            </div>
+                            <div class="step step2">
+                                <div class="step-circle">2</div>
+                                <div class="step-label">OTP</div>
+                            </div>
+                            <div class="step step3">
+                                <div class="step-circle">3</div>
+                                <div class="step-label">Results</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1: Mobile Number Input -->
+                        <div id="mobileForm" class="animate__animated animate__fadeIn">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Enter Registered Mobile Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text text-white"><i class="fas fa-mobile-alt"></i></span>
+                                    <input value="" type="tel" class="form-control" id="mobileNumber" maxlength="10"
+                                        placeholder="Enter your 10-digit mobile number" pattern="[0-9]{10}">
+                                </div>
+                                <small class="text-muted">We'll send an OTP to this number</small>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary btn-lg pulse" id="sendOtpBtn" onclick="sendOtp()">
+                                    <i class="fas fa-paper-plane me-2"></i> Send OTP
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: OTP Verification -->
+                        <div id="otpForm" style="display: none;" class="animate__animated animate__fadeIn">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Enter OTP</label>
+                                <p class="text-muted">We've sent a 4-digit OTP to <span id="displayMobileNumber"
+                                        class="fw-bold"></span></p>
+                                <div class="otp-container">
+                                    <input type="tel" class="form-control text-center otp-digit" id="otp1" maxlength="1"
+                                        oninput="moveToNext(this, 'otp2')" onkeydown="moveToPrevious(event, this)">
+                                    <input type="tel" class="form-control text-center otp-digit" id="otp2" maxlength="1"
+                                        oninput="moveToNext(this, 'otp3')"
+                                        onkeydown="moveToPrevious(event, this, 'otp1')">
+                                    <input type="tel" class="form-control text-center otp-digit" id="otp3" maxlength="1"
+                                        oninput="moveToNext(this, 'otp4')"
+                                        onkeydown="moveToPrevious(event, this, 'otp2')">
+                                    <input type="tel" class="form-control text-center otp-digit" id="otp4" maxlength="1"
+                                        onkeydown="moveToPrevious(event, this, 'otp3')">
+                                </div>
+                                <div class="otp-timer">
+                                    OTP expires in: <span id="otpTimer">02:00</span>
+                                </div>
+                                <p class="text-muted text-center mt-2">Didn't receive OTP? <a href="#"
+                                        id="resendOtpLink" class="text-primary" onclick="resendOtp()">Resend</a></p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary btn-lg" id="verifyOtpBtn" onclick="verifyOtp()">
+                                    <i class="fas fa-check-circle me-2"></i> Verify OTP
+                                </button>
+                            </div>
+                            <div id="otpError"
+                                class="alert alert-danger mt-3 text-center animate__animated animate__shakeX"
+                                style="display: none;">
+                                <i class="fas fa-exclamation-circle me-2"></i> Invalid OTP. Please try again.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="complaintTable" class="mt-4 animate__animated animate__fadeInUp"></div>
+        </div>
+    </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer ></script>
+    <script src="../assets/js/main.js" defer ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer ></script>
+    <script src="assets/js/main.js" defer ></script>
+    <script src="assets/js/chatbot.js" defer ></script>
+    <script src="assets/js/p9_language.js" defer ></script>
+
+    <script>
+        // Global variables
+        let otpTimer;
+        let otpExpiryTime;
+        const generatedOtp = "1234"; // Fixed OTP
+        let mobileNumber;
+
+        // Initialize the page
+        $(document).ready(function () {
+            // Restrict mobile number input to digits only
+            $('#mobileNumber').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+                if (this.value.length > 10) {
+                    this.value = this.value.slice(0, 10);
+                }
+            });
+
+            // Auto-focus first OTP digit when OTP form is shown
+            $('#otpForm').on('shown.bs.collapse', function () {
+                $('#otp1').focus();
+            });
+        });
+
+        // Animation for progress bar
+        function updateProgressBar(step) {
+            let width = 0;
+            if (step === 1) width = 0;
+            else if (step === 2) width = 50;
+            else if (step === 3) width = 100;
+
+            anime({
+                targets: '#progressBar',
+                width: width + '%',
+                duration: 800,
+                easing: 'easeInOutQuad'
+            });
+
+            // Update step indicators
+            $('.step').removeClass('active');
+            $(`.step${step}`).addClass('active');
+        }
+
+        // Move to next OTP field
+        function moveToNext(current, nextFieldId) {
+            if (current.value.length >= current.maxLength) {
+                document.getElementById(nextFieldId).focus();
+            }
+        }
+
+        // Move to previous OTP field on backspace
+        function moveToPrevious(event, current, prevFieldId) {
+            if (event.key === 'Backspace' && current.value.length === 0 && prevFieldId) {
+                document.getElementById(prevFieldId).focus();
+            }
+        }
+
+        // Start OTP timer
+        function startOtpTimer() {
+            let timeLeft = 120; // 2 minutes in seconds
+            clearInterval(otpTimer);
+
+            otpTimer = setInterval(function () {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+
+                $('#otpTimer').text(`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+
+                if (timeLeft <= 0) {
+                    clearInterval(otpTimer);
+                    $('#otpTimer').text('00:00');
+                    $('#resendOtpLink').removeClass('text-primary').addClass('text-danger');
+                    $('#verifyOtpBtn').prop('disabled', true);
+                } else {
+                    timeLeft--;
+                }
+            }, 1000);
+        }
+
+        // Step 1: Send OTP
+        function sendOtp() {
+            mobileNumber = $('#mobileNumber').val().trim();
+
+            if (mobileNumber.length === 10 && /^\d+$/.test(mobileNumber)) {
+                // Show loading animation
+                const btn = $('#sendOtpBtn');
+                btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Sending...');
+                btn.prop('disabled', true);
+
+                // Set expiry time (OTP is already fixed to "1234")
+                otpExpiryTime = new Date().getTime() + 120000; // 2 minutes from now
+
+                // Simulate API call delay
+                setTimeout(() => {
+                    // In a real app, you would call your backend API here
+                    console.log(`OTP for ${mobileNumber}: ${generatedOtp}`); // For demo purposes
+
+                    // Hide mobile form and show OTP form with animation
+                    $('#mobileForm').addClass('animate__fadeOut').delay(300).queue(function () {
+                        $(this).hide().dequeue();
+                        updateProgressBar(2);
+
+                        // Display mobile number in OTP form
+                        $('#displayMobileNumber').text(mobileNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1$2$3'));
+
+                        // Show OTP form
+                        $('#otpForm').show().addClass('animate__fadeIn');
+
+                        // Start OTP timer
+                        startOtpTimer();
+
+                        // Focus first OTP field
+                        $('#otp1').focus();
+
+                        // Reset button
+                        btn.html('<i class="fas fa-paper-plane me-2"></i> Send OTP');
+                        btn.prop('disabled', false);
+
+                        // Show success message
+                        const successMsg = $('<div class="alert alert-success mt-3 animate__animated animate__fadeIn">' +
+                            '<i class="fas fa-check-circle me-2"></i> OTP sent to your mobile number' +
+                            '</div>');
+                        $('#mobileForm').after(successMsg);
+                        setTimeout(() => {
+                            successMsg.addClass('animate__fadeOut').delay(300).queue(function () {
+                                $(this).remove();
+                            });
+                        }, 3000);
+                    });
+                }, 1500);
+            } else {
+                // Shake animation for error
+                $('#mobileNumber').addClass('animate__animated animate__shakeX');
+                setTimeout(() => {
+                    $('#mobileNumber').removeClass('animate__animated animate__shakeX');
+                }, 1000);
+
+                // Show error message
+                const errorMsg = $('<div class="alert alert-danger mt-3 animate__animated animate__fadeIn">' +
+                    '<i class="fas fa-exclamation-circle me-2"></i> Please enter a valid 10-digit mobile number' +
+                    '</div>');
+                $('#mobileForm').after(errorMsg);
+                setTimeout(() => {
+                    errorMsg.addClass('animate__fadeOut').delay(300).queue(function () {
+                        $(this).remove();
+                    });
+                }, 3000);
+            }
+        }
+
+        // Resend OTP
+        function resendOtp() {
+            // Check if resend is allowed (at least 30 seconds since last send)
+            const now = new Date().getTime();
+            if (otpExpiryTime && now < otpExpiryTime - 90000) { // 90 seconds (30 seconds cooldown)
+                const cooldown = Math.ceil(((otpExpiryTime - 90000) - now) / 1000);
+                $('#resendOtpLink').text(`Resend in ${cooldown}s`);
+                return;
+            }
+
+            const btn = $('#resendOtpLink');
+            btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Resending...');
+            btn.prop('disabled', true);
+
+            // Set new expiry time (OTP remains "1234")
+            otpExpiryTime = new Date().getTime() + 120000; // 2 minutes from now
+
+            setTimeout(() => {
+                // In a real app, you would call your backend API here
+                console.log(`New OTP for ${mobileNumber}: ${generatedOtp}`); // For demo purposes
+
+                // Reset OTP fields
+                $('.otp-digit').val('');
+                $('#otp1').focus();
+
+                // Reset timer
+                clearInterval(otpTimer);
+                startOtpTimer();
+
+                // Reset resend link
+                btn.html('Resend');
+                btn.prop('disabled', false);
+                $('#verifyOtpBtn').prop('disabled', false);
+                $('#resendOtpLink').removeClass('text-danger').addClass('text-primary');
+
+                // Show success message
+                const successMsg = $('<div class="alert alert-success mt-3 animate__animated animate__fadeIn">' +
+                    '<i class="fas fa-check-circle me-2"></i> New OTP sent to your mobile number' +
+                    '</div>');
+                $('#otpForm').prepend(successMsg);
+                setTimeout(() => {
+                    successMsg.addClass('animate__fadeOut').delay(300).queue(function () {
+                        $(this).remove();
+                    });
+                }, 3000);
+            }, 1000);
+        }
+
+        // Verify OTP
+        function verifyOtp() {
+            // Get OTP from all fields
+            const otp1 = $('#otp1').val();
+            const otp2 = $('#otp2').val();
+            const otp3 = $('#otp3').val();
+            const otp4 = $('#otp4').val();
+            const enteredOtp = otp1 + otp2 + otp3 + otp4;
+
+            // Validate OTP length
+            if (enteredOtp.length !== 4) {
+                showOtpError('Please enter complete 4-digit OTP');
+                return;
+            }
+
+            // Check if OTP is expired
+            const now = new Date().getTime();
+            if (now > otpExpiryTime) {
+                showOtpError('OTP has expired. Please request a new one.');
+                return;
+            }
+
+            // Show loading animation
+            const btn = $('#verifyOtpBtn');
+            btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Verifying...');
+            btn.prop('disabled', true);
+
+            // Simulate API verification delay
+            setTimeout(() => {
+                if (enteredOtp === generatedOtp) { // Compare with fixed OTP "1234"
+                    // Successful verification
+                    $('#otpError').hide();
+                    $('#otpForm').addClass('animate__fadeOut').delay(300).queue(function () {
+                        $(this).hide().dequeue();
+                        updateProgressBar(3);
+
+                        // ✅ Load all complaints for this mobile number
+                        displayComplaintTable(mobileNumber);
+
+                        // Scroll to results
+                        $('html, body').animate({
+                            scrollTop: $('#complaintTable').offset().top - 100
+                        }, 800);
+
+                        // Reset button
+                        btn.html('<i class="fas fa-check-circle me-2"></i> Verify OTP');
+                        btn.prop('disabled', false);
+                    });
+                } else {
+                    // Invalid OTP
+                    showOtpError('Invalid OTP. Please try again.');
+                    btn.html('<i class="fas fa-check-circle me-2"></i> Verify OTP');
+                    btn.prop('disabled', false);
+                }
+            }, 1000);
+        }
+
+        // Show OTP error
+        function showOtpError(message) {
+            // Shake animation for error
+            $('.otp-digit').addClass('animate__animated animate__shakeX');
+            setTimeout(() => {
+                $('.otp-digit').removeClass('animate__animated animate__shakeX');
+            }, 1000);
+
+            // Show error message
+            $('#otpError').html('<i class="fas fa-exclamation-circle me-2"></i> ' + message);
+            $('#otpError').show().addClass('animate__fadeIn');
+        }
+
+        // ✅ Fetch and display all registered complaints with all fields in a table
+        function displayComplaintTable(mobileNumber) {
+            const complaints = JSON.parse(localStorage.getItem('complaints')) || [];
+            const userComplaints = complaints.filter(c => c.mobile === mobileNumber);
+
+            if (userComplaints.length === 0) {
+                $('#complaintTable').html(`
+                    <div class="card animate__animated animate__fadeIn">
+                        <div class="card-body text-center py-5">
+                            <i class="fas fa-inbox fa-4x text-muted mb-4"></i>
+                            <h4 class="text-muted">No complaints found</h4>
+                            <p>We couldn't find any complaints registered with this mobile number.</p>
+                            <button class="btn btn-outline-primary" onclick="window.location.href='customer-complaint.html'">
+                                <i class="fas fa-plus me-2"></i> Register New Complaint
+                            </button>
+                        </div>
+                    </div>
+                `);
+                return;
+            }
+
+            // Define all possible columns
+            const allColumns = {
+                token: "Token",
+                customerId: "Customer ID",
+                name: "Name",
+                department: "Department",
+                dpId: "DP ID",
+                clientId: "Client ID",
+                tradingCode: "Trading Code",
+                query: "Query",
+                subQuery: "Sub Query",
+                transaction: "Transaction",
+                attachment: "Attachment",
+                date: "Date",
+                status: "Status"
+            };
+
+            // ✅ Step 1: Identify which columns have at least one non-"N/A" value
+            let visibleColumns = {};
+            Object.keys(allColumns).forEach(key => {
+                if (userComplaints.some(complaint => complaint[key] && complaint[key] !== "N/A" && complaint[key] !== "")) {
+                    visibleColumns[key] = allColumns[key]; // Keep only columns with data
+                }
+            });
+
+            // ✅ Step 2: Build the table dynamically
+            let tableHtml = `
+            <div class="card animate__animated animate__fadeIn">
+                <div class="card-header ">
+                    <h5 class="mb-0"><i class="fas fa-list-alt me-2"></i> Your Complaint History</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-primary">
+                                <tr>`;
+
+            // Create table headers dynamically
+            Object.values(visibleColumns).forEach(columnName => {
+                tableHtml += `<th>${columnName}</th>`;
+            });
+
+            tableHtml += `</tr></thead><tbody>`;
+
+            // Create table rows dynamically
+            userComplaints.forEach(complaint => {
+                tableHtml += `<tr class="animate__animated animate__fadeIn">`;
+                Object.keys(visibleColumns).forEach(key => {
+                    if (key === 'status') {
+                        // Add special styling for status column
+                        tableHtml += `<td><span class="status-badge status-${complaint[key].toLowerCase()}">${complaint[key]}</span></td>`;
+                    } else if (key === 'attachment' && complaint[key] && complaint[key] !== "N/A") {
+                        // Make attachment clickable
+                        tableHtml += `<td><a href="${complaint[key]}" target="_blank" class="text-primary">View Attachment</a></td>`;
+                    } else {
+                        tableHtml += `<td>${complaint[key] ? complaint[key] : "N/A"}</td>`;
+                    }
+                });
+                tableHtml += `</tr>`;
+            });
+
+            tableHtml += `</tbody></table></div></div></div>`;
+
+            // ✅ Display the updated table
+            $('#complaintTable').html(tableHtml);
+
+            // Add animation to each row
+            $('tbody tr').each(function (index) {
+                $(this).css('animation-delay', `${index * 0.1}s`);
+            });
+        }
+    </script>
+</body>
+
+</html>

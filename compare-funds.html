@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Funds</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/default.css" />
+    <link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
+    <script src="./assets/js/app-link.js" defer></script>
+    <style>
+        .main-content-container {
+            background-color: #f8f9fa;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: none;
+            height: 100%;
+            position: relative;
+            border: 1px solid #e8eef8;
+        }
+
+        .fund-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--tg-heading-color, #1c355e);
+        }
+.btn-invest-now {
+            background-color: #00ae42;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-invest-now:hover {
+            background-color: #1c355e;
+            color: white;
+        }
+
+        .remove-fund-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .remove-fund-btn:hover {
+            background: #e2e8f0;
+            color: #64748b;
+        }
+
+        .add-fund-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 105px;
+            height: 100%;
+            background-color: #f9fafb;
+        }
+
+        .add-fund-card:hover {
+            background-color: #f1f5f9;
+            border-color: var(--tg-theme-primary, #00ae42);
+        }
+
+        .add-fund-card .add-fund-text {
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        #performance-chart-container {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            height: 400px;
+        }
+
+        #chart-legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .legend-color-box {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        #chart-time-buttons button {
+            border: 1px solid #d1d5db;
+            background-color: #fff;
+            padding: 0.25rem 1rem;
+            transition: all 0.2s ease;
+        }
+
+        #chart-time-buttons button.active {
+            background-color: #e5e7eb;
+            font-weight: 600;
+        }
+
+        .comparison-table .table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .comparison-table .table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #f8f9fa;
+        }
+
+        .comparison-table .table td,
+        .comparison-table .table th {
+            text-align: center;
+            vertical-align: middle;
+            border-top: 1px solid #e8eef8;
+            padding: 1rem 0.75rem;
+        }
+
+        .comparison-table .table tbody td:first-child,
+        .comparison-table .table thead th:first-child {
+            text-align: left;
+            font-weight: 500;
+            background-color: #fff;
+            position: sticky;
+            left: 0;
+            z-index: 5;
+            border-right: 1px solid #e8eef8;
+        }
+
+        .comparison-section-title {
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            color: var(--tg-heading-color, #1c355e) !important;
+            background-color: #f1f5f9 !important;
+        }
+
+        /* Modal Styles */
+        #addFundModal .modal-dialog {
+            max-width: 600px;
+        }
+
+        #addFundModal .modal-content {
+            border-radius: 1rem;
+            border: none;
+        }
+
+        #addFundModal .modal-header {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        #fund-search-results {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .search-result-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid #e8eef8;
+        }
+
+        .search-result-item:hover {
+            background-color: #f9fafb;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .popular-comparison-card {
+            background-color: #fff;
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .popular-comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .popular-comparison-card .fund-name-small {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .popular-comparison-card .vs-text {
+            color: #9ca3af;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+
+            #comparison-header-container table,
+            #comparison-header-container thead,
+            #comparison-header-container tbody,
+            #comparison-header-container tr {
+                display: block;
+            }
+
+            #comparison-header-container th {
+                display: block;
+                width: 100% !important;
+                /* Override inline style */
+                padding: 0.5rem 0 !important;
+                border: none !important;
+            }
+
+            /* Add space between stacked cards */
+            #comparison-header-container th:not(:first-child):not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            /* Hide the main title cell on mobile to save space */
+            #comparison-header-container th:first-child {
+                display: none;
+            }
+
+            #performance-chart-container {
+                height: 300px;
+                /* Reduce chart height on smaller screens */
+            }
+
+            .h4 {
+                font-size: 1.25rem;
+                /* Adjust heading font size */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .main-content-container {
+                padding: 1.5rem !important;
+            }
+
+            .comparison-section-title {
+                font-size: 1rem !important;
+            }
+
+            .comparison-table .table td,
+            .comparison-table .table th {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            #chart-legend {
+                gap: 1rem;
+            }
+
+            .legend-item {
+                font-size: 0.8rem;
+            }
+            
+        }
+
+        .sticky {
+            top: 80px;
+            z-index: 9;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <script src="assets/js/header.js"></script>
+        <script src="assets/js/footer.js"></script>
+        <div class="container">
+            <div class="pt-5">
+                <div class="main-content-container p-4 p-sm-5">
+
+                    <div id="comparison-header-container" class="bg-white rounded-2 p-2 sticky position-md-sticky" style=""></div>
+
+                    <!-- Summary Table -->
+                    <div id="summary-table-container" class="mt-3"></div>
+
+                    <!-- Performance Comparison Table -->
+                    <div id="performance-comparison-container" class="mt-3"></div>
+
+                    <a href="#" onclick="window.history.back(); return false;"
+                        class="btn-light fw-bold mt-5 d-inline-block">Back</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="addFundModal" tabindex="-1" aria-labelledby="addFundModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addFundModalLabel">Add Fund to Compare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select id="fund-category-filter" class="form-select mb-2">
+                            <option value="">All Categories</option>
+                            <option value="Equity: Value">Equity: Value</option>
+                            <option value="Large Cap">Large Cap</option>
+                            <option value="Small Cap">Small Cap</option>
+                            <option value="Mid Cap">Mid Cap</option>
+                            <option value="Multicap">Multicap</option>
+                            <option value="Flexicap">Flexicap</option>
+                            <option value="ELSS">ELSS (Tax Saver)</option>
+                            <option value="Index Fund">Index Fund</option>
+                            <option value="Thematic">Thematic</option>
+                            <option value="Equity Thematic">Equity Thematic</option>
+                            <option value="Equity Sectoral">Equity Sectoral</option>
+                        </select>
+                        <input type="text" id="fund-search-input" placeholder="Search for a mutual fund"
+                            class="form-control">
+                        <div id="fund-search-results" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./assets/js/p9_language.js" defer></script>
+    <script src="./assets/js/main.js" fetchpriority="high" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Data Store ---
+            // A comprehensive and unified object containing all necessary details for every fund across the site.
+            // This acts as a single source of truth, ensuring fund names and data are consistent.
+            const fundDetailsData = {
+'SBI PSU Direct Plan Growth': { category: 'Thematic', tags: ['Equity', 'Thematic'], rating: 4.0, risk: 'Very High', minSip: '₹500', expenseRatio: '0.85%', nav: '₹34.2', fundStarted: '01-Jan-2013', fundSize: '₹5,427Cr', exitLoad: 'Exit load of 0.50% if redeemed within 30 days.', returns: { '1Y': 45.2, '3Y': 21.0, '5Y': 19.8 }, pros: ['1.Consistently top ranked fund', '2.Lower expense ratio: 0.85%', '3.Consistently higher annualised returns than category average for the past 1Y and 3Y'], cons: ['1.5Y and 10Y annualised returns lower than category average'], holdingAnalysis: { top5: '48%', top20: '88%', pe: '11.79', pb: '1.90', turnover: '47%', equity: '95.3%', cash: '4.6%' }, holdings: [{ name: 'State Bank of India', assets: '13.0%' }, { name: 'Bharat Electronics Ltd.', assets: '10.1%' }, { name: 'GAIL (India) Ltd.', assets: '9.1%' }, { name: 'Power Grid Corporation Of India Ltd.', assets: '8.4%' }, { name: 'NTPC Ltd.', assets: '7.5%' }, { name: 'Bharat Petroleum Corporation Ltd.', assets: '5.9%' }, { name: 'Bank Of Baroda', assets: '5.0%' }, { name: 'NMDC Ltd.', assets: '3.6%' }, { name: 'Oil India Ltd.', assets: '3.1%' }, { name: 'General Insurance Corporation of India', assets: '2.9%' }], fundManager: { name: 'Rohit Shimpi', education: 'Mr. Shimpi is a B. Com., PGDBM (Finance), CFA.', experience: 'Prior to joining SBI Mutual Fund, he has worked with CNBC TV18, JP Morgans offshore research centre and HDFC Standard Life Insurance.' }, aboutFund: { description: 'SBI Mutual Fund started their mutual fund on 29/06/1987 and its managing total assets of ₹1,88,455 Cr. Its ranked at 5 as per total assets at end of 30th Sep 2017.', launchDate: '29 Jun 1987', custodian: 'SBI SG Global Securities Services Pvt.Ltd.', registrar: 'Cams' } },
+                'Invesco India PSU Equity Fund': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.05%', nav: '₹50.0', fundStarted: '01-Jan-2013', fundSize: '₹1,234Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 48.1, '3Y': 22.5, '5Y': 20.1 }, pros: ['Strong PSU focus'], cons: ['Sector concentration risk'], holdingAnalysis: { top5: '45%', top20: '80%', pe: '12.0', pb: '2.0', turnover: '40%', equity: '95%', cash: '5%' }, holdings: [{ name: 'State Bank of India', assets: '10.0%' }, { name: 'NTPC Ltd.', assets: '8.0%' }], fundManager: { name: 'Dhimant Kothari', education: 'MBA', experience: '15+ years' }, aboutFund: { description: 'A thematic fund focusing on Public Sector Undertakings.', launchDate: '01 Jan 2013', custodian: 'Invesco Custodial', registrar: 'KFin Tech' } },
+                'Aditya Birla SL PSU Equity Fund': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], rating: 3, risk: 'Very High', minSip: '₹500', expenseRatio: '1.1%', nav: '₹45.0', fundStarted: '01-Jan-2013', fundSize: '₹987Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 43.5, '3Y': 20.2, '5Y': 18.9 }, pros: ['PSU sector exposure'], cons: ['Lower rating'], holdingAnalysis: { top5: '50%', top20: '85%', pe: '11.5', pb: '1.8', turnover: '50%', equity: '94%', cash: '6%' }, holdings: [{ name: 'Coal India', assets: '9.0%' }, { name: 'Power Grid', assets: '8.5%' }], fundManager: { name: 'Mahesh Patil', education: 'CFA', experience: '20+ years' }, aboutFund: { description: 'A thematic fund focusing on Public Sector Undertakings.', launchDate: '01 Jan 2013', custodian: 'ABSL Custodial', registrar: 'Cams' } },
+                'Kotak PSU and Government Fund': { category: 'Equity Thematic', tags: ['Equity', 'Thematic'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '0.9%', nav: '₹60.0', fundStarted: '01-Jan-2013', fundSize: '₹2,500Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 51.2, '3Y': 24.1, '5Y': 22.3 }, pros: ['Strong recent returns'], cons: ['Niche theme'], holdingAnalysis: { top5: '40%', top20: '75%', pe: '13.0', pb: '2.1', turnover: '35%', equity: '96%', cash: '4%' }, holdings: [{ name: 'HAL', assets: '11.0%' }, { name: 'BEL', assets: '9.5%' }], fundManager: { name: 'Harish Krishnan', education: 'MBA', experience: '18+ years' }, aboutFund: { description: 'A thematic fund focusing on Public Sector and Government companies.', launchDate: '01 Jan 2013', custodian: 'Kotak Bank', registrar: 'Cams' } },
+                'Axis Bluechip Fund': { category: 'Large Cap', tags: ['Equity', 'Large Cap'], rating: 5.0, risk: 'High', minSip: '₹500', expenseRatio: '1.02%', nav: '₹55.12', fundStarted: '05-Jan-2010', fundSize: '₹34,567Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 22.3, '3Y': 14.1, '5Y': 15.8 }, pros: ['Low expense ratio', 'Consistent returns'], cons: ['Slightly lower alpha'], holdingAnalysis: { top5: '40%', top20: '75%', pe: '28.5', pb: '4.5', turnover: '30%', equity: '95.2%', cash: '4.8%' }, holdings: [{ name: 'ICICI Bank', assets: '9.5%' }, { name: 'Infosys', assets: '8.2%' }, { name: 'HDFC Bank', assets: '7.8%' }, { name: 'Reliance Industries', assets: '7.5%' }, { name: 'Bajaj Finance', assets: '6.3%' }], fundManager: { name: 'Shreyash Devalkar', education: 'MBA (Finance)', experience: '20+ years in financial markets' }, aboutFund: { description: 'Aims for long term capital appreciation from a portfolio of large cap equity stocks.', launchDate: '05 Jan 2010', custodian: 'Citibank NA', registrar: 'CAMS' } },
+                'ICICI Prudential Bluechip Fund': { category: 'Large Cap', tags: ['Large Cap'], rating: 5, risk: 'High', minSip: '₹500', expenseRatio: '1.0%', nav: '₹80.0', fundStarted: '01-Jan-2013', fundSize: '₹40,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 24.1, '3Y': 15.5, '5Y': 16.2 }, pros: ['Top rated', 'Large AUM'], cons: ['Standard large cap returns'], holdingAnalysis: { top5: '42%', top20: '78%', pe: '29.0', pb: '4.6', turnover: '45%', equity: '97%', cash: '3%' }, holdings: [{ name: 'HDFC Bank', assets: '10.0%' }, { name: 'ICICI Bank', assets: '9.8%' }], fundManager: { name: 'Anish Tawakley', education: 'PGDM, B.Tech', experience: '25+ years' }, aboutFund: { description: 'A large cap fund investing in top 100 companies by market cap.', launchDate: '01 Jan 2013', custodian: 'HSBC', registrar: 'Cams' } },
+                'HDFC Top 100 Fund': { category: 'Large Cap', tags: ['Large Cap'], rating: 4, risk: 'High', minSip: '₹500', expenseRatio: '1.1%', nav: '₹75.0', fundStarted: '01-Jan-2013', fundSize: '₹35,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 21.8, '3Y': 13.9, '5Y': 15.1 }, pros: ['Established fund'], cons: ['Slightly lower returns than peers'], holdingAnalysis: { top5: '39%', top20: '76%', pe: '28.8', pb: '4.4', turnover: '50%', equity: '95%', cash: '5%' }, holdings: [{ name: 'Reliance Industries', assets: '9.5%' }, { name: 'Infosys', assets: '8.5%' }], fundManager: { name: 'Rahul Baijal', education: 'B.E, MBA', experience: '20+ years' }, aboutFund: { description: 'A large cap fund investing in top 100 companies by market cap.', launchDate: '01 Jan 2013', custodian: 'HDFC Bank', registrar: 'Cams' } },
+                'Mirae Asset Large Cap Fund': { category: 'Large Cap', tags: ['Large Cap'], rating: 5, risk: 'High', minSip: '₹500', expenseRatio: '0.95%', nav: '₹90.0', fundStarted: '01-Jan-2013', fundSize: '₹38,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 23.5, '3Y': 14.8, '5Y': 16.5 }, pros: ['Top rated', 'Consistent performer'], cons: ['None notable'], holdingAnalysis: { top5: '41%', top20: '77%', pe: '29.2', pb: '4.7', turnover: '40%', equity: '96%', cash: '4%' }, holdings: [{ name: 'ICICI Bank', assets: '9.9%' }, { name: 'HDFC Bank', assets: '9.7%' }], fundManager: { name: 'Gaurav Misra', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'A large cap fund investing in top 100 companies by market cap.', launchDate: '01 Jan 2013', custodian: 'Citibank', registrar: 'KFin Tech' } },
+                'Axis Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.8%', nav: '₹100.0', fundStarted: '01-Jan-2013', fundSize: '₹15,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 30.5, '3Y': 25.1, '5Y': 24.8 }, pros: ['Top rated', 'High returns'], cons: ['High risk'], holdingAnalysis: { top5: '30%', top20: '65%', pe: '35.0', pb: '5.5', turnover: '60%', equity: '93%', cash: '7%' }, holdings: [{ name: 'Narayan Hrudayalaya', assets: '5.0%' }, { name: 'Galaxy Surfactants', assets: '4.5%' }], fundManager: { name: 'Anupam Tiwari', education: 'MBA', experience: '15+ years' }, aboutFund: { description: 'A small cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'Axis Bank', registrar: 'Cams' } },
+                'SBI Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.75%', nav: '₹110.0', fundStarted: '01-Jan-2013', fundSize: '₹20,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 28.9, '3Y': 24.5, '5Y': 23.9 }, pros: ['Top rated', 'Strong SBI backing'], cons: ['High risk'], holdingAnalysis: { top5: '28%', top20: '68%', pe: '34.0', pb: '5.2', turnover: '55%', equity: '94%', cash: '6%' }, holdings: [{ name: 'Blue Star', assets: '4.8%' }, { name: 'Finolex Industries', assets: '4.2%' }], fundManager: { name: 'R. Srinivasan', education: 'M.Com, MFM', experience: '25+ years' }, aboutFund: { description: 'A small cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'SBI SG Global', registrar: 'Cams' } },
+                'Kotak Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '0.85%', nav: '₹115.0', fundStarted: '01-Jan-2013', fundSize: '₹18,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 35.8, '3Y': 28.2, '5Y': 25.1 }, pros: ['High returns'], cons: ['High risk'], holdingAnalysis: { top5: '32%', top20: '70%', pe: '36.0', pb: '5.8', turnover: '65%', equity: '92%', cash: '8%' }, holdings: [{ name: 'Cyient DLM', assets: '5.1%' }, { name: 'Ratnamani Metals', assets: '4.6%' }], fundManager: { name: 'Pankaj Tibrewal', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'A small cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'Kotak Bank', registrar: 'Cams' } },
+                'Nippon India Small Cap Fund': { category: 'Small Cap', tags: ['Small Cap'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '0.9%', nav: '₹125.0', fundStarted: '01-Jan-2013', fundSize: '₹22,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 32.1, '3Y': 26.8, '5Y': 25.5 }, pros: ['Large AUM', 'High returns'], cons: ['High risk'], holdingAnalysis: { top5: '25%', top20: '60%', pe: '37.0', pb: '6.0', turnover: '70%', equity: '91%', cash: '9%' }, holdings: [{ name: 'Tube Investments', assets: '4.5%' }, { name: 'HDFC Bank', assets: '3.5%' }], fundManager: { name: 'Samir Rachh', education: 'MMS', experience: '25+ years' }, aboutFund: { description: 'A small cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'HSBC', registrar: 'KFin Tech' } },
+                'UTI Nifty 50 Index Fund': { category: 'Index Fund', tags: ['Index'], rating: 4, risk: 'High', minSip: '₹500', expenseRatio: '0.2%', nav: '₹150.0', fundStarted: '01-Jan-2013', fundSize: '₹10,000Cr', exitLoad: 'Nil', returns: { '1Y': 5.5, '3Y': 15.8, '5Y': 18.5 }, pros: ['Low cost', 'Tracks Nifty 50'], cons: ['No alpha generation'], holdingAnalysis: { top5: '40%', top20: '70%', pe: '25.0', pb: '4.0', turnover: '10%', equity: '99%', cash: '1%' }, holdings: [{ name: 'Reliance Industries', assets: '10.5%' }, { name: 'HDFC Bank', assets: '9.5%' }], fundManager: { name: 'Team Managed', education: '', experience: '' }, aboutFund: { description: 'An index fund that tracks the Nifty 50 index.', launchDate: '01 Jan 2013', custodian: 'UTI Custodial', registrar: 'Cams' } },
+                'HDFC Index Fund - Nifty 50 Plan': { category: 'Index Fund', tags: ['Index'], rating: 4, risk: 'High', minSip: '₹500', expenseRatio: '0.2%', nav: '₹155.0', fundStarted: '01-Jan-2013', fundSize: '₹12,000Cr', exitLoad: 'Nil', returns: { '1Y': 5.6, '3Y': 15.9, '5Y': 18.6 }, pros: ['Low cost', 'Tracks Nifty 50'], cons: ['No alpha generation'], holdingAnalysis: { top5: '40%', top20: '70%', pe: '25.0', pb: '4.0', turnover: '10%', equity: '99%', cash: '1%' }, holdings: [{ name: 'Reliance Industries', assets: '10.5%' }, { name: 'HDFC Bank', assets: '9.5%' }], fundManager: { name: 'Team Managed', education: '', experience: '' }, aboutFund: { description: 'An index fund that tracks the Nifty 50 index.', launchDate: '01 Jan 2013', custodian: 'HDFC Bank', registrar: 'Cams' } },
+                'Mirae Asset Tax Saver Fund': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.7%', nav: '₹40.0', fundStarted: '01-Jan-2013', fundSize: '₹8,000Cr', exitLoad: 'Nil', returns: { '1Y': 7.2, '3Y': 18.1, '5Y': 20.3 }, pros: ['Tax benefits', 'Top rated'], cons: ['3-year lock-in'], holdingAnalysis: { top5: '45%', top20: '80%', pe: '30.0', pb: '5.0', turnover: '50%', equity: '95%', cash: '5%' }, holdings: [{ name: 'HDFC Bank', assets: '9.0%' }, { name: 'ICICI Bank', assets: '8.5%' }], fundManager: { name: 'Neelesh Surana', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'An ELSS fund with tax benefits under Section 80C.', launchDate: '01 Jan 2013', custodian: 'Mirae Custodial', registrar: 'KFin Tech' } },
+                'Axis Long Term Equity Fund': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.8%', nav: '₹85.0', fundStarted: '01-Jan-2013', fundSize: '₹30,000Cr', exitLoad: 'Nil', returns: { '1Y': 6.5, '3Y': 17.5, '5Y': 19.8 }, pros: ['Tax benefits', 'Large AUM'], cons: ['3-year lock-in'], holdingAnalysis: { top5: '40%', top20: '75%', pe: '32.0', pb: '5.2', turnover: '40%', equity: '96%', cash: '4%' }, holdings: [{ name: 'TCS', assets: '8.0%' }, { name: 'Bajaj Finance', assets: '7.5%' }], fundManager: { name: 'Jinesh Gopani', education: 'MMS', experience: '15+ years' }, aboutFund: { description: 'An ELSS fund with tax benefits under Section 80C.', launchDate: '01 Jan 2013', custodian: 'Axis Bank', registrar: 'Cams' } },
+                'DSP Tax Saver Fund': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '0.9%', nav: '₹95.0', fundStarted: '01-Jan-2013', fundSize: '₹12,000Cr', exitLoad: 'Nil', returns: { '1Y': 8.1, '3Y': 19.2, '5Y': 21.5 }, pros: ['Tax benefits', 'Good returns'], cons: ['3-year lock-in'], holdingAnalysis: { top5: '38%', top20: '72%', pe: '31.0', pb: '5.1', turnover: '55%', equity: '94%', cash: '6%' }, holdings: [{ name: 'HDFC Bank', assets: '8.8%' }, { name: 'Infosys', assets: '7.8%' }], fundManager: { name: 'Charanjit Singh', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'An ELSS fund with tax benefits under Section 80C.', launchDate: '01 Jan 2013', custodian: 'DSP Custodial', registrar: 'KFin Tech' } },
+                'Invesco India Tax Plan': { category: 'ELSS', tags: ['ELSS', 'Tax Saver'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.0%', nav: '₹105.0', fundStarted: '01-Jan-2013', fundSize: '₹5,000Cr', exitLoad: 'Nil', returns: { '1Y': 7.8, '3Y': 18.8, '5Y': 20.9 }, pros: ['Tax benefits'], cons: ['3-year lock-in'], holdingAnalysis: { top5: '42%', top20: '78%', pe: '33.0', pb: '5.3', turnover: '60%', equity: '93%', cash: '7%' }, holdings: [{ name: 'Reliance Industries', assets: '9.2%' }, { name: 'ICICI Bank', assets: '8.2%' }], fundManager: { name: 'Amit Ganatra', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'An ELSS fund with tax benefits under Section 80C.', launchDate: '01 Jan 2013', custodian: 'Invesco Custodial', registrar: 'KFin Tech' } },
+                'PGIM India Midcap Opportunities Fund': { category: 'Mid Cap', tags: ['Mid Cap'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.6%', nav: '₹60.0', fundStarted: '01-Jan-2013', fundSize: '₹7,000Cr', exitLoad: '0.5% if redeemed within 90 days', returns: { '1Y': 10.2, '3Y': 22.1, '5Y': 25.3 }, pros: ['Top rated', 'Low expense ratio'], cons: ['High risk'], holdingAnalysis: { top5: '35%', top20: '70%', pe: '40.0', pb: '6.0', turnover: '50%', equity: '95%', cash: '5%' }, holdings: [{ name: 'Persistent Systems', assets: '6.0%' }, { name: 'Max Healthcare', assets: '5.5%' }], fundManager: { name: 'Aniruddha Naha', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'A mid cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'PGIM Custodial', registrar: 'Cams' } },
+                'Kotak Emerging Equity Fund': { category: 'Mid Cap', tags: ['Mid Cap'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '0.7%', nav: '₹110.0', fundStarted: '01-Jan-2013', fundSize: '₹25,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 9.8, '3Y': 21.5, '5Y': 24.1 }, pros: ['Large AUM'], cons: ['High risk'], holdingAnalysis: { top5: '30%', top20: '65%', pe: '42.0', pb: '6.2', turnover: '45%', equity: '96%', cash: '4%' }, holdings: [{ name: 'Supreme Industries', assets: '5.5%' }, { name: 'Solar Industries', assets: '5.0%' }], fundManager: { name: 'Pankaj Tibrewal', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'A mid cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'Kotak Bank', registrar: 'Cams' } },
+                'Axis Midcap Fund': { category: 'Mid Cap', tags: ['Mid Cap'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.75%', nav: '₹115.0', fundStarted: '01-Jan-2013', fundSize: '₹20,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 11.5, '3Y': 23.8, '5Y': 26.5 }, pros: ['Top rated', 'Consistent performer'], cons: ['High risk'], holdingAnalysis: { top5: '38%', top20: '72%', pe: '41.0', pb: '6.1', turnover: '40%', equity: '97%', cash: '3%' }, holdings: [{ name: 'Cholamandalam Investment', assets: '6.5%' }, { name: 'PI Industries', assets: '6.0%' }], fundManager: { name: 'Shreyash Devalkar', education: 'MBA', experience: '20+ years' }, aboutFund: { description: 'A mid cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'Axis Bank', registrar: 'Cams' } },
+                'HDFC Mid-Cap Opportunities Fund': { category: 'Mid Cap', tags: ['Mid Cap'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '0.85%', nav: '₹130.0', fundStarted: '01-Jan-2013', fundSize: '₹38,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 10.9, '3Y': 22.9, '5Y': 25.8 }, pros: ['Largest in category', 'Experienced manager'], cons: ['High risk'], holdingAnalysis: { top5: '25%', top20: '60%', pe: '43.0', pb: '6.3', turnover: '55%', equity: '94%', cash: '6%' }, holdings: [{ name: 'Max Financial Services', assets: '4.5%' }, { name: 'Indian Hotels', assets: '4.0%' }], fundManager: { name: 'Chirag Setalvad', education: 'MBA', experience: '25+ years' }, aboutFund: { description: 'A mid cap fund investing in emerging companies.', launchDate: '01 Jan 2013', custodian: 'HDFC Bank', registrar: 'Cams' } },
+                'Nippon India Power & Infra Fund': { category: 'Equity Sectoral', tags: ['Sectoral', 'Infra'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '1.2%', nav: '₹55.0', fundStarted: '01-Jan-2013', fundSize: '₹3,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': -10.0, '3Y': 31.1, '5Y': 32.3 }, pros: ['High returns in long term'], cons: ['High risk', 'Negative 1Y return'], holdingAnalysis: { top5: '50%', top20: '85%', pe: '15.0', pb: '2.5', turnover: '60%', equity: '92%', cash: '8%' }, holdings: [{ name: 'NTPC', assets: '10.0%' }, { name: 'Power Grid', assets: '9.0%' }], fundManager: { name: 'Meenakshi Dawar', education: 'MBA', experience: '15+ years' }, aboutFund: { description: 'A sectoral fund focusing on power and infrastructure.', launchDate: '01 Jan 2013', custodian: 'HSBC', registrar: 'KFin Tech' } },
+                'ICICI Prudential Infrastructure Fund': { category: 'Equity Sectoral', tags: ['Sectoral', 'Infra'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.3%', nav: '₹120.0', fundStarted: '01-Jan-2013', fundSize: '₹5,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': -9.5, '3Y': 30.5, '5Y': 31.8 }, pros: ['High returns in long term'], cons: ['High risk', 'Negative 1Y return'], holdingAnalysis: { top5: '48%', top20: '82%', pe: '16.0', pb: '2.6', turnover: '65%', equity: '93%', cash: '7%' }, holdings: [{ name: 'Larsen & Toubro', assets: '9.5%' }, { name: 'UltraTech Cement', assets: '8.5%' }], fundManager: { name: 'Ihab Dalwai', education: 'CFA', experience: '20+ years' }, aboutFund: { description: 'A sectoral fund focusing on infrastructure.', launchDate: '01 Jan 2013', custodian: 'HSBC', registrar: 'Cams' } },
+                'SBI Bluechip Fund': { category: 'Large Cap', tags: ['Equity', 'Large Cap'], rating: 4.5, risk: 'High', minSip: '₹500', expenseRatio: '0.95%', nav: '₹70.50', fundStarted: '14-Feb-2006', fundSize: '₹38,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 21.5, '3Y': 15.2, '5Y': 16.1 }, pros: ['Strong parentage', 'Well-diversified'], cons: ['Slightly higher expense ratio'], holdingAnalysis: { top5: '38%', top20: '72%', pe: '29.1', pb: '4.7', turnover: '40%', equity: '96.1%', cash: '3.9%' }, holdings: [{ name: 'HDFC Bank', assets: '9.8%' }, { name: 'ICICI Bank', assets: '9.1%' }, { name: 'Reliance Industries', assets: '8.5%' }, { name: 'Infosys', assets: '6.8%' }, { name: 'Larsen & Toubro', assets: '4.5%' }], fundManager: { name: 'Sohini Andani', education: 'B.Com, CA', experience: '15+ years in equity research' }, aboutFund: { description: 'Seeks to provide investors with opportunities for long-term growth in capital through an active management of a diversified basket of large cap equity stocks.', launchDate: '14 Feb 2006', custodian: 'Deutsche Bank', registrar: 'CAMS' } },
+                'HDFC Small Cap Fund': { category: 'Small Cap', tags: ['Equity', 'Small Cap'], rating: 4.0, risk: 'Very High', minSip: '₹500', expenseRatio: '0.82%', nav: '₹120.30', fundStarted: '03-Apr-2008', fundSize: '₹25,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 35.2, '3Y': 28.5, '5Y': 29.8 }, pros: ['High growth potential', 'Experienced fund manager'], cons: ['High volatility'], holdingAnalysis: { top5: '25%', top20: '60%', pe: '40.2', pb: '6.5', turnover: '55%', equity: '94.3%', cash: '5.7%' }, holdings: [{ name: 'Sonata Software', assets: '5.5%' }, { name: 'Bank of Baroda', assets: '5.1%' }, { name: 'Firstsource Solutions', assets: '4.8%' }, { name: 'PNC Infratech', assets: '4.5%' }, { name: 'IDFC First Bank', assets: '4.2%' }], fundManager: { name: 'Chirag Setalvad', education: 'MBA', experience: '25+ years in fund management' }, aboutFund: { description: 'To generate long term capital appreciation by investing in a portfolio of small cap companies.', launchDate: '03 Apr 2008', custodian: 'HDFC Bank', registrar: 'CAMS' } },
+                'HSBC Small Cap Fund': { category: 'Small Cap', tags: ['Equity', 'Small Cap'], rating: 4.2, risk: 'Very High', minSip: '₹500', expenseRatio: '0.78%', nav: '₹85.60', fundStarted: '12-May-2005', fundSize: '₹12,500Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 33.8, '3Y': 27.1, '5Y': 28.5 }, pros: ['Good diversification', 'Consistent performer'], cons: ['Can be volatile'], holdingAnalysis: { top5: '28%', top20: '65%', pe: '38.5', pb: '6.1', turnover: '50%', equity: '93.8%', cash: '6.2%' }, holdings: [{ name: 'K.P.R. Mill', assets: '6.1%' }, { name: 'Apar Industries', assets: '5.8%' }, { name: 'Carborundum Universal', assets: '5.5%' }, { name: 'KEI Industries', assets: '5.3%' }, { name: 'Timken India', assets: '5.1%' }], fundManager: { name: 'Venugopal Manghat', education: 'CFA, MBA', experience: '20+ years in financial services' }, aboutFund: { description: 'The investment objective of the scheme is to generate long-term capital growth from an actively managed portfolio of equity and equity-related securities of small-cap companies.', launchDate: '12 May 2005', custodian: 'J.P. Morgan', registrar: 'KFin Tech' } },
+                'Motilal Oswal Multicap 35 Fund - Direct - Growth': { category: 'Multicap', tags: ['Equity', 'Multicap'], rating: 4.0, risk: 'Very High', minSip: '₹500', expenseRatio: '0.92%', nav: '₹45.10', fundStarted: '28-Apr-2014', fundSize: '₹15,000Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 18.5, '3Y': 16.5, '5Y': 17.2 }, pros: ['Focused portfolio', 'Exposure to all market caps'], cons: ['Concentration risk'], holdingAnalysis: { top5: '35%', top20: '80%', pe: '32.1', pb: '5.2', turnover: '45%', equity: '97.1%', cash: '2.9%' }, holdings: [{ name: 'HDFC Bank', assets: '8.5%' }, { name: 'ICICI Bank', assets: '8.1%' }, { name: 'Infosys', assets: '7.5%' }, { name: 'Reliance Industries', assets: '7.2%' }, { name: 'TCS', assets: '6.8%' }], fundManager: { name: 'Niket Shah', education: 'MBA', experience: '15+ years in equity research' }, aboutFund: { description: 'The investment objective of the Scheme is to achieve long term capital appreciation by investing in a maximum of 35 equity & equity related instruments across market capitalization.', launchDate: '28 Apr 2014', custodian: 'Deutsche Bank', registrar: 'KFin Tech' } },
+                'SBI Flexicap Fund Direct Growth': { category: 'Flexicap', tags: ['Equity', 'Flexicap'], rating: 4.5, risk: 'Very High', minSip: '₹500', expenseRatio: '0.88%', nav: '₹80.20', fundStarted: '01-Jan-2013', fundSize: '₹18,000Cr', exitLoad: '0.1% if redeemed within 30 days', returns: { '1Y': 20.1, '3Y': 17.8, '5Y': 18.5 }, pros: ['Dynamic asset allocation', 'Managed by experienced team'], cons: ['Performance depends on fund manager\'s calls'], holdingAnalysis: { top5: '30%', top20: '70%', pe: '30.5', pb: '4.8', turnover: '60%', equity: '96.5%', cash: '3.5%' }, holdings: [{ name: 'ICICI Bank', assets: '7.8%' }, { name: 'HDFC Bank', assets: '7.5%' }, { name: 'Infosys', assets: '6.5%' }, { name: 'Reliance Industries', assets: '6.1%' }, { name: 'State Bank of India', assets: '5.5%' }], fundManager: { name: 'R. Srinivasan', education: 'M.Com, MFM', experience: 'Over 25 years of experience' }, aboutFund: { description: 'To provide investors with opportunities for long-term growth in capital through an active management of a diversified basket of equity stocks, with the flexibility to invest across the market capitalization spectrum.', launchDate: '01 Jan 2013', custodian: 'SBI SG Global', registrar: 'CAMS' } },
+                'Tata Small Cap Fund Direct Growth': { category: 'Small Cap', tags: ['Equity', 'Small Cap'], rating: 4.0, risk: 'Very High', minSip: '₹100', expenseRatio: '0.33%', nav: '₹44.6', fundStarted: '12-Nov-2018', fundSize: '₹11,164Cr', exitLoad: 'For units more than 12% of the investments, an exit load of 1% if redeemed within 12 months.', returns: { '1Y': 3.1, '3Y': 25.1, '5Y': 33.8 }, pros: ['1.Consistently higher annualised returns than category average for the past 1Y, 3Y and 5Y', '2.Lower expense ratio: 0.33%'], cons: 'Found nothing so far.', holdingAnalysis: { top5: '20%', top20: '54%', pe: '35.71', pb: '3.57', turnover: '25%', equity: '91.5%', cash: '8.4%' }, holdings: [{ name: 'Sudarshan Chemical Industries Ltd.', assets: '5.2%' }, { name: 'Kirloskar Pneumatic Company Ltd.', assets: '3.9%' }, { name: 'IDFC First Bank Ltd.', assets: '3.9%' }, { name: 'BASF India Ltd.', assets: '3.5%' }, { name: 'Usha Martin Ltd.', assets: '3.5%' }, { name: 'Godrej Industries Ltd.', assets: '3.1%' }, { name: 'Wockhardt Ltd.', assets: '3.0%' }, { name: 'Time Technoplast Ltd.', assets: '2.8%' }, { name: 'CE Info Systems Ltd.', assets: '2.8%' }, { name: 'Wonderla Holidays Ltd.', assets: '2.5%' }], fundManager: { name: 'Chandraprakash Padiyar', education: 'Mr. Padiyar is CFA & MBA in Finance from Symbiosis Institute of Business Management, Pune.', experience: 'Prior to joining TATA Mutual Fund he has worked with UTI Mutual fund, he has worked with Alchemy Capital Management Pvt Ltd.' }, aboutFund: { description: 'Tata Mutual Fund started their mutual fund on 30/06/1995 and its managing total assets of ₹44,897 Cr. Its ranked at 13 as per total assets at end of 30th Sep 2017.', launchDate: '30 Jun 1995', custodian: 'HDFC Bank', registrar: 'Cams' } },
+                'Motilal Oswal Midcap Fund Direct Growth': { category: 'Mid Cap', tags: ['Equity', 'Mid Cap'], rating: 5.0, risk: 'Very High', minSip: '₹500', expenseRatio: '0.70%', nav: '₹116.1', fundStarted: '24-Feb-2014', fundSize: '₹33,609Cr', exitLoad: 'Exit load of 1%, if redeemed within 365 days.', returns: { '1Y': 6.4, '3Y': 29.6, '5Y': 35.3 }, pros: ['1.Consistently higher annualised returns than category average for the past 1Y, 3Y, 5Y and 10Y', '2.Lower expense ratio: 0.7%', '3.Higher alpha: 7.28 The fund has generated returns higher than benchmark - NIFTY Midcap 150 Total Return Index - in the last 3Y'], cons: 'Found nothing so far.', holdingAnalysis: { top5: '46%', top20: '83%', pe: '68.42', pb: '9.82', turnover: '35%', equity: '82.0%', cash: '18.0%' }, holdings: [{ name: 'Coforge Ltd.', assets: '10.5%' }, { name: 'Persistent Systems Ltd.', assets: '9.6%' }, { name: 'Trent Ltd.', assets: '9.4%' }, { name: 'Dixon Technologies (India) Ltd.', assets: '9.1%' }, { name: 'Kalyan Jewellers India Ltd.', assets: '7.6%' }, { name: 'Polycab India Ltd.', assets: '5.1%' }, { name: 'Kei Industries Ltd.', assets: '4.0%' }, { name: 'Bharti Hexacom Ltd.', assets: '4.0%' }, { name: 'Max Healthcare Institute Ltd.', assets: '3.8%' }, { name: 'Kaynes Technology India Ltd.', assets: '2.9%' }], fundManager: { name: 'Ajay Khandelwal', education: 'Mr. Khandelwal is B.com (H) and a qualified Chartered Accountant. He has also done MBA from Lancaster University, UK.', experience: 'Prior to joining Motilal Oswal Mutual Fund, he has worked with Canara Robeco Mutual Fund, BOI AXA Mutual Fund,, B&K Securities and Infosys.' }, aboutFund: { description: 'Motilal Oswal Mutual Fund started their mutual fund on 29/12/2009 and its managing total assets of ₹12,967 Cr. Its ranked at 19 as per total assets at end of 30th Sep 2017.', launchDate: '29 Dec 2009', custodian: 'Citibank NA', registrar: 'KFin Tech' } },
+                'ABSL Value Fund Gr Dir Plan': { category: 'Equity: Value', tags: ['Equity', 'Value'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.02%', nav: '₹92.50', fundStarted: '01-01-2013', fundSize: '₹6,260.06Cr', exitLoad: '1% if redeemed within 1 year', sharpeRatio: 1.04, alpha: 2.0, beta: 1.16, mean: 21.59, stdDeviation: 15.82, cagr: '16.26%', amc: 'ABSLMF', returns: { '1Y': 9.65, '3Y': 19.86, '5Y': 16.13, '10Y': 13.64 }, pros: ['Consistent value investing approach', 'Lower expense ratio vs peers', 'Strong ABSL parentage'], cons: ['Smaller AUM compared to category leaders', 'Slightly lower Sharpe Ratio of 1.04'], holdingAnalysis: { top5: '38%', top20: '72%', pe: '24.8', pb: '3.7', turnover: '42%', equity: '94%', cash: '6%' }, holdings: [{ name: 'HDFC Bank Ltd.', assets: '8.5%' }, { name: 'ICICI Bank Ltd.', assets: '7.8%' }, { name: 'Infosys Ltd.', assets: '7.2%' }, { name: 'ITC Ltd.', assets: '6.5%' }, { name: 'Reliance Industries', assets: '5.8%' }, { name: 'State Bank of India', assets: '5.1%' }, { name: 'ONGC Ltd.', assets: '4.5%' }, { name: 'HCL Technologies', assets: '4.0%' }, { name: 'Tata Steel Ltd.', assets: '3.6%' }, { name: 'Coal India Ltd.', assets: '3.2%' }], fundManager: { name: 'Mahesh Patil', education: 'B.E. (Electronics), MBA (Finance)', experience: '25+ years in equity fund management' }, aboutFund: { description: 'ABSL Value Fund seeks long-term capital appreciation by investing in a diversified portfolio of equity and equity-related instruments using a value investing approach, targeting undervalued companies with strong fundamentals.', launchDate: '01 Jan 2013', custodian: 'Deutsche Bank', registrar: 'Cams' } },
+                'HSBC Value Fund Reg Gr': { category: 'Equity: Value', tags: ['Equity', 'Value'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.71%', nav: '₹85.20', fundStarted: '01-01-2013', fundSize: '₹14,744.65Cr', exitLoad: '1% if redeemed within 1 year', sharpeRatio: 1.25, alpha: 4.59, beta: 1.04, mean: 22.69, stdDeviation: 14.02, cagr: '15.73%', amc: 'HSBCMF', returns: { '1Y': 14.81, '3Y': 21.25, '5Y': 18.64, '10Y': 16.53 }, pros: ['Consistently higher returns than category average', 'Strong alpha generation of 4.59', 'Lower beta of 1.04 indicating controlled volatility'], cons: ['Higher expense ratio at 1.71%', 'High standard deviation of 14.02'], holdingAnalysis: { top5: '42%', top20: '78%', pe: '28.5', pb: '4.2', turnover: '45%', equity: '95%', cash: '5%' }, holdings: [{ name: 'HDFC Bank Ltd.', assets: '9.2%' }, { name: 'ICICI Bank Ltd.', assets: '8.5%' }, { name: 'Infosys Ltd.', assets: '7.8%' }, { name: 'Reliance Industries Ltd.', assets: '7.1%' }, { name: 'ITC Ltd.', assets: '5.5%' }, { name: 'State Bank of India', assets: '4.9%' }, { name: 'Tata Steel Ltd.', assets: '4.2%' }, { name: 'Coal India Ltd.', assets: '3.8%' }, { name: 'ONGC Ltd.', assets: '3.5%' }, { name: 'NTPC Ltd.', assets: '3.1%' }], fundManager: { name: 'Gautam Bhupal', education: 'MBA (Finance), CFA', experience: '20+ years in equity markets' }, aboutFund: { description: 'HSBC Value Fund seeks to provide long-term capital appreciation by investing in a diversified portfolio of equity and equity-related securities following a value investing style.', launchDate: '01 Jan 2013', custodian: 'J.P. Morgan', registrar: 'KFin Tech' } },
+                'ICICI Prudential Value Discovery Fund': { category: 'Equity: Value', tags: ['Equity', 'Value'], rating: 5, risk: 'Very High', minSip: '₹500', expenseRatio: '1.20%', nav: '₹390.5', fundStarted: '16-Aug-2004', fundSize: '₹45,200Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 18.2, '3Y': 23.1, '5Y': 21.4, '10Y': 18.9 }, pros: ['Top rated value fund', 'Longest track record in category', 'Strong risk-adjusted returns'], cons: ['Large AUM may limit nimbleness', 'Higher expense ratio'], holdingAnalysis: { top5: '38%', top20: '72%', pe: '24.5', pb: '3.8', turnover: '40%', equity: '96%', cash: '4%' }, holdings: [{ name: 'ICICI Bank Ltd.', assets: '8.5%' }, { name: 'NTPC Ltd.', assets: '7.8%' }, { name: 'Oil India Ltd.', assets: '6.5%' }, { name: 'Infosys Ltd.', assets: '6.0%' }, { name: 'HDFC Bank Ltd.', assets: '5.8%' }, { name: 'HCL Technologies', assets: '5.2%' }, { name: 'Sun Pharmaceuticals', assets: '4.8%' }, { name: 'Coal India Ltd.', assets: '4.5%' }, { name: 'Wipro Ltd.', assets: '3.9%' }, { name: 'Bajaj Auto Ltd.', assets: '3.5%' }], fundManager: { name: 'Sankaran Naren', education: 'B.Tech (IIT Madras), MBA', experience: '30+ years' }, aboutFund: { description: 'Aims to generate returns through dividend income and capital appreciation by investing in a well-diversified portfolio of value stocks.', launchDate: '16 Aug 2004', custodian: 'HSBC', registrar: 'CAMS' } },
+                'Nippon India Value Fund': { category: 'Equity: Value', tags: ['Equity', 'Value'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.55%', nav: '₹210.3', fundStarted: '08-Jun-2005', fundSize: '₹8,500Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 15.6, '3Y': 20.8, '5Y': 19.2, '10Y': 15.8 }, pros: ['Value-oriented with contrarian approach', 'Decent 5Y track record'], cons: ['Moderate category ranking', 'Higher expense ratio'], holdingAnalysis: { top5: '40%', top20: '74%', pe: '22.8', pb: '3.5', turnover: '55%', equity: '94%', cash: '6%' }, holdings: [{ name: 'Reliance Industries', assets: '9.0%' }, { name: 'ONGC Ltd.', assets: '7.5%' }, { name: 'HDFC Bank', assets: '6.8%' }, { name: 'BHEL', assets: '5.5%' }, { name: 'Coal India', assets: '5.1%' }, { name: 'SBI Ltd.', assets: '4.9%' }, { name: 'NMDC Ltd.', assets: '4.2%' }, { name: 'Power Grid Corp.', assets: '3.8%' }, { name: 'GAIL India', assets: '3.5%' }, { name: 'Indian Oil Corp.', assets: '3.0%' }], fundManager: { name: 'Meenakshi Dawar', education: 'MBA (Finance)', experience: '18+ years' }, aboutFund: { description: 'The fund seeks long-term capital growth by investing in stocks trading below their intrinsic value.', launchDate: '08 Jun 2005', custodian: 'HSBC', registrar: 'KFin Tech' } },
+                'UTI Value Opportunities Fund': { category: 'Equity: Value', tags: ['Equity', 'Value'], rating: 4, risk: 'Very High', minSip: '₹500', expenseRatio: '1.62%', nav: '₹145.7', fundStarted: '20-Jul-2005', fundSize: '₹11,200Cr', exitLoad: '1% if redeemed within 1 year', returns: { '1Y': 13.4, '3Y': 19.5, '5Y': 17.8, '10Y': 14.9 }, pros: ['Solid value investing framework', 'Good long-term record'], cons: ['Below-average 1Y return', 'High expense ratio'], holdingAnalysis: { top5: '36%', top20: '68%', pe: '25.0', pb: '3.9', turnover: '50%', equity: '95%', cash: '5%' }, holdings: [{ name: 'Infosys Ltd.', assets: '8.1%' }, { name: 'HDFC Bank Ltd.', assets: '7.5%' }, { name: 'ITC Ltd.', assets: '6.8%' }, { name: 'ICICI Bank Ltd.', assets: '6.2%' }, { name: 'Tata Motors Ltd.', assets: '5.5%' }, { name: 'Wipro Ltd.', assets: '4.8%' }, { name: 'ONGC Ltd.', assets: '4.2%' }, { name: 'Tech Mahindra', assets: '3.8%' }, { name: 'HCL Technologies', assets: '3.5%' }, { name: 'Hindalco Industries', assets: '3.1%' }], fundManager: { name: 'Vetri Subramaniam', education: 'MBA, CFA', experience: '25+ years' }, aboutFund: { description: 'Seeks capital appreciation through a value-oriented equity investment strategy.', launchDate: '20 Jul 2005', custodian: 'UTI Custodial', registrar: 'CAMS' } }
+            };
+
+            // --- State Management ---
+            let comparedFunds = []; // Holds the names of the funds currently being compared
+            const chartColors = ['#00ae42', '#0d6efd', '#ffc107']; // Colors for the chart lines
+
+            // --- DOM Element References ---
+            const comparisonHeaderContainer = document.getElementById('comparison-header-container');
+            const addFundModalElement = document.getElementById('addFundModal');
+            const addFundModal = addFundModalElement ? new bootstrap.Modal(addFundModalElement) : null;
+            const fundSearchInput = document.getElementById('fund-search-input');
+            const fundSearchResults = document.getElementById('fund-search-results');
+            const popularComparisonsRow = document.getElementById('popular-comparisons-row');
+
+            // --- Initialization Logic ---
+
+            // Function to read the fund name from the URL hash
+           // New, updated function for compare-funds.html
+function initializeFundsFromURL() {
+    const urlHash = window.location.hash.substring(1);
+    if (urlHash) {
+        // Split the hash by our chosen separator '|'
+        const fundSlugs = urlHash.split('|');
+        fundSlugs.forEach(slug => {
+            // Decode and replace dashes back to spaces
+            const fundName = decodeURIComponent(slug.replace(/-/g, ' '));
+            if (fundDetailsData[fundName] && !comparedFunds.includes(fundName)) {
+                comparedFunds.push(fundName);
+            }
+        });
+    }
+}
+
+            // Function to set default funds if none are selected
+            function ensureDefaultFunds() {
+                if (comparedFunds.length === 0) {
+                    comparedFunds.push('HSBC Value Fund Reg Gr');
+                    comparedFunds.push('Motilal Oswal Multicap 35 Fund - Direct - Growth');
+                    comparedFunds.push('UTI Nifty 50 Index Fund');
+                }
+            }
+
+            // --- Core Rendering Functions ---
+
+            // Main function to update the entire page
+            function renderFullComparison() {
+                renderComparisonHeader();
+                renderSummaryTable();
+                renderPerformanceComparison();
+            }
+
+            // Function to render the Summary table (Fund Name, Category, Launch Date, AUM, Expense Ratio, Sharp Ratio, Alpha, Beta, Mean, Std. Deviation)
+            function renderSummaryTable() {
+                const container = document.getElementById('summary-table-container');
+                if (!container) return;
+
+                const activeFunds = comparedFunds.filter(f => f && fundDetailsData[f]);
+                if (activeFunds.length === 0) {
+                    container.innerHTML = '';
+                    return;
+                }
+
+                let html = `
+                <div class="bg-white rounded-2 p-3 mb-3" style="border: 1px solid #e8eef8;">
+                    <h2 class="h5 fw-bold mb-3">Summary</h2>
+                    <div class="table-responsive">
+                        <table class="table" style="border-collapse: separate; border-spacing: 0; width: 100%;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #e8eef8;">
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Fund Name</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Category</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Launch Date</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">AUM (Crore)</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Expense<br>Ratio (%)</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Sharp Ratio</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Alpha</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Beta</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Mean</th>
+                                    <th style="padding: 0.85rem 0.75rem; font-weight: 600; font-size: 0.88rem; color: #1c355e; border-top: none; white-space: nowrap;">Std. Deviation</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+
+                activeFunds.forEach(fundName => {
+                    const d = fundDetailsData[fundName];
+                    // Parse AUM — strip ₹ and Cr for display
+                    const aumRaw = (d.fundSize || '-').replace('₹', '').replace('Cr', '').trim();
+                    const expRaw = (d.expenseRatio || '-').replace('%', '').trim();
+                    const launchRaw = d.fundStarted || d.aboutFund?.launchDate || '-';
+
+                    html += `
+                    <tr style="border-top: 1px solid #e8eef8;">
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #0d6efd; font-weight: 500; white-space: nowrap;"><a href="fund-details.html#${encodeURIComponent(fundName)}" style="color:#0d6efd; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${fundName}</a></td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${d.category || '-'}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${launchRaw}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${aumRaw}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${expRaw}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${d.sharpeRatio ?? '-'}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${d.alpha ?? '-'}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${d.beta ?? '-'}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${d.mean ?? '-'}</td>
+                        <td style="padding: 0.85rem 0.75rem; font-size: 0.88rem; color: #444;">${d.stdDeviation ?? '-'}</td>
+                    </tr>`;
+                });
+
+                html += `</tbody></table></div></div>`;
+                container.innerHTML = html;
+            }
+
+            // ─── PERFORMANCE COMPARISON TABLE ─────────────────────────
+            function renderPerformanceComparison() {
+                const container = document.getElementById('performance-comparison-container');
+                if (!container) return;
+
+                const activeFunds = comparedFunds.filter(f => f && fundDetailsData[f]);
+                if (activeFunds.length === 0) { container.innerHTML = ''; return; }
+
+                // AMC name map
+                const amcMap = {
+                    'ABSL Value Fund Gr Dir Plan': 'ABSLMF',
+                    'HSBC Value Fund Reg Gr': 'HSBCMF',
+                    'ICICI Prudential Value Discovery Fund': 'ICICIMF',
+                    'Nippon India Value Fund': 'NipponMF',
+                    'UTI Value Opportunities Fund': 'UTIMF',
+                    'SBI PSU Direct Plan Growth': 'SBIMF',
+                    'Invesco India PSU Equity Fund': 'InvescoMF',
+                    'Aditya Birla SL PSU Equity Fund': 'ABSLMF',
+                    'Kotak PSU and Government Fund': 'KotakMF',
+                    'Axis Bluechip Fund': 'AxisMF',
+                    'ICICI Prudential Bluechip Fund': 'ICICIMF',
+                    'HDFC Top 100 Fund': 'HDFCMF',
+                    'Mirae Asset Large Cap Fund': 'MiraeMF',
+                    'SBI Bluechip Fund': 'SBIMF',
+                    'Axis Small Cap Fund': 'AxisMF',
+                    'SBI Small Cap Fund': 'SBIMF',
+                    'Kotak Small Cap Fund': 'KotakMF',
+                    'Nippon India Small Cap Fund': 'NipponMF',
+                    'HDFC Small Cap Fund': 'HDFCMF',
+                    'HSBC Small Cap Fund': 'HSBCMF',
+                    'Tata Small Cap Fund Direct Growth': 'TataMF',
+                    'PGIM India Midcap Opportunities Fund': 'PGIMMF',
+                    'Kotak Emerging Equity Fund': 'KotakMF',
+                    'Axis Midcap Fund': 'AxisMF',
+                    'HDFC Mid-Cap Opportunities Fund': 'HDFCMF',
+                    'Motilal Oswal Midcap Fund Direct Growth': 'MotilalMF',
+                    'Motilal Oswal Multicap 35 Fund - Direct - Growth': 'MotilalMF',
+                    'SBI Flexicap Fund Direct Growth': 'SBIMF',
+                    'Mirae Asset Tax Saver Fund': 'MiraeMF',
+                    'Axis Long Term Equity Fund': 'AxisMF',
+                    'DSP Tax Saver Fund': 'DSPMF',
+                    'Invesco India Tax Plan': 'InvescoMF',
+                    'UTI Nifty 50 Index Fund': 'UTIMF',
+                    'HDFC Index Fund - Nifty 50 Plan': 'HDFCMF',
+                    'Nippon India Power & Infra Fund': 'NipponMF',
+                    'ICICI Prudential Infrastructure Fund': 'ICICIMF',
+                };
+
+                // Category averages & benchmark (Equity: Value)
+                const catAvg   = { '1Y': 7.96,  '3Y': 17.33, '5Y': 14.91, '10Y': 14.49, 'SL': 13.67 };
+                const benchmark = { name: 'NIFTY 50 TRI', '1Y': 5.63, '3Y': 12.59, '5Y': 10.73, '10Y': 13.44, 'SL': 13.29 };
+
+                const thS  = 'padding:0.85rem 0.75rem;font-weight:600;font-size:0.88rem;color:#1c355e;border-top:none;white-space:nowrap;border-bottom:2px solid #e8eef8;';
+                const tdS  = 'padding:0.85rem 0.75rem;font-size:0.88rem;color:#444;border-top:1px solid #e8eef8;';
+                const tdB  = 'padding:0.85rem 0.75rem;font-size:0.88rem;font-weight:600;color:#1c355e;border-top:1px solid #e8eef8;';
+                const tdN  = 'padding:0.85rem 0.75rem;font-size:0.88rem;color:#0d6efd;font-weight:500;border-top:1px solid #e8eef8;';
+                const tdY  = 'padding:0.85rem 0.75rem;font-size:0.88rem;color:#444;border-top:1px solid #e8eef8;background:#fffde7;';
+
+                let html = `
+                <div class="bg-white rounded-2 p-3 mb-3" style="border:1px solid #e8eef8;">
+                    <h2 class="h5 fw-bold mb-3">Performance Comparison</h2>
+                    <div class="table-responsive">
+                        <table class="table" style="border-collapse:separate;border-spacing:0;width:100%;">
+                            <thead><tr>
+                                <th style="${thS}">Fund Name</th>
+                                <th style="${thS}">AMC Name</th>
+                                <th style="${thS}">1-Yr Ret (%)</th>
+                                <th style="${thS}">3-Yrs Ret (%)</th>
+                                <th style="${thS}">5-Yrs Ret (%)</th>
+                                <th style="${thS}">10-Yrs Ret (%)</th>
+                                <th style="${thS}">Since Launch Ret (%)</th>
+                            </tr></thead>
+                            <tbody>`;
+
+                activeFunds.forEach(fundName => {
+                    const d   = fundDetailsData[fundName];
+                    const amc = d.amc || amcMap[fundName] || '-';
+                    const r1  = d.returns?.['1Y']  ?? '-';
+                    const r3  = d.returns?.['3Y']  ?? '-';
+                    const r5  = d.returns?.['5Y']  ?? '-';
+                    const r10 = d.returns?.['10Y'] ?? '-';
+                    const sl  = d.cagr ? parseFloat(d.cagr) : '-';
+
+                    html += `<tr>
+                        <td style="${tdN}"><a href="fund-details.html#${encodeURIComponent(fundName)}" style="color:#0d6efd;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${fundName}</a></td>
+                        <td style="${tdS}"><a href="#" style="color:#0d6efd;text-decoration:none;">${amc}</a></td>
+                        <td style="${tdB}">${typeof r1  === 'number' ? r1  : '-'}</td>
+                        <td style="${tdB}">${typeof r3  === 'number' ? r3  : '-'}</td>
+                        <td style="${tdB}">${typeof r5  === 'number' ? r5  : '-'}</td>
+                        <td style="${tdB}">${typeof r10 === 'number' ? r10 : '-'}</td>
+                        <td style="${tdB}">${typeof sl  === 'number' ? sl  : '-'}</td>
+                    </tr>`;
+                });
+
+                html += `
+                    <tr>
+                        <td style="${tdY}">Category Average</td>
+                        <td style="${tdY}">-</td>
+                        <td style="${tdY}">${catAvg['1Y']}</td>
+                        <td style="${tdY}">${catAvg['3Y']}</td>
+                        <td style="${tdY}">${catAvg['5Y']}</td>
+                        <td style="${tdY}">${catAvg['10Y']}</td>
+                        <td style="${tdY}">${catAvg['SL']}</td>
+                    </tr>
+                    <tr>
+                        <td style="${tdY}">${benchmark.name}</td>
+                        <td style="${tdY}">-</td>
+                        <td style="${tdY}">${benchmark['1Y']}</td>
+                        <td style="${tdY}">${benchmark['3Y']}</td>
+                        <td style="${tdY}">${benchmark['5Y']}</td>
+                        <td style="${tdY}">${benchmark['10Y']}</td>
+                        <td style="${tdY}">${benchmark['SL']}</td>
+                    </tr>`;
+
+                html += '</tbody></table></div></div>';
+                container.innerHTML = html;
+            }
+
+
+            // Function to attach click listeners to 'remove' (x) buttons on fund cards
+            function attachRemoveListeners() {
+                document.querySelectorAll('.remove-fund-btn').forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        const fundNameToRemove = e.currentTarget.dataset.fundName;
+                        comparedFunds = comparedFunds.filter(f => f !== fundNameToRemove);
+                        renderFullComparison();
+                    });
+                });
+            }
+
+            // Function to build and inject the top header cards
+            function renderComparisonHeader() {
+                if (!comparisonHeaderContainer) return;
+
+                let headerHtml = '<table class="table" style="table-layout: fixed;"><thead><tr>';
+
+                // Render the main header cell
+                headerHtml += `<th style="width: 25%; border: none; background-color: transparent; vertical-align: middle;">
+                        <h1 class="h4 fw-bold mb-1">Compare Funds</h1>
+                     </th>`;
+
+                // Render a header cell for each of the 3 possible fund slots
+                for (let i = 0; i < 3; i++) {
+                    const fundName = comparedFunds[i];
+                    const thStyle = "width: 25%; border: none; background-color: transparent; padding: 0.5rem;";
+                    if (fundName && fundDetailsData[fundName]) {
+                        const fundData = fundDetailsData[fundName];
+                        headerHtml += `
+                    <th style="${thStyle}">
+                        <div class="comparison-card p-3">
+                            <button class="remove-fund-btn" data-fund-name="${fundName}">&times;</button>
+                            <h2 class="fund-name mb-2 h6"><a href="fund-details.html#${encodeURIComponent(fundName)}" style="color:inherit;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${fundName}</a></h2>
+                            <button class="btn-invest-now btn-sm">INVEST NOW</button>
+                        </div>
+                    </th>`;
+                    } else {
+                        headerHtml += `
+                    <th style="${thStyle}">
+                        <div class="comparison-card add-fund-card p-3" onclick="openAddFundModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-circle text-primary mb-2" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            <span class="add-fund-text small">Add a fund</span>
+                        </div>
+                    </th>`;
+                    }
+                }
+                headerHtml += '</tr></thead></table>';
+                comparisonHeaderContainer.innerHTML = headerHtml;
+                attachRemoveListeners(); // Re-attach event listeners to the new "remove" buttons
+            }
+
+            // --- Event Handlers & Listeners ---
+
+
+            // --- Helper & Utility Functions ---
+
+            // Opens the "Add Fund" modal and clears previous search results
+            window.openAddFundModal = function () {
+                if (!addFundModal) return;
+                if (fundSearchInput) fundSearchInput.value = '';
+                if (fundSearchResults) fundSearchResults.innerHTML = '';
+                const catFilter = document.getElementById('fund-category-filter');
+                if (catFilter) catFilter.value = '';
+                addFundModal.show();
+            }
+
+           
+
+            // --- Search Listener ---
+            if (fundSearchInput) {
+                const categoryFilter = document.getElementById('fund-category-filter');
+
+                function updateSearchResults() {
+                    const searchTerm = fundSearchInput.value.toLowerCase();
+                    const selectedCategory = categoryFilter ? categoryFilter.value : '';
+                    if (!fundSearchResults) return;
+                    fundSearchResults.innerHTML = '';
+                    if (searchTerm.length < 1 && !selectedCategory) return;
+                    const availableFunds = Object.keys(fundDetailsData).filter(f => {
+                        const notAlreadyAdded = !comparedFunds.includes(f);
+                        const matchesSearch = searchTerm.length < 1 || f.toLowerCase().includes(searchTerm);
+                        const matchesCategory = !selectedCategory || fundDetailsData[f].category === selectedCategory;
+                        return notAlreadyAdded && matchesSearch && matchesCategory;
+                    });
+                    if (availableFunds.length === 0) {
+                        fundSearchResults.innerHTML = '<div class="text-secondary p-3 text-center small">No funds found</div>';
+                        return;
+                    }
+                    availableFunds.forEach(fundName => {
+                        const item = document.createElement('div');
+                        item.className = 'search-result-item';
+                        item.innerHTML = `<div>${fundName}</div><small class="text-secondary">${fundDetailsData[fundName].category}</small>`;
+                        item.addEventListener('click', () => {
+                            if (comparedFunds.length < 3) {
+                                comparedFunds.push(fundName);
+                                if (addFundModal) addFundModal.hide();
+                                renderFullComparison();
+                            }
+                        });
+                        fundSearchResults.appendChild(item);
+                    });
+                }
+
+                fundSearchInput.addEventListener('input', updateSearchResults);
+                if (categoryFilter) categoryFilter.addEventListener('change', updateSearchResults);
+            }
+
+            // --- Page Load Execution ---
+            initializeFundsFromURL();
+            ensureDefaultFunds();
+            renderFullComparison();
+            renderPopularComparisons();
+        });
+
+    </script>
+
+</body>
+
+</html>
