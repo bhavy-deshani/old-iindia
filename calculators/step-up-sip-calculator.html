@@ -582,7 +582,7 @@ justify-content:center;
             color: #1C355E;
             
             padding: 7px 10px;
-            width: 80px;
+            width: 100px;
             text-align: right;
             -moz-appearance: textfield;
         }
@@ -1170,10 +1170,6 @@ justify-content:center;
                             <!-- Donut chart -->
                             <div class="sip-chart-wrap">
                                 <canvas id="resultChart"></canvas>
-                                <div class="sip-chart-center" id="chartCenterLabel">
-                                    <span class="sip-chart-center-text">Total Value</span>
-                                    <span class="sip-chart-center-value" id="chartTotalValue">—</span>
-                                </div>
                             </div>
 
                             <!-- Legend -->
@@ -1505,31 +1501,10 @@ justify-content:center;
     <script src="../assets/js/main.js" fetchpriority="high" defer></script>
     <script src="../assets/js/chatbot.js" defer></script>
     <script src="../assets/js/faqs.js" defer></script>
+    <script src="../Scripts/GlobalApi.js" defer></script>
     <script src="../assets/js/calculators/calculator-sip-top-up.js" defer></script>
     <script src="../assets/js/cta-submit.js" ></script>
-    <script src="../Scripts/GlobalApi.js" defer ></script>
-    <!-- Patch: update donut chart center label after each calculation -->
-    <script>
-        window.addEventListener('load', function () {
-            var _orig = window.displayResult;
-            if (typeof _orig === 'function') {
-                window.displayResult = function (data) {
-                    _orig(data);
-                    updateCenterLabel(data);
-                };
-            }
-            function updateCenterLabel(data) {
-                var el = document.getElementById('chartTotalValue');
-                if (!el || data == null || data.maturity_amount == null) return;
-                var val = data.maturity_amount;
-                var fmt;
-                if (val >= 10000000) fmt = '₹' + (val / 10000000).toFixed(2) + ' Cr';
-                else if (val >= 100000) fmt = '₹' + (val / 100000).toFixed(2) + ' L';
-                else fmt = '₹' + Math.round(val).toLocaleString('en-IN');
-                el.textContent = fmt;
-            }
-        });
-    </script>
+
 
 </body>
 

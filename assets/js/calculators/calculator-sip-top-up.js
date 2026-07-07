@@ -7,20 +7,15 @@ document
   });
 
 function calculateAndDisplayResults() {
-  const apiKey = "mfapikey";
-
+  const apiKey = "bf27810f-27a3-44f3-b28d-c0a863d04ffb";
+  const CalcApi = "https://mfapi.advisorkhoj.com/calc/getGoalBasedTopUpSIPResult";
   const goalAmount = document.getElementById("goalAmount").value;
   const expectedReturn = document.getElementById("expectedReturn").value;
   const investmentPeriod = document.getElementById("investmentPeriod").value;
   const sipTopUpValue = document.getElementById("sipTopUpValue").value;
 
-  const reqtype = `calc/getGoalBasedTopUpSIPResult`;
-  //New Altered
-  // const apiUrl = "https://www.integratedindia.in/API/ADKAPI.aspx";
-
   const params = new URLSearchParams({
     key: apiKey,
-    reqtype: reqtype,
     goal_amount: goalAmount,
     expected_rate_of_return: expectedReturn,
     investment_period: investmentPeriod,
@@ -63,19 +58,19 @@ function displayResult(data) {
             <tbody>
                 <tr>
                     <td>Initial SIP Amount</td>
-                    <td class="fw-bold">â‚¹${data.sip_amount.toLocaleString('en-IN')}</td>
+                    <td class="fw-bold">&#8377;${data.sip_amount.toLocaleString('en-IN')}</td>
                 </tr>
                 <tr>
                     <td>Total Invested Amount</td>
-                    <td class="fw-bold">â‚¹${data.invested_amount.toLocaleString('en-IN')}</td>
+                    <td class="fw-bold">&#8377;${data.invested_amount.toLocaleString('en-IN')}</td>
                 </tr>
                 <tr>
                     <td>Growth Value</td>
-                    <td class="fw-bold">â‚¹${data.growth_value.toLocaleString('en-IN')}</td>
+                    <td class="fw-bold">&#8377;${data.growth_value.toLocaleString('en-IN')}</td>
                 </tr>
                 <tr>
                     <td>Maturity Amount</td>
-                    <td class="fw-bold">â‚¹${data.maturity_amount.toLocaleString('en-IN')}</td>
+                    <td class="fw-bold">&#8377;${data.maturity_amount.toLocaleString('en-IN')}</td>
                 </tr>
             </tbody>
         </table>
@@ -141,7 +136,7 @@ function displayChart(data) {
       // labels: ["Total Invested Amount", "Growth Value"],
       datasets: [
         {
-          label: "Amount in â‚¹",
+          label: "Amount in ₹",
           data: [data.invested_amount, data.growth_value],
           backgroundColor: ["#143980", "#00ae42"],
           borderColor: ["#143980", "#00ae42"],

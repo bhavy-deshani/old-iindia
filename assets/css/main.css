@@ -3987,6 +3987,28 @@ textarea {
   animation-name: fadeInUp2
 }
 
+.slider__single.swiper-slide-active .slider__content .slider-metrics {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInUp2;
+  animation-name: fadeInUp2
+}
+
+.slider__single.swiper-slide-active .slider__content .slider__btn {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInUp2;
+  animation-name: fadeInUp2
+}
+
 .slider__single.swiper-slide-active .slider__shape img:nth-child(1) {
   -webkit-animation-delay: 1.4s;
   animation-delay: 1.4s;
@@ -22111,3 +22133,7 @@ button, a, .btn, .navigation a, .tgmenu__main-menu li a, .tgmobile__menu .naviga
     box-shadow: 0 4px 10px rgba(17, 85, 204, 0.2) !important;
 }
 
+.cta-form-box button{
+  justify-content: center;
+  align-items: center;
+}
