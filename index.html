@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -33,6 +32,7 @@
 
 	<link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png" />
 	<link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" fetchpriority="high" href="./assets/css/home.css" />
 	<link rel="stylesheet" href="./assets/css/odometer.css" />
 	<link rel="stylesheet" fetchpriority="high" href="./assets/css/swiper-bundle.css" />
 	<link rel="stylesheet" href="./assets/css/default.css" />
@@ -177,6 +177,12 @@
 	<meta name="google-site-verification" content="H8XZfd-YDFAj8807X3TlI8FfWoh5NCksPixLH5MSWP4" />
 	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 	<meta name="msvalidate.01" content="544E1EC4DFDB709DD6D412FB07A5A0D1" />
+	<!-- Swiper CDN -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<!-- Google Fonts: DM Sans for headings, Inter for body -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -186,182 +192,281 @@
 	<!-- End Google Tag Manager (noscript) -->
 	<script src="assets/js/header.js"></script>
 	<main>
-		<section class="slider__area p-0">
-			<div class="swiper-container slider-active">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide slider__single">
-						<div class="slider__bg" style="background-image: url('assets/img/bg/gip.png');"></div>
-						<div class="container-md">
-							<div class="row">
-								<div class="col-lg-9 col-md-10">
-									<div class="slider__content">
 
-										<h2 class="title" data-animation="fadeInUp" data-delay=".4s">Your path to <span>
-												soaring wealth</span>
-										</h2>
-										<div class="mb-3  col-lg-2 mx-auto mx-md-0 img " data-animation="fadeInUp"
-											data-delay=".6s">
-											<img src="assets/img/gip-logo.png" class="img-fluid" alt="GIP" title="GIP">
+		<!-- =========================================================
+		     HERO SECTION — Clean 2-column layout
+		     Left: rotating Swiper slider (text only)
+		     Right: persistent account-opening form card
+		     ========================================================= -->
+		<section class="hero-ii" aria-label="Hero">
+			<div class="container-md">
+				<div class="hero-ii__row">
+
+					<!-- ===== LEFT COLUMN: rotating slider ===== -->
+					<div class="hero-ii__left">
+						<div id="hero-left-swiper" class="swiper">
+							<div class="swiper-wrapper">
+
+								<!-- Slide 1: Online Trading -->
+								<div class="swiper-slide">
+									<div class="d-flex flex-column flex-xl-row align-items-xl-center gap-4 w-100">
+										<div class="flex-grow-1">
+											<span class="slide-eyebrow">Online Trading</span>
+											<h1 class="slide-heading">Online Stock Trading &amp; <em>Investment Platform</em> in India</h1>
+											<p class="slide-sub">Built for Every Investor. Backed by Trust.</p>
+											<a href="https://www.integratedindia.in/online.html" class="slide-link">Get Started &rarr;</a>
 										</div>
-
-										<div class="slider__btn pt-3" data-animation="fadeInUp" data-delay=".8s">
-											<a href="sp/gip/" target="_blank" class="btn">Check your GIP score</a>
+										<div class="d-none d-md-block flex-shrink-0 slide-img-wrap">
+											<img src="assets/img/hero-slide-1.png" alt="Online Trading" class="img-fluid rounded-4 slide-hero-img">
 										</div>
 									</div>
+								</div>
+
+								<!-- Slide 2: Mutual Funds -->
+								<div class="swiper-slide">
+									<div class="d-flex flex-column flex-xl-row align-items-xl-center gap-4 w-100">
+										<div class="flex-grow-1">
+											<span class="slide-eyebrow">Mutual Funds</span>
+											<h2 class="slide-heading">Build wealth with <em>disciplined SIPs</em></h2>
+											<p class="slide-sub">Equity, Debt, or Hybrid &mdash; curated funds aligned to your goals, not guesswork.</p>
+											<a href="mutual-funds.html" class="slide-link">Explore funds &#8594;</a>
+										</div>
+										<div class="d-none d-md-block flex-shrink-0 slide-img-wrap">
+											<img src="assets/img/hero-slide-2.png" alt="Mutual Funds" class="img-fluid rounded-4 slide-hero-img">
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 3: Minor Demat -->
+								<div class="swiper-slide">
+									<div class="d-flex flex-column flex-xl-row align-items-xl-center gap-4 w-100">
+										<div class="flex-grow-1">
+											<span class="slide-eyebrow">Minor Demat</span>
+											<h2 class="slide-heading">Invest in your child's <em>future today</em></h2>
+											<p class="slide-sub">Specially designed minor demat accounts &mdash; secure, simple, and parent-managed.</p>
+											<a href="open-minor-demat-account.html" class="slide-link">Learn more &#8594;</a>
+										</div>
+										<div class="d-none d-md-block flex-shrink-0 slide-img-wrap">
+											<img src="assets/img/hero-slide-3.png" alt="Minor Demat" class="img-fluid rounded-4 slide-hero-img">
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 4: GIP Score -->
+								<div class="swiper-slide">
+									<div class="d-flex flex-column flex-xl-row align-items-xl-center gap-4 w-100">
+										<div class="flex-grow-1">
+											<span class="slide-eyebrow">GIP Score</span>
+											<h2 class="slide-heading">Your path to <em>soaring wealth</em></h2>
+											<p class="slide-sub">Growth, Income &amp; Protection &mdash; our framework keeps your portfolio balanced, always.</p>
+											<a href="sp/gip/" target="_blank" class="slide-link">Check your GIP score &#8594;</a>
+										</div>
+										<div class="d-none d-md-block flex-shrink-0 slide-img-wrap">
+											<img src="assets/img/hero-slide-4.png" alt="GIP Score" class="img-fluid rounded-4 slide-hero-img">
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 5: Franchisee -->
+								<div class="swiper-slide">
+									<div class="d-flex flex-column flex-xl-row align-items-xl-center gap-4 w-100">
+										<div class="flex-grow-1">
+											<span class="slide-eyebrow">Franchisee</span>
+											<h2 class="slide-heading">Grow your business as <em>our partner</em></h2>
+											<p class="slide-sub">Attractive remuneration, full support, and a pan-India network behind you.</p>
+											<a href="https://www.integratedindia.in/sp/businesspartner/FRLogin/login.aspx" class="slide-link">Partner login &#8594;</a>
+										</div>
+										<div class="d-none d-md-block flex-shrink-0 slide-img-wrap">
+											<img src="assets/img/hero-slide-5.png" alt="Franchisee Partner" class="img-fluid rounded-4 slide-hero-img">
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 6: Recognition -->
+								<div class="swiper-slide">
+									<div class="d-flex flex-column flex-xl-row align-items-xl-center gap-4 w-100">
+										<div class="flex-grow-1">
+											<span class="slide-eyebrow">Recognition</span>
+											<h2 class="slide-heading">Certified <em>Great Place to Work</em>3 years in a row</h2>
+											<p class="slide-sub">Our people-first culture is recognised by the world's most respected workplace body.</p>
+											<a href="#" class="slide-link">Our story &#8594;</a>
+										</div>
+										<div class="d-none d-md-block flex-shrink-0 slide-img-wrap">
+											<img src="assets/img/hero-slide-6.png" alt="Great Place to Work" class="img-fluid rounded-4 slide-hero-img">
+										</div>
+									</div>
+								</div>
+
+							</div><!-- /.swiper-wrapper -->
+						</div><!-- /#hero-left-swiper -->
+
+						<!-- Simple dot indicators (outside swiper, managed by JS) -->
+						<div class="hero-ii-dots" role="tablist" aria-label="Slide indicators" id="hero-dots"></div>
+					</div><!-- /.hero-ii__left -->
+
+					<!-- ===== RIGHT COLUMN: persistent form card ===== -->
+					<div class="hero-ii__right">
+						<div class="form-card">
+							<p class="form-card__heading">Open your free demat account</p>
+							<p class="form-card__sub">Start investing in under 5 minutes</p>
+
+							<form id="hero-form" novalidate>
+								<!-- Mobile number input -->
+								<div class="phone-input-wrap">
+									<span class="phone-prefix" aria-hidden="true">+91</span>
+									<input
+										type="tel"
+										id="hero-mobile"
+										name="mobile"
+										placeholder="Enter mobile number"
+										maxlength="10"
+										inputmode="numeric"
+										pattern="[0-9]{10}"
+										autocomplete="tel-national"
+										aria-label="Mobile number"
+										aria-describedby="hero-form-error"
+										aria-required="true"
+									>
+								</div>
+								<span class="form-error" id="hero-form-error" role="alert" aria-live="polite"></span>
+
+								<button type="submit" class="btn-hero-cta" id="hero-cta-btn">
+									Open Free Account
+									<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+								</button>
+							</form>
+
+							<!-- Trust line -->
+							<div class="form-trust">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+								100% secure &middot; SEBI registered
+							</div>
+
+							<!-- Trust badges -->
+							<div class="trust-badges">
+								<div class="trust-badge">
+									<svg class="trust-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+									<span class="trust-badge__value">1M+</span>
+									<span class="trust-badge__label">Investors</span>
+								</div>
+								<div class="trust-badge">
+									<svg class="trust-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+									<span class="trust-badge__value">50+</span>
+									<span class="trust-badge__label">Years</span>
+								</div>
+								<div class="trust-badge">
+									<svg class="trust-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+									<span class="trust-badge__value">Pan India</span>
+									<span class="trust-badge__label">Network</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="swiper-slide slider__single">
-						<div class="slider__bg" style="background-image: url('assets/img/slider-1.png');"></div>
 
-						<div class="container-md">
-							<div class="row">
-								<div class="col-lg-9 col-md-10">
-									<div class="slider__content">
-										<div data-animation="fadeInUp" data-delay=".4s">
-											<h1 class="title m-0" data-animation="fadeInUp" data-delay=".4s">
-												Open Your <span> FREE</span> <br> DigiTrade* A/c Today
-											</h1>
-											<p class="lh-lg" data-animation="fadeInUp" data-delay=".4s">(*Trading
-												cum Demat Account)</p>
-										</div>
-										<div class="d-flex flex-wrap gap-3 mb-3 justify-content-lg-start"
-											data-animation="fadeInUp" data-delay=".6s">
-											<div class="">
-												<h2 class="h5 mb-0">
-													<span class="price-wrap">
-														<span class="rupee-sign">₹</span>
-														<span class="highlight-zero">0</span>
-													</span>
-													Account Opening Charges
-												</h2>
-											</div>
-											<div class="">
-												<h2 class="h5 ">
-													<span class="price-wrap">
-														<span class="rupee-sign">₹</span>
-														<span class="highlight-zero">0</span>
-													</span>
-													Maintenance Fees
-												</h2>
-											</div>
-										</div>
-										<div class="slider__btn" data-animation="fadeInUp" data-delay=".8s">
-											<a href="instant-free-trading-demat-account.html" class="btn">Open Demat
-												Account</a>
-											<a href="open-demat-trading-account.html" class="btn ">Learn
-												More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-slide slider__single">
-						<div class="slider__bg" style="background-image: url('assets/img/slider-2.png');"></div>
-						<div class="container-md">
-							<div class="row">
-								<div class="col-lg-9 col-md-10">
-									<div class="slider__content">
-
-										<h2 class="title" data-animation="fadeInUp" data-delay=".4s">Build Wealth with
-											<br> <span> Mutual Funds</span>
-										</h2>
-										<h3 class="h5 fw-normal lh-lg mb-4" data-animation="fadeInUp" data-delay=".6s">
-											Start your SIP journey in Equity, Debt, or Hybrid funds and<br
-												class="d-none d-lg-block"> turn your
-											financial goals into reality.
-										</h3>
-										<div class="slider__btn" data-animation="fadeInUp" data-delay=".8s">
-											<a href="mf-dp.html" class="btn">Start SIP Now</a>
-											<a href="mutual-funds.html" class="btn">Explore Funds</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="swiper-slide slider__single">
-						<div class="slider__bg" style="background-image: url('assets/img/bg/minor-demat-account.png');">
-						</div>
-						<div class="container-md">
-							<div class="row">
-								<div class="col-lg-9 col-md-10">
-									<div class="slider__content">
-
-										<h2 class="title" data-animation="fadeInUp" data-delay=".4s">
-											Start Your <span>Champ's Investment</span> <br
-												class="d-none d-md-block">Journey Today
-										</h2>
-										<p class="h5 fw-normal lh-lg mb-4 " data-animation="fadeInUp" data-delay=".6s">
-											Secure and protect your children financially, <br
-												class="d-none d-md-block">we provide our specially
-											designed minor demat accounts.
-										</p>
-										<div class="slider__btn" data-animation="fadeInUp" data-delay=".8s">
-											<a href="open-minor-demat-account.html" class="btn">Open Minor Demat
-												Account</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide slider__single">
-						<div class="slider__bg" style="background-image: url('assets/img/slider-3.png');"></div>
-						<div class="container-md">
-							<div class="row">
-								<div class="col-lg-9 col-md-10">
-									<div class="slider__content">
-
-										<h2 class="title" data-animation="fadeInUp" data-delay=".4s">
-											Become <span>our Franchisee</span>
-										</h2>
-										<p class="h5 fw-normal lh-lg mb-4" data-animation="fadeInUp" data-delay=".6s">
-											Integrated offers you a host of financial services <br
-												class="d-none d-lg-block"> with attractive
-											remuneration.
-										</p>
-										<div class="slider__btn" data-animation="fadeInUp" data-delay=".8s">
-											<a href="https://www.integratedindia.in/sp/businesspartner/FRLogin/login.aspx"
-												class="btn">Click Here to login</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide slider__single">
-						<div class="slider__bg" style="background-image: url('assets/img/bg/gret_place_work.jpg');">
-						</div>
-						<div class="container-md">
-							<div class="row">
-								<div class="col-lg-9 col-md-10">
-									<div class="slider__content">
-
-										<h2 class="title" data-animation="fadeInUp" data-delay=".4s">
-											Certified <span> 3 years</span> in a row
-										</h2>
-										<p class="h5 fw-normal lh-lg mb-4" data-animation="fadeInUp" data-delay=".6s">
-											togetherwebuild
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="slider-nav-wrap">
-					<div class="slider-button-prev"><i class="fas fa-arrow-left"></i></div>
-					<div class="slider-button-next"><i class="fas fa-arrow-right"></i></div>
 				</div>
 			</div>
 		</section>
+
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script>
+		(function () {
+			'use strict';
+
+			const SLIDE_COUNT = 6;
+
+			const swiper = new Swiper('#hero-left-swiper', {
+				effect: 'fade',
+				fadeEffect: { crossFade: true },
+				loop: true,
+				speed: 600,
+				autoplay: {
+					delay: 5000,
+					pauseOnMouseEnter: true,
+					disableOnInteraction: false,
+				},
+				a11y: { enabled: true },
+			});
+
+			/* --- Custom dot indicators --- */
+			const dotsWrap = document.getElementById('hero-dots');
+			if (dotsWrap) {
+				for (let i = 0; i < SLIDE_COUNT; i++) {
+					const btn = document.createElement('button');
+					btn.className = 'hero-ii-dot' + (i === 0 ? ' is-active' : '');
+					btn.setAttribute('role', 'tab');
+					btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+					btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+					btn.addEventListener('click', function () { swiper.slideToLoop(i); });
+					dotsWrap.appendChild(btn);
+				}
+
+				// Add Play/Pause Button
+				const toggleBtn = document.createElement('button');
+				toggleBtn.className = 'hero-ii-toggle';
+				toggleBtn.setAttribute('aria-label', 'Pause slider');
+				toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; // Pause icon
+				let isPlaying = true;
+				
+				toggleBtn.addEventListener('click', function () {
+					if (isPlaying) {
+						swiper.autoplay.stop();
+						toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'; // Play icon
+						toggleBtn.setAttribute('aria-label', 'Play slider');
+					} else {
+						swiper.autoplay.start();
+						toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; // Pause icon
+						toggleBtn.setAttribute('aria-label', 'Pause slider');
+					}
+					isPlaying = !isPlaying;
+				});
+				dotsWrap.appendChild(toggleBtn);
+
+				function updateDots(realIndex) {
+					dotsWrap.querySelectorAll('.hero-ii-dot').forEach(function (d, idx) {
+						const active = idx === realIndex;
+						d.classList.toggle('is-active', active);
+						d.setAttribute('aria-selected', active ? 'true' : 'false');
+					});
+				}
+
+				swiper.on('realIndexChange', function () { updateDots(swiper.realIndex); });
+			}
+
+			/* --- Form validation --- */
+			const form  = document.getElementById('hero-form');
+			const input = document.getElementById('hero-mobile');
+			const errEl = document.getElementById('hero-form-error');
+			const btn   = document.getElementById('hero-cta-btn');
+
+			/* Strip non-digits as user types */
+			input.addEventListener('input', function () {
+				this.value = this.value.replace(/\D/g, '').slice(0, 10);
+				if (errEl.textContent) errEl.textContent = '';
+			});
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				const val = input.value.trim();
+
+				if (!/^[6-9]\d{9}$/.test(val)) {
+					errEl.textContent = val.length < 10
+						? 'Please enter a valid 10-digit mobile number.'
+						: 'Number must start with 6, 7, 8, or 9.';
+					input.focus();
+					return;
+				}
+
+				/* Valid — show pending state; OTP API call goes here */
+				errEl.textContent = '';
+				btn.textContent   = 'Sending OTP\u2026';
+				btn.disabled      = true;
+				console.log('[Hero Form] Submitted:', '+91' + val);
+				/* TODO: integrate OTP / backend here */
+			});
+		})();
+		</script>
+
 		<section class="inst-grid-section iinvest-split-section modern-iinvest-layout">
 			<div class="container-md">
 				<div class="row justify-content-center">
@@ -853,7 +958,7 @@
 							</div>
 
 							<div class="services-bottom-content justify-content-start gap-3">
-								<a href="https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589"
+								<a href="https://apps.apple.com/in/app/iinvest-pro/id6755422160"
 									target="_blank" class="store-btn apple-btn" role="button" alt="App Store"
 									title="App Store">
 									<div class="icon"><i class="fab fa-apple"></i></div>
@@ -863,7 +968,7 @@
 									</div>
 								</a>
 
-								<a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+								<a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
 									target="_blank" class="store-btn google-btn" role="button" alt="Google Play"
 									title="Google Play">
 									<div class="icon"><i class="fab fa-google-play"></i></div>

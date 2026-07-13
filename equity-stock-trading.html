@@ -43,7 +43,6 @@
 	<link rel="stylesheet" href="./assets/css/flaticon.css" />
 	<link rel="stylesheet" href="./assets/css/default.css" />
 	<link rel="stylesheet" fetchpriority="high" href="./assets/css/main.css" />
-	<link rel="stylesheet" href="./assets/css/demat.css" />
 	<script src="./assets/js/app-link.js" defer></script>
 <link rel="preload" as="image" href="./assets/img/bg/equity_derivatives.png" fetchpriority="high">
 
@@ -109,170 +108,6 @@
 	<!-- End Google Tag Manager -->
 	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-
-
-
-<!-- PREMIUM REDESIGN STYLES -->
-<style>
-/* Professional Typography & Smooth Scrolling */
-html { scroll-behavior: smooth; }
-
-/* Hero Section Refinement */
-.premium-hero-section {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
-    position: relative;
-}
-.premium-hero-section::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg opacity="0.4" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
-    mix-blend-mode: overlay; z-index: 1; pointer-events: none;
-}
-
-/* Services Area - Clean Corporate Grid */
-.services__area-three {
-    background: #ffffff !important;
-    position: relative;
-    padding: 120px 0 !important;
-    z-index: 2;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* Override Grid to make it a perfectly spaced feature grid */
-.services__area-three .row.gutter-24 {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-    gap: 80px 60px !important;
-    max-width: 1140px;
-    margin: 0 auto;
-}
-.services__area-three .col-lg-4, 
-.services__area-three .col-md-6 {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: unset !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* Completely remove card/box look - Pure breathing space */
-.services__item-three {
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    transition: transform 0.3s ease !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    height: 100%;
-}
-.services__item-three::after {
-    display: none !important;
-}
-.services__item-three:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
-/* Icon Container - Soft, elegant square */
-.services__icon-three {
-    width: 64px !important;
-    height: 64px !important;
-    background: #f1f5f9 !important; /* Very light slate */
-    border-radius: 16px !important;
-    display: flex !important; 
-    align-items: center !important; 
-    justify-content: center !important;
-    margin-bottom: 24px !important;
-    transition: all 0.3s ease !important;
-    border: none !important;
-}
-.services__icon-three svg {
-    width: 32px !important;
-    height: 32px !important;
-    transition: all 0.3s ease !important;
-}
-.services__item-three:hover .services__icon-three {
-    background: #1C355E !important;
-    box-shadow: 0 10px 20px rgba(28, 53, 94, 0.15) !important;
-}
-.services__item-three:hover .services__icon-three svg path {
-    fill: #ffffff !important;
-}
-
-/* High Contrast Professional Title */
-.services__top-title .title a, .services__item-top-title .title a {
-    font-size: 1.35rem !important;
-    font-weight: 700 !important;
-    color: #0f172a !important; /* Slate 900 */
-    text-decoration: none !important;
-    transition: color 0.3s ease !important;
-    letter-spacing: -0.02em !important;
-    line-height: 1.4 !important;
-    display: block !important;
-    margin-bottom: 12px !important;
-}
-.services__item-three:hover .services__top-title .title a,
-.services__item-three:hover .services__item-top-title .title a {
-    color: #1C355E !important;
-}
-
-/* Content Area */
-.services__content-three {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-}
-
-.services__content-three p {
-    color: #475569 !important; /* Slate 600 */
-    font-size: 1.05rem !important;
-    line-height: 1.65 !important;
-    margin-bottom: 24px !important;
-    font-weight: 400 !important;
-}
-
-/* Professional Learn More Link */
-.btn-two {
-    background: transparent !important;
-    color: #1C355E !important;
-    border: none !important;
-    padding: 0 !important;
-    font-weight: 600 !important;
-    font-size: 1rem !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    box-shadow: none !important;
-    margin-top: auto !important; /* Pushes button to bottom if descriptions vary */
-}
-.btn-two::after {
-    content: '061' !important; /* FontAwesome right arrow */
-    font-family: 'Font Awesome 5 Free' !important;
-    font-weight: 900 !important;
-    font-size: 0.8rem !important;
-    transition: transform 0.2s ease !important;
-}
-.services__item-three:hover .btn-two {
-    background: transparent !important;
-    color: #2563eb !important; /* Royal Blue on hover */
-    box-shadow: none !important;
-    transform: none !important;
-}
-.services__item-three:hover .btn-two::after {
-    transform: translateX(4px) !important;
-}
-</style>
-<!-- END PREMIUM REDESIGN STYLES -->
-
-
-
 </head>
 
 <body>
@@ -280,143 +115,99 @@ html { scroll-behavior: smooth; }
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
+	<div id="openAccountBtn" class="side-side-button">
+		Open A Trading Account
+	</div>
 
+	<!-- Sliding Form -->
+	<div id="accountForm" class="side-form-container">
+		<span id="closeForm" class="side-close-btn">&times;</span>
+		<h6>OPEN A <span class="side-highlight">TRADING ACCOUNT</span></h6>
+		<form id="myForms">
+			<input type="text" id="names" placeholder="Name">
+			<input type="text" id="mobiles" placeholder="Mobile">
+			<button type="button" id="sendOtpsBtn" class="btn text-center">SEND OTP</button>
+
+			<div id="otpSections" style="display: none;">
+				<input type="text" id="otps" placeholder="Enter OTP">
+				<button type="button" id="verifyOtpsBtn" class="btn text-center">VERIFY OTP</button>
+			</div>
+		</form>
+	</div>
 	<main class="fix">
-		<script src="./assets/js/header.js" defer></script>
-		<script src="./assets/js/footer.js" defer></script>
-		
-        <section class="demat-hero-wrap section-pt-120 section-pb-120">
-            <div class="container">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col-lg-6">
-                        <div class="demat-hero-content">
-                            <!-- Breadcrumb -->
-                            <nav aria-label="breadcrumb" style="margin-bottom: 20px;">
-                                <ol class="breadcrumb" style="background: transparent; padding: 0; margin: 0; display: inline-flex; align-items: center; font-size: 0.95rem; font-weight: 500;">
-                                    <li class="breadcrumb-item"><a href="/" style="color: #1C355E; text-decoration: none;"><i class="fas fa-home me-1"></i> Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page" style="color: #64748b; margin-top: 2px;">/ Equity</li>
-                                </ol>
-                            </nav>
-                            <div class="section-title mb-30 tg-heading-subheading animation-style3 mb-4">
-                                <h1 class="title tg-element-title mb-2">Open a Free Demat Account
-                                </h1>
-                                <p class="mt-0">Invest across markets from one account</p>
-                            </div>
-                            <div class="hero-input-glass">
-                                <div class="input-inner">
-                                    <span class="country-code">+91</span>
-                                    <input type="tel" class="hero-phone-input" id="heroMobile"
-                                        placeholder="Enter mobile number" maxlength="10">
-                                    <input type="text" class="hero-pincode-input" id="heroPincode" placeholder="Pincode"
-                                        maxlength="6">
-                                    <button class="hero-primary-btn" id="heroSubmit">
-                                        Begin Now
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="hero-stats">
+		<!-- breadcrumb-area -->
+		<section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/equity_derivatives.png">
+			<script src="./assets/js/header.js" defer></script>
+			<script src="./assets/js/footer.js" defer></script>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="breadcrumb__content">
+							<h3 class="title">Equities</h3>
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/">Home</a></li>
+									<li class="breadcrumb-item" aria-current="page">Equities</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="breadcrumb__shape">
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated"
+					class="rightToLeft" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+				<img loading="lazy" src="./assets/img/images/breadcrumb_shape05.png" alt="Integrated"
+					class="alltuchtopdown" />
+			</div>
+		</section>
+		<!-- breadcrumb-area-end -->
+		<section class="about__area-four">
+			<div class="container">
+				<div class="row align-items-center justify-content-center">
+					<div class="col-lg-6 col-md-9 col-sm-10">
+						<div class="about__img-wrap-four p-0">
+							<img loading="lazy" src="./assets/img/equity_derivatives.jpg" class="img-fluid"
+								alt="Equity Trading" title="Equity Trading" />
 
-                                <div class="hero-stat">
-                                    <h3>₹0</h3>
-                                    <p>Account Opening</p>
-                                </div>
+							<div class="shape">
+								<img loading="lazy" src="./assets/img/images/inner_about_shape.jpg" alt="Integrated"
+									class="alltuchtopdown" />
+							</div>
 
-                                <div class="hero-divider"></div>
-
-                                <div class="hero-stat">
-                                    <h3>₹0</h3>
-                                    <p>Lifetime AMC</p>
-                                </div>
-
-                                <div class="hero-divider"></div>
-
-                                <div class="hero-stat">
-                                    <h3>1M+</h3>
-                                    <p>Happy Investors</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 text-center">
-                        <div class="hero-graphic-box ">
-                            <div class="graphic-glow-circle"></div>
-                            <img src="./assets/img/mockup-1.png" alt="Demat Account"
-                                class="img-fluid rounded-3" style="max-height: 500px; object-fit: contain;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-		<!-- Opportunities Section -->
-<section class="equity-opportunities-section" style="position: relative; background: #ffffff; padding: 80px 0; overflow: hidden;">
-    
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="row align-items-center">
-            <!-- Text Content -->
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="hero-content">
-                    <h2 class="title" style="font-size: 30px; font-weight: 800; color: #0f172a; line-height: 1.25; margin-bottom: 25px; letter-spacing: -0.5px;">Unlock Equity <br>Investment <span style="color: #1C355E;">Opportunities</span></h2>
-                    
-                    <div class="hero-features" style="background: rgba(255,255,255,0.9); border-left: 4px solid #1C355E; padding: 25px 30px; border-radius: 0 16px 16px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.04); margin-bottom: 40px; backdrop-filter: blur(10px);">
-                        <ul class="list-unstyled mb-0">
-                            <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
-                                <div style="background: rgba(28,53,94,0.1); border-radius: 50%; padding: 5px; margin-right: 15px; margin-top: 2px;">
-                                    <i class="fas fa-check" style="color: #1C355E; font-size: 0.9rem; width: 14px; text-align: center;"></i>
-                                </div>
-                                <span style="color: #475569; font-size: 1.05rem; line-height: 1.6; font-weight: 500;">Equity and derivatives trading offer a wealth of opportunities, but success requires a solid understanding of market dynamics and strategic planning</span>
-                            </li>
-                            <li style="display: flex; align-items: flex-start;">
-                                <div style="background: rgba(28,53,94,0.1); border-radius: 50%; padding: 5px; margin-right: 15px; margin-top: 2px;">
-                                    <i class="fas fa-check" style="color: #1C355E; font-size: 0.9rem; width: 14px; text-align: center;"></i>
-                                </div>
-                                <span style="color: #475569; font-size: 1.05rem; line-height: 1.6; font-weight: 500;">No Charges for opening the DigiTrade A/c. with affordable brokerage for the Trading transactions.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <a href="instant-free-trading-demat-account.html" target="_blank" class="btn" style="padding: 18px 40px; font-size: 1.1rem; border-radius: 30px; background: #1C355E; color: white; border: none; box-shadow: 0 10px 25px rgba(28,53,94,0.3); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 12px; font-weight: 600;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 30px rgba(28,53,94,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(28,53,94,0.3)';">
-                        Start Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Image Content -->
-            <div class="col-lg-6">
-                <div class="hero-image-wrapper" style="position: relative; text-align: right; padding-left: 20px;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; height: 110%; background: #1C355E; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; opacity: 0.05; filter: blur(20px); animation: morphHero 8s ease-in-out infinite;"></div>
-                    <style>
-                        @keyframes morphHero {
-                            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-                            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-                            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-                        }
-                    </style>
-                    <img loading="lazy" src="./assets/img/equity_derivatives.jpg" class="img-fluid" alt="Equity Trading" title="Equity Trading" style="border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); position: relative; z-index: 2; border: 10px solid white; transform: perspective(1000px) rotateY(-5deg); transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);" onmouseover="this.style.transform='perspective(1000px) rotateY(0deg) scale(1.03)';" onmouseout="this.style.transform='perspective(1000px) rotateY(-5deg) scale(1)';"/>
-                    
-                    <!-- Floating badge -->
-                    <div style="position: absolute; bottom: 40px; left: -10px; background: white; padding: 18px 25px; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); z-index: 3; display: flex; align-items: center; gap: 18px; animation: floatBadge 4s ease-in-out infinite;">
-                        <div style="width: 54px; height: 54px; background: rgba(28,53,94,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-chart-line" style="color: #1C355E; font-size: 1.5rem;"></i>
-                        </div>
-                        <div style="text-align: left;">
-                            <h5 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #0f172a;">Expert Guidance</h5>
-                            <span style="color: #64748b; font-size: 0.9rem; font-weight: 500;">For your investments</span>
-                        </div>
-                    </div>
-                    <style>
-                        @keyframes floatBadge {
-                            0% { transform: translateY(0px); }
-                            50% { transform: translateY(-12px); }
-                            100% { transform: translateY(0px); }
-                        }
-                    </style>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="about__content-four">
+							<div class="section-title mb-40 tg-heading-subheading animation-style3">
+								<h1 class="title tg-element-title">Unlock Equity Investment Opportunities</h1>
+								<span class="sub-title pt-2">Gateway to Create Wealth</span>
+							</div>
+							<div class="about__content-inner-three">
+								<div class="about__list-box">
+									<ul class="list-wrap">
+										<li>Equity and derivatives trading offer a wealth of opportunities, but success
+											requires a solid understanding of market dynamics and strategic planning
+										</li>
+										<li>
+											No Charges for opening the DigiTrade A/c. with affordable brokerage for the
+											Trading transactions.
+										</li>
+									</ul>
+								</div>
+								<!-- <div class="about__list-img-two">
+											<img loading="lazy" src="./assets/img/images/about_list_img02.png" alt="Integrated" />
+										</div> -->
+							</div>
+							<a href="open-demat-trading-account.html" target="_blank" class="btn">Start Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!-- services-area -->
 		<section class="services__area-three services__bg-three" data-background="assets/img/bg/h3_services_bg.jpg">
 			<div class="container">
@@ -428,74 +219,10 @@ html { scroll-behavior: smooth; }
 						</div>
 					</div>
 				</div> -->
-				<div class="row justify-content-center gutter-24">
+				<div class="row justify-content-center gutter-24 g-5">
+					
 					<div class="col-lg-4 col-md-6">
-						<div class="services__item-three">
-							<div class="services__item-top">
-								<div class="services__icon-three">
-									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"
-										fill="none">
-										<path
-											d="M21.6562 5.25H17.7188C17.3565 5.25 17.0625 4.956 17.0625 4.59375C17.0625 4.2315 17.3565 3.9375 17.7188 3.9375H21.6562C22.0185 3.9375 22.3125 4.2315 22.3125 4.59375C22.3125 4.956 22.0185 5.25 21.6562 5.25Z"
-											fill="#1C355E" />
-										<path
-											d="M26.9062 40.6875H12.4688C10.6588 40.6875 9.1875 39.2149 9.1875 37.4062V28.2188C9.1875 27.8565 9.4815 27.5625 9.84375 27.5625C10.206 27.5625 10.5 27.8565 10.5 28.2188V37.4062C10.5 38.4917 11.3833 39.375 12.4688 39.375H26.9062C27.9917 39.375 28.875 38.4917 28.875 37.4062V15.0938C28.875 14.7315 29.169 14.4375 29.5312 14.4375C29.8935 14.4375 30.1875 14.7315 30.1875 15.0938V37.4062C30.1875 39.2149 28.7162 40.6875 26.9062 40.6875Z"
-											fill="#1C355E" />
-										<path
-											d="M29.5312 6.5625C29.169 6.5625 28.875 6.2685 28.875 5.90625V4.59375C28.875 3.50831 27.9917 2.625 26.9062 2.625H12.4688C11.3833 2.625 10.5 3.50831 10.5 4.59375V5.90625C10.5 6.2685 10.206 6.5625 9.84375 6.5625C9.4815 6.5625 9.1875 6.2685 9.1875 5.90625V4.59375C9.1875 2.78513 10.6588 1.3125 12.4688 1.3125H26.9062C28.7162 1.3125 30.1875 2.78513 30.1875 4.59375V5.90625C30.1875 6.2685 29.8935 6.5625 29.5312 6.5625Z"
-											fill="#1C355E" />
-										<path
-											d="M19.0312 32.8125H13.7812C13.419 32.8125 13.125 32.5185 13.125 32.1562C13.125 31.794 13.419 31.5 13.7812 31.5H19.0312C19.3935 31.5 19.6875 31.794 19.6875 32.1562C19.6875 32.5185 19.3935 32.8125 19.0312 32.8125Z"
-											fill="#1C355E" />
-										<path
-											d="M22.9688 35.4375H13.7812C13.419 35.4375 13.125 35.1435 13.125 34.7812C13.125 34.419 13.419 34.125 13.7812 34.125H22.9688C23.331 34.125 23.625 34.419 23.625 34.7812C23.625 35.1435 23.331 35.4375 22.9688 35.4375Z"
-											fill="#1C355E" />
-										<path
-											d="M25.5938 30.1875H13.7812C13.419 30.1875 13.125 29.8935 13.125 29.5312C13.125 29.169 13.419 28.875 13.7812 28.875H25.5938C25.956 28.875 26.25 29.169 26.25 29.5312C26.25 29.8935 25.956 30.1875 25.5938 30.1875Z"
-											fill="#1C355E" />
-										<path
-											d="M11.8125 18.375C10.0026 18.375 8.53125 16.9024 8.53125 15.0938C8.53125 13.2851 10.0026 11.8125 11.8125 11.8125C13.6224 11.8125 15.0938 13.2851 15.0938 15.0938C15.0938 16.9024 13.6224 18.375 11.8125 18.375ZM11.8125 13.125C10.7271 13.125 9.84375 14.0083 9.84375 15.0938C9.84375 16.1792 10.7271 17.0625 11.8125 17.0625C12.8979 17.0625 13.7812 16.1792 13.7812 15.0938C13.7812 14.0083 12.8979 13.125 11.8125 13.125Z"
-											fill="#1C355E" />
-										<path
-											d="M11.8118 26.25C9.50967 26.25 7.30074 25.3811 5.59186 23.8061C5.41599 23.6434 5.34249 23.3979 5.40024 23.1669C5.90424 21.1181 7.73124 19.6875 9.84305 19.6875H13.7805C15.8924 19.6875 17.7194 21.1181 18.2247 23.1656C18.2824 23.3979 18.2076 23.6434 18.033 23.8048C16.3229 25.3811 14.1139 26.25 11.8118 26.25ZM6.78886 23.1092C9.62649 25.473 13.9971 25.473 16.8347 23.1092C16.3622 21.8505 15.156 21 13.7805 21H9.84305C8.46755 21 7.26136 21.8505 6.78886 23.1092Z"
-											fill="#1C355E" />
-										<path
-											d="M11.8125 26.25C6.74756 26.25 2.625 22.1287 2.625 17.0625C2.625 11.9963 6.74756 7.875 11.8125 7.875C16.8774 7.875 21 11.9963 21 17.0625C21 22.1287 16.8774 26.25 11.8125 26.25ZM11.8125 9.1875C7.46944 9.1875 3.9375 12.7194 3.9375 17.0625C3.9375 21.4056 7.46944 24.9375 11.8125 24.9375C16.1556 24.9375 19.6875 21.4056 19.6875 17.0625C19.6875 12.7194 16.1556 9.1875 11.8125 9.1875Z"
-											fill="#1C355E" />
-										<path
-											d="M5.90625 30.1203C5.544 30.1203 5.25 29.8919 5.25 29.5297V29.3984C5.25 29.0362 5.544 28.7422 5.90625 28.7422C6.2685 28.7422 6.5625 29.0362 6.5625 29.3984C6.5625 29.7607 6.2685 30.1203 5.90625 30.1203Z"
-											fill="#1C355E" />
-										<path
-											d="M5.90625 32.7453C5.544 32.7453 5.25 32.5169 5.25 32.1547V32.0234C5.25 31.6612 5.544 31.3672 5.90625 31.3672C6.2685 31.3672 6.5625 31.6612 6.5625 32.0234C6.5625 32.3857 6.2685 32.7453 5.90625 32.7453Z"
-											fill="#1C355E" />
-										<path
-											d="M5.90625 35.3703C5.544 35.3703 5.25 35.1419 5.25 34.7797V34.6484C5.25 34.2862 5.544 33.9922 5.90625 33.9922C6.2685 33.9922 6.5625 34.2862 6.5625 34.6484C6.5625 35.0107 6.2685 35.3703 5.90625 35.3703Z"
-											fill="#1C355E" />
-										<path
-											d="M31.9463 35.4375H30.8437C30.4815 35.4375 30.1875 35.1435 30.1875 34.7812C30.1875 34.419 30.4815 34.125 30.8437 34.125H31.4173L31.7389 32.6353C31.7914 32.3886 31.9817 32.1956 32.2258 32.1366C32.8453 31.9869 33.4491 31.7349 34.02 31.3871C34.2313 31.2559 34.503 31.2598 34.7143 31.3937L36.0137 32.2245L36.8182 31.4134L35.9874 30.1245C35.8509 29.9132 35.8483 29.6415 35.9783 29.4276C36.3261 28.8566 36.5781 28.2529 36.7264 27.6334C36.7854 27.3893 36.9771 27.2002 37.2225 27.1451L38.7174 26.8131V25.6883L37.2225 25.3562C36.9771 25.3011 36.7854 25.1121 36.7264 24.8679C36.5781 24.2484 36.3248 23.6447 35.9783 23.0738C35.847 22.8598 35.8496 22.5894 35.9861 22.3781L36.8182 21.0774L36.015 20.2742L34.7143 21.1063C34.5043 21.2415 34.2326 21.2441 34.02 21.1129C33.4477 20.7651 32.844 20.5131 32.2258 20.3634C31.9804 20.3044 31.7914 20.1101 31.7389 19.8647L31.4173 18.375H30.8437C30.4815 18.375 30.1875 18.081 30.1875 17.7188C30.1875 17.3565 30.4815 17.0625 30.8437 17.0625H31.9463C32.2547 17.0625 32.5224 17.2791 32.5867 17.5809L32.9372 19.1993C33.4176 19.3449 33.8888 19.5418 34.3429 19.7873L35.7525 18.8856C36.0124 18.7215 36.3523 18.7556 36.5702 18.9748L38.1203 20.5236C38.3381 20.7414 38.3749 21.0814 38.2082 21.3413L37.3065 22.7509C37.5519 23.2063 37.7488 23.6775 37.8945 24.1592L39.5154 24.5188C39.816 24.5857 40.0299 24.8522 40.0299 25.1593V27.3381C40.0299 27.6452 39.816 27.9129 39.5154 27.9786L37.8945 28.3382C37.7488 28.8199 37.5519 29.2911 37.3065 29.7452L38.2069 31.1417C38.3749 31.4002 38.3394 31.7415 38.1216 31.9594L36.5715 33.5213C36.3536 33.7404 36.0137 33.7785 35.7525 33.6118L34.3429 32.7101C33.8874 32.9556 33.4176 33.1524 32.9372 33.2981L32.5867 34.9164C32.5224 35.2209 32.2547 35.4375 31.9463 35.4375Z"
-											fill="#1C355E" />
-										<path
-											d="M32.226 29.883C31.9793 29.883 31.743 29.7426 31.6314 29.5037C31.4792 29.1756 31.6209 28.7844 31.9491 28.6322C32.8718 28.2017 33.4689 27.2672 33.4689 26.25C33.4689 24.8023 32.2916 23.625 30.8439 23.625C30.4883 23.625 30.1457 23.6946 29.8241 23.8311C29.4921 23.9741 29.1062 23.8179 28.9644 23.4833C28.8227 23.1499 28.9789 22.7653 29.3123 22.6236C29.7953 22.4175 30.3124 22.3125 30.8439 22.3125C33.0148 22.3125 34.7814 24.0791 34.7814 26.25C34.7814 27.7764 33.8863 29.1782 32.5029 29.8213C32.4124 29.8633 32.3192 29.883 32.226 29.883Z"
-											fill="#1C355E" />
-										<path
-											d="M34.125 13.125H26.25C24.8023 13.125 23.625 11.9477 23.625 10.5C23.625 9.05231 24.8023 7.875 26.25 7.875H34.125C35.5727 7.875 36.75 9.05231 36.75 10.5C36.75 11.9477 35.5727 13.125 34.125 13.125ZM26.25 9.1875C25.5255 9.1875 24.9375 9.77681 24.9375 10.5C24.9375 11.2232 25.5255 11.8125 26.25 11.8125H34.125C34.8495 11.8125 35.4375 11.2232 35.4375 10.5C35.4375 9.77681 34.8495 9.1875 34.125 9.1875H26.25Z"
-											fill="#1C355E" />
-									</svg>
-								</div>
-								<div class="services__item-top-title">
-									<h2 class="title"><a href="instant-free-trading-demat-account.html"
-											target="_blank">Instant A/c Opening</a></h2>
-								</div>
-							</div>
-							<div class="services__content-three">
-								<p>Instant Paperless A/c opening in just a few minutes without any hassles</p>
-								<a href="instant-free-trading-demat-account.html" target="_blank"
-									class="btn btn-two">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="services__item-three">
+						<div class="services__item-three h-100">
 							<div class="services__item-top">
 								<div class="services__icon-three">
 									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"
@@ -529,7 +256,7 @@ html { scroll-behavior: smooth; }
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
-						<div class="services__item-three">
+						<div class="services__item-three h-100">
 							<div class="services__item-top">
 								<div class="services__icon-three">
 									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"
@@ -567,7 +294,7 @@ html { scroll-behavior: smooth; }
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
-						<div class="services__item-three">
+						<div class="services__item-three h-100">
 							<div class="services__item-top">
 								<div class="services__icon-three">
 									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"
@@ -590,7 +317,7 @@ html { scroll-behavior: smooth; }
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
-						<div class="services__item-three">
+						<div class="services__item-three h-100">
 							<div class="services__item-top">
 								<div class="services__icon-three">
 									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"
@@ -626,7 +353,7 @@ html { scroll-behavior: smooth; }
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-6">
-						<div class="services__item-three">
+						<div class="services__item-three h-100">
 							<div class="services__item-top">
 								<div class="services__icon-three">
 									<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"
@@ -1226,68 +953,6 @@ html { scroll-behavior: smooth; }
 			</div>
 		</section>
 		<!-- team-area-three -->
-		
-
-        <section class="investment-cta-section">
-
-            <div class="cta-bg-shape"></div>
-            <div class="cta-bg-shape2"></div>
-
-            <div class="container">
-
-                <div class="cta-wrapper">
-                    <div class="section-title tg-heading-subheading animation-style3 mb-5 ">
-                        <h2 class="title tg-element-title mb-2 text-white">Start Your Investment Journey</h2>
-                        <p class="text-white "> Begin today with a free demat account in India and move forward with
-                            guidance that keeps
-                            things simple.
-                            You will always know what is happening and why, so every step feels comfortable.</p>
-                        <div class="cta-store-wrapper text-b">
-
-                            <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
-                                target="_blank" class="cta-store-btn cta-play-btn">
-
-                                <i class="fab fa-google-play text-b"></i>
-
-                                <div class="cta-store-text text-b">
-                                    <span >Download on the</span>
-                                    <strong>Google Play</strong>
-                                </div>
-
-                            </a>
-
-
-                            <a href="https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589" target="_blank"
-                                class="cta-store-btn cta-apple-btn">
-
-                                <i class="fab fa-apple text-b"></i>
-
-                                <div class="cta-store-text text-b">
-                                    <span>Download on the</span>
-                                    <strong>App Store</strong>
-                                </div>
-
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="cta-right">
-                        <div class="cta-form-box">
-                            <h4>Get in Touch</h4>
-                            <form style="display: flex !important; flex-direction: column !important; gap: 15px !important;">
-                                <div class="phone-field" style="display: flex !important; border: 1px solid #e5e7eb !important; border-radius: 8px !important; overflow: hidden !important; background: #fff !important; align-items: center !important; height: 48px !important;">
-                                    <span class="text-b" style="background: #f3f4f6 !important; padding: 0 12px !important; display: flex !important; align-items: center !important; font-weight: 600 !important; height: 100% !important;">+91</span>
-                                    <input type="tel" placeholder="Enter Mobile Number" id="modalMobile" style="border: none !important; flex: 1 !important; height: 100% !important; padding: 0 12px !important; outline: none !important; background: transparent !important; width: 100% !important;">
-                                </div>
-                                <input type="text" placeholder="Pincode" id="modalPincode" style="height: 48px !important; border: 1px solid #e5e7eb !important; border-radius: 8px !important; padding: 0 12px !important; width: 100% !important; outline: none !important; background: #fff !important;">
-                                <button id="modalSubmit" style="height: 48px !important; width: 100% !important; background: #005CB9 !important; color: #fff !important; border: none !important; border-radius: 8px !important; font-weight: 600 !important; cursor: pointer !important; font-size: 16px !important; display: flex !important; justify-content: center !important; align-items: center !important;">Submit Inquiry</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 		<section class="Equity-faqs about__area-four tg-color-gray">
 			<div class="container">
 				<h2 class="text-center">Equity FAQs</h2>
@@ -1296,7 +961,6 @@ html { scroll-behavior: smooth; }
 			</div>
 		</section>
 		<!-- services-area-end -->
-
 	</main>
 	<!-- main-area-end -->
 	<!-- footer-area -->
@@ -1318,11 +982,19 @@ html { scroll-behavior: smooth; }
 	<!-- JS here -->
 	<script src="./assets/js/vendor/jquery-3.6.0.min.js" defer></script>
 	<script src="./assets/js/bootstrap.bundle.min.js" defer></script>
+	<script src="./assets/js/jquery.magnific-popup.min.js" defer></script>
+	<script src="./assets/js/jquery.appear.js" defer></script>
+	<script src="./assets/js/gsap.js" defer></script>
+	<script src="./assets/js/ScrollTrigger.js" defer></script>
+	<script src="./assets/js/SplitText.js" defer></script>
+	<script src="./assets/js/jquery.parallaxScroll.min.js" defer></script>
+	<script src="./assets/js/ajax-form.js" defer></script>
+	<script src="./assets/js/wow.min.js" defer></script>
+	<script src="./assets/js/p9_language.js" defer></script>
 	<script src="./assets/js/main.js" defer></script>
 	<script src="./assets/js/chatbot.js" defer></script>
 	<script src="./assets/js/faqs.js" defer></script>
 
-    <script src="./assets/js/cta-submit.js" defer></script>
 </body>
 
 

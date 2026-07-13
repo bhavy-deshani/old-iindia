@@ -811,7 +811,7 @@ class Header {
                                                 <div class="row row-cols-1 ">
                                                     <div class="col">
                                                         <!-- //New Altered -->
-                                                        <a href="instant-free-trading-demat-account.html"
+                                                        <a href="open-demat-trading-account.html"
                                                             class="p-0 m-0 text-b">
                                                             <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                 <div class="m-y">
@@ -921,7 +921,7 @@ class Header {
                                         </li>
 
                                         <!-- <li class="header-btn"><a
-												href="instant-free-trading-demat-account.html" class="btn"
+												href="open-demat-trading-account.html" class="btn"
 												alt="Open Demat A/C" title="Open Demat A/C">Open Demat A/C</a></li> -->
                                     </ul>
                                 </div>

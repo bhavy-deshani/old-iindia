@@ -800,7 +800,7 @@ class Header {
                 <div class="col">
                     <ul>
                         <li class="d-flex gap-2 hover-effect mb-3">
-                            <a href="instant-free-trading-demat-account.html" class="p-0 m-0 text-b d-flex gap-2 w-100">
+                            <a href="open-demat-trading-account.html" class="p-0 m-0 text-b d-flex gap-2 w-100">
                                 <div class="m-y">
                                     <img loading="lazy" src="assets/img/residential_individual.png" alt="Equity" title="Equity">
                                 </div>
