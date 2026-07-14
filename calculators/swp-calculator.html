@@ -584,11 +584,8 @@
 
         .swp-results-panel {
             padding: 36px 36px 36px 36px;
-            background: #f8fafd;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .swp-calc-title {
@@ -736,14 +733,143 @@
             color: #00AE42;
         }
 
-        .swp-stat-val.orange {
+        /* Maturity highlight box */
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
+        }
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .gsc-result-col-box {
+            flex: 1;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+        .gsc-result-col-val {
+            font-size: 15px;
+            font-weight: 700;
             color: #1C355E;
         }
+        .gsc-result-col-val.green { color: #00ae42; }
+        .gsc-result-col-val.orange { color: #ff8c00; }
+        .gsc-chart-wrap {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 12px;
+        }
 
-        /* Line chart area */
-        .swp-chart-area {
+        .gsc-chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .gsc-chart-label {
+            display: block;
+            font-size: 11px;
+            color: #8a9bb5;
+            margin-bottom: 2px;
+        }
+        .gsc-chart-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+        .gsc-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .gsc-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            color: #3a4f6e;
+        }
+        .gsc-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .gsc-divider {
+            border: none;
+            border-top: 1px solid #eaf0fb;
+            margin: 4px 0 12px;
+        }
+        .gsc-result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f4fb;
+        }
+        .gsc-result-row:last-child { border-bottom: none; }
+        .gsc-result-label {
+            font-size: 13px;
+            color: #3a4f6e;
+        }
+        .gsc-result-val {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1C355E;
+        }
+        .gsc-result-val.highlight {
+            color: #005CB9;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .gsc-cta-btn {
+            display: block;
             width: 100%;
-            margin-top: 10px;
+            text-align: center;
+            background: #1C355E;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .gsc-cta-btn:hover {
+            background: #005CB9;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
         }
 
         .swp-chart-area canvas {
@@ -1136,36 +1262,69 @@
                         </div>
 
                         <!-- RIGHT: Results -->
-                        <div class="swp-results-panel">
+                        <div class="swp-results-panel gsc-right">
+                            <h4 class="gsc-title">Your Investment Summary</h4>
 
-                            <!-- Donut Chart -->
-                            <div class="swp-donut-wrap">
-                                <canvas id="swpDonut" width="200" height="200"></canvas>
+                            <!-- Maturity highlight box -->
+                            <div class="gsc-maturity-box d-none">
+                                <div>
+                                    <div class="gsc-maturity-label">Final Corpus</div>
+                                    <div class="gsc-maturity-value" id="mobile_stat_final">—</div>
+                                </div>
                             </div>
 
-                            <!-- Stat Cards -->
-                            <div class="swp-stat-cards">
-                                <div class="swp-stat-card">
-                                    <span class="swp-stat-label">Invested</span>
-                                    <span class="swp-stat-val" id="stat_invested">₹5,00,000</span>
+                            <!-- Result Cols -->
+                            <div class="gsc-result-cols">
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Invested</div>
+                                    <div class="gsc-result-col-val" id="col_stat_invested">—</div>
                                 </div>
-                                <div class="swp-stat-card">
-                                    <span class="swp-stat-label">Total Withdrawn</span>
-                                    <span class="swp-stat-val orange" id="stat_withdrawn">₹0</span>
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Total Withdrawn</div>
+                                    <div class="gsc-result-col-val" id="col_stat_withdrawn">—</div>
                                 </div>
-                                <div class="swp-stat-card">
-                                    <span class="swp-stat-label">Returns Earned</span>
-                                    <span class="swp-stat-val green" id="stat_returns">₹0</span>
+                            </div>
+
+                            <!-- Donut chart -->
+                            <div class="gsc-chart-wrap">
+                                <canvas id="swpDonut" width="180" height="180"></canvas>
+                            </div>
+
+                            <!-- Legend -->
+                            <div class="gsc-legend">
+                                <div class="gsc-legend-item">
+                                    <span class="gsc-legend-dot" style="background:#1C355E;"></span>
+                                    Total Withdrawn
                                 </div>
-                                <div class="swp-stat-card">
-                                    <span class="swp-stat-label">Final Corpus</span>
-                                    <span class="swp-stat-val" id="stat_final">₹0</span>
+                                <div class="gsc-legend-item">
+                                    <span class="gsc-legend-dot" style="background:#00AE42;"></span>
+                                    Final Corpus
                                 </div>
+                            </div>
+
+                            <hr class="gsc-divider">
+
+                            <!-- Detail rows -->
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label">Invested</span>
+                                <span class="gsc-result-val highlight" id="stat_invested">—</span>
+                            </div>
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label">Total Withdrawn</span>
+                                <span class="gsc-result-val" id="stat_withdrawn">—</span>
+                            </div>
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label">Returns Earned</span>
+                                <span class="gsc-result-val" id="stat_returns">—</span>
+                            </div>
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label fw-bold">Final Corpus</span>
+                                <span class="gsc-result-val highlight" id="stat_final">—</span>
                             </div>
 
                             <!-- Line Chart -->
-                            <div class="swp-chart-area">
-                                <div class="chart-title">Balance Over Time</div>
+                            <div class="swp-chart-area mt-4 w-100">
+                                <div class="chart-title text-center mb-2" style="font-size: 14px; font-weight: 600; color: #1C355E;">Balance Over Time</div>
                                 <canvas id="swpLine" height="110"></canvas>
                             </div>
 
@@ -1239,7 +1398,7 @@
                                 labels: ['Total Withdrawn', 'Final Corpus'],
                                 datasets: [{
                                     data: [Math.round(res.totalWithdrawn), Math.max(0, Math.round(res.finalBalance))],
-                                    backgroundColor: ['#1C355E', '#00AE42'],
+                                    backgroundColor: ['#005CB9', '#00AE42'],
                                     borderWidth: 0,
                                     hoverOffset: 8
                                 }]
@@ -1250,11 +1409,14 @@
                                 type: 'doughnut',
                                 data: donutData,
                                 options: {
-                                    cutout: '72%',
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    cutout: '65%',
                                     plugins: {
-                                        legend: { display: false }, tooltip: {
+                                        legend: { display: false },
+                                        tooltip: {
                                             callbacks: {
-                                                label: function (c) { return ' ' + fmt(c.raw); }
+                                                label: function (ctx) { return ctx.label + ': ' + fmt(ctx.raw); }
                                             }
                                         }
                                     },
@@ -1322,6 +1484,18 @@
                             document.getElementById('stat_withdrawn').textContent = fmt(res.totalWithdrawn);
                             document.getElementById('stat_returns').textContent = fmt(res.totalReturns);
                             document.getElementById('stat_final').textContent = fmt(res.finalBalance);
+
+                            var colInv = document.getElementById('col_stat_invested');
+                            if(colInv) colInv.textContent = fmt(investment);
+                            
+                            var colWithdrawn = document.getElementById('col_stat_withdrawn');
+                            if(colWithdrawn) colWithdrawn.textContent = fmt(res.totalWithdrawn);
+                            
+                            var mobFinal = document.getElementById('mobile_stat_final');
+                            if(mobFinal) mobFinal.textContent = fmt(res.finalBalance);
+
+                            var desktopFinal = document.getElementById('desktop_stat_final');
+                            if(desktopFinal) desktopFinal.textContent = '₹' + fmt(Math.max(0, res.finalBalance));
 
                             waitForChartJS(function () { initCharts(res, investment, years); });
                         }

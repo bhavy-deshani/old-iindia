@@ -53,29 +53,32 @@ const formatter = new Intl.NumberFormat("en-IN", {
 function displayResult(data) {
   const resultDiv = document.getElementById("result");
   resultDiv.innerHTML = `
-  <div class="w-100 overflow-auto">
-        <table class="table table-bordered ">
-            <tbody>
-                <tr>
-                    <td>Initial SIP Amount</td>
-                    <td class="fw-bold">&#8377;${data.sip_amount.toLocaleString('en-IN')}</td>
-                </tr>
-                <tr>
-                    <td>Total Invested Amount</td>
-                    <td class="fw-bold">&#8377;${data.invested_amount.toLocaleString('en-IN')}</td>
-                </tr>
-                <tr>
-                    <td>Growth Value</td>
-                    <td class="fw-bold">&#8377;${data.growth_value.toLocaleString('en-IN')}</td>
-                </tr>
-                <tr>
-                    <td>Maturity Amount</td>
-                    <td class="fw-bold">&#8377;${data.maturity_amount.toLocaleString('en-IN')}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="gsc-result-row">
+        <span class="gsc-result-label">Initial SIP Amount</span>
+        <span class="gsc-result-val">&#8377;${data.sip_amount.toLocaleString('en-IN')}</span>
     </div>
-    `;
+    <div class="gsc-result-row">
+        <span class="gsc-result-label">Total Invested Amount</span>
+        <span class="gsc-result-val">&#8377;${data.invested_amount.toLocaleString('en-IN')}</span>
+    </div>
+    <div class="gsc-result-row">
+        <span class="gsc-result-label">Growth Value</span>
+        <span class="gsc-result-val">&#8377;${data.growth_value.toLocaleString('en-IN')}</span>
+    </div>
+    <div class="gsc-result-row">
+        <span class="gsc-result-label fw-bold">Maturity Amount</span>
+        <span class="gsc-result-val highlight">&#8377;${data.maturity_amount.toLocaleString('en-IN')}</span>
+    </div>
+  `;
+
+  const mobileMaturity = document.getElementById("mobileMaturityAmount");
+  if (mobileMaturity) mobileMaturity.innerHTML = `&#8377;${data.maturity_amount.toLocaleString('en-IN')}`;
+
+  const colInvested = document.getElementById("colInvestedAmount");
+  if (colInvested) colInvested.innerHTML = `&#8377;${data.invested_amount.toLocaleString('en-IN')}`;
+
+  const colGrowth = document.getElementById("colGrowthValue");
+  if (colGrowth) colGrowth.innerHTML = `&#8377;${data.growth_value.toLocaleString('en-IN')}`;
 
   displayChart(data);
 }
@@ -133,29 +136,31 @@ function displayChart(data) {
   chart = new Chart(ctx, {
     type: "doughnut",
     data: {
-      // labels: ["Total Invested Amount", "Growth Value"],
+      labels: ["Total Invested Amount", "Growth Value"],
       datasets: [
         {
-          label: "Amount in ₹",
           data: [data.invested_amount, data.growth_value],
-          backgroundColor: ["#143980", "#00ae42"],
-          borderColor: ["#143980", "#00ae42"],
-          // borderWidth: 1,
+          backgroundColor: ["#005CB9", "#00AE42"],
+          borderWidth: 0,
+          hoverOffset: 8
         },
       ],
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
+      cutout: '65%',
       plugins: {
-        legend: {
-          position: "top",
-        },
-        title: {
-          display: true,
-          text: "SIP Investment Results",
-        },
-      },
-    },
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function (ctx) {
+              return ctx.label + ': ' + new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(ctx.raw);
+            }
+          }
+        }
+      }
+    }
   });
 }
 

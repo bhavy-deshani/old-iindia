@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="../assets/css/default.css" />
     <link rel="stylesheet" fetchpriority="high" href="../assets/css/main.css" />
     <script src="../assets/js/app-link.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link rel="preload" as="image" href="../assets/img/bg/calculator.jpg" fetchpriority="high">
 
     <script type="application/ld+json">
@@ -374,9 +374,6 @@
             margin-bottom: 20px;
         }
 
-        #sipChart {
-            width: 100%;
-        }
 
         .result-legend {
             display: flex;
@@ -439,6 +436,134 @@
         .result-row.total .r-value {
             font-size: 16px;
             color: #005CB9;
+        }
+
+        /* ===== RIGHT SIDE GSC UI (Copied from FD/Crorepati) ===== */
+        .gsc-right {
+            padding: 36px 36px 36px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        .gsc-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1C355E;
+            margin-bottom: 28px;
+        }
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
+        }
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .gsc-result-col-box {
+            flex: 1;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+        .gsc-result-col-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+        .gsc-result-col-val.green { color: #00ae42; }
+        .gsc-chart-wrap {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 12px;
+        }
+        .gsc-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .gsc-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            color: #3a4f6e;
+        }
+        .gsc-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .gsc-divider {
+            border: none;
+            border-top: 1px solid #eaf0fb;
+            margin: 4px 0 12px;
+        }
+        .gsc-result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f4fb;
+        }
+        .gsc-result-row:last-child { border-bottom: none; }
+        .gsc-result-label {
+            font-size: 13px;
+            color: #3a4f6e;
+        }
+        .gsc-result-val {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1C355E;
+        }
+        .gsc-result-val.highlight {
+            color: #005CB9;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .gsc-cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #1C355E;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .gsc-cta-btn:hover {
+            background: #005CB9;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
         }
 
         /* ===== SIMPLE CONTENT SECTIONS ===== */
@@ -974,34 +1099,63 @@ color: #1C355E ! IMPORTANT;
                         </div>
 
                         <!-- RIGHT: Chart + Results -->
-                        <div class="col-lg-6 calc-widget__right">
-                            <h4 style="font-size:17px;font-weight:700;color:#1C355E;margin-bottom:16px;">Your Investment
-                                Summary</h4>
-                            <div class="donut-wrap">
-                                <div id="sipChart"></div>
-                            </div>
-                            <div class="result-legend">
-                                <div class="legend-item"><span class="legend-dot"
-                                        style="background:#005CB9;"></span>Invested Amount</div>
-                                <div class="legend-item"><span class="legend-dot"
-                                        style="background:#00AE42;"></span>Wealth Gained</div>
-                            </div>
-                            <div class="result-rows">
-                                <div class="result-row">
-                                    <span class="r-label">Invested Amount</span>
-                                    <span class="r-value" id="investedAmount">₹0</span>
-                                </div>
-                                <div class="result-row">
-                                    <span class="r-label">Wealth Gained</span>
-                                    <span class="r-value" id="growthValue">₹0</span>
-                                </div>
-                                <div class="result-row total">
-                                    <span class="r-label">Total Value</span>
-                                    <span class="r-value" id="maturityAmount">₹0</span>
+                        <div class="col-lg-6 gsc-right">
+                            <h4 class="gsc-title">Investment Summary</h4>
+
+                            <!-- Maturity highlight box -->
+                            <div class="gsc-maturity-box d-none">
+                                <div>
+                                    <div class="gsc-maturity-label">Total Value</div>
+                                    <div class="gsc-maturity-value" id="maturityAmount">—</div>
                                 </div>
                             </div>
-                            <a href="../mutual-funds.html"
-                                target="_blank" class="invest-btn">Invest now</a>
+
+                            <!-- Invested Amount / Estimated Returns -->
+                            <div class="gsc-result-cols">
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Invested Amount</div>
+                                    <div class="gsc-result-col-val" id="investedAmount">—</div>
+                                </div>
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Wealth Gained</div>
+                                    <div class="gsc-result-col-val green" id="growthValue">—</div>
+                                </div>
+                            </div>
+
+                            <!-- Donut chart -->
+                            <div class="gsc-chart-wrap">
+                                <canvas id="sipChart" width="180" height="180"></canvas>
+                            </div>
+
+                            <!-- Legend -->
+                            <div class="gsc-legend">
+                                <div class="gsc-legend-item">
+                                    <span class="gsc-legend-dot" style="background:#005CB9;"></span>
+                                    Invested Amount
+                                </div>
+                                <div class="gsc-legend-item">
+                                    <span class="gsc-legend-dot" style="background:#00AE42;"></span>
+                                    Wealth Gained
+                                </div>
+                            </div>
+
+                            <hr class="gsc-divider">
+
+                            <!-- Detail rows -->
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label">Invested Amount</span>
+                                <span class="gsc-result-val highlight" id="summaryInvested">—</span>
+                            </div>
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label">Wealth Gained</span>
+                                <span class="gsc-result-val" id="summaryReturns">—</span>
+                            </div>
+                            <div class="gsc-result-row">
+                                <span class="gsc-result-label fw-bold">Total Value</span>
+                                <span class="gsc-result-val highlight" id="summaryMaturity">—</span>
+                            </div>
+
+                            <a href="../mutual-funds.html" class="gsc-cta-btn">Invest now</a>
 
                         </div>
                     </div>
@@ -1347,44 +1501,34 @@ color: #1C355E ! IMPORTANT;
 
             /* Update donut chart */
             function updateChart(invested, gain) {
-                var opts = {
-                    series: [Math.round(invested), Math.round(gain)],
-                    chart: { type: 'donut', height: 220, toolbar: { show: false } },
-                    labels: ['Invested Amount', 'Wealth Gained'],
-                    colors: ['#005CB9', '#00AE42'],
-                    dataLabels: { enabled: false },
-                    plotOptions: {
-                        pie: {
-                            donut: {
-                                size: '68%',
-                                labels: {
-                                    show: true,
-                                    total: {
-                                        show: true,
-                                        label: 'Total Value',
-                                        fontSize: '12px',
-                                        fontFamily: 'DM Sans, sans-serif',
-                                        color: '#5a6a85',
-                                        formatter: function (w) {
-                                            var total = w.globals.seriesTotals.reduce(function (a, b) { return a + b; }, 0);
-                                            return fmtINR(total);
-                                        }
-                                    }
+                var ctx = document.getElementById('sipChart').getContext('2d');
+                if (sipChart instanceof Chart) sipChart.destroy();
+                
+                sipChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Invested Amount', 'Wealth Gained'],
+                        datasets: [{
+                            data: [Math.round(invested), Math.round(gain)],
+                            backgroundColor: ['#005CB9', '#00AE42'],
+                            borderWidth: 0,
+                            hoverOffset: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '65%',
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (ctx) { return ctx.label + ': ' + fmtINR(ctx.raw); }
                                 }
                             }
                         }
-                    },
-                    legend: { show: false },
-                    stroke: { width: 2 },
-                    tooltip: { y: { formatter: function (v) { return fmtINR(v); } } }
-                };
-
-                if (sipChart) {
-                    sipChart.updateSeries([Math.round(invested), Math.round(gain)]);
-                } else {
-                    sipChart = new ApexCharts(document.getElementById('sipChart'), opts);
-                    sipChart.render();
-                }
+                    }
+                });
             }
 
             /* Call API */
@@ -1405,6 +1549,11 @@ color: #1C355E ! IMPORTANT;
                             document.getElementById('investedAmount').textContent = fmtINR(data.invested_amount);
                             document.getElementById('growthValue').textContent = fmtINR(data.growth_value);
                             document.getElementById('maturityAmount').textContent = fmtINR(data.maturity_amount);
+                            
+                            document.getElementById('summaryInvested').textContent = fmtINR(data.invested_amount);
+                            document.getElementById('summaryReturns').textContent = fmtINR(data.growth_value);
+                            document.getElementById('summaryMaturity').textContent = fmtINR(data.maturity_amount);
+                            
                             updateChart(data.invested_amount, data.growth_value);
                         } else {
                             fallbackCalc(sip_amount, interest_rate, years);
@@ -1425,6 +1574,11 @@ color: #1C355E ! IMPORTANT;
                 document.getElementById('investedAmount').textContent = fmtINR(invested);
                 document.getElementById('growthValue').textContent = fmtINR(gain);
                 document.getElementById('maturityAmount').textContent = fmtINR(fv);
+                
+                document.getElementById('summaryInvested').textContent = fmtINR(invested);
+                document.getElementById('summaryReturns').textContent = fmtINR(gain);
+                document.getElementById('summaryMaturity').textContent = fmtINR(fv);
+                
                 updateChart(invested, gain);
             }
 
@@ -1470,7 +1624,7 @@ color: #1C355E ! IMPORTANT;
 
             /* Initial load */
             function init() {
-                if (typeof ApexCharts !== 'undefined') {
+                if (typeof Chart !== 'undefined') {
                     calculate();
                 } else {
                     setTimeout(init, 200);

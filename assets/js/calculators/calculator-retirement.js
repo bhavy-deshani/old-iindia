@@ -9,45 +9,37 @@ const formatINR = (val) => new Intl.NumberFormat('en-IN', {
 const formatNum = (val) => new Intl.NumberFormat('en-IN').format(val);
 const parseNum = (str) => parseInt(str.toString().replace(/,/g, '')) || 0;
 
-// Initialize the ApexChart
-// Initialize the ApexChart
 function initChart() {
-    const options = {
-        series: [0, 0],
-        chart: { type: 'donut', height: 320 },
-        labels: ['Invested Amount', 'Total Earnings'],
-        colors: ['#00ad41', '#005cb9'],
-        legend: { position: 'bottom' },
-        plotOptions: {
-            pie: {
-                donut: {
-                    size: '70%',
-                    labels: {
-                        show: true,
-                        value: {
-                            show: true,
-                            fontSize: '20px',
-                            fontWeight: 600,
-                            formatter: (val) => formatINR(val)
-                        },
-                        total: {
-                            show: true,
-                            label: 'Monthly Goal',
-                            formatter: () => formatINR(window.currentMonthly || 0)
+    const canvas = document.getElementById('resultChart');
+    if (!canvas) return; // Wait for DOM if not ready
+    const ctx = canvas.getContext('2d');
+    chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Invested Amount', 'Total Earnings'],
+            datasets: [{
+                data: [0, 0],
+                backgroundColor: ['#005CB9', '#00AE42'],
+                borderWidth: 0,
+                hoverOffset: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '65%',
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            return tooltipItem.label + ': ' + formatINR(tooltipItem.raw);
                         }
                     }
                 }
             }
-        },
-        tooltip: { 
-            y: { 
-                formatter: (val) => formatINR(val) 
-            } 
-        },
-        dataLabels: { enabled: false }
-    };
-    chart = new ApexCharts(document.querySelector("#resultChart"), options);
-    chart.render();
+        }
+    });
 }
 
 // Perform the API request based on your exact structure
@@ -80,31 +72,44 @@ function renderResults(data) {
     const display = document.getElementById("resultsDisplay");
 
     display.innerHTML = `
-        <tr>
-            <td class="text-muted border-bottom">Target Wealth (Inflation Adj.)</td>
-            <td class="text-end result-val border-bottom">${formatINR(data.target_wealth)}</td>
-        </tr>
-        <tr>
-            <td class="text-muted border-bottom">Wealth Gap to Fill</td>
-            <td class="text-end result-val border-bottom">${formatINR(data.target_amount)}</td>
-        </tr>
-        <tr>
-            <td class="text-muted border-bottom">Total Invested Amount</td>
-            <td class="text-end result-val border-bottom">${formatINR(data.invested_amount)}</td>
-        </tr>
-        <tr>
-            <td class="text-muted border-bottom">Total Earnings Growth</td>
-            <td class="text-end result-val border-bottom">${formatINR(data.total_earnings)}</td>
-        </tr>
-        <tr class="bg-light">
-            <td class="fw-bold pt-3 text-success-custom">Monthly Savings Required</td>
-            <td class="text-end fw-bold pt-3 text-success-custom" style="font-size: 1.2rem;">
-                ${formatINR(data.monthly_savings)}
-            </td>
-        </tr>
+        <div class="gsc-result-row">
+            <span class="gsc-result-label">Target Wealth (Inflation Adj.)</span>
+            <span class="gsc-result-val">${formatINR(data.target_wealth)}</span>
+        </div>
+        <div class="gsc-result-row">
+            <span class="gsc-result-label">Wealth Gap to Fill</span>
+            <span class="gsc-result-val">${formatINR(data.target_amount)}</span>
+        </div>
+        <div class="gsc-result-row">
+            <span class="gsc-result-label">Total Invested Amount</span>
+            <span class="gsc-result-val">${formatINR(data.invested_amount)}</span>
+        </div>
+        <div class="gsc-result-row">
+            <span class="gsc-result-label">Total Earnings Growth</span>
+            <span class="gsc-result-val">${formatINR(data.total_earnings)}</span>
+        </div>
+        <div class="gsc-result-row">
+            <span class="gsc-result-label fw-bold">Monthly Savings Required</span>
+            <span class="gsc-result-val highlight">${formatINR(data.monthly_savings)}</span>
+        </div>
     `;
 
-    chart.updateSeries([data.invested_amount, data.total_earnings]);
+    const mobSavings = document.getElementById("mobileMonthlySavings");
+    if (mobSavings) mobSavings.innerHTML = formatINR(data.monthly_savings);
+
+    const colInvested = document.getElementById("colInvestedAmount");
+    if (colInvested) colInvested.innerHTML = formatINR(data.invested_amount);
+
+    const colEarnings = document.getElementById("colTotalEarnings");
+    if (colEarnings) colEarnings.innerHTML = formatINR(data.total_earnings);
+
+    const desktopMonthlyGoal = document.getElementById("desktop_monthly_goal");
+    if (desktopMonthlyGoal) desktopMonthlyGoal.innerHTML = formatINR(data.monthly_savings);
+
+    if (chart) {
+        chart.data.datasets[0].data = [data.invested_amount, data.total_earnings];
+        chart.update();
+    }
 }
 
 // Sync Controls
@@ -145,4 +150,4 @@ document.addEventListener("DOMContentLoaded", () => {
     initChart();
     setupSync();
     getRetirementData();
-}); 
+});

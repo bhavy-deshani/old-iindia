@@ -866,17 +866,65 @@ justify-content:center;
             flex-direction: column;
         }
 
+        /* Maturity highlight box */
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
+        }
+
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* two-col result row */
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .gsc-result-col-box {
+            flex: 1;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+
+        .gsc-result-col-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+
+        .gsc-result-col-val.green { color: #00ae42; }
+
         /* Donut chart */
         .gsc-chart-wrap {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 16px;
-        }
-
-        .gsc-chart-wrap canvas {
-            position: relative;
-            z-index: 1;
         }
 
         .gsc-chart-center {
@@ -1296,9 +1344,29 @@ justify-content:center;
                         <div class="gsc-right">
                             <h4 class="gsc-title">Your Investment Summary</h4>
 
+                            <!-- Maturity highlight box -->
+                            <div class="gsc-maturity-box d-none">
+                                <div>
+                                    <div class="gsc-maturity-label">Monthly Savings Required</div>
+                                    <div class="gsc-maturity-value" id="mobileMonthlySavings">—</div>
+                                </div>
+                            </div>
+
+                            <!-- Result Cols -->
+                            <div class="gsc-result-cols">
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Invested Amount</div>
+                                    <div class="gsc-result-col-val" id="colInvestedAmount">—</div>
+                                </div>
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Total Earnings</div>
+                                    <div class="gsc-result-col-val green" id="colGrowthValue">—</div>
+                                </div>
+                            </div>
+
                             <!-- Donut chart with center text -->
                             <div class="gsc-chart-wrap">
-                                <canvas id="goalChart"></canvas>
+                                <canvas id="goalChart" width="180" height="180"></canvas>
                             </div>
 
                             <!-- Legend -->

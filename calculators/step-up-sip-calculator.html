@@ -518,7 +518,7 @@ justify-content:center;
         .calc-right-panel {
             flex: 1;
             padding: 36px 40px;
-            background: #f4f7fb;
+            background: #ffffff;
             display: flex;
             flex-direction: column;
         }
@@ -656,44 +656,6 @@ justify-content:center;
         }
 
         /* ===== RIGHT PANEL ===== */
-        /* Donut chart container */
-        .sip-chart-wrap {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 16px;
-        }
-
-        .sip-chart-wrap canvas {
-            width: 200px !important;
-            height: 200px !important;
-        }
-
-        .sip-chart-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            pointer-events: none;
-        }
-
-        .sip-chart-center-text {
-            display: block;
-            font-size: 11px;
-            color: #8a9bb8;
-            
-        }
-
-        .sip-chart-center-value {
-            display: block;
-            font-size: 20px;
-            font-weight: 700;
-            color: #1C355E;
-            
-            line-height: 1.2;
-        }
-
         /* Legend */
         .sip-legend {
             display: flex;
@@ -724,37 +686,132 @@ justify-content:center;
             margin: 0 0 16px;
         }
 
-        /* Result rows — overrides the table from JS displayResult */
-        #result .table {
-            font-size: 14px;
-            
-            margin-bottom: 0;
+        /* ===== RIGHT SIDE GSC UI (Copied from FD/Crorepati) ===== */
+        .gsc-right {
+            padding: 36px 36px 36px 40px;
+            display: flex;
+            flex-direction: column;
         }
-
-        #result .table td {
-            padding: 10px 4px;
-            border: none;
-            border-bottom: 1px solid #eef2f8;
-            
-            vertical-align: middle;
-        }
-
-        #result .table tr:last-child td {
-            border-bottom: none;
+        .gsc-title {
+            font-size: 17px;
             font-weight: 700;
             color: #1C355E;
-            font-size: 15px;
+            margin-bottom: 28px;
         }
-
-        #result .table td:last-child {
-            text-align: right;
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
+        }
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .gsc-result-col-box {
+            flex: 1;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+        .gsc-result-col-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+        .gsc-result-col-val.green { color: #00ae42; }
+        .gsc-chart-wrap {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 12px;
+        }
+        .gsc-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .gsc-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            color: #3a4f6e;
+        }
+        .gsc-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .gsc-divider {
+            border: none;
+            border-top: 1px solid #eaf0fb;
+            margin: 4px 0 12px;
+        }
+        .gsc-result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f4fb;
+        }
+        .gsc-result-row:last-child { border-bottom: none; }
+        .gsc-result-label {
+            font-size: 13px;
+            color: #3a4f6e;
+        }
+        .gsc-result-val {
+            font-size: 13px;
             font-weight: 600;
             color: #1C355E;
         }
-
-        #result .table tr:last-child td:last-child {
+        .gsc-result-val.highlight {
             color: #005CB9;
-            font-size: 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .gsc-cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #1C355E;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .gsc-cta-btn:hover {
+            background: #005CB9;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
         }
 
         /* Start Investing button */
@@ -1164,33 +1221,54 @@ justify-content:center;
                         <div class="calc-divider"></div>
 
                         <!-- ===== RIGHT: SUMMARY ===== -->
-                        <div class="calc-right-panel">
-                            <p class="calc-panel-title">Your Investment Summary</p>
+                        <div class="calc-right-panel gsc-right">
+                            <h4 class="gsc-title">Your Investment Summary</h4>
+
+                            <!-- Maturity highlight box -->
+                            <div class="gsc-maturity-box d-none">
+                                <div>
+                                    <div class="gsc-maturity-label">Maturity Amount</div>
+                                    <div class="gsc-maturity-value" id="mobileMaturityAmount">—</div>
+                                </div>
+                            </div>
+
+                            <!-- Result Cols -->
+                            <div class="gsc-result-cols">
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Total Invested Amount</div>
+                                    <div class="gsc-result-col-val" id="colInvestedAmount">—</div>
+                                </div>
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Growth Value</div>
+                                    <div class="gsc-result-col-val green" id="colGrowthValue">—</div>
+                                </div>
+                            </div>
 
                             <!-- Donut chart -->
-                            <div class="sip-chart-wrap">
-                                <canvas id="resultChart"></canvas>
+                            <div class="gsc-chart-wrap">
+                                <canvas id="resultChart" width="180" height="180"></canvas>
                             </div>
 
                             <!-- Legend -->
-                            <div class="sip-legend">
-                                <div class="sip-legend-item">
-                                    <span class="sip-legend-dot" style="background:#143980;"></span>
+                            <div class="gsc-legend">
+                                <div class="gsc-legend-item">
+                                    <span class="gsc-legend-dot" style="background:#143980;"></span>
                                     Invested Amount
                                 </div>
-                                <div class="sip-legend-item">
-                                    <span class="sip-legend-dot" style="background:#00ae42;"></span>
+                                <div class="gsc-legend-item">
+                                    <span class="gsc-legend-dot" style="background:#00ae42;"></span>
                                     Wealth Gained
                                 </div>
                             </div>
 
-                            <hr class="sip-hr">
+                            <hr class="gsc-divider">
 
-                            <!-- Result rows — injected by JS into #result -->
-                            <div id="result"></div>
+                            <!-- Result rows — populated by JS -->
+                            <div id="result">
+                            </div>
 
                             <!-- Start Investing Button -->
-                            <a href="../mutual-funds.html" target="_blank" class="sip-invest-btn">Invest now</a>
+                            <a href="../mutual-funds.html" target="_blank" class="gsc-cta-btn">Invest now</a>
                         </div>
 
                     </div>

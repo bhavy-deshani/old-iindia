@@ -612,18 +612,68 @@ justify-content:center;
             flex-direction: column;
         }
 
+        /* Maturity highlight box */
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
+        }
+
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* two-col result row */
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .gsc-result-col-box {
+            flex: 1;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+
+        .gsc-result-col-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+
+        .gsc-result-col-val.green { color: #00ae42; }
+
         /* Donut chart */
         .gsc-chart-wrap {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 16px;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 12px;
         }
 
-        .gsc-chart-wrap canvas {
-            position: relative;
-            z-index: 1;
-        }
+
 
         .gsc-chart-center {
             position: absolute;
@@ -1036,19 +1086,39 @@ justify-content:center;
                         <div class="gsc-right">
                             <h4 class="gsc-title">Your Investment Summary</h4>
 
+                            <!-- Maturity highlight box -->
+                            <div class="gsc-maturity-box d-none">
+                                <div>
+                                    <div class="gsc-maturity-label">Lumpsum Investment Amount</div>
+                                    <div class="gsc-maturity-value" id="mobileLumpsumAmount">—</div>
+                                </div>
+                            </div>
+
+                            <!-- Result Cols -->
+                            <div class="gsc-result-cols">
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Your Targeted Amount</div>
+                                    <div class="gsc-result-col-val" id="targetAmountResultCol">—</div>
+                                </div>
+                                <div class="gsc-result-col-box">
+                                    <div class="gsc-result-col-label">Lumpsum Amount</div>
+                                    <div class="gsc-result-col-val green" id="lumpsumAmountCol">—</div>
+                                </div>
+                            </div>
+
                             <!-- Donut chart with center text -->
                             <div class="gsc-chart-wrap">
-                                <canvas id="resultChart"></canvas>
+                                <canvas id="resultChart" width="180" height="180"></canvas>
                             </div>
 
                             <!-- Legend -->
                             <div class="gsc-legend">
                                 <div class="gsc-legend-item">
-                                    <span class="gsc-legend-dot" style="background:#143980;"></span>
+                                    <span class="gsc-legend-dot" style="background:#005CB9;"></span>
                                     Target Amount
                                 </div>
                                 <div class="gsc-legend-item">
-                                    <span class="gsc-legend-dot" style="background:#00ae42;"></span>
+                                    <span class="gsc-legend-dot" style="background:#00AE42;"></span>
                                     Lumpsum Amount
                                 </div>
                             </div>
@@ -1059,13 +1129,13 @@ justify-content:center;
                             <div id="results">
                                 <div class="gsc-result-row">
                                     <span class="gsc-result-label">Your Targeted Amount</span>
-                                    <span class="gsc-result-val" id="targetAmountResult">—</span>
+                                    <span class="gsc-result-val highlight" id="targetAmountResult">—</span>
                                 </div>
                                 <div class="gsc-result-row">
                                     <span class="gsc-result-label">Number of years to achieve your goal</span>
                                     <span class="gsc-result-val" id="yearsResult">—</span>
                                 </div>
-                                <div class="gsc-result-row highlight">
+                                <div class="gsc-result-row">
                                     <span class="gsc-result-label fw-bold">Lumpsum Investment Amount</span>
                                     <span class="gsc-result-val highlight" id="lumpsumAmount">—</span>
                                 </div>
@@ -1074,8 +1144,7 @@ justify-content:center;
                             <div id="error" style="display:none; color:red; font-size:13px; margin-bottom:12px;"></div>
 
                             <!-- CTA Button -->
-                            <a href="../mutual-funds.html"
-                                target="_blank" class="gsc-cta-btn">Invest Now</a>
+                            <a href="../mutual-funds.html" target="_blank" class="gsc-cta-btn">Invest Now</a>
 
                         </div>
 
@@ -1412,7 +1481,7 @@ justify-content:center;
             syncField('yearsRange', 'years');
             syncField('expectedReturnRange', 'expectedReturn');
 
-            // Patch displayResult to also update chart center label
+            // Patch displayResult to also update chart center label and new GSC UI
             var _origDisplayResult;
             function waitAndPatch() {
                 if (typeof displayResult !== 'undefined') {
@@ -1422,6 +1491,15 @@ justify-content:center;
                         var fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' });
                         var center = document.getElementById('chartCenterValue');
                         if (center) center.textContent = fmt.format(data.lumpsum_amount);
+                        
+                        var mobileLumpsumAmount = document.getElementById('mobileLumpsumAmount');
+                        if (mobileLumpsumAmount) mobileLumpsumAmount.textContent = fmt.format(data.lumpsum_amount);
+                        
+                        var targetCol = document.getElementById('targetAmountResultCol');
+                        if (targetCol) targetCol.textContent = fmt.format(data.target_amount);
+                        
+                        var lumpsumCol = document.getElementById('lumpsumAmountCol');
+                        if (lumpsumCol) lumpsumCol.textContent = fmt.format(data.lumpsum_amount);
                     };
                 } else {
                     setTimeout(waitAndPatch, 100);

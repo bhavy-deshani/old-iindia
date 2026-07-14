@@ -48,7 +48,7 @@ async function calculateLumpsum() {
     years: years,
     expected_return: expectedReturn,
   });
-  const url = `${CalcApi}?${paramsdata.toString()}`;
+  const url = `/${CalcApi}?${paramsdata.toString()}`;
 
   try {
     const response = await fetch(url, { method: "POST" });
@@ -113,36 +113,31 @@ function updateChart(data) {
     chart = new Chart(ctx, {
       type: "doughnut",
       data: {
+        labels: ["Invested Amount", "Estimated Returns"],
         datasets: [
           {
-            label: "Values",
             data: chartData,
-            backgroundColor: ["#143980", "#00ae42"],
+            backgroundColor: ["#005CB9", "#00AE42"],
+            borderWidth: 0,
+            hoverOffset: 8
           },
         ],
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
         plugins: {
-          legend: {
-            position: "top",
-          },
+          legend: { display: false },
           tooltip: {
             callbacks: {
-              label: function (tooltipItem) {
-                return (
-                  tooltipItem.label +
-                  ": " +
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                  }).format(tooltipItem.raw)
-                );
-              },
-            },
-          },
-        },
-      },
+              label: function (ctx) {
+                return ctx.label + ': ' + new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(ctx.raw);
+              }
+            }
+          }
+        }
+      }
     });
   }
 }

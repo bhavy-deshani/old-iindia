@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       expected_return: expectedReturn,
       savings_amount: savingsAmount,
     });
-    const url = `${CalcApi}?${requestData.toString()}`;
+    const url = `/${CalcApi}?${requestData.toString()}`;
 
     try {
       const response = await fetch(url, { method: "GET" });
@@ -113,6 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
       data.total_earnings
     );
 
+    const mobSavings = document.getElementById("mobileMonthlySavings");
+    if (mobSavings) mobSavings.textContent = formatter.format(data.monthly_savings);
+
+    const colInvested = document.getElementById("colInvestedAmount");
+    if (colInvested) colInvested.textContent = formatter.format(data.invested_amount);
+
+    const colGrowth = document.getElementById("colGrowthValue");
+    if (colGrowth) colGrowth.textContent = formatter.format(data.total_earnings);
+
     document.getElementById("results").style.display = "block";
   }
 
@@ -126,6 +135,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayChart(data) {
     const ctx = document.getElementById("goalChart").getContext("2d");
+    const formatter = new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0
+    });
 
     // Ensure chart instance is destroyed if it exists
     if (chart instanceof Chart) {
@@ -136,35 +150,31 @@ document.addEventListener("DOMContentLoaded", function () {
     chart = new Chart(ctx, {
       type: "doughnut",
       data: {
+        labels: ["Invested Amount", "Total Earnings"],
         datasets: [
           {
             data: [data.invested_amount, data.total_earnings],
-            backgroundColor: ["#143980", "#00ae42"],
-            hoverBackgroundColor: ["#143980", "#00ae42"],
+            backgroundColor: ["#005CB9", "#00AE42"],
+            borderWidth: 0,
+            hoverOffset: 8
           },
         ],
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
         plugins: {
-          legend: {
-            position: "top",
-          },
+          legend: { display: false },
           tooltip: {
             callbacks: {
-              label: function (tooltipItem) {
-                return `${tooltipItem.label}: ${tooltipItem.raw.toLocaleString(
-                  "en-IN",
-                  {
-                    style: "currency",
-                    currency: "INR",
-                  }
-                )}`;
-              },
-            },
-          },
-        },
-      },
+              label: function (ctx) {
+                return ctx.label + ': ' + formatter.format(ctx.raw);
+              }
+            }
+          }
+        }
+      }
     });
   }
 

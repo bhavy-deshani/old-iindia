@@ -256,8 +256,6 @@
         /* BUTTON */
 
         .cta-form-box button {
-            justify-content: center;
-            align-items: center;
             height: 48px;
             background: #005CB9;
             color: #fff;
@@ -922,6 +920,7 @@
             cursor: pointer;
             transition: .25s;
             text-transform: uppercase;
+            align-items: center;
         }
 
         .ep-calc-btn:hover {
@@ -961,45 +960,49 @@
 
         .ep-res-box {
             background: linear-gradient(135deg, #1C355E, #005CB9);
-            border-radius: 10px;
-            padding: 14px 16px;
+            border-radius: 12px;
+            padding: 18px 20px;
             color: #fff;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
         }
 
         .ep-res-box-label {
-            font-size: 12px;
+            font-size: 13px;
             opacity: .85;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .ep-res-box-val {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .ep-res-cols {
             display: flex;
-            gap: 10px;
-            margin-bottom: 12px;
+            gap: 12px;
+            margin-bottom: 14px;
         }
 
         .ep-res-col {
             flex: 1;
-            background: #fff;
-            border: 1px solid #e4ecf7;
-            border-radius: 8px;
-            padding: 10px 12px;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
         }
 
         .ep-res-col-lbl {
-            font-size: 11px;
+            font-size: 12px;
             color: #8a9bb5;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .ep-res-col-val {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             color: #1C355E;
         }
@@ -1035,8 +1038,8 @@
         }
 
         .ep-chart-wrap {
-            width: 140px;
-            height: 140px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 10px;
             position: relative;
         }
@@ -1146,7 +1149,7 @@
 ]
 }
 </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -1172,7 +1175,7 @@
   "datePublished": ""
 }
 </script>
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "FAQPage",
@@ -1251,7 +1254,7 @@
             j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
-    <script type="text/javascript">
+         <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
             t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
@@ -1405,8 +1408,10 @@
                             <div class="ep-result-card">
                                 <div class="ep-result-card-title" id="r1_title">Child 1 — Education Summary</div>
                                 <div class="ep-res-box">
-                                    <div class="ep-res-box-label">Inflation Adjusted Education Cost</div>
-                                    <div class="ep-res-box-val" id="r1_inflationAdj">—</div>
+                                    <div>
+                                        <div class="ep-res-box-label">Inflation Adjusted Education Cost</div>
+                                        <div class="ep-res-box-val" id="r1_inflationAdj">—</div>
+                                    </div>
                                 </div>
                                 <div class="ep-res-cols">
                                     <div class="ep-res-col">
@@ -1418,7 +1423,7 @@
                                         <div class="ep-res-col-val" id="r1_currentSavings">—</div>
                                     </div>
                                 </div>
-                                <div class="ep-chart-wrap"><canvas id="chart1"></canvas></div>
+                                <div class="ep-chart-wrap"><canvas id="chart1" width="180" height="180"></canvas></div>
                                 <div class="ep-legend">
                                     <div class="ep-legend-item"><span class="ep-legend-dot"
                                             style="background:#005CB9;"></span>Cost Today</div>
@@ -1445,8 +1450,10 @@
                             <div class="ep-result-card" id="result2Card">
                                 <div class="ep-result-card-title" id="r2_title">Child 2 — Education Summary</div>
                                 <div class="ep-res-box">
-                                    <div class="ep-res-box-label">Inflation Adjusted Education Cost</div>
-                                    <div class="ep-res-box-val" id="r2_inflationAdj">—</div>
+                                    <div>
+                                        <div class="ep-res-box-label">Inflation Adjusted Education Cost</div>
+                                        <div class="ep-res-box-val" id="r2_inflationAdj">—</div>
+                                    </div>
                                 </div>
                                 <div class="ep-res-cols">
                                     <div class="ep-res-col">
@@ -1458,7 +1465,7 @@
                                         <div class="ep-res-col-val" id="r2_currentSavings">—</div>
                                     </div>
                                 </div>
-                                <div class="ep-chart-wrap"><canvas id="chart2"></canvas></div>
+                                <div class="ep-chart-wrap"><canvas id="chart2" width="180" height="180"></canvas></div>
                                 <div class="ep-legend">
                                     <div class="ep-legend-item"><span class="ep-legend-dot"
                                             style="background:#005CB9;"></span>Cost Today</div>
@@ -1843,7 +1850,7 @@
                         data: [eduAmt, Math.max(0, inflationAdj - eduAmt)],
                         backgroundColor: ['#005CB9', '#00AE42'],
                         borderWidth: 0,
-                        hoverOffset: 6
+                        hoverOffset: 8
                     }]
                 },
                 options: {

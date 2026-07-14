@@ -50,7 +50,7 @@
     <link rel="stylesheet" fetchpriority="high" href="../assets/css/main.css" />
     <script src="../assets/js/app-link.js" defer></script>
     <link rel="preload" as="image" href="../assets/img/bg/calculator.jpg" fetchpriority="high">
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
@@ -689,7 +689,7 @@
 
         /* Results panel */
         .retirement-results-panel {
-            background: #f0f5fc;
+            background: #ffffff;
             border-left: 1.5px solid #dce6f5;
             padding: 32px 36px;
             display: flex;
@@ -704,44 +704,156 @@
 
         }
 
-        #resultChart {
-            min-height: 280px;
-            margin-bottom: 24px;
-        }
 
-        #resultsDisplay {
-            width: 100%;
-        }
 
-        #resultsDisplay .result-row {
+        /* ===== RIGHT SIDE GSC UI (Copied from FD/Crorepati) ===== */
+        .gsc-right {
+            padding: 36px 36px 36px 40px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1.5px solid #dce6f5;
+        }
+        .gsc-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1C355E;
+            margin-bottom: 28px;
+        }
+        .gsc-maturity-box {
+            background: linear-gradient(135deg, #1C355E, #005CB9);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: #fff;
+            margin-bottom: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 11px 0;
-            border-bottom: 1px solid #dce6f5;
-
             gap: 12px;
         }
-
-        #resultsDisplay .result-row:last-child {
-            border-bottom: none;
+        .gsc-maturity-label {
+            font-size: 13px;
+            opacity: .85;
+            margin-bottom: 4px;
         }
-
-        #resultsDisplay .result-label {
+        .gsc-maturity-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .gsc-result-cols {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .gsc-result-col-box {
             flex: 1;
-            line-height: 1.4;
+            background: #f4f8ff;
+            border-radius: 10px;
+            padding: 12px 14px;
         }
-
-        #resultsDisplay .result-value {
+        .gsc-result-col-label {
+            font-size: 12px;
+            color: #8a9bb5;
+            margin-bottom: 4px;
+        }
+        .gsc-result-col-val {
+            font-size: 15px;
             font-weight: 700;
             color: #1C355E;
-            text-align: right;
-            white-space: nowrap;
+        }
+        .gsc-result-col-val.green { color: #00ae42; }
+        .gsc-chart-wrap {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 12px;
         }
 
-        #resultsDisplay .result-value.highlight {
+        .gsc-chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .gsc-chart-label {
+            display: block;
+            font-size: 11px;
+            color: #8a9bb5;
+            margin-bottom: 2px;
+        }
+        .gsc-chart-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1C355E;
+        }
+        .gsc-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .gsc-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            color: #3a4f6e;
+        }
+        .gsc-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .gsc-divider {
+            border: none;
+            border-top: 1px solid #eaf0fb;
+            margin: 4px 0 12px;
+        }
+        .gsc-result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f4fb;
+        }
+        .gsc-result-row:last-child { border-bottom: none; }
+        .gsc-result-label {
+            font-size: 13px;
+            color: #3a4f6e;
+        }
+        .gsc-result-val {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1C355E;
+        }
+        .gsc-result-val.highlight {
             color: #005CB9;
-            font-size: 16px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .gsc-cta-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #1C355E;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .gsc-cta-btn:hover {
+            background: #005CB9;
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
         }
 
         /* Breadcrumb */
@@ -981,15 +1093,53 @@
 
                         <!-- Right: Results -->
                         <div class="col-lg-6">
-                            <div class="retirement-results-panel">
-                                <h4>Your Retirement Summary</h4>
-                                <div id="resultChart"></div>
-                                <table class="table table-borderless w-100">
-                                    <tbody id="resultsDisplay"></tbody>
-                                </table>
+                            <div class="retirement-results-panel gsc-right">
+                                <h4 class="gsc-title">Your Retirement Summary</h4>
+
+                                <!-- Maturity highlight box -->
+                                <div class="gsc-maturity-box d-none">
+                                    <div>
+                                        <div class="gsc-maturity-label">Monthly Savings Required</div>
+                                        <div class="gsc-maturity-value" id="mobileMonthlySavings">—</div>
+                                    </div>
+                                </div>
+
+                                <!-- Result Cols -->
+                                <div class="gsc-result-cols">
+                                    <div class="gsc-result-col-box">
+                                        <div class="gsc-result-col-label">Total Invested Amount</div>
+                                        <div class="gsc-result-col-val" id="colInvestedAmount">—</div>
+                                    </div>
+                                    <div class="gsc-result-col-box">
+                                        <div class="gsc-result-col-label">Total Earnings Growth</div>
+                                        <div class="gsc-result-col-val green" id="colTotalEarnings">—</div>
+                                    </div>
+                                </div>
+
+                                <!-- Donut chart area -->
+                                <div class="gsc-chart-wrap">
+                                    <canvas id="resultChart" width="180" height="180"></canvas>
+                                </div>
+
+                                <!-- Legend -->
+                                <div class="gsc-legend">
+                                    <div class="gsc-legend-item">
+                                        <span class="gsc-legend-dot" style="background:#00ad41;"></span>
+                                        Invested Amount
+                                    </div>
+                                    <div class="gsc-legend-item">
+                                        <span class="gsc-legend-dot" style="background:#005cb9;"></span>
+                                        Total Earnings
+                                    </div>
+                                </div>
+
+                                <hr class="gsc-divider">
+
+                                <div id="resultsDisplay"></div>
+                                
+                                <a href="../nps-national-pension-system.html" target="_blank" class="gsc-cta-btn">Invest
+                                    now</a>
                             </div>
-                            <a href="../nps-national-pension-system.html" target="_blank" class="sip-invest-btn">Invest
-                                now</a>
                         </div>
 
                     </div>

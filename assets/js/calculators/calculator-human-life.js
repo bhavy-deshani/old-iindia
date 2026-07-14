@@ -16,7 +16,8 @@ function calculateAndDisplayLifeValue() {
   const noYears = document.getElementById("noYears").value;
 
   const reqtype = "calc/getHumanLifeValueCalcResultByYear";
-  const apiUrl = "API/testADKAPI.aspx";
+  const apiUrl = "API/ADKAPI.aspx";
+   //const apiUrl = "API/testADKAPI.aspx";
 
   const params = new URLSearchParams({
     key: apiKey,
@@ -27,7 +28,7 @@ function calculateAndDisplayLifeValue() {
     no_years: noYears,
   });
 
-  const url = `${apiUrl}?${params.toString()}`;
+  const url = `/${apiUrl}?${params.toString()}`;
 
   fetch(url, {
     method: "POST",
@@ -144,31 +145,35 @@ function displayLifeValueChart(data) {
   if (chart) {
     chart.destroy();
   }
-  chart = new Chart(ctx, {
-    type: "doughnut",
-    data: {
-      datasets: [
-        {
-          label: "Amount in ₹",
-          data: [data.annual_income_expense, data.life_cover_value],
-          backgroundColor: ["#143980", "#00ae42"],
-          borderColor: ["#143980", "#00ae42"],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: "top",
-        },
-        title: {
-          display: true,
-          text: "Human Life Value Results",
-        },
+    chart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["Annual Income/Expense", "Human Life Value"],
+        datasets: [
+          {
+            data: [data.annual_income_expense, data.life_cover_value],
+            backgroundColor: ["#005CB9", "#00AE42"],
+            borderWidth: 0,
+            hoverOffset: 8
+          },
+        ],
       },
-    },
-  });
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                return ctx.label + ': ' + formatINR(ctx.raw);
+              }
+            }
+          }
+        }
+      }
+    });
 }
 
 // Trigger initial calculation

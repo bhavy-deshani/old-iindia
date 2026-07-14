@@ -113,7 +113,7 @@ class Footer {
 											Available Time : 
 										</li>
 										<li>
-											Working Days : 8.30 A.M to 6.30 P.M <br>Saturday : 9.30 A.M to 1.30 P.M
+											Working Days : 9.30 A.M to 6.00 P.M <br>Saturday : 9.30 A.M to 1.30 P.M
 										</li>
 										<li>
 							
