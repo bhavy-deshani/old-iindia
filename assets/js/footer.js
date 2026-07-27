@@ -132,6 +132,7 @@ class Footer {
 						<a class="mx-1 fw-semibold text-b " href="/disclaimer.html">Disclaimer</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/list-of-holidays.html">List of Holidays</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="#">Group Companies</a> <span>|</span>
+                            <a class="mx-1 fw-semibold text-b " target="_blank" href="/assets/pdf/Annexue-5-SEBI-Master-Circular-for-Online-Resolution-of-Disputes-December-28-2023.pdf">ODR Mechanism</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="https://smartodr.in/login" target="_blank">Smart Odr</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/sitemap.html">Sitemap</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Policy_for_Freezing.pdf">Freezing Policy</a> <span>|</span>

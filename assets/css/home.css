@@ -32,8 +32,8 @@
 
 		/* --- Left column: slider --- */
 		.hero-ii__left {
-			flex: 0 0 55%;
-			max-width: 55%;
+			flex: 0 0 64%;
+			max-width: 64%;
 			position: relative;
 			display: flex;
 			flex-direction: column;
@@ -57,7 +57,7 @@
 		/* Eyebrow label */
 		.slide-eyebrow {
 			display: inline-block;
-			font-size: 0.75rem;
+			font-size: 0.825rem;
 			font-weight: 600;
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
@@ -67,7 +67,7 @@
 
 		/* Slide heading */
 		.slide-heading {
-			font-size: clamp(2rem, 2.5vw, 1.75rem);
+			font-size: clamp(2.2rem, 2.75vw, 1.925rem);
 			font-weight: 700;
 			color: var(--ink);
 			line-height: 1.18;
@@ -82,7 +82,7 @@
 
 		/* Slide subtext */
 		.slide-sub {
-			font-size: 1rem;
+			font-size: 1.1rem;
 			color: var(--muted);
 			line-height: 1.55;
 			margin: 0 0 24px;
@@ -91,7 +91,7 @@
 
 		/* Text link (minimal CTA) */
 		.slide-link {
-			font-size: 0.9rem;
+			font-size: 0.99rem;
 			font-weight: 500;
 			color: var(--accent);
 			text-decoration: none;
@@ -110,7 +110,9 @@
 		.hero-ii-dots {
 			display: flex;
 			gap: 8px;
-			margin-top: 36px;
+			position: absolute;
+			bottom: -20px;
+			left: 0;
 			align-items: center;
 		}
 		.hero-ii-dot {
@@ -234,7 +236,7 @@
 
 		/* --- Left column: image wrapper --- */
 		.slide-img-wrap {
-			max-width: 220px;
+			max-width: 225px;
 			perspective: 1000px;
 		}
 		.slide-hero-img {
