@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -258,18 +257,17 @@
             }
         }
 
-        .ipo-btn{
-	font-size: 13px;
-    padding: 11px 14px;
-    border-radius: 5px;
-}    
+        .ipo-btn {
+            font-size: 13px;
+            padding: 11px 14px;
+            border-radius: 5px;
+        }
 
-.company-info
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .company-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         @media (max-width: 480px) {
             .ipo-details {
@@ -279,8 +277,9 @@
             }
         }
     </style>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
@@ -368,7 +367,7 @@
                                 <div id="closed-ipo-list">Loading Closed IPOs...</div>
 
                             </div>
-                            
+
                         </div>
                         <div class="col-30">
                             <aside class="services_sidebar position-sticky" style="top: 100px;">
@@ -706,21 +705,21 @@
                             You will always know what is happening and why, so every step feels comfortable.</p>
                         <div class="cta-store-wrapper text-b">
 
-                            <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                            <a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
                                 target="_blank" class="cta-store-btn cta-play-btn">
 
                                 <i class="fab fa-google-play text-b"></i>
 
                                 <div class="cta-store-text text-b">
-                                    <span >Download on the</span>
+                                    <span>Download on the</span>
                                     <strong>Google Play</strong>
                                 </div>
 
                             </a>
 
 
-                            <a href="https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589" target="_blank"
-                                class="cta-store-btn cta-apple-btn">
+                            <a href="https://apps.apple.com/in/app/glide-demat-stocks-mf-nps/id6755422160"
+                                target="_blank" class="cta-store-btn cta-apple-btn">
 
                                 <i class="fab fa-apple text-b"></i>
 
@@ -750,7 +749,7 @@
             </div>
         </section>
 
-<section class="IPO-faqs about__area-four tg-color-gray">
+        <section class="IPO-faqs about__area-four tg-color-gray">
             <div class="container">
                 <h2 class="text-center">IPO FAQs</h2>
                 <div class="limited-faq-content"></div>
@@ -762,10 +761,10 @@
             </div>
         </section>
         <!-- services-area-end -->
-    
-        
 
-	</main>
+
+
+    </main>
     <!-- main-area-end -->
 
 
@@ -787,19 +786,19 @@
     </script>
     <script>
 
-    
+
 
 
         document.addEventListener("DOMContentLoaded", function () {
-            
+
             const tabButtons = document.querySelectorAll(".tab");
             //const ipoContentArea = document.getElementById("ipo-content-area");
-            const ipoContentArea =  document.getElementById("tab-contents");
+            const ipoContentArea = document.getElementById("tab-contents");
 
             // Function to fetch IPO data and populate the content
             const fetchIPOData = (category) => {
                 // Show a loading message
-                
+
                 ipoContentArea.innerHTML = "<p>Loading...</p>";
 
                 fetch(Cdslapi, {
@@ -807,7 +806,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ Name: '', Email: '', Mode: 'IPOList', Type: category,Mobile:"" ,PinCode: "", SaveInd: "0" }),
+                    body: JSON.stringify({ Name: '', Email: '', Mode: 'IPOList', Type: category, Mobile: "", PinCode: "", SaveInd: "0" }),
                 })
                     .then(response => {
                         if (!response.ok) {
@@ -817,22 +816,19 @@
                     })
                     .then(data => {
                         if ("Msg" in data) {
-                            if(data.Msg=="NoData")
-                            {
+                            if (data.Msg == "NoData") {
                                 ipoContentArea.innerHTML = "<p>No IPOs found for this category.</p>";
                             }
-                            else
-                            {
+                            else {
                                 ipoContentArea.innerHTML = "<p>Failed to load IPO data. Please try again later.</p>";
                             }
-                        }   
-                        else
-                        {
+                        }
+                        else {
                             if (!data || (Array.isArray(data) && data.length === 0) || (typeof data === 'object' && Object.keys(data).length === 0)) {
                                 ipoContentArea.innerHTML = "<p>No IPOs found for this category.</p>";
                             } else {
-                                
-                                const ipoHtml = data.map((item,i) => {
+
+                                const ipoHtml = data.map((item, i) => {
                                     // The "Apply" button will only be rendered if category is '1' (Upcoming)
                                     const applyButtonHtml = category == 1
                                         ? `<a href="https://integrated.investments" class="apply-btn">Apply Now</a>`
@@ -842,9 +838,9 @@
                             <div class="ipo-card">
                             <div class="company-info" >
                                 <h4>${item.name}</h4>
-                                ${item.Refno ? 
-                                `<button type="button" id="Upd-${i + 1}" data-id="${item.Refno}" fname="${item.name}" class="btn ipo-btn download-pdf-btn" onclick="handleDownload(this)">Download</button>` 
-                                : ''}
+                                ${item.Refno ?
+                                            `<button type="button" id="Upd-${i + 1}" data-id="${item.Refno}" fname="${item.name}" class="btn ipo-btn download-pdf-btn" onclick="handleDownload(this)">Download</button>`
+                                            : ''}
 
                                 </div>
                                 <div class="ipo-body">
@@ -869,7 +865,7 @@
                                 }).join("");
 
                                 ipoContentArea.innerHTML = ipoHtml;
-                                
+
                             }
                         }
 
@@ -925,104 +921,95 @@
 
     <script>
 
-    async function convertToPDF(Name, base64Images) 
-    {
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF({
-            orientation: 'portrait',    
-            unit: 'mm',
-            format: 'a4',
-            compress: true 
-        });
-
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
-        const margin = 15;
-        const maxWidth = pageWidth - 2 * margin;
-        let currentY = margin;
-        for (let i = 0; i < base64Images.length; i++) 
-        {
-            let imageData = base64Images[i].trim();
-
-            if (!imageData.startsWith('data:image')) {
-                let mimeType = 'image/jpeg';
-                if (imageData.startsWith('iVBORw0KGgo')) mimeType = 'image/png';
-                imageData = `data:${mimeType};base64,${imageData}`;
-            }
-            const img = new Image();
-            img.src = imageData;
-            await new Promise((resolve, reject) => {
-                img.onload = resolve;
-                img.onerror = () => reject(new Error(`Failed to load image ${i + 1}`));
+        async function convertToPDF(Name, base64Images) {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4',
+                compress: true
             });
 
-            const ratio = img.height / img.width;
-            let imgWidth = maxWidth;
-            let imgHeight = imgWidth * ratio;
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            const margin = 15;
+            const maxWidth = pageWidth - 2 * margin;
+            let currentY = margin;
+            for (let i = 0; i < base64Images.length; i++) {
+                let imageData = base64Images[i].trim();
 
-            if (currentY + imgHeight + margin > pageHeight) 
-            {
-                pdf.addPage();
-                currentY = margin;
+                if (!imageData.startsWith('data:image')) {
+                    let mimeType = 'image/jpeg';
+                    if (imageData.startsWith('iVBORw0KGgo')) mimeType = 'image/png';
+                    imageData = `data:${mimeType};base64,${imageData}`;
+                }
+                const img = new Image();
+                img.src = imageData;
+                await new Promise((resolve, reject) => {
+                    img.onload = resolve;
+                    img.onerror = () => reject(new Error(`Failed to load image ${i + 1}`));
+                });
+
+                const ratio = img.height / img.width;
+                let imgWidth = maxWidth;
+                let imgHeight = imgWidth * ratio;
+
+                if (currentY + imgHeight + margin > pageHeight) {
+                    pdf.addPage();
+                    currentY = margin;
+                }
+                pdf.addImage(imageData, 'JPEG', margin, currentY, imgWidth, imgHeight, undefined, 'FAST');
+                currentY += imgHeight + 15;
             }
-            pdf.addImage(imageData, 'JPEG', margin, currentY, imgWidth, imgHeight, undefined, 'FAST');
-            currentY += imgHeight + 15;
+            pdf.save(Name + '.pdf');
         }
-        pdf.save(Name + '.pdf');
-    }
 
 
-    async function handleDownload(element) 
-    {
-        const Refno = element.getAttribute('data-id');
-        const Row = element.getAttribute('id');
-        const FName = element.getAttribute('fname');
-        const existingFileData = element.getAttribute('Filedata');
-        if (existingFileData) 
-        {
-            const pdfData = JSON.parse(existingFileData);
-            const dataObject = pdfData.map(item => item.UploadAnalysisFile);
-            await convertToPDF(FName, dataObject);
-            return;
-        }
-        try     
-        {
-            const params = {
-                Mode: "IPOList",
-                Mobile: Refno,
-                Type:"4"
-            };
-            const queryString = new URLSearchParams(params).toString();
-            const baseUrl =Cdslapi;
-            const fullUrl = `${baseUrl}?${queryString}`;
-            const data = await fetchData(fullUrl);
-        
-            const parsedata = JSON.stringify(data);
-            element.setAttribute("Filedata", parsedata);
-
-            const dataObject = data.map(item => item.UploadAnalysisFile);
-            if (dataObject.length > 0) 
-            {
+        async function handleDownload(element) {
+            const Refno = element.getAttribute('data-id');
+            const Row = element.getAttribute('id');
+            const FName = element.getAttribute('fname');
+            const existingFileData = element.getAttribute('Filedata');
+            if (existingFileData) {
+                const pdfData = JSON.parse(existingFileData);
+                const dataObject = pdfData.map(item => item.UploadAnalysisFile);
                 await convertToPDF(FName, dataObject);
-            } 
-            else 
-            {
-                console.error("No image data found in API response");
+                return;
             }
-        } 
-        catch (error) 
-        {
-            console.error('Error loading or converting data:', error);
-        }
-    }
+            try {
+                const params = {
+                    Mode: "IPOList",
+                    Mobile: Refno,
+                    Type: "4"
+                };
+                const queryString = new URLSearchParams(params).toString();
+                const baseUrl = Cdslapi;
+                const fullUrl = `${baseUrl}?${queryString}`;
+                const data = await fetchData(fullUrl);
 
-    async function  fetchData(endpoint, params = {}) {
-        const response =await fetch(endpoint, {});
-        return await response.json();
-    }
+                const parsedata = JSON.stringify(data);
+                element.setAttribute("Filedata", parsedata);
+
+                const dataObject = data.map(item => item.UploadAnalysisFile);
+                if (dataObject.length > 0) {
+                    await convertToPDF(FName, dataObject);
+                }
+                else {
+                    console.error("No image data found in API response");
+                }
+            }
+            catch (error) {
+                console.error('Error loading or converting data:', error);
+            }
+        }
+
+        async function fetchData(endpoint, params = {}) {
+            const response = await fetch(endpoint, {});
+            return await response.json();
+        }
 
     </script>
-<script src="./assets/js/global-cta.js" defer></script>
+    <script src="./assets/js/global-cta.js" defer></script>
 </body>
 
 

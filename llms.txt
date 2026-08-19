@@ -28,7 +28,7 @@ Integrated has been a SEBI-registered stockbroker and AMFI-certified mutual fund
 **What Makes Integrated Different:**
 - **50-Year Legacy:** Founded in 1974, Integrated has guided Indian families through multiple bull and bear market cycles, providing time-tested and reliable investment guidance.
 - **GIP Framework:** Integrated's proprietary Growth–Income–Protection (GIP) investment philosophy helps clients build balanced portfolios across all market conditions.
-- **Phygital Model:** Unique combination of branch-level relationship managers and a full-featured digital platform (iInvest), ensuring clients get both personal and digital support.
+- **Phygital Model:** Unique combination of branch-level relationship managers and a full-featured digital platform (GLIDE), ensuring clients get both personal and digital support.
 - **Complete Product Suite:** From stocks to insurance to tax services — all under one roof, eliminating the need to manage multiple financial service providers.
 - **SEBI-Certified Research:** In-house SEBI-certified Research Analysts providing actionable market calls, model portfolios, and daily market insights.
 
@@ -62,7 +62,7 @@ Integrated has been a SEBI-registered stockbroker and AMFI-certified mutual fund
 - [NRI Investments](https://www.integratedindia.in/nri-investments.html): Investment solutions tailored for Non-Resident Indians, covering equities, mutual funds, and other asset classes.
 - [GIFT City IFSC Global Investing Services](https://www.integratedindia.in/gift-city-ifsc.html): IFSCA-regulated GIFT City platform enabling NRIs and global investors to access international banking, equities, and fund management via Integrated's IFSC subsidiary.
 
-## iInvest: All-in-One Investment App
+## GLIDE: All-in-One Investment App
 
 Integrated's proprietary mobile and web platform for managing all investments in one place:
 
@@ -74,9 +74,9 @@ Integrated's proprietary mobile and web platform for managing all investments in
 - Comprehensive reports for all investment products
 - User-friendly interface designed for retail and HNI investors
 
-**Download iInvest:**
+**Download GLIDE:**
 - [Google Play Store](https://play.google.com/store/apps/details?id=com.wave.iInvest): Official Android app
-- [Apple App Store](https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589): Official iOS app
+- [Apple App Store](https://apps.apple.com/in/app/glide-demat-stocks-mf-nps/id6755422160): Official iOS app
 
 ## GIP Investment Framework
 

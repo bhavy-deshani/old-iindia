@@ -745,39 +745,52 @@
             align-items: center;
             gap: 12px;
         }
+
         .gsc-maturity-label {
             font-size: 13px;
             opacity: .85;
             margin-bottom: 4px;
         }
+
         .gsc-maturity-value {
             font-size: 22px;
             font-weight: 700;
             line-height: 1.2;
         }
+
         .gsc-result-cols {
             display: flex;
             gap: 12px;
             margin-bottom: 14px;
         }
+
         .gsc-result-col-box {
             flex: 1;
             background: #f4f8ff;
             border-radius: 10px;
             padding: 12px 14px;
         }
+
         .gsc-result-col-label {
             font-size: 12px;
             color: #8a9bb5;
             margin-bottom: 4px;
         }
+
         .gsc-result-col-val {
             font-size: 15px;
             font-weight: 700;
             color: #1C355E;
         }
-        .gsc-result-col-val.green { color: #00ae42; }
-        .gsc-result-col-val.orange { color: #ff8c00; }
+
+        .gsc-result-col-val.green {
+            color: #00ae42;
+        }
+
+        .gsc-result-col-val.orange {
+            color: #ff8c00;
+        }
+
         .gsc-chart-wrap {
             position: relative;
             width: 180px;
@@ -794,23 +807,27 @@
             pointer-events: none;
             z-index: 2;
         }
+
         .gsc-chart-label {
             display: block;
             font-size: 11px;
             color: #8a9bb5;
             margin-bottom: 2px;
         }
+
         .gsc-chart-value {
             font-size: 14px;
             font-weight: 700;
             color: #1C355E;
         }
+
         .gsc-legend {
             display: flex;
             gap: 20px;
             justify-content: center;
             margin-bottom: 14px;
         }
+
         .gsc-legend-item {
             display: flex;
             align-items: center;
@@ -818,17 +835,20 @@
             font-size: 12px;
             color: #3a4f6e;
         }
+
         .gsc-legend-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             flex-shrink: 0;
         }
+
         .gsc-divider {
             border: none;
             border-top: 1px solid #eaf0fb;
             margin: 4px 0 12px;
         }
+
         .gsc-result-row {
             display: flex;
             justify-content: space-between;
@@ -836,21 +856,28 @@
             padding: 6px 0;
             border-bottom: 1px solid #f0f4fb;
         }
-        .gsc-result-row:last-child { border-bottom: none; }
+
+        .gsc-result-row:last-child {
+            border-bottom: none;
+        }
+
         .gsc-result-label {
             font-size: 13px;
             color: #3a4f6e;
         }
+
         .gsc-result-val {
             font-size: 13px;
             font-weight: 600;
             color: #1C355E;
         }
+
         .gsc-result-val.highlight {
             color: #005CB9;
             font-size: 14px;
             font-weight: 700;
         }
+
         .gsc-cta-btn {
             display: block;
             width: 100%;
@@ -865,6 +892,7 @@
             margin-top: 20px;
             transition: background 0.2s, transform 0.15s;
         }
+
         .gsc-cta-btn:hover {
             background: #005CB9;
             color: #fff;
@@ -1324,7 +1352,8 @@
 
                             <!-- Line Chart -->
                             <div class="swp-chart-area mt-4 w-100">
-                                <div class="chart-title text-center mb-2" style="font-size: 14px; font-weight: 600; color: #1C355E;">Balance Over Time</div>
+                                <div class="chart-title text-center mb-2"
+                                    style="font-size: 14px; font-weight: 600; color: #1C355E;">Balance Over Time</div>
                                 <canvas id="swpLine" height="110"></canvas>
                             </div>
 
@@ -1486,16 +1515,16 @@
                             document.getElementById('stat_final').textContent = fmt(res.finalBalance);
 
                             var colInv = document.getElementById('col_stat_invested');
-                            if(colInv) colInv.textContent = fmt(investment);
-                            
+                            if (colInv) colInv.textContent = fmt(investment);
+
                             var colWithdrawn = document.getElementById('col_stat_withdrawn');
-                            if(colWithdrawn) colWithdrawn.textContent = fmt(res.totalWithdrawn);
-                            
+                            if (colWithdrawn) colWithdrawn.textContent = fmt(res.totalWithdrawn);
+
                             var mobFinal = document.getElementById('mobile_stat_final');
-                            if(mobFinal) mobFinal.textContent = fmt(res.finalBalance);
+                            if (mobFinal) mobFinal.textContent = fmt(res.finalBalance);
 
                             var desktopFinal = document.getElementById('desktop_stat_final');
-                            if(desktopFinal) desktopFinal.textContent = '₹' + fmt(Math.max(0, res.finalBalance));
+                            if (desktopFinal) desktopFinal.textContent = '₹' + fmt(Math.max(0, res.finalBalance));
 
                             waitForChartJS(function () { initCharts(res, investment, years); });
                         }
@@ -1657,7 +1686,7 @@
                         <h2 class="title tg-element-title mb-2 text-white">Start Your Investment Journey</h2>
                         <p>From planning to investing, manage your financial journey in one place.</p>
                         <div class="cta-store-wrapper">
-                            <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                            <a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
                                 target="_blank" class="cta-store-btn text-b">
                                 <i class="fab fa-google-play"></i>
                                 <div class="cta-store-text">
@@ -1665,8 +1694,8 @@
                                     <strong>Google Play</strong>
                                 </div>
                             </a>
-                            <a href="https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589" target="_blank"
-                                class="cta-store-btn text-b">
+                            <a href="https://apps.apple.com/in/app/glide-demat-stocks-mf-nps/id6755422160"
+                                target="_blank" class="cta-store-btn text-b">
                                 <i class="fab fa-apple"></i>
                                 <div class="cta-store-text">
                                     <span>Download on the</span>

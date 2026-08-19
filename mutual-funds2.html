@@ -963,10 +963,11 @@
 
         /* BUTTON */
 
-        .cta-store-wrapper  I {
-color: #1C355E ! IMPORTANT;
-}
-.cta-store-wrapper {
+        .cta-store-wrapper I {
+            color: #1C355E ! IMPORTANT;
+        }
+
+        .cta-store-wrapper {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
@@ -1903,7 +1904,7 @@ color: #1C355E ! IMPORTANT;
                         </p>
                         <div class="cta-store-wrapper text-b">
 
-                            <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                            <a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
                                 target="_blank" class="cta-store-btn cta-play-btn">
 
                                 <i class="fab fa-google-play text-b"></i>
@@ -1916,8 +1917,8 @@ color: #1C355E ! IMPORTANT;
                             </a>
 
 
-                            <a href="https://apps.apple.com/in/app/iinvest-from-integrated/id6446880589" target="_blank"
-                                class="cta-store-btn cta-apple-btn">
+                            <a href="https://apps.apple.com/in/app/glide-demat-stocks-mf-nps/id6755422160"
+                                target="_blank" class="cta-store-btn cta-apple-btn">
 
                                 <i class="fab fa-apple text-b"></i>
 
@@ -2071,217 +2072,217 @@ color: #1C355E ! IMPORTANT;
                 'Motilal Oswal Midcap Fund Direct Growth': { category: 'Mid Cap', tags: ['Equity', 'Mid Cap'], rating: 5.0, risk: 'Very High', minSip: '₹500', expenseRatio: '0.70%', nav: '₹116.1', fundStarted: '24-Feb-2014', fundSize: '₹33,609Cr', exitLoad: 'Exit load of 1%, if redeemed within 365 days.', returns: { '1Y': 6.4, '3Y': 29.6, '5Y': 35.3 }, pros: ['1.Consistently higher annualised returns than category average for the past 1Y, 3Y, 5Y and 10Y', '2.Lower expense ratio: 0.7%', '3.Higher alpha: 7.28 The fund has generated returns higher than benchmark - NIFTY Midcap 150 Total Return Index - in the last 3Y'], cons: 'Found nothing so far.', holdingAnalysis: { top5: '46%', top20: '83%', pe: '68.42', pb: '9.82', turnover: '35%', equity: '82.0%', cash: '18.0%' }, holdings: [{ name: 'Coforge Ltd.', assets: '10.5%' }, { name: 'Persistent Systems Ltd.', assets: '9.6%' }, { name: 'Trent Ltd.', assets: '9.4%' }, { name: 'Dixon Technologies (India) Ltd.', assets: '9.1%' }, { name: 'Kalyan Jewellers India Ltd.', assets: '7.6%' }, { name: 'Polycab India Ltd.', assets: '5.1%' }, { name: 'Kei Industries Ltd.', assets: '4.0%' }, { name: 'Bharti Hexacom Ltd.', assets: '4.0%' }, { name: 'Max Healthcare Institute Ltd.', assets: '3.8%' }, { name: 'Kaynes Technology India Ltd.', assets: '2.9%' }], fundManager: { name: 'Ajay Khandelwal', education: 'Mr. Khandelwal is B.com (H) and a qualified Chartered Accountant. He has also done MBA from Lancaster University, UK.', experience: 'Prior to joining Motilal Oswal Mutual Fund, he has worked with Canara Robeco Mutual Fund, BOI AXA Mutual Fund,, B&K Securities and Infosys.' }, aboutFund: { description: 'Motilal Oswal Mutual Fund started their mutual fund on 29/12/2009 and its managing total assets of ₹12,967 Cr. Its ranked at 19 as per total assets at end of 30th Sep 2017.', launchDate: '29 Dec 2009', custodian: 'Citibank NA', registrar: 'KFin Tech' } },
             };
             // ── COMPARE SECTION JS ──
-       const fundSearchInput1 = document.getElementById('fund-search-1');
-const fundSearchInput2 = document.getElementById('fund-search-2');
-const fundSearchInput3 = document.getElementById('fund-search-3');
-const searchResults1 = document.getElementById('search-results-1');
-const searchResults2 = document.getElementById('search-results-2');
-const searchResults3 = document.getElementById('search-results-3');
-const compareBtn = document.getElementById('compare-now-btn');
-const categorySelect = document.getElementById('compare-category-select');
-const addFundBtn = document.getElementById('add-fund-btn');
-const fundSlot2 = document.getElementById('fund-slot-2');
-const fundSlot3 = document.getElementById('fund-slot-3');
-const removeFund2 = document.getElementById('remove-fund-2');
-const removeFund3 = document.getElementById('remove-fund-3');
+            const fundSearchInput1 = document.getElementById('fund-search-1');
+            const fundSearchInput2 = document.getElementById('fund-search-2');
+            const fundSearchInput3 = document.getElementById('fund-search-3');
+            const searchResults1 = document.getElementById('search-results-1');
+            const searchResults2 = document.getElementById('search-results-2');
+            const searchResults3 = document.getElementById('search-results-3');
+            const compareBtn = document.getElementById('compare-now-btn');
+            const categorySelect = document.getElementById('compare-category-select');
+            const addFundBtn = document.getElementById('add-fund-btn');
+            const fundSlot2 = document.getElementById('fund-slot-2');
+            const fundSlot3 = document.getElementById('fund-slot-3');
+            const removeFund2 = document.getElementById('remove-fund-2');
+            const removeFund3 = document.getElementById('remove-fund-3');
 
-let selectedFund1 = null;
-let selectedFund2 = null;
-let selectedFund3 = null;
-let visibleSlots = 2;
+            let selectedFund1 = null;
+            let selectedFund2 = null;
+            let selectedFund3 = null;
+            let visibleSlots = 2;
 
-// ── Helpers ──
-function getFilteredFunds() {
-    const cat = categorySelect ? categorySelect.value : '';
-    return Object.keys(fundDetailsData).filter(n => !cat || fundDetailsData[n].category === cat);
-}
+            // ── Helpers ──
+            function getFilteredFunds() {
+                const cat = categorySelect ? categorySelect.value : '';
+                return Object.keys(fundDetailsData).filter(n => !cat || fundDetailsData[n].category === cat);
+            }
 
-function updateCompareButtonState() {
-    if (selectedFund1 && selectedFund2) {
-        compareBtn.classList.remove('disabled');
-    } else {
-        compareBtn.classList.add('disabled');
-    }
-}
+            function updateCompareButtonState() {
+                if (selectedFund1 && selectedFund2) {
+                    compareBtn.classList.remove('disabled');
+                } else {
+                    compareBtn.classList.add('disabled');
+                }
+            }
 
-function updateAddFundBtn() {
-    if (!addFundBtn) return;
-    const catSelected = categorySelect && categorySelect.value;
-    if (!catSelected || visibleSlots >= 3) {
-        addFundBtn.disabled = true;
-        addFundBtn.style.opacity = '0.4';
-        addFundBtn.style.cursor = 'not-allowed';
-    } else {
-        addFundBtn.disabled = false;
-        addFundBtn.style.opacity = '1';
-        addFundBtn.style.cursor = 'pointer';
-    }
-}
+            function updateAddFundBtn() {
+                if (!addFundBtn) return;
+                const catSelected = categorySelect && categorySelect.value;
+                if (!catSelected || visibleSlots >= 3) {
+                    addFundBtn.disabled = true;
+                    addFundBtn.style.opacity = '0.4';
+                    addFundBtn.style.cursor = 'not-allowed';
+                } else {
+                    addFundBtn.disabled = false;
+                    addFundBtn.style.opacity = '1';
+                    addFundBtn.style.cursor = 'pointer';
+                }
+            }
 
-function enableInput(el) {
-    if (!el) return;
-    el.disabled = false;
-    el.placeholder = 'Search Fund';
-    el.style.background = '#fff';
-    el.style.cursor = '';
-    el.style.color = '';
-}
+            function enableInput(el) {
+                if (!el) return;
+                el.disabled = false;
+                el.placeholder = 'Search Fund';
+                el.style.background = '#fff';
+                el.style.cursor = '';
+                el.style.color = '';
+            }
 
-function disableInput(el) {
-    if (!el) return;
-    el.disabled = true;
-    el.value = '';
-    el.placeholder = 'Select a category first';
-    el.style.background = '#f3f4f6';
-    el.style.cursor = 'not-allowed';
-    el.style.color = '#9ca3af';
-}
+            function disableInput(el) {
+                if (!el) return;
+                el.disabled = true;
+                el.value = '';
+                el.placeholder = 'Select a category first';
+                el.style.background = '#f3f4f6';
+                el.style.cursor = 'not-allowed';
+                el.style.color = '#9ca3af';
+            }
 
-// ── Category change ──
-if (categorySelect) {
-    categorySelect.addEventListener('change', () => {
-        selectedFund1 = selectedFund2 = selectedFund3 = null;
-        visibleSlots = 2; // 2 rakhho, 1 nahi
-        if (fundSlot2) {
-            fundSlot2.style.display = 'flex';
-            fundSlot2.style.flexDirection = 'column';
-            fundSlot2.style.flex = '1.5';
-        }
-        if (fundSlot3) fundSlot3.style.display = 'none';
-        [searchResults1, searchResults2, searchResults3].forEach(el => { if (el) el.style.display = 'none'; });
+            // ── Category change ──
+            if (categorySelect) {
+                categorySelect.addEventListener('change', () => {
+                    selectedFund1 = selectedFund2 = selectedFund3 = null;
+                    visibleSlots = 2; // 2 rakhho, 1 nahi
+                    if (fundSlot2) {
+                        fundSlot2.style.display = 'flex';
+                        fundSlot2.style.flexDirection = 'column';
+                        fundSlot2.style.flex = '1.5';
+                    }
+                    if (fundSlot3) fundSlot3.style.display = 'none';
+                    [searchResults1, searchResults2, searchResults3].forEach(el => { if (el) el.style.display = 'none'; });
 
-        if (categorySelect.value) {
-            enableInput(fundSearchInput1);
-            enableInput(fundSearchInput2);
-        } else {
-            disableInput(fundSearchInput1);
-            disableInput(fundSearchInput2);
-        }
-        disableInput(fundSearchInput3);
+                    if (categorySelect.value) {
+                        enableInput(fundSearchInput1);
+                        enableInput(fundSearchInput2);
+                    } else {
+                        disableInput(fundSearchInput1);
+                        disableInput(fundSearchInput2);
+                    }
+                    disableInput(fundSearchInput3);
 
-        updateCompareButtonState();
-        updateAddFundBtn();
-    });
-}
-
-// ── Add another fund button ──
-if (addFundBtn) {
-    addFundBtn.addEventListener('click', () => {
-        if (visibleSlots === 1 && fundSlot2) {
-            fundSlot2.style.display = 'flex';
-            fundSlot2.style.flexDirection = 'column';
-            fundSlot2.style.flex = '1.5';
-            enableInput(fundSearchInput2);
-            visibleSlots = 2;
-        } else if (visibleSlots === 2 && fundSlot3) {
-            fundSlot3.style.display = 'flex';
-            fundSlot3.style.flexDirection = 'column';
-            fundSlot3.style.flex = '1.5';
-            enableInput(fundSearchInput3);
-            visibleSlots = 3;
-        }
-        updateAddFundBtn();
-    });
-}
-
-// ── Remove fund 2 ──
-if (removeFund2) {
-    removeFund2.addEventListener('click', () => {
-        selectedFund2 = null;
-        if (fundSearchInput2) fundSearchInput2.value = '';
-        if (searchResults2) searchResults2.style.display = 'none';
-        if (visibleSlots === 3 && fundSlot3 && fundSlot3.style.display !== 'none') {
-            selectedFund2 = selectedFund3;
-            if (fundSearchInput2) fundSearchInput2.value = fundSearchInput3 ? fundSearchInput3.value : '';
-            selectedFund3 = null;
-            if (fundSearchInput3) fundSearchInput3.value = '';
-            fundSlot3.style.display = 'none';
-            visibleSlots = 2; // Fund 2 hamesha visible rahe
-        }
-        // Fund 2 hide NAHI karo - sirf value clear karo
-        updateCompareButtonState();
-        updateAddFundBtn();
-    });
-}
-
-// ── Remove fund 3 ──
-if (removeFund3) {
-    removeFund3.addEventListener('click', () => {
-        selectedFund3 = null;
-        if (fundSearchInput3) fundSearchInput3.value = '';
-        if (searchResults3) searchResults3.style.display = 'none';
-        if (fundSlot3) fundSlot3.style.display = 'none';
-        disableInput(fundSearchInput3);
-        visibleSlots = 2;
-        updateCompareButtonState();
-        updateAddFundBtn();
-    });
-}
-
-// ── Search input setup ──
-function setupSearchInput(inputEl, resultsEl, selectionVarSetter, otherSelectionsGetter) {
-    if (!inputEl || !resultsEl) return;
-    inputEl.addEventListener('input', () => {
-        const term = inputEl.value.toLowerCase().trim();
-        resultsEl.innerHTML = '';
-        if (term.length < 1) { resultsEl.style.display = 'none'; return; }
-
-        const others = otherSelectionsGetter();
-        const matches = getFilteredFunds().filter(n =>
-            n.toLowerCase().includes(term) && !others.includes(n)
-        );
-
-        if (matches.length > 0) {
-            matches.forEach(name => {
-                const item = document.createElement('div');
-                item.className = 'search-result-item';
-                item.innerHTML = `<div style="font-weight:500;font-size:0.88rem;">${name}</div><small style="color:#6b7280;">${fundDetailsData[name]?.category || ''}</small>`;
-                item.addEventListener('click', () => {
-                    inputEl.value = name;
-                    selectionVarSetter(name);
-                    resultsEl.style.display = 'none';
                     updateCompareButtonState();
+                    updateAddFundBtn();
                 });
-                resultsEl.appendChild(item);
+            }
+
+            // ── Add another fund button ──
+            if (addFundBtn) {
+                addFundBtn.addEventListener('click', () => {
+                    if (visibleSlots === 1 && fundSlot2) {
+                        fundSlot2.style.display = 'flex';
+                        fundSlot2.style.flexDirection = 'column';
+                        fundSlot2.style.flex = '1.5';
+                        enableInput(fundSearchInput2);
+                        visibleSlots = 2;
+                    } else if (visibleSlots === 2 && fundSlot3) {
+                        fundSlot3.style.display = 'flex';
+                        fundSlot3.style.flexDirection = 'column';
+                        fundSlot3.style.flex = '1.5';
+                        enableInput(fundSearchInput3);
+                        visibleSlots = 3;
+                    }
+                    updateAddFundBtn();
+                });
+            }
+
+            // ── Remove fund 2 ──
+            if (removeFund2) {
+                removeFund2.addEventListener('click', () => {
+                    selectedFund2 = null;
+                    if (fundSearchInput2) fundSearchInput2.value = '';
+                    if (searchResults2) searchResults2.style.display = 'none';
+                    if (visibleSlots === 3 && fundSlot3 && fundSlot3.style.display !== 'none') {
+                        selectedFund2 = selectedFund3;
+                        if (fundSearchInput2) fundSearchInput2.value = fundSearchInput3 ? fundSearchInput3.value : '';
+                        selectedFund3 = null;
+                        if (fundSearchInput3) fundSearchInput3.value = '';
+                        fundSlot3.style.display = 'none';
+                        visibleSlots = 2; // Fund 2 hamesha visible rahe
+                    }
+                    // Fund 2 hide NAHI karo - sirf value clear karo
+                    updateCompareButtonState();
+                    updateAddFundBtn();
+                });
+            }
+
+            // ── Remove fund 3 ──
+            if (removeFund3) {
+                removeFund3.addEventListener('click', () => {
+                    selectedFund3 = null;
+                    if (fundSearchInput3) fundSearchInput3.value = '';
+                    if (searchResults3) searchResults3.style.display = 'none';
+                    if (fundSlot3) fundSlot3.style.display = 'none';
+                    disableInput(fundSearchInput3);
+                    visibleSlots = 2;
+                    updateCompareButtonState();
+                    updateAddFundBtn();
+                });
+            }
+
+            // ── Search input setup ──
+            function setupSearchInput(inputEl, resultsEl, selectionVarSetter, otherSelectionsGetter) {
+                if (!inputEl || !resultsEl) return;
+                inputEl.addEventListener('input', () => {
+                    const term = inputEl.value.toLowerCase().trim();
+                    resultsEl.innerHTML = '';
+                    if (term.length < 1) { resultsEl.style.display = 'none'; return; }
+
+                    const others = otherSelectionsGetter();
+                    const matches = getFilteredFunds().filter(n =>
+                        n.toLowerCase().includes(term) && !others.includes(n)
+                    );
+
+                    if (matches.length > 0) {
+                        matches.forEach(name => {
+                            const item = document.createElement('div');
+                            item.className = 'search-result-item';
+                            item.innerHTML = `<div style="font-weight:500;font-size:0.88rem;">${name}</div><small style="color:#6b7280;">${fundDetailsData[name]?.category || ''}</small>`;
+                            item.addEventListener('click', () => {
+                                inputEl.value = name;
+                                selectionVarSetter(name);
+                                resultsEl.style.display = 'none';
+                                updateCompareButtonState();
+                            });
+                            resultsEl.appendChild(item);
+                        });
+                        resultsEl.style.display = 'block';
+                    } else {
+                        resultsEl.innerHTML = '<div style="padding:0.75rem 1.25rem;color:#9ca3af;font-size:0.85rem;">No funds found</div>';
+                        resultsEl.style.display = 'block';
+                    }
+                });
+                inputEl.addEventListener('change', () => {
+                    if (!getFilteredFunds().includes(inputEl.value)) {
+                        selectionVarSetter(null);
+                        updateCompareButtonState();
+                    }
+                });
+            }
+
+            // ── Fund 1: auto-show Fund 2 on selection ──
+            setupSearchInput(fundSearchInput1, searchResults1, n => {
+                selectedFund1 = n;
+            }, () => [selectedFund2, selectedFund3].filter(Boolean));
+
+            setupSearchInput(fundSearchInput2, searchResults2, n => { selectedFund2 = n; }, () => [selectedFund1, selectedFund3].filter(Boolean));
+            setupSearchInput(fundSearchInput3, searchResults3, n => { selectedFund3 = n; }, () => [selectedFund1, selectedFund2].filter(Boolean));
+
+            // ── Close dropdowns on outside click ──
+            document.addEventListener('click', e => {
+                if (!e.target.closest('.search-wrapper')) {
+                    [searchResults1, searchResults2, searchResults3].forEach(el => { if (el) el.style.display = 'none'; });
+                }
             });
-            resultsEl.style.display = 'block';
-        } else {
-            resultsEl.innerHTML = '<div style="padding:0.75rem 1.25rem;color:#9ca3af;font-size:0.85rem;">No funds found</div>';
-            resultsEl.style.display = 'block';
-        }
-    });
-    inputEl.addEventListener('change', () => {
-        if (!getFilteredFunds().includes(inputEl.value)) {
-            selectionVarSetter(null);
-            updateCompareButtonState();
-        }
-    });
-}
 
-// ── Fund 1: auto-show Fund 2 on selection ──
-setupSearchInput(fundSearchInput1, searchResults1, n => {
-    selectedFund1 = n;
-}, () => [selectedFund2, selectedFund3].filter(Boolean));
-
-setupSearchInput(fundSearchInput2, searchResults2, n => { selectedFund2 = n; }, () => [selectedFund1, selectedFund3].filter(Boolean));
-setupSearchInput(fundSearchInput3, searchResults3, n => { selectedFund3 = n; }, () => [selectedFund1, selectedFund2].filter(Boolean));
-
-// ── Close dropdowns on outside click ──
-document.addEventListener('click', e => {
-    if (!e.target.closest('.search-wrapper')) {
-        [searchResults1, searchResults2, searchResults3].forEach(el => { if (el) el.style.display = 'none'; });
-    }
-});
-
-// ── Compare Now → navigate ──
-compareBtn.addEventListener('click', () => {
-    const funds = [selectedFund1, selectedFund2, selectedFund3].filter(Boolean);
-    if (funds.length >= 2) {
-        const encoded = funds.map(f => encodeURIComponent(f.replace(/ /g, '-')));
-        window.location.href = `compare-funds.html#${encoded.join('|')}`;
-    }
-});
-});
+            // ── Compare Now → navigate ──
+            compareBtn.addEventListener('click', () => {
+                const funds = [selectedFund1, selectedFund2, selectedFund3].filter(Boolean);
+                if (funds.length >= 2) {
+                    const encoded = funds.map(f => encodeURIComponent(f.replace(/ /g, '-')));
+                    window.location.href = `compare-funds.html#${encoded.join('|')}`;
+                }
+            });
+        });
     </script>
 </body>
 

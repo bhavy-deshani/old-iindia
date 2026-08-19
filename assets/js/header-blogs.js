@@ -7,7 +7,25 @@ class Header {
         // this.element.style.position = "fixed"; // Ensure it is fixed
         this.element.innerHTML = `
 
- <header>
+<header>
+     <div class="header-top border-bottom py-2 d-none d-lg-block bg-white">
+        <div class="container custom-container d-flex justify-content-between align-items-center gap-4">
+            <div class="d-flex align-items-center gap-4">
+            <a href="mailto:customercare@integratedindia.in" class="text-secondary text-decoration-none d-flex align-items-center gap-2" style="font-size: 13px; font-weight: 500;">
+                <i class="fas fa-envelope" style="color: #00ae42;"></i> customercare@integratedindia.in
+            </a>
+                <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 13px; font-weight: 500;">
+                    <i class="fas fa-phone" style="color: #00ae42; margin-right: 4px;"></i>
+                    <a href="tel:04428143045" class="text-secondary text-decoration-none hover-text-primary">044 - 28143045</a>
+                    <span>/</span>
+                    <a href="tel:04428143046" class="text-secondary text-decoration-none hover-text-primary">46</a>
+                </div>
+            </div>
+             <a href="#main-content" class="skip-link btn btn-dark rounded-pill py-1 px-3 d-flex align-items-center gap-2" style="font-size: 11px; font-weight: 700; background-color: #1a2a36; border-color: #1a2a36; letter-spacing: 0.5px; text-decoration: none;">
+                <i class="far fa-dot-circle text-white"></i> SKIP TO MAIN CONTENT
+            </a>
+        </div>
+    </div>
             <div id="sticky-header" class="tg-header__area">
                 <div class="container custom-container">
                     <div class="row">
@@ -448,7 +466,7 @@ class Header {
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
                                                                             src="../assets/img/daily-market.jpg"
-                                                                            alt="Austin, texas" title="Austin, texas">
+                                                                            alt="Daily Market Insights" title="Daily Market Insights">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Daily Market
@@ -465,8 +483,8 @@ class Header {
                                                                 <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
-                                                                            src="../assets/img/equity-f-o.jpg" alt=""
-                                                                            title="">
+                                                                            src="../assets/img/equity-f-o.jpg" alt="Equity/F&O"
+                                                                            title="Equity/F&O">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Equity/F&O
@@ -482,7 +500,7 @@ class Header {
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
                                                                             src="../assets/img/trading_strategy.jpg"
-                                                                            alt="" title="">
+                                                                            alt="Trading Strategy" title="Trading Strategy">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Trading
@@ -497,8 +515,8 @@ class Header {
                                                                 <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
-                                                                            src="../assets/img/stellar_picks.jpg" alt=""
-                                                                            title="">
+                                                                            src="../assets/img/stellar_picks.jpg" alt="Stellar Picks"
+                                                                            title="Stellar Picks">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Stellar Picks
@@ -515,7 +533,7 @@ class Header {
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
                                                                             src="../assets/img/technical_reports.jpg"
-                                                                            alt="" title="">
+                                                                            alt="Technical Reports" title="Technical Reports">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Technical
@@ -531,7 +549,7 @@ class Header {
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
                                                                             src="../assets/img/special_reports.jpg"
-                                                                            alt="" title="">
+                                                                            alt="Special Reports" title="Special Reports">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Special
@@ -546,8 +564,8 @@ class Header {
                                                                 <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                     <div class="m-y">
                                                                         <img loading="lazy"
-                                                                            src="../assets/img/basket.jpg" alt=""
-                                                                            title="">
+                                                                            src="../assets/img/basket.jpg" alt="Basket"
+                                                                            title="Basket">
                                                                     </div>
                                                                     <div class="my-auto">
                                                                         <p class=" m-0 fs--14 p-0 fw-bold">Basket</p>
@@ -674,7 +692,7 @@ class Header {
                                                     <div class="row row-cols-1 ">
                                                         <div class="col">
                                                             <!-- //New Altered -->
-                                                            <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                                                            <a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
                                                                 id="app-link2" class="p-0 m-0 text-b">
                                                                 <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                     <div class="m-y">
@@ -1642,7 +1660,7 @@ class Header {
 
         // ── Inject a mobile accessibility button next to the hamburger ───────────
         const mobileNavToggler = document.querySelector('.mobile-nav-toggler');
-        
+
 
         if (toggleBtn) toggleBtn.addEventListener('click', (e) => { e.stopPropagation(); openPanel(); });
         sideTab.addEventListener('click', (e) => { e.stopPropagation(); openPanel(); });
@@ -1663,7 +1681,7 @@ class Header {
         });
 
         // Profile: Vision — high contrast + bigger text + cursor
-        document.getElementById('acc-profile-vision').addEventListener('click', function() {
+        document.getElementById('acc-profile-vision').addEventListener('click', function () {
             resetAll();
             this.classList.add('acc-active');
             applyContrast(true);
@@ -1672,7 +1690,7 @@ class Header {
             saveSettings();
         });
         // Profile: Motor — large cursor + bigger text
-        document.getElementById('acc-profile-motor').addEventListener('click', function() {
+        document.getElementById('acc-profile-motor').addEventListener('click', function () {
             resetAll();
             this.classList.add('acc-active');
             applyBiggerText(true);
@@ -1680,7 +1698,7 @@ class Header {
             saveSettings();
         });
         // Profile: Cognitive — dyslexia + line height + text spacing
-        document.getElementById('acc-profile-cognitive').addEventListener('click', function() {
+        document.getElementById('acc-profile-cognitive').addEventListener('click', function () {
             resetAll();
             this.classList.add('acc-active');
             applyDyslexia(true);
@@ -2013,3 +2031,11 @@ class Header {
 
 const header = new Header();
 header.render();
+
+// Automatically add ID to main tag for 'Skip to main content' link to work
+document.addEventListener('DOMContentLoaded', () => {
+    const mainContent = document.querySelector('main');
+    if (mainContent && !mainContent.id) {
+        mainContent.id = 'main-content';
+    }
+});

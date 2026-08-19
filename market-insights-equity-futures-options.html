@@ -28,6 +28,13 @@
             text-align: center;
         }
 
+        .accordion-button:focus,
+        .accordion-button:focus-visible {
+            outline: 3px solid #00ae42 !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 4px rgba(0, 174, 66, 0.3) !important;
+        }
+
         .active-main-tab {
             color: #0ba46c;
             font-weight: bold;
@@ -41,32 +48,34 @@
             background: #0ba46c;
             margin-top: 5px;
         }
-		td
-		{
-			text-align:justify;
-		}
-		 .Centerlink
-        {
-            text-align:center;
+
+        td {
+            text-align: justify;
+        }
+
+        .Centerlink {
+            text-align: center;
             cursor: pointer;
             margin-bottom: 5%;
-			font-size:1.5rem !important;
+            font-size: 1.5rem !important;
         }
-		.Disclaim :hover
-        {
-			font-size:2rem !important;
-			color: #00ae42 !important ;
-		}
+
+        .Disclaim :hover {
+            font-size: 2rem !important;
+            color: #00ae42 !important;
+        }
 
         /* Fix: Select dropdown z-index - site na badha elements ni upar open thay */
         .date-picker {
             position: relative;
             z-index: 9999;
         }
+
         .date-picker .d-flex {
             position: relative;
             z-index: 9999;
         }
+
         #month-select,
         #year-select {
             position: relative;
@@ -78,16 +87,19 @@
             -moz-appearance: none !important;
             appearance: none !important;
         }
+
         #month-select:focus,
         #year-select:focus {
             z-index: 9999;
             outline: 2px solid #0ba46c;
         }
+
         /* Ensure no overlay/shape blocks the selects */
         .breadcrumb__shape,
         .breadcrumb__shape img {
             z-index: 1 !important;
         }
+
         /* Section ni andar pan select upar rahe */
         .services__area-six {
             position: relative;
@@ -100,6 +112,7 @@
             flex: 1;
             z-index: 9999;
         }
+
         .custom-select-box {
             background: #fff;
             border: 1px solid #ced4da;
@@ -110,6 +123,7 @@
             position: relative;
             z-index: 9999;
         }
+
         .custom-select-box::after {
             content: "";
             position: absolute;
@@ -121,6 +135,7 @@
             border-top: 6px solid #555;
             pointer-events: none;
         }
+
         .custom-select-list {
             position: absolute;
             top: 100%;
@@ -135,40 +150,41 @@
             list-style: none;
             margin: 2px 0 0 0;
             padding: 4px 0;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
         }
+
         .custom-select-list li {
             padding: 7px 14px;
             cursor: pointer;
             font-size: 0.97rem;
             color: #212529;
         }
+
         .custom-select-list li:hover,
         .custom-select-list li.active {
             background: #0ba46c;
             color: #fff;
         }
-		
     </style>
-<script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
-	<!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PT9GLCS');</script>
+    <!-- End Google Tag Manager -->
 
 
 
 </head>
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
-			style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT9GLCS" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main>
         <!-- breadcrumb-area -->
         <section class="breadcrumb__area breadcrumb__bg" data-background="assets/img/bg/research.png">
@@ -182,7 +198,8 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                    <li class="breadcrumb-item" aria-current="page"> Equity Futures & Options: Daily Market Insights </li>
+                                    <li class="breadcrumb-item" aria-current="page"> Equity Futures & Options: Daily
+                                        Market Insights </li>
                                 </ol>
                             </nav>
                         </div>
@@ -207,7 +224,7 @@
                 <div class=" col-md-6  m-auto">
 
                     <!-- Date Picker -->
-                     <div class="date-picker text-center">
+                    <div class="date-picker text-center">
                         <label class="form-label">Select Month & Year:</label>
                         <div class="d-flex justify-content-center gap-2 w-50 m-auto">
 
@@ -233,14 +250,19 @@
 
                             <!-- Custom Month Dropdown -->
                             <div class="custom-select-wrap" id="month-wrap">
-                                <div class="custom-select-box form-select" id="month-display" style="cursor:pointer;user-select:none;">April</div>
-                                <ul class="custom-select-list" id="month-list" style="display:none;"></ul>
+                                <div class="custom-select-box form-select" id="month-display" tabindex="0"
+                                    role="combobox" aria-expanded="false" style="cursor:pointer;user-select:none;">April
+                                </div>
+                                <ul class="custom-select-list" id="month-list" style="display:none;" role="listbox">
+                                </ul>
                             </div>
 
                             <!-- Custom Year Dropdown -->
                             <div class="custom-select-wrap" id="year-wrap">
-                                <div class="custom-select-box form-select" id="year-display" style="cursor:pointer;user-select:none;">2026</div>
-                                <ul class="custom-select-list" id="year-list" style="display:none;"></ul>
+                                <div class="custom-select-box form-select" id="year-display" tabindex="0"
+                                    role="combobox" aria-expanded="false" style="cursor:pointer;user-select:none;">2026
+                                </div>
+                                <ul class="custom-select-list" id="year-list" style="display:none;" role="listbox"></ul>
                             </div>
 
                         </div>
@@ -256,13 +278,15 @@
                                 <!-- Daily Tabs -->
                                 <ul class="nav nav-tabs justify-content-start" id="dailyTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="Intraday-tab" onclick="categorywisechange('intraday','Intraday-body')" data-bs-toggle="tab"
-                                            data-bs-target="#Intraday" type="button" role="tab" aria-controls="Intraday"
-                                            aria-selected="true">
+                                        <button class="nav-link active" id="Intraday-tab"
+                                            onclick="categorywisechange('intraday','Intraday-body')"
+                                            data-bs-toggle="tab" data-bs-target="#Intraday" type="button" role="tab"
+                                            aria-controls="Intraday" aria-selected="true">
                                             Intraday</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="Positional-tab" data-bs-toggle="tab" onclick="categorywisechange('positional','Positional-body')"
+                                        <button class="nav-link" id="Positional-tab" data-bs-toggle="tab"
+                                            onclick="categorywisechange('positional','Positional-body')"
                                             data-bs-target="#Positional" type="button" role="tab"
                                             aria-controls="Positional" aria-selected="false">
                                             Positional</button>
@@ -291,7 +315,7 @@
                                                 <tr>
                                                     <th>Date</th>
                                                     <th>Titles</th>
-													 <th>Valid Upto</th>
+                                                    <th>Valid Upto</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="Positional-body"></tbody>
@@ -303,150 +327,147 @@
                     </div>
                 </div>
             </div>
-			<div class="Centerlink" >
-                    <h4 class="Disclaim"><a class="mx-1 fw-semibold text-b mb-2" href="disclaimer.html">Disclaimer - Click Here</a></h4>
-                </div>
+            <div class="Centerlink">
+                <h4 class="Disclaim"><a class="mx-1 fw-semibold text-b mb-2" href="disclaimer.html">Disclaimer - Click
+                        Here</a></h4>
+            </div>
 
         </section>
         <section>
             <div class="container mt-4">
-				
-			
+
+
                 <h2 class="text-center fw-bold pb-4">Grievance Redressal / Escalation Matrix - Research Analysts</h2>
                 <div class="row flex-center">
                     <div class="col-lg-10 m-auto">
                         <div class="accordion" id="accordionExample">
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item mb-2">
-                                    <h5 class="accordion-header" id="heading1">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true"
-                                            aria-controls="collapse1">
-                                            <span class="mb-0 fw-bold text-start  text-1000">Customer Care
-                                            </span>
-                                            <!-- <span class="accordion-icon"></span> -->
-                                        </button>
-                                    </h5>
-                                    <div class="accordion-collapse collapse " id="collapse1" aria-labelledby="heading1"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
-                                            <p><b>Contact Person:</b> Ms Anitha K & Ms Sridevi N</p>
-                                            <p><b>Contact No:</b> <a href="tel:044-28140646">044-28140646</a></p>
-                                            <p><b>Email Id:</b> <a
-                                                    href="mailto:eshare@integratedindia.in">eshare@integratedindia.in</a>
-                                            </p>
-                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
-                                                T.Nagar, Chennai - 600017</p>
-                                            <p><b>Working hours:</b> MMonday – Friday 9:00 am to 12:30 pm. & 2:00 pm to
-                                                6:00 pm.
-                                                Saturday 9:30 am to 1:30 pm.
-                                            </p>
-                                        </div>
+                            <div class="accordion-item mb-2">
+                                <h5 class="accordion-header" id="heading1">
+                                    <button class="accordion-button collapsed" type="button" tabindex="0"
+                                        data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                                        aria-controls="collapse1">
+                                        <span class="mb-0 fw-bold text-start text-1000">Customer Care
+                                        </span>
+                                    </button>
+                                </h5>
+                                <div class="accordion-collapse collapse" id="collapse1" aria-labelledby="heading1"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                        <p><b>Contact Person:</b> Ms Anitha K & Ms Sridevi N</p>
+                                        <p><b>Contact No:</b> <a href="tel:044-28140646">044-28140646</a></p>
+                                        <p><b>Email Id:</b> <a
+                                                href="mailto:eshare@integratedindia.in">eshare@integratedindia.in</a>
+                                        </p>
+                                        <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
+                                            T.Nagar, Chennai - 600017</p>
+                                        <p><b>Working hours:</b> MMonday – Friday 9:00 am to 12:30 pm. & 2:00 pm to
+                                            6:00 pm.
+                                            Saturday 9:30 am to 1:30 pm.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="accordion-item mb-2">
-                                    <h5 class="" id="heading2">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true"
-                                            aria-controls="collapse2"><span
-                                                class="mb-0 fw-bold text-start  text-1000">Head of Customer care
-                                            </span></button>
-                                    </h5>
-                                    <div class="accordion-collapse collapse" id="collapse2" aria-labelledby="heading2"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
-                                            <p><b>Contact Person:</b> Ms Anusha</p>
-                                            <p><b>Contact No:</b> <a href="tel:044-28140646">044-28140646</a></p>
-                                            <p><b>Email Id:</b> <a
-                                                    href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
-                                            </p>
-                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
-                                                T.Nagar, Chennai - 600017</p>
-                                            <p><b>Working hours:</b> Monday – Friday
-                                                9:00 am to 12:30 pm.
-                                                2:00 pm to 6:00 pm.
-                                                Saturday
-                                                9:30 am to 1:30 pm.</p>
-                                        </div>
+                            </div>
+                            <div class="accordion-item mb-2">
+                                <h5 class="accordion-header" id="heading2">
+                                    <button class="accordion-button collapsed" type="button" tabindex="0"
+                                        data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                        aria-controls="collapse2"><span class="mb-0 fw-bold text-start text-1000">Head
+                                            of Customer care
+                                        </span></button>
+                                </h5>
+                                <div class="accordion-collapse collapse" id="collapse2" aria-labelledby="heading2"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                        <p><b>Contact Person:</b> Ms Anusha</p>
+                                        <p><b>Contact No:</b> <a href="tel:044-28140646">044-28140646</a></p>
+                                        <p><b>Email Id:</b> <a
+                                                href="mailto:customercare@integratedindia.in">customercare@integratedindia.in</a>
+                                        </p>
+                                        <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
+                                            T.Nagar, Chennai - 600017</p>
+                                        <p><b>Working hours:</b> Monday – Friday
+                                            9:00 am to 12:30 pm.
+                                            2:00 pm to 6:00 pm.
+                                            Saturday
+                                            9:30 am to 1:30 pm.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item mb-2">
-                                    <h5 class="accordion-header" id="heading3">
-                                        <button class="accordion-button collapsed" type="button"    
-                                            data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true"
-                                            aria-controls="collapse3"><span
-                                                class="mb-0 fw-bold text-start  text-1000">Compliance Officer
-                                            </span></button>
-                                    </h5>
-                                    <div class="accordion-collapse collapse" id="collapse3" aria-labelledby="heading3"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
-                                            <p><b>Contact Person:</b> Ms Prabha V</p>
-                                            <p><b>Contact No:</b> <a href="tel:044-281406457">044-281406457</a></p>
-                                            <p><b>Email Id:</b> <a
-                                                    href="mailto:compliance@integratedindia.in">compliance@integratedindia.in</a>
-                                            </p>
-                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
-                                                T.Nagar, Chennai - 600017</p>
-                                            <p><b>Working hours:</b> Monday – Friday
-                                                9:00 am to 12:30 pm.
-                                                2:00 pm to 6:00 pm.
-                                                Saturday
-                                                9:30 am to 1:30 pm.</p>
-                                        </div>
+                            </div>
+                            <div class="accordion-item mb-2">
+                                <h5 class="accordion-header" id="heading3">
+                                    <button class="accordion-button collapsed" type="button" tabindex="0"
+                                        data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                                        aria-controls="collapse3"><span
+                                            class="mb-0 fw-bold text-start text-1000">Compliance Officer
+                                        </span></button>
+                                </h5>
+                                <div class="accordion-collapse collapse" id="collapse3" aria-labelledby="heading3"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                        <p><b>Contact Person:</b> Ms Prabha V</p>
+                                        <p><b>Contact No:</b> <a href="tel:044-281406457">044-281406457</a></p>
+                                        <p><b>Email Id:</b> <a
+                                                href="mailto:compliance@integratedindia.in">compliance@integratedindia.in</a>
+                                        </p>
+                                        <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
+                                            T.Nagar, Chennai - 600017</p>
+                                        <p><b>Working hours:</b> Monday – Friday
+                                            9:00 am to 12:30 pm.
+                                            2:00 pm to 6:00 pm.
+                                            Saturday
+                                            9:30 am to 1:30 pm.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item mb-2">
-                                    <h5 class="accordion-header" id="heading4">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true"
-                                            aria-controls="collapse4"><span
-                                                class="mb-0 fw-bold text-start  text-1000">CEO
-                                            </span></button>
-                                    </h5>
-                                    <div class="accordion-collapse collapse" id="collapse4" aria-labelledby="heading4"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
-                                            <p><b>Contact Person:</b> Sriram V</p>
-                                            <p><b>Contact No:</b> <a href="tel:044-28143045">044-28143045</a></p>
-                                            <p><b>Email Id:</b> <a
-                                                    href="mailto:ceo@integratedindia.in">ceo@integratedindia.in</a>
-                                            </p>
-                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
-                                                T.Nagar, Chennai - 600017</p>
+                            </div>
+                            <div class="accordion-item mb-2">
+                                <h5 class="accordion-header" id="heading4">
+                                    <button class="accordion-button collapsed" type="button" tabindex="0"
+                                        data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                                        aria-controls="collapse4"><span class="mb-0 fw-bold text-start text-1000">CEO
+                                        </span></button>
+                                </h5>
+                                <div class="accordion-collapse collapse" id="collapse4" aria-labelledby="heading4"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body bg-100 d-flex flex-wrap gap-2">
+                                        <p><b>Contact Person:</b> Sriram V</p>
+                                        <p><b>Contact No:</b> <a href="tel:044-28143045">044-28143045</a></p>
+                                        <p><b>Email Id:</b> <a
+                                                href="mailto:ceo@integratedindia.in">ceo@integratedindia.in</a>
+                                        </p>
+                                        <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
+                                            T.Nagar, Chennai - 600017</p>
 
-                                            <p><b>Working hours:</b> Monday – Friday
-                                                9:00 am to 12:30 pm.
-                                                2:00 pm to 6:00 pm.
-                                                Saturday
-                                                9:30 am to 1:30 pm.</p>
-                                        </div>
+                                        <p><b>Working hours:</b> Monday – Friday
+                                            9:00 am to 12:30 pm.
+                                            2:00 pm to 6:00 pm.
+                                            Saturday
+                                            9:30 am to 1:30 pm.</p>
                                     </div>
                                 </div>
-                                <div class="accordion-item mb-2">
-                                    <h5 class="accordion-header" id="heading5">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true"
-                                            aria-controls="collapse5"><span class="mb-0 fw-bold text-start  text-1000">
-                                                Principal Officer </span></button>
-                                    </h5>
-                                    <div class="accordion-collapse collapse" id="collapse5" aria-labelledby="heading5"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body bg-100 lh-lg">
-                                            <p><b>Contact Person:</b> Ms Prabha V</p>
-                                            <p><b>Contact No:</b> <a href="tel:044-28140650">044-28140650</a></p>
-                                            <p><b>Email Id:</b> <a
-                                                    href="mailto:kmp1@integratedindia.in">kmp1@integratedindia.in</a>
-                                            </p>
-                                            <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
-                                                T.Nagar, Chennai - 600017</p>
+                            </div>
+                            <div class="accordion-item mb-2">
+                                <h5 class="accordion-header" id="heading5">
+                                    <button class="accordion-button collapsed" type="button" tabindex="0"
+                                        data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false"
+                                        aria-controls="collapse5"><span class="mb-0 fw-bold text-start text-1000">
+                                            Principal Officer </span></button>
+                                </h5>
+                                <div class="accordion-collapse collapse" id="collapse5" aria-labelledby="heading5"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body bg-100 lh-lg">
+                                        <p><b>Contact Person:</b> Ms Prabha V</p>
+                                        <p><b>Contact No:</b> <a href="tel:044-28140650">044-28140650</a></p>
+                                        <p><b>Email Id:</b> <a
+                                                href="mailto:kmp1@integratedindia.in">kmp1@integratedindia.in</a>
+                                        </p>
+                                        <p><b>Address:</b> IV Floor, Kences Towers, No. 1, Ramakrishna Street,
+                                            T.Nagar, Chennai - 600017</p>
 
-                                            <p><b>Working hours:</b> Monday – Friday
-                                                9:00 am to 12:30 pm.
-                                                2:00 pm to 6:00 pm.
-                                                Saturday
-                                                9:30 am to 1:30 pm.</p>
-                                        </div>
+                                        <p><b>Working hours:</b> Monday – Friday
+                                            9:00 am to 12:30 pm.
+                                            2:00 pm to 6:00 pm.
+                                            Saturday
+                                            9:30 am to 1:30 pm.</p>
                                     </div>
                                 </div>
                             </div>
@@ -470,35 +491,46 @@
                 sessionStorage.setItem("selectedCategory", "Equity");
                 window.location.href = "faqs-frequently-asked-questions.html";
             });
+
         });
     </script>
     <!-- footer-area-end -->
     <!-- JS here -->
     <script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="./assets/js/jquery.odometer.min.js"></script>
-    <script src="./assets/js/jquery.appear.js"></script>
-    <script src="./assets/js/gsap.js"></script>
-    <script src="./assets/js/ScrollTrigger.js"></script>
-    <script src="./assets/js/SplitText.js"></script>
-    
     <script src="./assets/js/jquery.parallaxScroll.min.js"></script>
     <script src="./assets/js/swiper-bundle.js"></script>
     <script src="./assets/js/ajax-form.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/aos.js"></script>
-    <script src="./assets/js/p9_language.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/chatbot.js"></script>
     <script src="./assets/js/faqs.js"></script>
+    <script>
+        // TAB / Focus upar accordion automatic OPEN thavu joiye
+        $(document).on('focus', '.accordion-button', function () {
+            var target = $(this).attr('data-bs-target');
+            if (target && !$(target).hasClass('show')) {
+                $(target).collapse('show');
+            }
+        });
+
+        // Enter & Space key toggle support
+        $(document).on('keydown', '.accordion-button', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var target = $(this).attr('data-bs-target');
+                if (target) {
+                    $(target).collapse('toggle');
+                }
+            }
+        });
+    </script>
     <script src="Scripts/GlobalApi.js"></script>
     <script>
         /**
    * Equity & F&O - Main JS
    * Handles date selection, API calls, and data display for Intraday/Positional tabs
    */
-const yearSelect = document.getElementById('year-select');
+        const yearSelect = document.getElementById('year-select');
         const monthSelect = document.getElementById('month-select');
         const currentMonth = String(new Date().getMonth() + 1).padStart(2, '0');
         monthSelect.value = currentMonth;
@@ -512,15 +544,15 @@ const yearSelect = document.getElementById('year-select');
         yearSelect.value = new Date().getFullYear();
 
         // Right-click press kare tyare dropdown open na thay - left click j open kare
-        ['month-select', 'year-select'].forEach(function(id) {
-            document.getElementById(id).addEventListener('mousedown', function(e) {
+        ['month-select', 'year-select'].forEach(function (id) {
+            document.getElementById(id).addEventListener('mousedown', function (e) {
                 if (e.button !== 0) {
                     e.preventDefault();
                     e.stopPropagation();
                     return false;
                 }
             });
-            document.getElementById(id).addEventListener('contextmenu', function(e) {
+            document.getElementById(id).addEventListener('contextmenu', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 return false;
@@ -530,7 +562,7 @@ const yearSelect = document.getElementById('year-select');
         // Listen to dropdown changes
         document.getElementById('month-select').addEventListener('change', updateData);
         document.getElementById('year-select').addEventListener('change', updateData);
-			var CatTyp="";
+        var CatTyp = "";
         function updateData() {
             const month = document.getElementById('month-select').value;
             const year = document.getElementById('year-select').value;
@@ -539,7 +571,7 @@ const yearSelect = document.getElementById('year-select');
         }
         // API Configuration
         //const API_BASE_URL = 'https://your-api-endpoint.com/api'; // Replace with your actual API
-        const API_BASE_URL =""; // Replace with your actual API
+        const API_BASE_URL = ""; // Replace with your actual API
         const API_ENDPOINTS = {
             INTRADAY: '/equity-fo/intraday',
             POSITIONAL: '/equity-fo/positional'
@@ -627,7 +659,7 @@ const yearSelect = document.getElementById('year-select');
         // Handle tab change (lazy loading implementation)
         function handleTabChange(event) {
             const targetId = event.target.getAttribute('data-bs-target').replace('#', '');
-         
+
             const date = elements.datePicker.value;
             if (targetId === 'Intraday' && elements.tables.intraday.innerHTML === '') {
                 // fetchAndPopulateData(API_ENDPOINTS.INTRADAY, 'Intraday-body', date);
@@ -643,9 +675,9 @@ const yearSelect = document.getElementById('year-select');
             showLoading(true);
             try {
                 //     // Only load data for the initially active tab (Intraday)
-                
+
                 await Promise.all([
-                    fetchAndPopulateData("1",'Intraday-body', date),
+                    fetchAndPopulateData("1", 'Intraday-body', date),
                 ]);
 
             } catch (error) {
@@ -657,15 +689,15 @@ const yearSelect = document.getElementById('year-select');
         }
 
         // Generic function to fetch data and populate table
-        var Result="";
+        var Result = "";
         async function fetchAndPopulateData(endpoint, tableId, date) {
             //created
-            endpoint=`${Cdslapi}?Mode=RESEARCH&Type=1&Mobile=${ date }`
+            endpoint = `${Cdslapi}?Mode=RESEARCH&Type=1&Mobile=${date}`
             try {
                 //commented
                 // const data = await fetchData(endpoint, { date });
-                const data = await fetchData(endpoint,"");
-                Result=data;
+                const data = await fetchData(endpoint, "");
+                Result = data;
                 populateTable(tableId, data);
             } catch (error) {
                 console.error(`Error loading ${endpoint}:`, error);
@@ -673,13 +705,13 @@ const yearSelect = document.getElementById('year-select');
             }
         }
 
-        
 
-         // Fetch data from API
-         async function fetchData(endpoint, params = {}) {
+
+        // Fetch data from API
+        async function fetchData(endpoint, params = {}) {
             const queryString = Object.keys(params).length
-            ? `?${new URLSearchParams(params).toString()}`
-            : '';
+                ? `?${new URLSearchParams(params).toString()}`
+                : '';
 
             const response = await fetch(`${API_BASE_URL}${endpoint}${queryString}`)
             // const response = await fetch(`${Cdslapi}?ftype=RESEARCH`);
@@ -692,86 +724,79 @@ const yearSelect = document.getElementById('year-select');
 
         // Enhanced table population with more data points
         function populateTable(tableId, data) {
-           if(CatTyp=="positional")
-                categorywisechange('positional','Positional-body')
+            if (CatTyp == "positional")
+                categorywisechange('positional', 'Positional-body')
             else
-                categorywisechange('intraday','Intraday-body')
-        }   
+                categorywisechange('intraday', 'Intraday-body')
+        }
 
-        function categorywisechange(CategoryName,tableId)
-        {
-			CatTyp=CategoryName;
+        function categorywisechange(CategoryName, tableId) {
+            CatTyp = CategoryName;
             const tableBody = document.getElementById(tableId);
             if (!tableBody) return;
             tableBody.innerHTML = '';
-            if(Object.keys(Result).length == 0 || Result==""){
+            if (Object.keys(Result).length == 0 || Result == "") {
                 const row = document.createElement('tr');
                 row.innerHTML = `<td colspan="2" class="text-muted">No data available for selected date</td>`;
                 tableBody.appendChild(row);
                 return;
             }
-            let type=""
-            if(CategoryName=="intraday")
-                type= Result.EquityIntraday
-            else if(CategoryName=="positional")
-                type= Result.EquityPositional
-            if(type==""||type==undefined)
-            {
+            let type = ""
+            if (CategoryName == "intraday")
+                type = Result.EquityIntraday
+            else if (CategoryName == "positional")
+                type = Result.EquityPositional
+            if (type == "" || type == undefined) {
                 const row = document.createElement('tr');
                 row.innerHTML = `<td colspan="2" class="text-muted">No data available for selected date</td>`;
                 tableBody.appendChild(row);
             }
 
-            $.each(type, function(i, item) {
-                let ReplaceDate=item.date.replaceAll('.','/');
+            $.each(type, function (i, item) {
+                let ReplaceDate = item.date.replaceAll('.', '/');
                 const row = document.createElement('tr');
 
                 const dateCell = document.createElement('td');
-                dateCell.textContent =ReplaceDate || 'N/A';
-				  const dateCell1 = document.createElement('td');
-				dateCell1.textContent =item.ValidDate || 'N/A';
+                dateCell.textContent = ReplaceDate || 'N/A';
+                const dateCell1 = document.createElement('td');
+                dateCell1.textContent = item.ValidDate || 'N/A';
 
                 const titleCell = document.createElement('td');
 
-                var Linkbase64 =  item.FileBinary;
+                var Linkbase64 = item.FileBinary;
 
-                if (Linkbase64!="") 
-                {
-                   
+                if (Linkbase64 != "") {
+
                     const titleLink = document.createElement('a');
-                    
-                    if(item.FileType=='.pdf')
-                    {
+
+                    if (item.FileType == '.pdf') {
                         titleLink.href = "data:application/pdf;base64," + Linkbase64;
-                        titleLink.download = item.title+".pdf";
+                        titleLink.download = item.title + ".pdf";
                     }
-                    else if(item.FileType==".png")
-                    {
+                    else if (item.FileType == ".png") {
                         titleLink.href = "data:image/png;base64," + Linkbase64;
-                        titleLink.download = item.title+".png";
+                        titleLink.download = item.title + ".png";
                     }
-                    else if(item.FileType==".jpg" ||item.FileType==".jpeg" )
-                    {
+                    else if (item.FileType == ".jpg" || item.FileType == ".jpeg") {
                         titleLink.href = "data:image/jpg;base64," + Linkbase64;
-                        titleLink.download = item.title+".jpg";
+                        titleLink.download = item.title + ".jpg";
                     }
                     titleLink.textContent = item.title || 'No title available';
                     titleCell.appendChild(titleLink);
-                } 
+                }
                 else {
                     titleCell.textContent = item.title || 'No title available';
                 }
                 row.appendChild(dateCell);
                 row.appendChild(titleCell);
-				if(CategoryName=="positional")
-                {
+                if (CategoryName == "positional") {
                     row.appendChild(dateCell1);
                 }
-				
+
                 tableBody.appendChild(row);
-                
+
             })
-            ;
+                ;
         }
 
         // Show loading indicator
@@ -849,149 +874,203 @@ const yearSelect = document.getElementById('year-select');
     </script>
 
     <script>
-    // =============================================
-    // Custom Dropdown - Right-click release to open
-    // Left-click pan open thay
-    // =============================================
-    (function () {
+        // =============================================
+        // Custom Dropdown - Right-click release to open
+        // Left-click pan open thay
+        // =============================================
+        (function () {
 
-        var monthData = [
-            { value: 'all', label: 'All Months' },
-            { value: '01', label: 'January' },
-            { value: '02', label: 'February' },
-            { value: '03', label: 'March' },
-            { value: '04', label: 'April' },
-            { value: '05', label: 'May' },
-            { value: '06', label: 'June' },
-            { value: '07', label: 'July' },
-            { value: '08', label: 'August' },
-            { value: '09', label: 'September' },
-            { value: '10', label: 'October' },
-            { value: '11', label: 'November' },
-            { value: '12', label: 'December' }
-        ];
+            var monthData = [
+                { value: 'all', label: 'All Months' },
+                { value: '01', label: 'January' },
+                { value: '02', label: 'February' },
+                { value: '03', label: 'March' },
+                { value: '04', label: 'April' },
+                { value: '05', label: 'May' },
+                { value: '06', label: 'June' },
+                { value: '07', label: 'July' },
+                { value: '08', label: 'August' },
+                { value: '09', label: 'September' },
+                { value: '10', label: 'October' },
+                { value: '11', label: 'November' },
+                { value: '12', label: 'December' }
+            ];
 
-        function buildList(listEl, items, nativeSelect, displayEl, otherListEl) {
-            listEl.innerHTML = '';
-            items.forEach(function (item) {
-                var li = document.createElement('li');
-                li.textContent = item.label;
-                li.dataset.value = item.value;
-                if (nativeSelect.value === item.value) li.classList.add('active');
-                li.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    // Native select value update
-                    nativeSelect.value = item.value;
-                    nativeSelect.dispatchEvent(new Event('change'));
-                    displayEl.childNodes[0].nodeValue = item.label;
-                    // Active class update
-                    listEl.querySelectorAll('li').forEach(function(x){ x.classList.remove('active'); });
-                    li.classList.add('active');
-                    listEl.style.display = 'none';
-                });
-                listEl.appendChild(li);
-            });
-        }
-
-        function setupDropdown(displayId, listId, nativeSelectId, items) {
-            var display = document.getElementById(displayId);
-            var list = document.getElementById(listId);
-            var nativeSel = document.getElementById(nativeSelectId);
-            if (!display || !list || !nativeSel) return;
-
-            // List build
-            function rebuild() {
-                // Year select mate items dynamic hoy
-                var dynItems = items;
-                if (!dynItems) {
-                    dynItems = [];
-                    Array.from(nativeSel.options).forEach(function(o){
-                        dynItems.push({ value: o.value, label: o.text });
+            function buildList(listEl, items, nativeSelect, displayEl, otherListEl) {
+                listEl.innerHTML = '';
+                items.forEach(function (item) {
+                    var li = document.createElement('li');
+                    li.textContent = item.label;
+                    li.dataset.value = item.value;
+                    li.setAttribute('role', 'option');
+                    li.setAttribute('tabindex', '0');
+                    if (nativeSelect.value === item.value) {
+                        li.classList.add('active');
+                        li.setAttribute('aria-selected', 'true');
+                    } else {
+                        li.setAttribute('aria-selected', 'false');
+                    }
+                    li.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        // Native select value update
+                        nativeSelect.value = item.value;
+                        nativeSelect.dispatchEvent(new Event('change'));
+                        displayEl.childNodes[0].nodeValue = item.label;
+                        // Active class update
+                        listEl.querySelectorAll('li').forEach(function (x) {
+                            x.classList.remove('active');
+                            x.setAttribute('aria-selected', 'false');
+                        });
+                        li.classList.add('active');
+                        li.setAttribute('aria-selected', 'true');
+                        listEl.style.display = 'none';
+                        displayEl.setAttribute('aria-expanded', 'false');
+                        displayEl.focus();
                     });
-                }
-                buildList(list, dynItems, nativeSel, display, null);
-                // display text sync
-                var sel = nativeSel.options[nativeSel.selectedIndex];
-                if (sel) {
-                    display.childNodes[0].nodeValue = sel.text;
-                }
-            }
-
-            var rightDown = false;
-
-            function openDropdown() {
-                // Bija badha lists band karo
-                document.querySelectorAll('.custom-select-list').forEach(function(l){
-                    if (l !== list) l.style.display = 'none';
+                    li.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            li.click();
+                        } else if (e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            if (li.nextElementSibling) li.nextElementSibling.focus();
+                        } else if (e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            if (li.previousElementSibling) li.previousElementSibling.focus();
+                        } else if (e.key === 'Escape') {
+                            e.preventDefault();
+                            listEl.style.display = 'none';
+                            displayEl.setAttribute('aria-expanded', 'false');
+                            displayEl.focus();
+                        }
+                    });
+                    listEl.appendChild(li);
                 });
-                rebuild();
-                list.style.display = list.style.display === 'block' ? 'none' : 'block';
             }
 
-            // Left-click to open
-            display.addEventListener('click', function (e) {
-                e.stopPropagation();
-                openDropdown();
-            });
+            function setupDropdown(displayId, listId, nativeSelectId, items) {
+                var display = document.getElementById(displayId);
+                var list = document.getElementById(listId);
+                var nativeSel = document.getElementById(nativeSelectId);
+                if (!display || !list || !nativeSel) return;
 
-            // Right-click: press track, release par open
-            display.addEventListener('mousedown', function (e) {
-                if (e.button === 2) {
-                    rightDown = true;
-                    e.preventDefault();
-                    e.stopPropagation();
+                // List build
+                function rebuild() {
+                    // Year select mate items dynamic hoy
+                    var dynItems = items;
+                    if (!dynItems) {
+                        dynItems = [];
+                        Array.from(nativeSel.options).forEach(function (o) {
+                            dynItems.push({ value: o.value, label: o.text });
+                        });
+                    }
+                    buildList(list, dynItems, nativeSel, display, null);
+                    // display text sync
+                    var sel = nativeSel.options[nativeSel.selectedIndex];
+                    if (sel) {
+                        display.childNodes[0].nodeValue = sel.text;
+                    }
                 }
-            });
-            display.addEventListener('mouseup', function (e) {
-                if (e.button === 2 && rightDown) {
-                    rightDown = false;
-                    e.preventDefault();
+
+                var rightDown = false;
+
+                function openDropdown() {
+                    // Bija badha lists band karo
+                    document.querySelectorAll('.custom-select-list').forEach(function (l) {
+                        if (l !== list) {
+                            l.style.display = 'none';
+                            var wrap = l.closest('.custom-select-wrap');
+                            if (wrap) {
+                                var disp = wrap.querySelector('.custom-select-box');
+                                if (disp) disp.setAttribute('aria-expanded', 'false');
+                            }
+                        }
+                    });
+                    rebuild();
+                    var isOpening = list.style.display !== 'block';
+                    list.style.display = isOpening ? 'block' : 'none';
+                    display.setAttribute('aria-expanded', isOpening ? 'true' : 'false');
+                    if (isOpening) {
+                        var activeLi = list.querySelector('li.active') || list.querySelector('li');
+                        if (activeLi) setTimeout(function () { activeLi.focus(); }, 10);
+                    }
+                }
+
+                // Left-click to open
+                display.addEventListener('click', function (e) {
                     e.stopPropagation();
                     openDropdown();
-                }
-            });
-            display.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                rightDown = false;
-            });
-
-            // Native select change thay to display sync
-            nativeSel.addEventListener('change', function () {
-                var sel = nativeSel.options[nativeSel.selectedIndex];
-                if (sel) display.childNodes[0].nodeValue = sel.text;
-            });
-
-            // Year select mate: jyare options populate thay tyare rebuild
-            if (!items) {
-                var observer = new MutationObserver(function () {
-                    rebuild();
                 });
-                observer.observe(nativeSel, { childList: true });
-            }
-        }
 
-        // Document click = close all
-        document.addEventListener('click', function () {
-            document.querySelectorAll('.custom-select-list').forEach(function (l) {
-                l.style.display = 'none';
-            });
-        });
-        document.addEventListener('contextmenu', function (e) {
-            var t = e.target;
-            if (!t.closest || !t.closest('.custom-select-wrap')) {
+                // Keyboard support for display
+                display.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (list.style.display !== 'block') {
+                            openDropdown();
+                        }
+                    }
+                });
+
+                // Right-click: press track, release par open
+                display.addEventListener('mousedown', function (e) {
+                    if (e.button === 2) {
+                        rightDown = true;
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                });
+                display.addEventListener('mouseup', function (e) {
+                    if (e.button === 2 && rightDown) {
+                        rightDown = false;
+                        e.preventDefault();
+                        e.stopPropagation();
+                        openDropdown();
+                    }
+                });
+                display.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    rightDown = false;
+                });
+
+                // Native select change thay to display sync
+                nativeSel.addEventListener('change', function () {
+                    var sel = nativeSel.options[nativeSel.selectedIndex];
+                    if (sel) display.childNodes[0].nodeValue = sel.text;
+                });
+
+                // Year select mate: jyare options populate thay tyare rebuild
+                if (!items) {
+                    var observer = new MutationObserver(function () {
+                        rebuild();
+                    });
+                    observer.observe(nativeSel, { childList: true });
+                }
+            }
+
+            // Document click = close all
+            document.addEventListener('click', function () {
                 document.querySelectorAll('.custom-select-list').forEach(function (l) {
                     l.style.display = 'none';
                 });
-            }
-        });
+            });
+            document.addEventListener('contextmenu', function (e) {
+                var t = e.target;
+                if (!t.closest || !t.closest('.custom-select-wrap')) {
+                    document.querySelectorAll('.custom-select-list').forEach(function (l) {
+                        l.style.display = 'none';
+                    });
+                }
+            });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            setupDropdown('month-display', 'month-list', 'month-select', monthData);
-            setupDropdown('year-display', 'year-list', 'year-select', null);
-        });
+            document.addEventListener('DOMContentLoaded', function () {
+                setupDropdown('month-display', 'month-list', 'month-select', monthData);
+                setupDropdown('year-display', 'year-list', 'year-select', null);
+            });
 
-    })();
+        })();
     </script>
 </body>
 

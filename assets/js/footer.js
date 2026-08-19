@@ -129,7 +129,7 @@ class Footer {
 					<div class="text-center d-flex flex-wrap gap-1 justify-content-center ">
 						<a class="mx-1 fw-semibold text-b " href="/career.html">Career</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/regulators.html">Regulators</a> <span>|</span>
-						<a class="mx-1 fw-semibold text-b " href="/disclaimer.html">Disclaimer</a> <span>|</span>
+						<a class="mx-1 fw-semibold text-b " href="disclaimer.html">Disclaimer</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/list-of-holidays.html">List of Holidays</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="#">Group Companies</a> <span>|</span>
                             <a class="mx-1 fw-semibold text-b " target="_blank" href="/assets/pdf/Annexue-5-SEBI-Master-Circular-for-Online-Resolution-of-Disputes-December-28-2023.pdf">ODR Mechanism</a> <span>|</span>
@@ -137,16 +137,16 @@ class Footer {
 						<a class="mx-1 fw-semibold text-b " href="/sitemap.html">Sitemap</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Policy_for_Freezing.pdf">Freezing Policy</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Policy for Handling Good Till Date (GTD) Orders.pdf">GTD</a> <span>|</span>
-						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/RiskDisclosurederivatives.pdf">Risk Disclosure Derivatives</a> <span></span> <br>
+						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/RiskDisclosurederivatives.pdf">Risk Disclosure Derivatives</a> <span>|</span> <br>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Details-of-Client-Bank-Ac-Annexure.pdf">Details of Client Bank A/c</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Advisory-for-investors-Annexure-II.pdf">Advisory Investors</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/kyc.html">KYC</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/kyc-forms.html">KYC Form</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Attention-Investors-Annexure-III.pdf">Attention Investors</a> <span>|</span>
-						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/SCORES-ANNEXURE-V.pdf">Scores</a> <span>|</span>
+						<a class="mx-1 fw-semibold text-b " href="http://scores.sebi.gov.in" target="_blank">Scores</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="https://bo.integrated.investments/support/spanmargin/spanmargin1.asp" target="_blank">Span Margin</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/privacy-policy.html">Privacy Policy</a> <span>|</span>
-						<a class="mx-1 fw-semibold text-b " href="/e-voting.html">E-Voting</a> <span></span> <br>
+						<a class="mx-1 fw-semibold text-b " href="/e-voting.html">E-Voting</a> <span>|</span> <br>
 						<a class="mx-1 fw-semibold text-b " href="/investor-charter.html">Investor Charter</a> <span>|</span>
 						<a class="mx-1 fw-semibold text-b " href="/assets/pdf/Policiesandprocedures.pdf">Policies & Procedures</a>
 					</div>
@@ -179,6 +179,16 @@ class Footer {
 							<span>|</span> <span> MCX Member ID : 57225</span> <span>|</span> <span> SEBI REG NO :
 								INZ000095737</span> <span>|</span> <span> CIN No : U65993TN1987PTC014964</span>
 						</p>
+						<div class="sebi-complaints-info mb-3 ">
+							<p class="mb-0 fs--14">FILING COMPLAINTS THROUGH SEBI’S ONLINE PORTAL SCORES’ and ‘SMARTODR portal’ - EASY & QUICK</p>
+							<p class="mb-0 fs--14">a. Register On SCORES / SMARTODR Portal</p>
+							<p class="mb-0 fs--14">b. Mandatory Details For filling Complaints on SCORES: (Name, PAN, Address, Mobile Number, Email ID)</p>
+							<p class="mb-1 fs--14">c. Benefits: i. Effective communication &nbsp; ii. Speedy Redressal of Grievance / Dispute</p>
+							<p class="mb-0 fs--14">
+								<a href="https://scores.sebi.gov.in/" target="_blank">https://scores.sebi.gov.in</a> | 
+								<a href="https://smartodr.in/login" target="_blank">https://smartodr.in/login</a>
+							</p>
+						</div>
 						<div class="copyright-text">
 							<p>Copyright © 2025 Integrated Enterprises (India) Private Ltd., All rights reserved.
 								Reproduction of any articles, photos, videos

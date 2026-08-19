@@ -18,7 +18,7 @@
     },
     {
       "question": "Steps to open the A/c",
-      "answer": "Visit our Website, www.integratedindia.in, click on Open DigiTrade A/c and follow the steps further. Alternatively, you can download iInvest Mobile App & start your Journey in opening DigiTrade A/c"
+      "answer": "Visit our Website, www.integratedindia.in, click on Open DigiTrade A/c and follow the steps further. Alternatively, you can download GLIDE Mobile App & start your Journey in opening DigiTrade A/c"
     },
     {
       "question": "What is KYC?",
@@ -34,7 +34,7 @@
     },
     {
       "question": "How to apply for IPO through online/mobile app?",
-      "answer": "You can login to our Mobile App “iInvest” or web https://integrated.investments/login & apply for an IPO."
+      "answer": "You can login to our Mobile App “GLIDE” or web https://integrated.investments/login & apply for an IPO."
     },
     {
       "question": "How do I get my user ID and password?",
@@ -104,7 +104,7 @@
     },
     {
       "question": "How does one open a demat account at Integrated?",
-      "answer": "You can open a free demat account in India with Integrated by signing up on our website or the iInvest app and completing your KYC online in minutes."
+      "answer": "You can open a free demat account in India with Integrated by signing up on our website or the GLIDE app and completing your KYC online in minutes."
     },
     {
       "question": "Are my stocks holding safe?",
@@ -114,7 +114,6 @@
       "question": "Can I dematerialise any share certificate?",
       "answer": "You can dematerialise only those certificates that are already registered in your name and are in the list of securities admitted for dematerialisation at NSDL."
     },
-    
     {
       "question": "What is the meaning of 'nomination'?",
       "answer": "Nomination means appointing a person (nominee) who will receive the securities held in the demat account in the event of the account holder’s death."
@@ -181,13 +180,12 @@
         "Tax Benefits to Individual: Any individual who is Subscriber of NPS can claim tax benefit under Sec 80 CCD (1) with in the overall ceiling of Rs.1.5 lac under Sec 80 CCE. Exclusive Tax Benefit to all NPS Subscribers U/s 80CCD (1B): An additional deduction for investment up to Rs.50,000 in NPS (Tier I account) is available under subsection 80CCD (1B) This is over and above the deduction of Rs.1.5 lakh available under section 80C of Income Tax Act, 1961.",
         "Tax Benefits under the Corporate Sector:",
         {
-      "title": "Tax Benefits under the Corporate Sector:",
-      "subPoints": [
-        "U/s 80CCD (2) of Income Tax Act, employer's NPS contribution (for the benefit of employee) up to 14% & 10% of salary (Basic + DA) under New & Old Tax Regime respectively, is deductible from taxable income, up-to 7.5 Lakh.",
-        "Corporates: Employer’s Contribution towards NPS as per the above % can be deducted as ‘Business Expense’ from their Profit & Loss Account."
-      ]
-    },
-
+          "title": "Tax Benefits under the Corporate Sector:",
+          "subPoints": [
+            "U/s 80CCD (2) of Income Tax Act, employer's NPS contribution (for the benefit of employee) up to 14% & 10% of salary (Basic + DA) under New & Old Tax Regime respectively, is deductible from taxable income, up-to 7.5 Lakh.",
+            "Corporates: Employer’s Contribution towards NPS as per the above % can be deducted as ‘Business Expense’ from their Profit & Loss Account."
+          ]
+        },
         "Please note: Tax benefits are applicable for investments in Tier I account only."
       ]
     },
@@ -209,18 +207,17 @@
     },
     {
       "question": "Where can I open NPS account?",
-     "answer": "Applicant can contact any of our branches or visit our webpage https://www.integratedindia.in/NPS-Container.aspx?Open"
+      "answer": "Applicant can contact any of our branches or visit our webpage https://www.integratedindia.in/NPS-Container.aspx?Open"
     },
     {
       "question": "Who is POP/POP-SP? What is the role of POP/POP-SP under NPS?",
       "answer": "PFRDA has appointed entities known as Points of Presence (POPs) to extend customer interface for all citizens of India, who wish to open an NPS account. POP is the first point of interaction between the subscriber and the NPS architecture. Point of Presence (POP) shall perform the functions relating to registration of subscribers, receiving contributions and instructions from subscribers and transmission of the same to designated NPS intermediaries. The authorized branches of POP for NPS services are called POP-SP (Points of Presence-Service Provider)"
     },
-    
     {
       "question": "How can a Subscriber contribute to NPS?",
       "answer": "A Subscriber can make contribution digitally thro’ our APP / Portal. Alternatively, a subscriber can register for SIP thro’ our APP/Portal."
     },
-   {
+    {
       "question": "What are the minimum contribution criteria under NPS?",
       "answer": [
         "A Subscriber is required to make an initial contribution (a minimum of Rs.500 for Tier I and a minimum of Rs.1000 for Tier II) at the time of registration. Subsequently, a Subscriber can make contributions subject to the following conditions:",
@@ -631,8 +628,8 @@
       "answer": "The Systematic Investment Plan (SIP) is an investment strategy in which a mutual fund scheme is selected and a fixed sum is invested at regular intervals."
     },
     {
-      "question": "Can I use the iInvest app to make online investments?",
-      "answer": "Yes, you can use the iInvest app to  <a href=\"mf-dp.html\" class=\"fw-bold\" target=\"_blank\">invest in mutual funds </a> and set up SIPs."
+      "question": "Can I use the GLIDE app to make online investments?",
+      "answer": "Yes, you can use the GLIDE app to  <a href=\"mf-dp.html\" class=\"fw-bold\" target=\"_blank\">invest in mutual funds </a> and set up SIPs."
     },
     {
       "question": "Do lock-in periods exist?",

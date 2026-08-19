@@ -8,6 +8,24 @@ class Header {
         this.element.innerHTML = `
 
 <header>
+    <div class="header-top border-bottom py-2 d-none d-lg-block bg-white">
+        <div class="container custom-container d-flex justify-content-start align-items-center gap-4">
+            <a href="#main-content" class="skip-link btn btn-dark rounded-pill py-1 px-3 d-flex align-items-center gap-2" style="font-size: 11px; font-weight: 700; background-color: #1a2a36; border-color: #1a2a36; letter-spacing: 0.5px; text-decoration: none;">
+                <i class="far fa-dot-circle text-white"></i> SKIP TO MAIN CONTENT
+            </a>
+            <div class="d-flex align-items-center gap-4">
+                <div class="d-flex align-items-center gap-1 text-secondary" style="font-size: 13px; font-weight: 500;">
+                    <i class="fas fa-phone" style="color: #00ae42; margin-right: 4px;"></i>
+                    <a href="tel:04428143045" class="text-secondary text-decoration-none hover-text-primary">044 - 28143045</a>
+                    <span>/</span>
+                    <a href="tel:04428143046" class="text-secondary text-decoration-none hover-text-primary">46</a>
+                </div>
+                <a href="mailto:customercare@integratedindia.in" class="text-secondary text-decoration-none d-flex align-items-center gap-2" style="font-size: 13px; font-weight: 500;">
+                    <i class="fas fa-envelope" style="color: #00ae42;"></i> customercare@integratedindia.in
+                </a>
+            </div>
+        </div>
+    </div>
     <div id="sticky-header" class="tg-header__area">
         <div class="container custom-container">
             <div class="row">
@@ -377,7 +395,7 @@ class Header {
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
                                                                 <img loading="lazy" src="assets/img/daily-market.jpg"
-                                                                    alt="Austin, texas" title="Austin, texas">
+                                                                    alt="Daily Market Insights" title="Daily Market Insights">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Daily Market Insights
@@ -393,7 +411,7 @@ class Header {
                                                         class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
-                                                                <img loading="lazy" src="assets/img/equity-f-o.jpg" alt="" title="">
+                                                                <img loading="lazy" src="assets/img/equity-f-o.jpg" alt="Equity/F&O" title="Equity/F&O">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Equity/F&O</p>
@@ -406,8 +424,8 @@ class Header {
                                                     <a href="trading-strategy.html" class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
-                                                                <img loading="lazy" src="assets/img/trading_strategy.jpg" alt=""
-                                                                    title="">
+                                                                <img loading="lazy" src="assets/img/trading_strategy.jpg" alt="Trading Strategy"
+                                                                    title="Trading Strategy">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Trading Strategy</p>
@@ -420,8 +438,8 @@ class Header {
                                                     <a href="stellar-picks.html" class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
-                                                                <img loading="lazy" src="assets/img/stellar_picks.jpg" alt=""
-                                                                    title="">
+                                                                <img loading="lazy" src="assets/img/stellar_picks.jpg" alt="Stellar Picks"
+                                                                    title="Stellar Picks">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Stellar Picks</p>
@@ -434,8 +452,8 @@ class Header {
                                                     <a href="research-technical-reports.html" class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
-                                                                <img loading="lazy" src="assets/img/technical_reports.jpg" alt=""
-                                                                    title="">
+                                                                <img loading="lazy" src="assets/img/technical_reports.jpg" alt="Technical Reports"
+                                                                    title="Technical Reports">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Technical Reports</p>
@@ -448,8 +466,8 @@ class Header {
                                                     <a href="special-reports.html" class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
-                                                                <img loading="lazy" src="assets/img/special_reports.jpg" alt=""
-                                                                    title="">
+                                                                <img loading="lazy" src="assets/img/special_reports.jpg" alt="Special Reports"
+                                                                    title="Special Reports">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Special Reports</p>
@@ -462,7 +480,7 @@ class Header {
                                                     <a href="research-basket.html" class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
-                                                                <img loading="lazy" src="assets/img/basket.jpg" alt="" title="">
+                                                                <img loading="lazy" src="assets/img/basket.jpg" alt="Basket" title="Basket">
                                                             </div>
                                                             <div class="my-auto">
                                                                 <p class=" m-0 fs--14 p-0 fw-bold">Basket</p>
@@ -531,7 +549,7 @@ class Header {
                                         <ul class="sub-menu sub-menu-w2">
                                             <div class="row row-cols-1 ">
                                                 <div class="col">
-                                                    <a href="https://play.google.com/store/apps/details?id=com.wave.iInvest&pli=1"
+                                                    <a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
                                                         id="app-link2" class="p-0 m-0 text-b">
                                                         <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                             <div class="m-y">
@@ -938,3 +956,11 @@ class Header {
 
 const header = new Header();
 header.render();
+
+// Automatically add ID to main tag for 'Skip to main content' link to work
+document.addEventListener('DOMContentLoaded', () => {
+    const mainContent = document.querySelector('main');
+    if (mainContent && !mainContent.id) {
+        mainContent.id = 'main-content';
+    }
+});
