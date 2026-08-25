@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -612,7 +613,7 @@
             showLoading(true);
 			
 
-            try {
+            // try {
                 await Promise.all([
              
                 
@@ -624,47 +625,49 @@
                     // fetchAndPopulateData("", 'market-close-box-body', date)
                 ]);
 				
-            } catch (error) {
-                console.error('Error loading data:', error);
-                showError('Failed to load data. Please try again.');
-            } finally {
-                showLoading(false);
-            }
+            // } catch (error) {
+            //     console.error('Error loading data:', error);
+            //     showError('Failed to load data. Please try again.');
+            // } finally {
+            //     showLoading(false);
+            // }
         }
 
         // Generic function to fetch data and populate table
         var Result="";
-        async function fetchAndPopulateData(endpoint, tableId, date) {
-            try {
+        async function fetchAndPopulateData(endpoint, tableId, date) 
+        {
+             try {
            
                 endpoint="";
                 endpoint=Cdslapi;
+			
             
                 const data = await fetchData(`${Cdslapi}?Mode=RESEARCH&Type=1&Mobile=${ date }`,"");
+		
                 Result=data;
                 populateTable(tableId, data);
 				
 				
                 
                 // console.log(data)      
-            } catch (error) {
-                console.error(`Error loading ${endpoint}:`, error);
-                showErrorInTable(tableId, `No Record`);
-                // showErrorInTable(tableId, `Failed to load data. ${error.message}`);
-            }
+             } catch (error) {
+                 console.error(`Error loading ${endpoint}:`, error);
+                 console.log("error");
+                 showErrorInTable(tableId, `No Record`);
+                 // showErrorInTable(tableId, `Failed to load data. ${error.message}`);
+             }
         }
 
         // Fetch data from API
-        async function fetchData(endpoint, params = {}) {
+        async function fetchData(endpoint, params = {}) 
+        {
             const queryString = Object.keys(params).length
             ? `?${new URLSearchParams(params).toString()}`
             : '';
             // console.log(endpoint)
 
-            const response = await fetch(`${API_BASE_URL}${endpoint}${queryString}`)
-            // const response = await fetch(`${Cdslapi}?ftype=RESEARCH`);
-            // ?ftype=RESEARCH&Mobile=${date}
-            // console.log(endpoint)
+            const response = await fetch(`${API_BASE_URL}${endpoint}${queryString}`);
 
             return await response.json();
         }
@@ -672,9 +675,11 @@
 
         // Populate table with data
         function populateTable(tableId, data) {
-			$("#dMarket-Outlook-tab").click();
-		
-           // CategorywiseChange('MarketOutlook','market-outlook-body')
+			if ($(".nav-link.active").length > 0) {
+				$(".nav-link.active").click();
+			} else {
+				$("#dMarket-Outlook-tab").click();
+			}
 			
        /*
             const tableBody = document.getElementById(tableId);
@@ -794,7 +799,8 @@
                 tableBody.appendChild(row);
                 return;
             }
-         
+
+			
             let type=""
             // console.log(Result)
 			//alert(CategoryName)
@@ -859,23 +865,40 @@
                 if(CategoryName=="MarketClose")
                 {
                     const FileCell = document.createElement('td');
-                    var FileContent=item.FileBinary;
+                    var FileContent=item.Refno;
                     if(FileContent !="")
                     {   
-                        
-                    
                         const fileLink = document.createElement('button');
                         fileLink.type = 'button';
-                        
                         fileLink.className = 'btn download-pdf-btn';
-                        fileLink.setAttribute("data-id", `${JSON.stringify(item.FileBinary)}`)
+                        fileLink.setAttribute("data-id", `${item.Refno}`)
+                    
+                        fileLink.setAttribute('id', `Upd-${i+1}`);  //new alter
                         fileLink.setAttribute("fname", GetFileName)
                         fileLink.textContent = 'Download';
-            
                         FileCell.appendChild(fileLink);
-                        
+
                     }
-                    row.appendChild(FileCell);
+                        row.appendChild(FileCell); 
+
+
+                    //var FileContent=item.FileBinary;
+                    //    if(FileContent !="")
+                    //    {   
+                    //        
+                    //    
+                    //        const fileLink = document.createElement('button');
+                    //        fileLink.type = 'button';
+                    //        
+                    //        fileLink.className = 'btn download-pdf-btn';
+                    //        fileLink.setAttribute("data-id", `${JSON.stringify(item.FileBinary)}`)
+                    //        fileLink.setAttribute("fname", GetFileName)
+                    //        fileLink.textContent = 'Download';
+                //
+                    //        FileCell.appendChild(fileLink);
+                    //        
+                    //    }
+                    //    row.appendChild(FileCell); 
                 }
 
                 
@@ -885,82 +908,164 @@
                 
             });
 
-                $(".download-pdf-btn").click(function () {
-                    pdfData = $.parseJSON($(this).attr('data-id'));
+            //$(".download-pdf-btn").click(function () {
+            //    pdfData = $.parseJSON($(this).attr('data-id'));
+            //    FName=$(this).attr('fname');
+            //    var dataObject=[];
+            //    pdfData.forEach((item,index) => {
+            //        dataObject.push(item.UploadAnalysisFile)
+            //    });
+            //    convertToPDF(FName,dataObject);
+            //})
+ 
+
+            //new alter
+
+            $(".download-pdf-btn").click(function () {
+                const Refno = $(this).attr('data-id');
+                Row=$(this).attr('id'); 
+                FName=$(this).attr('fname'); 
+            
+
+                if ($(this).attr('Filedata')) {
+                    const pdfData = $.parseJSON($(this).attr('Filedata'));
                     FName=$(this).attr('fname');
                     var dataObject=[];
                     pdfData.forEach((item,index) => {
                         dataObject.push(item.UploadAnalysisFile)
                     });
                     convertToPDF(FName,dataObject);
-                })
 
+                    
+                } else {
 
+                    FileAllData(Refno,FName,Row);
+                    var FileData="";
 
-                async function convertToPDF(Name,base64Images) {
+                    async function FileAllData(date,FName,Row) {
+                        showLoading(true);
+
+                        try {
+                            await Promise.all([
+                                fetchAndGetData(date,FName,Row),
+                            ]);
+                            async function fetchAndGetData(date,FName,Row) 
+                            {
+                                try {
+                                const data = await fetchData(`${Cdslapi}?Mode=RESEARCH&Type=7&Mobile=${date}`,"");
+                                var parsedata=JSON.stringify(data)
+                                $("#"+Row).attr("Filedata",parsedata);
+                                var pdfData=  $.parseJSON($("#"+Row).attr('Filedata'))
+                                var dataObject=[];
+                                pdfData.forEach((item,index) => {
+                                    dataObject.push(item.UploadAnalysisFile)
+                                });
+                                    convertToPDF(FName,dataObject);
+                                } catch (error) {
+                                    console.error(`Error loading ${endpoint}:`, error);
+                                    console.log("error");
+                                    showErrorInTable(tableId, `No Record`);
+                                }
+                            }
+                        } catch (error) {
+                            console.error('Error loading data:', error);
+                            showError('Failed to load data. Please try again.');
+                        } finally {
+                            showLoading(false);
+                        }
+                    }
                 
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF({
-            orientation: 'portrait',
-            unit: 'mm',
-            format: 'a4'
-            });
-
-            const pageWidth = pdf.internal.pageSize.getWidth();
-            const pageHeight = pdf.internal.pageSize.getHeight();
-            const margin = 15;
-            const maxWidth = pageWidth - 2 * margin;
-            let currentY = margin;
-
-            for (let i = 0; i < base64Images.length; i++) {
-            let imageData = base64Images[i].trim();
-
-            // Auto-detect and add data URL prefix if missing
-            if (!imageData.startsWith('data:image')) {
-                let mimeType = 'image/jpeg'; // default
-                if (imageData.startsWith('iVBORw0KGgo')) {
-                mimeType = 'image/png';
-                } else if (imageData.startsWith('R0lGOD')) {
-                mimeType = 'image/gif';
-                } else if (imageData.startsWith('/9j/')) {
-                mimeType = 'image/jpeg';
                 }
-                imageData = `data:${mimeType};base64,${imageData}`;
-            }
 
-            // Extract format for jsPDF
-            const format = imageData.split(';')[0].split('/')[1].toUpperCase();
 
-            // Load image to get dimensions
-            const img = new Image();
-            img.src = imageData;
+                
+                return;
 
-            await new Promise((resolve, reject) => {
-                img.onload = resolve;
-                img.onerror = () => reject(new Error(`Failed to load image ${i + 1}`));
-            });
 
-        
-            const ratio = img.height / img.width;
-            let imgWidth = maxWidth;
-            let imgHeight = imgWidth * ratio;
 
-        
-            if (currentY + imgHeight + margin > pageHeight) {
-                if (i > 0) pdf.addPage(); // Don't add page before first image
-                currentY = margin;
-            }
+                
+            })
+			
+			
+			
+			    async function convertToPDF(Name, base64Images) {
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'mm',
+                        format: 'a4',
+                        compress: true 
+                    });
 
-        
-            pdf.addImage(imageData, format, margin, currentY, imgWidth, imgHeight);
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const margin = 15;
+                    const maxWidth = pageWidth - (2 * margin);
+                    let currentY = margin;
 
-        
-            currentY += imgHeight + 15;
-            }
+                    for (let i = 0; i < base64Images.length; i++) {
+                        let imageData = base64Images[i].trim();
 
-            
-            pdf.save(Name+'.pdf');
-            }
+                    
+                        if (!imageData.startsWith('data:image')) {
+                            imageData = `data:image/jpeg;base64,${imageData}`;
+                        }
+
+                        try {
+                         
+                            const img = await new Promise((resolve, reject) => {
+                                const image = new Image();
+                                image.crossOrigin = "Anonymous"; 
+                                image.onload = () => resolve(image);
+                                image.onerror = () => reject(new Error(`Image ${i} load failed`));
+                                image.src = imageData;
+                            });
+
+                            const canvas = document.createElement('canvas');
+                            const ctx = canvas.getContext('2d');
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            ctx.drawImage(img, 0, 0);
+
+                          
+                            const compressedBase64 = canvas.toDataURL('image/jpeg', 0.6);
+
+                         
+                            const ratio = img.height / img.width;
+                            let imgWidth = maxWidth;
+                            let imgHeight = imgWidth * ratio;
+
+                          
+                            if (imgHeight > (pageHeight - 2 * margin)) {
+                                imgHeight = pageHeight - 2 * margin;
+                                imgWidth = imgHeight / ratio;
+                            }
+
+                         
+                            if (currentY + imgHeight > pageHeight - margin) {
+                                pdf.addPage();
+                                currentY = margin;
+                            }
+
+                         
+                            pdf.addImage(compressedBase64, 'JPEG', margin, currentY, imgWidth, imgHeight, undefined, 'FAST');
+
+                            currentY += imgHeight + 10; 
+
+                        } catch (error) {
+                            console.error("Skipping image due to error:", error);
+                        }
+                    }
+
+                    pdf.save(`${Name}.pdf`);
+                }
+
+
+			
+			
+			
+			
+			
 			}
 			
 			

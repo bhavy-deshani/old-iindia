@@ -647,7 +647,7 @@ class Header {
                                                         </a>
                                                     </div>
                                                     <div class="col">
-                                                        <a href="policies-procedures.html" class="p-0 m-0 text-b">
+                                                        <a href="gift-city-grievance-redressal-policy.html" class="p-0 m-0 text-b">
                                                             <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                 <div class="m-y">
                                                                     <img loading="lazy"

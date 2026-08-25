@@ -642,7 +642,7 @@ class Header {
                 <div class="col">
                     <ul>
                         <li class="d-flex gap-2 hover-effect mb-3">
-                            <a href="policies-procedures.html" class="p-0 m-0 text-b d-flex gap-2 w-100">
+                            <a href="gift-city-grievance-redressal-policy.html" class="p-0 m-0 text-b d-flex gap-2 w-100">
                                 <div class="m-y">
                                     <img loading="lazy" src="assets/img/gift-city/policies_procedures.png" alt="Policies & Procedures" title="Policies & Procedures">
                                 </div>
