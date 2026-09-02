@@ -691,35 +691,13 @@ class Header {
                                                 <ul class="sub-menu sub-menu-w2">
                                                     <div class="row row-cols-1 ">
                                                         <div class="col">
-                                                            <!-- //New Altered -->
-                                                            <a href="https://play.google.com/store/apps/details?id=com.iepshell.ieilpro&pcampaignid=web_share"
-                                                                id="app-link2" class="p-0 m-0 text-b">
+                                                            <a href="../online.html" class="p-0 m-0 text-b">
                                                                 <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
                                                                     <div class="m-y">
-                                                                        <img loading="lazy"
-                                                                            src="../assets/img/Equity.png" alt="Equity"
-                                                                            title="Equity">
+                                                                        <img loading="lazy" src="../assets/img/Equity.png" alt="Equity/MF" title="Equity/MF">
                                                                     </div>
                                                                     <div class="lh-1 my-auto">
-                                                                        <p class="lh-1 m-0 fs--14 p-0 fw-bold">Equity
-                                                                        </p>
-
-                                                                    </div>
-                                                                    <div class="ani"></div>
-                                                                </li>
-                                                            </a>
-                                                        </div>
-                                                        <div class="col">
-                                                            <a href="../mf-dp.html" class="p-0 m-0 text-b">
-                                                                <li class="d-flex gap-2 hover-effect mb-3 hover-effect">
-                                                                    <div class="m-y">
-                                                                        <img loading="lazy"
-                                                                            src="../assets/img/mf-dp.png" alt="MF & DP"
-                                                                            title="MF & DP">
-                                                                    </div>
-                                                                    <div class="lh-1 my-auto">
-                                                                        <p class="lh-1 m-0 fs--14 p-0 fw-bold">MF & DP
-                                                                        </p>
+                                                                        <p class="lh-1 m-0 fs--14 p-0 fw-bold">Equity/MF</p>
                                                                     </div>
                                                                     <div class="ani"></div>
                                                                 </li>
