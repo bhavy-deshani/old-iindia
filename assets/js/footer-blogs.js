@@ -236,11 +236,11 @@ class Footer {
                 </div>
                 <div class="footer-shape">
                     <img loading="lazy" src="../assets/img/images/footer_shape01.png" alt="Integrated"
-                        data-aos="fade-right" data-aos-delay="400" />
+                        data-aos="fade-right" data-aos-delay="400"  title="Footer Shape01" />
                     <img loading="lazy" src="../assets/img/images/footer_shape02.png" alt="Integrated"
-                        data-aos="fade-left" data-aos-delay="400" />
+                        data-aos="fade-left" data-aos-delay="400"  title="Footer Shape02" />
                     <img loading="lazy" src="../assets/img/images/footer_shape03.png" alt="Integrated"
-                        data-parallax='{"x" : 100 , "y" : -100 }' />
+                        data-parallax='{"x" : 100 , "y" : -100 }'  title="Footer Shape03" />
                 </div>
             </div>
         </footer>

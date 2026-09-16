@@ -226,54 +226,7 @@ class Header {
                                                             </li>
                                                         </a>
                                                     </div>
-                                                    <!-- <div class="col py-2">
-														<a href="best-bond-investment-platform-in-india.html"
-															class="m-0 p-0 text-b">
-															<li class="premium-bond-card position-relative overflow-hidden"
-																style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-
-																<div class="gradient-animator" style="position: absolute; inset: 0; 
-                background: linear-gradient(135deg, #1c355e 0%, #00ae42 100%);
-                background-size: 200% 200%; animation: gradientPulse 8s ease infinite alternate;"></div>
-																<div class="new-badge" style="position: absolute; top: 0; right: 2px; 
-                background: linear-gradient(135deg, #ff8a00 0%, #ff0058 100%);
-                color: white; font-size: 10px; font-weight: bold; padding: 3px 10px;
-                border-bottom-left-radius: 8px; z-index: 3; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-                animation: badgePulse 2s ease infinite;">
-																	NEW
-																</div>
-																<div class="shimmer-overlay" style="position: absolute; inset: 0; 
-                background: linear-gradient(90deg, 
-                    rgba(255,255,255,0) 0%, 
-                    rgba(255,255,255,0.15) 50%, 
-                    rgba(255,255,255,0) 100%);
-                transform: translateX(-100%);"></div>
-
-																<div class="position-relative"
-																	style="z-index: 2; padding: 8px; display: flex; align-items: center; gap: 12px;">
-																	<div class="icon-container"
-																		style="position: relative;">
-																		<div class="icon-glow" style="position: absolute; width: 40px; height: 40px; 
-                        border-radius: 50%; background: rgba(255,255,255,0.2); 
-                        animation: glowPulse 3s ease infinite;"></div>
-																		<img loading="lazy" src="assets/img/bonds.png"
-																			alt="Bonds" style="width: 28px; height: 28px; position: relative; z-index: 2;
-                        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));">
-																	</div>
-
-																	<div style="flex: 1;">
-																		<p class="m-0  fw-bold text-white">Bonds</p>
-
-																	</div>
-																</div>
-
-																<div class="particle" style="position: absolute; width: 3px; height: 3px; 
-                background: white; border-radius: 50%; opacity: 0.5; top: 20%; left: 15%;"></div>
-																<div class="particle" style="position: absolute; width: 2px; height: 2px; 
-                background: white; border-radius: 50%; opacity: 0.3; top: 60%; left: 80%;"></div>
-															</li>
-														</a>
-													</div> -->
+                                                   
                                                 </div>
                                             </ul>
                                         </li>
@@ -1045,14 +998,14 @@ class Header {
     </header>
     <div class="z-99">
         <div class="chatbot-icon">
-            <img loading="lazy" src="assets/img/chanakya-removebg-preview.png" alt="Chatbot Icon" />
+            <img loading="lazy" src="assets/img/chanakya-removebg-preview.png" alt="Chatbot Icon"  title="Chanakya Removebg Preview" />
             <h5 class="fw-bold text-white">Hi, I am Chanakya</h5>
         </div>
         <div class="chatbot hidden">
             <header class="chatbot-header">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-3 chatbot-image">
-                        <img loading="lazy" src="assets/img/chatbot-icon.svg" class="img-fluid" alt="Chanakya Logo" />
+                        <img loading="lazy" src="assets/img/chatbot-icon.svg" class="img-fluid" alt="Chanakya Logo"  title="Chatbot Icon" />
                     </div>
                     <div class="col-4">
                         <h5 class="text-b m-0 fw-bold">Chanakya</h5>

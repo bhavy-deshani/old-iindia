@@ -294,11 +294,11 @@
                 </div>
             </div>
             <div class="breadcrumb__shape">
-                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape01.png" alt="Integrated"  title="Breadcrumb Shape01" />
                 <img loading="lazy" src="./assets/img/images/breadcrumb_shape02.png" alt="Integrated"
-                    class="rightToLeft" />
-                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated" />
-                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated" />
+                    class="rightToLeft"  title="Breadcrumb Shape02" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape03.png" alt="Integrated"  title="Breadcrumb Shape03" />
+                <img loading="lazy" src="./assets/img/images/breadcrumb_shape04.png" alt="Integrated"  title="Breadcrumb Shape04" />
 
             </div>
         </section>
@@ -309,11 +309,11 @@
                     <div class="col-lg-6 col-md-9 col-sm-10">
                         <div class="about__img-wrap-four p-0">
                             <img loading="lazy" src="./assets/img/ipo_initial_public_offering.png" class="img-fluid"
-                                alt="Integrated" />
+                                alt="Integrated"  title="Ipo Initial Public Offering" />
 
                             <div class="shape">
                                 <img loading="lazy" src="./assets/img/images/inner_about_shape.jpg" alt="Integrated"
-                                    class="alltuchtopdown" />
+                                    class="alltuchtopdown"  title="Inner About Shape" />
                             </div>
 
                         </div>
@@ -393,7 +393,7 @@
                     </div>
                     <div id="no-data" class="text-center py-5 hidden">
                         <img src="https://placehold.co/300x200/EBF4FF/7F9CF5?text=No+IPOs+Found" alt="No IPOs"
-                            class="mx-auto mb-4 rounded-3">
+                            class="mx-auto mb-4 rounded-3" title="7F9Cf5?Text=No+Ipos+Found">
                         <p class=" fs-5">No IPOs available in this category at the moment.</p>
                     </div>
                 </div>
@@ -445,7 +445,7 @@
                     <div class="col-lg-6">
                         <div class="position-relative text-center">
                             <img loading="lazy" class="position-relative z-1"
-                                src="./assets/img/how_to_apply_for_ipo.png" alt="Integrated" />
+                                src="./assets/img/how_to_apply_for_ipo.png" alt="Integrated"  title="How To Apply For Ipo" />
 
                         </div>
                     </div>
@@ -791,7 +791,7 @@
 
             // Added data-label attributes to each <td> for the mobile card view
             return `<tr onclick="window.location.href='${detailPageUrl}'">
-                        <td data-label="Company" class="p-3"><div class="d-flex align-items-center"><img class="rounded-circle" src="${ipo.logo}" alt="${ipo.name} logo" style="width: 40px; height: 40px;"><div class="ms-3"><div class="fw-bold text-dark">${ipo.name}</div>${ipo.sme ? `<div class="small text-muted">SME IPO</div>` : ''}</div></div></td>
+                        <td data-label="Company" class="p-3"><div class="d-flex align-items-center"><img class="rounded-circle" src="${ipo.logo}" alt="${ipo.name} logo" style="width: 40px; height: 40px;" title="Integrated India Image"><div class="ms-3"><div class="fw-bold text-dark">${ipo.name}</div>${ipo.sme ? `<div class="small text-muted">SME IPO</div>` : ''}</div></div></td>
                         <td data-label="Issue Date" class="p-3 ">${ipo.issueDate}</td>
                         <td data-label="Price" class="p-3 ">${ipo.price}</td>
                         <td data-label="Min Investment" class="p-3 ">${ipo.minInvestment}</td>

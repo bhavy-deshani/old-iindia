@@ -15,7 +15,7 @@ class Footer {
 								<div class="fw-logo mb-25">
 									<a href="/"><img
 											src="./assets/img/integrated_enterprises_india_pvt_ltd.png"
-											alt="Integrated" /></a>
+											alt="Integrated"  title="Integrated Enterprises India Pvt Ltd" /></a>
 								</div>
 								<div class="footer-content">
 									<p>Grow your wealth with confidence. Integrated India Your one-stop platform for all
@@ -194,11 +194,11 @@ class Footer {
 			</div>
 			<div class="footer-shape">
 				<img loading="lazy" src="./assets/img/images/footer_shape01.png" alt="Integrated" data-aos="fade-right"
-					data-aos-delay="400" />
+					data-aos-delay="400"  title="Footer Shape01" />
 				<img loading="lazy" src="./assets/img/images/footer_shape02.png" alt="Integrated" data-aos="fade-left"
-					data-aos-delay="400" />
+					data-aos-delay="400"  title="Footer Shape02" />
 				<img loading="lazy" src="./assets/img/images/footer_shape03.png" alt="Integrated"
-					data-parallax='{"x" : 100 , "y" : -100 }' />
+					data-parallax='{"x" : 100 , "y" : -100 }'  title="Footer Shape03" />
 			</div>
 		</div>
 	</footer>

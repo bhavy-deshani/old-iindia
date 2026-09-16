@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
           output += `
                         <div class="Newscls">
                             <div class="issue">
-                                <img loading="lazy" src="${item.NLLinkImg}" alt="${item.NLIssueName}" class="img-fluid">
+                                <img loading="lazy" src="${item.NLLinkImg}" alt="${item.NLIssueName}" class="img-fluid" title="Integrated India Image">
                                 <div class="view-btn h-100 w-100">
                                     <button class="btn" onclick="newsPdf('View','${item.NLView}')">View</button>
                                 </div>

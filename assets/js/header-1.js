@@ -841,14 +841,14 @@ class Header {
 </header>
 <div class="z-99">
     <div class="chatbot-icon">
-        <img loading="lazy" src="assets/img/chanakya-removebg-preview.png" alt="Chatbot Icon" />
+        <img loading="lazy" src="assets/img/chanakya-removebg-preview.png" alt="Chatbot Icon"  title="Chanakya Removebg Preview" />
         <h5 class="fw-bold text-white">Hi, I am Chanakya</h5>
     </div>
     <div class="chatbot hidden">
         <header class="chatbot-header">
             <div class="row align-items-center justify-content-between">
                 <div class="col-3 chatbot-image">
-                    <img loading="lazy" src="assets/img/chatbot-icon.svg" class="img-fluid" alt="Chanakya Logo" />
+                    <img loading="lazy" src="assets/img/chatbot-icon.svg" class="img-fluid" alt="Chanakya Logo"  title="Chatbot Icon" />
                 </div>
                 <div class="col-4">
                     <h5 class="text-b m-0 fw-bold">Chanakya</h5>

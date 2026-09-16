@@ -2,7 +2,7 @@ var data={chatinit:{title:["Myself <b> Chanakya</b>, I am here to assist you tod
 document.getElementById("init").addEventListener("click",toggleChatBot);document.getElementById("close-chatbot").addEventListener("click",toggleChatBot);const minimizeButton=document.getElementById("minimize-chatbot");const backButton=document.getElementById("back-button");const mainMenu=document.getElementById("main-menu");var cbot=document.getElementById("chat-box");var chatContainer=document.getElementById("test");const chartbot=document.getElementById("init");var historyStack=[];var minimized=!1;var optionsSelected=0;function clearChat(){cbot.innerHTML="";historyStack=[];optionsSelected=0;backButton.style.display="none";mainMenu.style.display="none"}
 function toggleChatBot(){if(chatContainer.style.display==="none"||chatContainer.style.display===""){chatContainer.classList.remove("minimized");chatContainer.classList.add("open");minimizeButton.innerHTML='<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="15.000000pt" height="15.000000pt" viewBox="0 0 32.000000 32.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"><path d="M50 212 c0 -4 25 -32 55 -62 l55 -55 57 57 c31 32 54 61 50 65 -4 4 -30 -15 -57 -42 l-50 -49 -48 47 c-46 46 -62 56 -62 39z"/></g></svg>';minimized=!1;chatContainer.style.display="block";chartbot.style.display="none";document.getElementById("init").innerHTML=`
         <div class="col-md-8 m-auto">
-                      <img loading="lazy" src="./assets/images/gallery/chanakya-removebg-preview.png" class="img-fluid" alt="">
+                      <img loading="lazy" src="./assets/images/gallery/chanakya-removebg-preview.png" class="img-fluid" alt="Chanakya Removebg Preview" title="Chanakya Removebg Preview">
                   </div>
                   <div class="text-center me-2">
                   <div class="bg-b fs--2  p-1 px-1 text-white text-b  rounded-2 w-100">
@@ -11,7 +11,7 @@ function toggleChatBot(){if(chatContainer.style.display==="none"||chatContainer.
                   </div>
       `;initChat()}else{chatContainer.style.display="none";chartbot.style.display="block";document.getElementById("init").innerHTML=`
          <div class="col-md-8 m-auto">
-                      <img loading="lazy" src="./assets/images/gallery/chanakya-removebg-preview.png" class="img-fluid" alt="">
+                      <img loading="lazy" src="./assets/images/gallery/chanakya-removebg-preview.png" class="img-fluid" alt="Chanakya Removebg Preview" title="Chanakya Removebg Preview">
                   </div>
                   <div class="text-center me-2">
                   <div class="bg-b fs--2  p-1 px-1 text-white text-b  rounded-2 w-100">
